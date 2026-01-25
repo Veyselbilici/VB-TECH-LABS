@@ -10,15 +10,20 @@
     <title>Privacy Policy - VB TECH LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0e27;
-            --bg-secondary: #1a1f3a;
-            --text-primary: #f1f5f9;
+            --primary-navy: #0f1729;
+            --secondary-navy: #1a2332;
+            --accent-blue: #2563eb;
+            --accent-gold: #d4af37;
+            --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --accent-primary: #38bdf8;
-            --accent-secondary: #818cf8;
+            --text-muted: #64748b;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(26, 35, 50, 0.6);
         }
 
         * {
@@ -29,17 +34,16 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-primary);
+            background: var(--primary-navy);
             color: var(--text-primary);
-            line-height: 1.8;
-            padding: 0;
+            line-height: 1.6;
         }
 
         /* Header */
         header {
-            background: rgba(26, 31, 58, 0.8);
+            background: rgba(26, 35, 50, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            border-bottom: 1px solid var(--border-color);
             padding: 1.5rem 0;
             position: sticky;
             top: 0;
@@ -47,7 +51,7 @@
         }
 
         .header-content {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
@@ -56,103 +60,116 @@
         }
 
         .logo-small {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-blue), #1e40af);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .header-title {
-            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--text-primary);
         }
 
         /* Main Content */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
         }
 
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--accent-primary);
+            color: var(--accent-blue);
             text-decoration: none;
             font-weight: 600;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             transition: all 0.3s;
+            font-size: 0.95rem;
         }
 
         .back-link:hover {
             gap: 0.8rem;
-            color: var(--accent-secondary);
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         .last-updated {
             color: var(--text-secondary);
             font-size: 0.95rem;
             margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
         }
 
-        .intro {
-            background: rgba(30, 41, 59, 0.4);
-            border-left: 4px solid var(--accent-primary);
-            padding: 1.5rem;
+        .intro-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-blue);
+            padding: 2rem;
             border-radius: 8px;
             margin-bottom: 3rem;
         }
 
-        .intro p {
+        .intro-box p {
             color: var(--text-secondary);
+            line-height: 1.8;
             margin: 0;
         }
 
-        .intro strong {
-            color: var(--accent-primary);
+        .intro-box strong {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
 
         h2 {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-top: 3rem;
-            margin-bottom: 1rem;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         h3 {
             font-size: 1.3rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
         }
 
         p {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
         ul {
@@ -165,77 +182,130 @@
             padding: 0.75rem 0;
             padding-left: 2rem;
             position: relative;
+            line-height: 1.7;
         }
 
         ul li::before {
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--accent-primary);
+            color: var(--accent-blue);
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
         .highlight-box {
-            background: rgba(56, 189, 248, 0.05);
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.25);
             border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
+            padding: 2rem;
+            margin: 2.5rem 0;
         }
 
         .highlight-box h3 {
             margin-top: 0;
-            color: var(--accent-primary);
+            color: var(--accent-blue);
+            font-size: 1.2rem;
         }
 
-        .contact-box {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            border: 1px solid rgba(129, 140, 248, 0.2);
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(30, 64, 175, 0.1));
+            border: 1px solid rgba(37, 99, 235, 0.3);
             border-radius: 16px;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 3rem;
+            margin-top: 4rem;
             text-align: center;
         }
 
-        .contact-box h3 {
+        .contact-section h2 {
             margin-top: 0;
-            color: var(--accent-primary);
+            color: var(--accent-blue);
+            justify-content: center;
+        }
+
+        .contact-section p {
+            margin-bottom: 2rem;
         }
 
         .contact-email {
-            display: inline-block;
-            color: var(--accent-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            background: var(--accent-blue);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            background: rgba(56, 189, 248, 0.1);
+            padding: 1rem 2rem;
             border-radius: 8px;
             transition: all 0.3s;
-            margin-top: 1rem;
         }
 
         .contact-email:hover {
-            background: rgba(56, 189, 248, 0.2);
+            background: #1d4ed8;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
 
         footer {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            border-top: 1px solid var(--border-color);
             text-align: center;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .toc-list {
+            list-style: decimal;
+            padding-left: 1.5rem;
+        }
+
+        .toc-list li {
+            padding: 0.5rem 0;
+            padding-left: 0.5rem;
+        }
+
+        .toc-list li::before {
+            content: none;
+        }
+
+        .toc-list a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc-list a:hover {
+            color: #60a5fa;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .container {
-                padding: 2rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             h2 {
@@ -248,6 +318,10 @@
 
             .header-content {
                 padding: 0 1.5rem;
+            }
+
+            .contact-section {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -264,98 +338,154 @@
     <div class="container">
         <a href="index.html" class="back-link">← Back to Home</a>
 
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">📅 Last Updated: January 2026</p>
-
-        <div class="intro">
-            <p><strong>VB TECH LABS</strong> operates mobile applications including Falio and other innovative
-                solutions. This Privacy Policy informs you of our policies regarding the collection, use, and disclosure
-                of personal data when you use our Services and the choices you have associated with that data.</p>
+        <div class="page-header">
+            <div class="page-subtitle">Legal Documentation</div>
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">📅 Last Updated: January 2026</p>
         </div>
 
-        <h2>📋 1. Information We Collect</h2>
+        <div class="intro-box">
+            <p><strong>VB TECH LABS</strong> operates mobile applications including Falio and other innovative
+                solutions. This Privacy Policy informs you of our policies regarding the collection, use, and disclosure
+                of personal data when you use our Services and the choices you have associated with that data. We are
+                committed to protecting your privacy and ensuring transparency in our data practices.</p>
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol class="toc-list">
+                <li><a href="#section1">Information We Collect</a></li>
+                <li><a href="#section2">Third-Party Services</a></li>
+                <li><a href="#section3">How We Use Your Data</a></li>
+                <li><a href="#section4">Data Security</a></li>
+                <li><a href="#section5">Children's Privacy</a></li>
+                <li><a href="#section6">Changes to This Privacy Policy</a></li>
+                <li><a href="#section7">Your Rights</a></li>
+                <li><a href="#section8">Contact Us</a></li>
+            </ol>
+        </div>
+
+        <h2 id="section1">📋 1. Information We Collect</h2>
         <p>We collect several different types of information for various purposes to provide and improve our Service to
             you.</p>
 
         <h3>1.1 Personal Data</h3>
         <p>While using our Service, we may ask you to provide us with certain personally identifiable information that
-            can be used to contact or identify you. This may include, but is not limited to:</p>
+            can be used to contact or identify you ("Personal Data"). This may include, but is not limited to:</p>
         <ul>
             <li>Email address</li>
-            <li>Name and surname</li>
+            <li>First name and last name</li>
+            <li>Phone number (optional)</li>
             <li>Usage data and analytics</li>
+            <li>Device information</li>
         </ul>
 
         <h3>1.2 Usage Data</h3>
-        <p>We may also collect information on how the Service is accessed and used. This Usage Data may include
-            information such as your device's Internet Protocol address (IP address), device type, operating system
-            version, the time and date of your visit, and other diagnostic data.</p>
+        <p>We may also collect information on how the Service is accessed and used ("Usage Data"). This Usage Data may
+            include information such as your device's Internet Protocol address (IP address), device type, operating
+            system version, the configuration of the app when utilizing our Service, the time and date of your use of
+            the Service, and other diagnostic data.</p>
 
-        <h2>🔧 2. Third-Party Services</h2>
+        <h2 id="section2">🔧 2. Third-Party Services</h2>
         <p>Our applications use third-party services that may collect information used to identify you. These services
-            include:</p>
+            are essential for providing our core functionality and improving user experience. We have carefully selected
+            these partners to ensure they maintain high standards of data protection.</p>
 
         <div class="highlight-box">
             <h3>Google Play Services</h3>
-            <p>Used for app distribution, in-app updates, and core functionality on Android devices.</p>
+            <p>Used for app distribution, in-app updates, authentication, and core functionality on Android devices.
+                Google Play Services helps us provide a seamless and secure experience across Android platforms.</p>
         </div>
 
         <div class="highlight-box">
             <h3>Google AdMob</h3>
             <p>We use AdMob to display advertisements in our applications. AdMob may use your Advertising ID to show
-                personalized ads based on your interests. You can opt-out of personalized advertising in your device
-                settings.</p>
+                personalized ads based on your interests and browsing behavior. You can opt-out of personalized
+                advertising in your device settings under "Ads" or "Privacy" settings. Non-personalized ads will still
+                be shown to support our free services.</p>
         </div>
 
         <div class="highlight-box">
             <h3>Firebase Analytics</h3>
             <p>We use Firebase Analytics to understand how users interact with our app, helping us improve user
-                experience and app performance. This service collects anonymous usage statistics.</p>
+                experience and app performance. This service collects anonymous usage statistics, crash reports, and
+                performance data. No personally identifiable information is collected through Firebase Analytics without
+                your explicit consent.</p>
         </div>
 
-        <h2>📊 3. How We Use Your Data</h2>
+        <h2 id="section3">📊 3. How We Use Your Data</h2>
         <p>VB TECH LABS uses the collected data for various purposes:</p>
         <ul>
             <li>To provide and maintain our Service</li>
             <li>To notify you about changes to our Service</li>
-            <li>To provide customer support</li>
-            <li>To gather analysis or valuable information to improve our Service</li>
-            <li>To monitor the usage of our Service</li>
+            <li>To allow you to participate in interactive features of our Service when you choose to do so</li>
+            <li>To provide customer care and support</li>
+            <li>To provide analysis or valuable information so that we can improve the Service</li>
+            <li>To monitor the usage of the Service</li>
             <li>To detect, prevent and address technical issues</li>
-            <li>To provide you with news, special offers and general information about other services we offer</li>
+            <li>To provide you with news, special offers and general information about other goods, services and events
+                which we offer (you can opt-out at any time)</li>
         </ul>
 
-        <h2>🔐 4. Data Security</h2>
-        <p>The security of your data is important to us, but remember that no method of transmission over the Internet
-            or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to
-            protect your Personal Data, we cannot guarantee its absolute security.</p>
+        <h2 id="section4">🔐 4. Data Security</h2>
+        <p>The security of your data is important to us. We implement industry-standard security measures to protect
+            your Personal Data, including:</p>
+        <ul>
+            <li>Encryption of data in transit using SSL/TLS protocols</li>
+            <li>Secure data storage with access controls</li>
+            <li>Regular security audits and updates</li>
+            <li>Employee training on data protection practices</li>
+        </ul>
+        <p>However, please remember that no method of transmission over the Internet or method of electronic storage is
+            100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot
+            guarantee its absolute security.</p>
 
-        <h2>👶 5. Children's Privacy</h2>
-        <p>Our Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable
-            information from children under 13. If you are a parent or guardian and you are aware that your child has
-            provided us with Personal Data, please contact us.</p>
+        <h2 id="section5">👶 5. Children's Privacy</h2>
+        <p>Our Services do not address anyone under the age of 13 ("Children"). We do not knowingly collect personally
+            identifiable information from children under 13. If you are a parent or guardian and you are aware that your
+            child has provided us with Personal Data, please contact us immediately.</p>
+        <p>If we become aware that we have collected Personal Data from children without verification of parental
+            consent, we take steps to remove that information from our servers promptly.</p>
 
-        <h2>🔄 6. Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new
-            Privacy Policy on this page and updating the "Last Updated" date at the top of this Privacy Policy.</p>
+        <h2 id="section6">🔄 6. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time to reflect changes in our practices, technology, legal
+            requirements, or other factors. We will notify you of any changes by:</p>
+        <ul>
+            <li>Posting the new Privacy Policy on this page</li>
+            <li>Updating the "Last Updated" date at the top of this Privacy Policy</li>
+            <li>Sending you an email notification (for significant changes)</li>
+            <li>Displaying an in-app notification (for significant changes)</li>
+        </ul>
         <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy
             are effective when they are posted on this page.</p>
 
-        <h2>🌍 7. Your Rights</h2>
-        <p>Depending on your location, you may have certain rights regarding your personal data, including:</p>
+        <h2 id="section7">🌍 7. Your Rights</h2>
+        <p>Depending on your location, you may have certain rights regarding your personal data under applicable data
+            protection laws, including GDPR and CCPA. These rights may include:</p>
         <ul>
-            <li>The right to access your personal data</li>
-            <li>The right to rectification of inaccurate data</li>
-            <li>The right to erasure of your data</li>
-            <li>The right to restrict processing</li>
-            <li>The right to data portability</li>
-            <li>The right to object to processing</li>
+            <li><strong>Right to Access:</strong> You have the right to request copies of your personal data</li>
+            <li><strong>Right to Rectification:</strong> You have the right to request correction of inaccurate or
+                incomplete data</li>
+            <li><strong>Right to Erasure:</strong> You have the right to request deletion of your personal data under
+                certain conditions</li>
+            <li><strong>Right to Restrict Processing:</strong> You have the right to request restriction of processing
+                your personal data</li>
+            <li><strong>Right to Data Portability:</strong> You have the right to request transfer of your data to
+                another organization</li>
+            <li><strong>Right to Object:</strong> You have the right to object to our processing of your personal data
+            </li>
+            <li><strong>Right to Withdraw Consent:</strong> You have the right to withdraw your consent at any time</li>
         </ul>
+        <p>To exercise any of these rights, please contact us using the information provided below.</p>
 
-        <div class="contact-box">
-            <h3>📧 Contact Us</h3>
-            <p>If you have any questions about this Privacy Policy, please contact us:</p>
-            <a href="mailto:bilicisoftwaree@gmail.com" class="contact-email">bilicisoftwaree@gmail.com</a>
+        <div class="contact-section" id="section8">
+            <h2>📧 Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, wish to exercise your rights, or have concerns about
+                how we handle your data, please contact us:</p>
+            <a href="mailto:bilicisoftwaree@gmail.com" class="contact-email">
+                <span>✉️</span>
+                <span>bilicisoftwaree@gmail.com</span>
+            </a>
         </div>
 
         <footer>

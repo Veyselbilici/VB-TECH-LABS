@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VB TECH LABS app-ads.txt - AdMob Publisher Verification File">
+    <title>App-ads.txt - VB TECH LABS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #0f1729;
+            --secondary-navy: #1a2332;
+            --accent-blue: #2563eb;
+            --accent-gold: #d4af37;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(26, 35, 50, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary-navy);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-small {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-blue), #1e40af);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .intro-text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-box h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Code Display */
+        .code-section {
+            margin: 3rem 0;
+        }
+
+        .code-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .code-container {
+            background: var(--secondary-navy);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .code-header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .copy-btn {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .copy-btn.copied {
+            background: #10b981;
+        }
+
+        .code-content {
+            padding: 2rem 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: #e2e8f0;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .code-line {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .line-number {
+            color: var(--text-muted);
+            user-select: none;
+            min-width: 30px;
+        }
+
+        .line-content {
+            color: #a5f3fc;
+        }
+
+        /* Details Section */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .detail-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .detail-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .detail-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .detail-card strong {
+            color: var(--accent-gold);
+        }
+
+        /* Download Section */
+        .download-section {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(30, 64, 175, 0.1));
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .download-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .download-section p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--accent-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .header-content {
+                padding: 0 1.5rem;
+            }
+
+            .code-content {
+                font-size: 0.85rem;
+                padding: 1.5rem 1rem;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-small">VB</div>
+            <div class="header-title">VB TECH LABS</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="page-header">
+            <div class="page-subtitle">AdMob Verification</div>
+            <h1>App-ads.txt</h1>
+            <p class="intro-text">
+                This file is used to verify our AdMob publisher account and ensure proper ad monetization
+                for our mobile applications. It is a requirement by Google AdMob for transparency in digital
+                advertising.
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h2>📋 What is app-ads.txt?</h2>
+            <p>
+                The app-ads.txt file is an IAB Tech Lab initiative that helps ensure transparency in the
+                mobile app advertising ecosystem. It allows app developers to publicly declare the companies
+                authorized to sell their ad inventory, helping to combat fraud and unauthorized inventory sales.
+            </p>
+        </div>
+
+        <div class="code-section">
+            <h2>File Contents</h2>
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="code-title">app-ads.txt</span>
+                    <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                </div>
+                <div class="code-content" id="codeContent">
+                    <div class="code-line">
+                        <span class="line-number">1</span>
+                        <span class="line-content">google.com, pub-3811362384195733, DIRECT, f08c47fec0942fa0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-card">
+                <h3>🏢 Ad Network</h3>
+                <p>
+                    <strong>Google AdMob</strong><br>
+                    The authorized advertising network for VB TECH LABS applications.
+                </p>
+            </div>
+            <div class="detail-card">
+                <h3>🆔 Publisher ID</h3>
+                <p>
+                    <strong>pub-3811362384195733</strong><br>
+                    Our verified Google AdMob publisher identification number.
+                </p>
+            </div>
+            <div class="detail-card">
+                <h3>✅ Relationship Type</h3>
+                <p>
+                    <strong>DIRECT</strong><br>
+                    Indicates a direct business relationship with Google AdMob.
+                </p>
+            </div>
+            <div class="detail-card">
+                <h3>🔐 Certification ID</h3>
+                <p>
+                    <strong>f08c47fec0942fa0</strong><br>
+                    Google's unique certification authority identifier.
+                </p>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h2>Download File</h2>
+            <p>Download the app-ads.txt file for verification or hosting purposes</p>
+            <a href="app-ads.txt" download class="download-btn">
+                <span>📥</span>
+                <span>Download app-ads.txt</span>
+            </a>
+        </div>
+
+        <div class="info-box">
+            <h2>ℹ️ Implementation Note</h2>
+            <p>
+                This file should be hosted at the root domain level of your website. For example:
+                <strong>https://yourdomain.com/app-ads.txt</strong>. This ensures that ad networks
+                can properly verify your publisher credentials and maintain the integrity of your ad inventory.
+            </p>
+        </div>
+
+        <footer>
+            <p>© 2026 VB TECH LABS. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode() {
+            const codeText = 'google.com, pub-3811362384195733, DIRECT, f08c47fec0942fa0';
+            navigator.clipboard.writeText(codeText).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy Code';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

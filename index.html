@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="VB TECH LABS - Innovative Mobile Solutions, AI Integrations, and Cutting-Edge Software Development">
-    <meta name="keywords" content="mobile development, AI integration, software solutions, VB TECH LABS, app development">
+    <meta name="description"
+        content="VB TECH LABS - Professional Mobile Application Development, AI Integration Solutions, and Enterprise Software Services">
+    <meta name="keywords"
+        content="mobile development, AI integration, enterprise software, VB TECH LABS, professional app development">
     <meta name="author" content="VB TECH LABS">
-    <title>VB TECH LABS | Mobile & Software Solutions</title>
+    <title>VB TECH LABS | Professional Mobile & Software Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0e27;
-            --bg-secondary: #1a1f3a;
-            --bg-card: rgba(30, 41, 59, 0.4);
-            --text-primary: #f1f5f9;
+            --primary-navy: #0f1729;
+            --secondary-navy: #1a2332;
+            --accent-blue: #2563eb;
+            --accent-gold: #d4af37;
+            --text-primary: #ffffff;
             --text-secondary: #94a3b8;
-            --accent-primary: #38bdf8;
-            --accent-secondary: #818cf8;
-            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --glow: rgba(56, 189, 248, 0.3);
+            --text-muted: #64748b;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(26, 35, 50, 0.6);
         }
 
         * {
@@ -30,392 +35,567 @@
         }
 
         body {
-            background: var(--bg-primary);
-            color: var(--text-primary);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary-navy);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Animated Background */
-        .bg-animation {
+        /* Header / Navigation */
+        header {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 41, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .bg-animation::before,
-        .bg-animation::after {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.15;
-            animation: float 20s infinite ease-in-out;
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .bg-animation::before {
-            background: var(--accent-primary);
-            top: -200px;
-            left: -200px;
-            animation-delay: 0s;
-        }
-
-        .bg-animation::after {
-            background: var(--accent-secondary);
-            bottom: -200px;
-            right: -200px;
-            animation-delay: 10s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(100px, -100px) scale(1.1); }
-            66% { transform: translate(-100px, 100px) scale(0.9); }
-        }
-
-        /* Main Container */
-        .container {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
+        .logo-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        /* Card Styling */
-        .card {
-            max-width: 700px;
-            width: 100%;
-            padding: 3rem 2.5rem;
-            text-align: center;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 24px;
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.3),
-                0 0 80px rgba(56, 189, 248, 0.05),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
-            animation: fadeInUp 0.8s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
-            transition: left 0.5s;
-        }
-
-        .card:hover::before {
-            left: 100%;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Logo/Brand */
-        .brand {
-            margin-bottom: 1rem;
+            gap: 1rem;
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: var(--accent-gradient);
-            border-radius: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-blue), #1e40af);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
             font-weight: 800;
+            font-size: 1.5rem;
             color: white;
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
-            animation: pulse 3s infinite;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6); }
-        }
-
-        h1 {
-            font-size: 3rem;
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
             letter-spacing: -0.02em;
         }
 
-        .tagline {
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
             color: var(--text-secondary);
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
         }
 
-        .description {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s;
         }
 
-        /* Features Grid */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-            margin: 2.5rem 0;
-        }
-
-        .feature {
-            padding: 1.5rem 1rem;
-            background: rgba(30, 41, 59, 0.3);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-primary);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-title {
-            font-size: 0.9rem;
-            font-weight: 600;
+        .nav-links a:hover {
             color: var(--text-primary);
         }
 
-        /* Buttons */
-        .links {
-            margin-top: 2.5rem;
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 12px;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            overflow: hidden;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .primary {
-            background: var(--accent-gradient);
+        .btn-primary {
+            background: var(--accent-blue);
             color: white;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
         }
 
-        .primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
         }
 
-        .secondary {
-            border: 2px solid var(--accent-primary);
-            color: var(--accent-primary);
-            background: rgba(56, 189, 248, 0.05);
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
         }
 
-        .secondary:hover {
-            background: rgba(56, 189, 248, 0.1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--secondary-navy);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 6rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         /* Footer */
         footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            background: var(--secondary-navy);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
 
         .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 1rem;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
         }
 
         .footer-links a {
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         .footer-links a:hover {
-            color: var(--accent-primary);
+            color: var(--accent-blue);
         }
 
-        /* Responsive Design */
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+            .nav-links {
+                display: none;
             }
 
-            .card {
-                padding: 2rem 1.5rem;
+            .hero {
+                padding: 8rem 1.5rem 4rem;
             }
 
-            h1 {
-                font-size: 2.2rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .tagline {
-                font-size: 1rem;
+            .hero-description {
+                font-size: 1.1rem;
             }
 
-            .features {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .links {
+            .cta-buttons {
                 flex-direction: column;
             }
 
             .btn {
                 width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
+                text-align: center;
             }
 
-            .logo {
-                width: 60px;
-                height: 60px;
+            .section-title {
                 font-size: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="bg-animation"></div>
-    
-    <div class="container">
-        <div class="card">
-            <div class="brand">
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
                 <div class="logo">VB</div>
-                <h1>VB TECH LABS</h1>
-                <p class="tagline">Innovative Mobile Solutions & AI Integrations</p>
-                <p class="description">
-                    Cutting-edge mobile applications powered by artificial intelligence. 
-                    We transform ideas into exceptional digital experiences.
+                <span class="brand-name">VB TECH LABS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="app-ads.html">App-ads.txt</a></li>
+                <li><a href="mailto:bilicisoftwaree@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-subtitle">Professional Technology Solutions</div>
+        <h1>Innovative Mobile<br>& Software Development</h1>
+        <p class="hero-description">
+            VB TECH LABS delivers enterprise-grade mobile applications with cutting-edge AI integration,
+            providing scalable solutions for modern businesses.
+        </p>
+        <div class="cta-buttons">
+            <a href="https://play.google.com/store/apps/dev?id=VBTECHLABS" class="btn btn-primary" target="_blank"
+                rel="noopener">View Our Applications</a>
+            <a href="mailto:bilicisoftwaree@gmail.com" class="btn btn-secondary">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Our Expertise</div>
+                <h2 class="section-title">Professional Services</h2>
+                <p class="section-description">
+                    Comprehensive technology solutions tailored to meet your business objectives
                 </p>
             </div>
-
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">📱</div>
-                    <div class="feature-title">Mobile Apps</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title">Mobile Development</h3>
+                    <p class="service-description">
+                        Native and cross-platform mobile applications built with modern frameworks,
+                        ensuring optimal performance and user experience.
+                    </p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🤖</div>
-                    <div class="feature-title">AI Integration</div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">AI Integration</h3>
+                    <p class="service-description">
+                        Advanced artificial intelligence solutions including machine learning models,
+                        natural language processing, and computer vision.
+                    </p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <div class="feature-title">Performance</div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-title">Enterprise Solutions</h3>
+                    <p class="service-description">
+                        Scalable enterprise software systems designed to streamline operations
+                        and drive business growth.
+                    </p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <div class="feature-title">Modern Design</div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3 class="service-title">Security & Compliance</h3>
+                    <p class="service-description">
+                        Industry-standard security protocols and compliance with international
+                        data protection regulations.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3 class="service-title">Cloud Infrastructure</h3>
+                    <p class="service-description">
+                        Robust cloud-based solutions with high availability, scalability,
+                        and disaster recovery capabilities.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">Analytics & Insights</h3>
+                    <p class="service-description">
+                        Data-driven analytics platforms providing actionable insights
+                        for informed decision-making.
+                    </p>
                 </div>
             </div>
-
-            <div class="links">
-                <a href="privacy-policy.html" class="btn secondary">
-                    <span>🔒 Privacy Policy</span>
-                </a>
-                <a href="https://play.google.com/store/apps/dev?id=VBTECHLABS" class="btn primary" target="_blank" rel="noopener">
-                    <span>📲 Play Store Apps</span>
-                </a>
-            </div>
-
-            <footer>
-                <div class="footer-links">
-                    <a href="mailto:bilicisoftwaree@gmail.com">Contact</a>
-                    <a href="privacy-policy.html">Privacy</a>
-                    <a href="#terms">Terms</a>
-                </div>
-                <div>© 2026 VB TECH LABS. All rights reserved.</div>
-            </footer>
         </div>
-    </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Our Impact</div>
+                <h2 class="section-title">Trusted by Businesses Worldwide</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>VB TECH LABS</h3>
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    Professional mobile and software development company specializing in
+                    AI-powered solutions for modern enterprises.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Mobile Development</a></li>
+                    <li><a href="#services">AI Integration</a></li>
+                    <li><a href="#services">Enterprise Solutions</a></li>
+                    <li><a href="#services">Cloud Infrastructure</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="app-ads.html">App-ads.txt</a></li>
+                    <li><a href="mailto:bilicisoftwaree@gmail.com">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:bilicisoftwaree@gmail.com">bilicisoftwaree@gmail.com</a></li>
+                    <li><a href="https://play.google.com/store/apps/dev?id=VBTECHLABS" target="_blank"
+                            rel="noopener">Google Play Store</a></li>
+                    <li><a href="https://github.com/Veyselbilici" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2026 VB TECH LABS. All rights reserved.
+            </div>
+            <div class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="app-ads.html">App-ads.txt</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
