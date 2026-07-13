@@ -558,20 +558,18 @@
             width: 220px;
             height: 440px;
             background: linear-gradient(145deg, #f5f5f7, #e8e8ed, #d2d2d7);
-            border-radius: 32px;
-            border: 4px solid;
-            border-image: none;
-            border-color: rgba(255,255,255,0.9);
+            border-radius: 28px;
+            border: 2px solid rgba(255, 255, 255, 0.95);
             position: relative;
             overflow: hidden;
             box-shadow:
-                0 25px 70px rgba(0,0,0,0.35),
+                0 25px 70px rgba(0,0,0,0.3),
                 0 0 40px rgba(139,92,246,0.1),
                 inset 0 1px 0 rgba(255,255,255,1),
                 inset 0 -1px 0 rgba(0,0,0,0.05);
             flex-shrink: 0;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            padding: 8px;
+            padding: 5px;
         }
         .phone-mockup::before {
             content: '';
@@ -579,29 +577,29 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 22px;
+            width: 70px;
+            height: 16px;
             background: linear-gradient(180deg, #e0e0e5, #d5d5da);
-            border-radius: 0 0 14px 14px;
+            border-radius: 0 0 10px 10px;
             z-index: 5;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
         .phone-mockup::after {
             content: '';
             position: absolute;
-            top: 7px;
+            top: 5px;
             left: 50%;
             transform: translateX(-50%);
-            width: 32px;
-            height: 4px;
+            width: 24px;
+            height: 3px;
             background: rgba(0,0,0,0.08);
-            border-radius: 4px;
+            border-radius: 3px;
             z-index: 6;
         }
         .phone-mockup:hover {
             transform: translateY(-8px) !important;
             box-shadow:
-                0 35px 80px rgba(0,0,0,0.4),
+                0 35px 80px rgba(0,0,0,0.35),
                 0 0 60px rgba(139,92,246,0.15),
                 inset 0 1px 0 rgba(255,255,255,1),
                 inset 0 -1px 0 rgba(0,0,0,0.08);
@@ -610,8 +608,109 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 22px;
+            border-radius: 24px;
             display: block;
+        }
+        /* Language Switcher Styling */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 0.2rem;
+            flex-shrink: 0;
+        }
+        .lang-switcher button {
+            background: none;
+            border: none;
+            color: #8b8fa3;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.6rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .lang-switcher button.active {
+            color: #fff;
+            background: #8b5cf6;
+            box-shadow: 0 2px 10px rgba(139, 92, 246, 0.3);
+        }
+        .lang-switcher button:hover:not(.active) {
+            color: #fff;
+        }
+        /* Social Media Cards Styling */
+        .social-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+        }
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        .social-card svg, .social-card span {
+            position: relative;
+            z-index: 2;
+        }
+        .social-card svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+            fill: currentColor;
+        }
+        .social-card.instagram {
+            background: rgba(225, 48, 108, 0.1);
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.1);
+        }
+        .social-card.instagram::before {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .social-card.instagram:hover {
+            border-color: rgba(225, 48, 108, 0.4);
+            box-shadow: 0 8px 25px rgba(225, 48, 108, 0.3);
+            transform: translateY(-3px);
+        }
+        .social-card.instagram:hover::before {
+            opacity: 1;
+        }
+        .social-card.instagram:hover svg {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        .social-card.facebook {
+            background: rgba(24, 119, 242, 0.1);
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.1);
+        }
+        .social-card.facebook::before {
+            background: linear-gradient(45deg, #1877f2, #3b5998);
+        }
+        .social-card.facebook:hover {
+            border-color: rgba(24, 119, 242, 0.4);
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.3);
+            transform: translateY(-3px);
+        }
+        .social-card.facebook:hover::before {
+            opacity: 1;
+        }
+        .social-card.facebook:hover svg {
+            transform: scale(1.1) rotate(5deg);
         }
         .phones-row {
             display: flex;
@@ -702,6 +801,24 @@
             .falio-grid {
                 gap: 2rem;
             }
+            .phone-mockup {
+                padding: 4px !important;
+                border-width: 1.5px !important;
+                border-radius: 24px !important;
+            }
+            .phone-mockup img {
+                border-radius: 20px !important;
+            }
+            .phone-mockup::before {
+                width: 55px !important;
+                height: 12px !important;
+                border-radius: 0 0 8px 8px !important;
+            }
+            .phone-mockup::after {
+                width: 18px !important;
+                height: 2px !important;
+                top: 4px !important;
+            }
             .phones-row .phone-mockup:nth-child(1),
             .phones-row .phone-mockup:nth-child(3) {
                 width: 160px !important;
@@ -776,7 +893,24 @@
 
             .falio-visual { order: -1; margin-bottom: 2rem; }
 
-            .phone-mockup { border-radius: 22px !important; }
+            .phone-mockup {
+                border-radius: 20px !important;
+                padding: 3px !important;
+                border-width: 1.2px !important;
+            }
+            .phone-mockup img {
+                border-radius: 17px !important;
+            }
+            .phone-mockup::before {
+                width: 45px !important;
+                height: 10px !important;
+                border-radius: 0 0 7px 7px !important;
+            }
+            .phone-mockup::after {
+                width: 14px !important;
+                height: 2px !important;
+                top: 3px !important;
+            }
             .phones-row .phone-mockup:nth-child(1),
             .phones-row .phone-mockup:nth-child(3) {
                 width: 130px !important;
@@ -831,6 +965,22 @@
 
             .store-btn { min-width: 150px; padding: 0.6rem 1rem; }
 
+            .phone-mockup {
+                border-radius: 14px !important;
+                padding: 2.5px !important;
+                border-width: 1px !important;
+            }
+            .phone-mockup img {
+                border-radius: 11px !important;
+            }
+            .phone-mockup::before {
+                width: 35px !important;
+                height: 7px !important;
+                border-radius: 0 0 5px 5px !important;
+            }
+            .phone-mockup::after {
+                display: none !important;
+            }
             .phones-row .phone-mockup:nth-child(1),
             .phones-row .phone-mockup:nth-child(3) {
                 width: 100px !important;
@@ -862,14 +1012,20 @@
                 <div class="logo">VB</div>
                 <span class="brand-name">VB TECH LABS</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#falio-app">Falio App</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="app-ads.html">App-ads.txt</a></li>
-                <li><a href="mailto:bilicisoftwaree@gmail.com">Contact</a></li>
-            </ul>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <ul class="nav-links">
+                    <li><a href="#falio-app" data-translate="nav_falio">Falio App</a></li>
+                    <li><a href="#services" data-translate="nav_services">Services</a></li>
+                    <li><a href="#about" data-translate="nav_about">About</a></li>
+                    <li><a href="privacy-policy.html" data-translate="nav_privacy">Privacy Policy</a></li>
+                    <li><a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a></li>
+                    <li><a href="mailto:bilicisoftwaree@gmail.com" data-translate="nav_contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button id="lang-tr" class="active" onclick="switchLanguage('tr')">TR</button>
+                    <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -878,49 +1034,49 @@
         <div class="falio-container">
             <div class="falio-grid">
                 <div class="falio-content">
-                    <div class="falio-badge">
+                    <div class="falio-badge" data-translate="falio_badge">
                         <span class="pulse-dot"></span>
                         Şimdi Yayında — Ücretsiz İndir
                     </div>
                     <div class="falio-title-row">
                         <img src="android-icon-web.png" alt="Falio App Icon" class="falio-app-icon">
-                        <h2 class="falio-title">Falio : Astroloji,<br>Rüya & Fal</h2>
+                        <h2 class="falio-title" data-translate="falio_title">Falio : Astroloji,<br>Rüya & Fal</h2>
                     </div>
-                    <p class="falio-desc">
+                    <p class="falio-desc" data-translate="falio_desc">
                         Günlük burç yorumlarını keşfet, online canlı fal baktır ve astroloji dünyasına
                         adım at. Falio ile geleceğine ışık tut! ✨
                     </p>
                     <div class="falio-features">
-                        <span class="falio-feature-tag">🔮 Canlı Fal</span>
-                        <span class="falio-feature-tag">♈ Burç Yorumları</span>
-                        <span class="falio-feature-tag">🌙 Astroloji</span>
-                        <span class="falio-feature-tag">⭐ Tarot</span>
-                        <span class="falio-feature-tag">🎴 Katina Falı</span>
+                        <span class="falio-feature-tag" data-translate="falio_tag_live">🔮 Canlı Fal</span>
+                        <span class="falio-feature-tag" data-translate="falio_tag_horoscope">♈ Burç Yorumları</span>
+                        <span class="falio-feature-tag" data-translate="falio_tag_astrology">🌙 Astroloji</span>
+                        <span class="falio-feature-tag" data-translate="falio_tag_tarot">⭐ Tarot</span>
+                        <span class="falio-feature-tag" data-translate="falio_tag_katina">🎴 Katina Falı</span>
                     </div>
                     <div class="store-buttons">
                         <a href="https://play.google.com/store/apps/details?id=com.veysel35.Falio" target="_blank" rel="noopener" class="store-btn" id="google-play-btn">
                             <svg viewBox="0 0 24 24" fill="white"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
                             <span class="store-btn-text">
-                                <small>GET IT ON</small>
+                                <small data-translate="falio_play_small">HEMEN İNDİR</small>
                                 <strong>Google Play</strong>
                             </span>
                         </a>
                         <a href="#" class="store-btn" id="app-store-btn" style="opacity:0.6; cursor:default;">
                             <svg viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
                             <span class="store-btn-text">
-                                <small>Çok Yakında</small>
+                                <small data-translate="falio_appstore_small">Çok Yakında</small>
                                 <strong>App Store</strong>
                             </span>
                         </a>
                     </div>
                     <div class="social-links-row">
-                        <a href="https://www.instagram.com/falioapp?igsh=ZHJ5YWZ4dWxsbmht" target="_blank" rel="noopener" class="social-link" id="instagram-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            @falioapp
+                        <a href="https://www.instagram.com/falioapp?igsh=ZHJ5YWZ4dWxsbmht" target="_blank" rel="noopener" class="social-card instagram" id="instagram-link">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            <span>Instagram</span>
                         </a>
-                        <a href="https://www.facebook.com/share/1BX9RuizfG/" target="_blank" rel="noopener" class="social-link" id="facebook-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            Falio Facebook
+                        <a href="https://www.facebook.com/share/1BX9RuizfG/" target="_blank" rel="noopener" class="social-card facebook" id="facebook-link">
+                            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <span>Facebook</span>
                         </a>
                     </div>
                 </div>
@@ -949,9 +1105,9 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-subtitle">Professional Technology Solutions</div>
-        <h1>Innovative Mobile<br>& Software Development</h1>
-        <p class="hero-description">
+        <div class="hero-subtitle" data-translate="hero_subtitle">Professional Technology Solutions</div>
+        <h1 data-translate="hero_title">Innovative Mobile<br>& Software Development</h1>
+        <p class="hero-description" data-translate="hero_desc">
             VB TECH LABS delivers enterprise-grade mobile applications with cutting-edge AI integration,
             providing scalable solutions for modern businesses.
         </p>
@@ -961,57 +1117,57 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <div class="section-subtitle">Our Expertise</div>
-                <h2 class="section-title">Professional Services</h2>
-                <p class="section-description">
+                <div class="section-subtitle" data-translate="services_subtitle">Our Expertise</div>
+                <h2 class="section-title" data-translate="services_title">Professional Services</h2>
+                <p class="section-description" data-translate="services_desc">
                     Comprehensive technology solutions tailored to meet your business objectives
                 </p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">📱</div>
-                    <h3 class="service-title">Mobile Development</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-translate="service_mobile_title">Mobile Development</h3>
+                    <p class="service-description" data-translate="service_mobile_desc">
                         Native and cross-platform mobile applications built with modern frameworks,
                         ensuring optimal performance and user experience.
                     </p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🤖</div>
-                    <h3 class="service-title">AI Integration</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-translate="service_ai_title">AI Integration</h3>
+                    <p class="service-description" data-translate="service_ai_desc">
                         Advanced artificial intelligence solutions including machine learning models,
                         natural language processing, and computer vision.
                     </p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💼</div>
-                    <h3 class="service-title">Enterprise Solutions</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-translate="service_enterprise_title">Enterprise Solutions</h3>
+                    <p class="service-description" data-translate="service_enterprise_desc">
                         Scalable enterprise software systems designed to streamline operations
                         and drive business growth.
                     </p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔒</div>
-                    <h3 class="service-title">Security & Compliance</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-translate="service_security_title">Security & Compliance</h3>
+                    <p class="service-description" data-translate="service_security_desc">
                         Industry-standard security protocols and compliance with international
                         data protection regulations.
                     </p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">☁️</div>
-                    <h3 class="service-title">Cloud Infrastructure</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-translate="service_cloud_title">Cloud Infrastructure</h3>
+                    <p class="service-description" data-translate="service_cloud_desc">
                         Robust cloud-based solutions with high availability, scalability,
                         and disaster recovery capabilities.
                     </p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📊</div>
-                    <h3 class="service-title">Analytics & Insights</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-translate="service_analytics_title">Analytics & Insights</h3>
+                    <p class="service-description" data-translate="service_analytics_desc">
                         Data-driven analytics platforms providing actionable insights
                         for informed decision-making.
                     </p>
@@ -1024,25 +1180,25 @@
     <section class="stats" id="about">
         <div class="container">
             <div class="section-header">
-                <div class="section-subtitle">Our Impact</div>
-                <h2 class="section-title">Trusted by Businesses Worldwide</h2>
+                <div class="section-subtitle" data-translate="stats_subtitle">Our Impact</div>
+                <h2 class="section-title" data-translate="stats_title">Trusted by Businesses Worldwide</h2>
             </div>
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">50K+</div>
-                    <div class="stat-label">Active Users</div>
+                    <div class="stat-label" data-translate="stats_active_users">Active Users</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">99.9%</div>
-                    <div class="stat-label">Uptime</div>
+                    <div class="stat-label" data-translate="stats_uptime">Uptime</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support</div>
+                    <div class="stat-label" data-translate="stats_support">Support</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Satisfaction</div>
+                    <div class="stat-label" data-translate="stats_satisfaction">Satisfaction</div>
                 </div>
             </div>
         </div>
@@ -1053,31 +1209,31 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>VB TECH LABS</h3>
-                <p style="color: var(--text-secondary); line-height: 1.7;">
+                <p style="color: var(--text-secondary); line-height: 1.7;" data-translate="footer_company_desc">
                     Professional mobile and software development company specializing in
                     AI-powered solutions for modern enterprises.
                 </p>
             </div>
             <div class="footer-section">
-                <h3>Services</h3>
+                <h3 data-translate="footer_services_title">Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#services">Mobile Development</a></li>
-                    <li><a href="#services">AI Integration</a></li>
-                    <li><a href="#services">Enterprise Solutions</a></li>
-                    <li><a href="#services">Cloud Infrastructure</a></li>
+                    <li><a href="#services" data-translate="service_mobile_title">Mobile Development</a></li>
+                    <li><a href="#services" data-translate="service_ai_title">AI Integration</a></li>
+                    <li><a href="#services" data-translate="service_enterprise_title">Enterprise Solutions</a></li>
+                    <li><a href="#services" data-translate="service_cloud_title">Cloud Infrastructure</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Company</h3>
+                <h3 data-translate="footer_company_title">Company</h3>
                 <ul class="footer-links">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="app-ads.html">App-ads.txt</a></li>
-                    <li><a href="mailto:bilicisoftwaree@gmail.com">Contact</a></li>
+                    <li><a href="#about" data-translate="nav_about">About Us</a></li>
+                    <li><a href="privacy-policy.html" data-translate="nav_privacy">Privacy Policy</a></li>
+                    <li><a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a></li>
+                    <li><a href="mailto:bilicisoftwaree@gmail.com" data-translate="nav_contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact</h3>
+                <h3 data-translate="footer_contact_title">Contact</h3>
                 <ul class="footer-links">
                     <li><a href="mailto:bilicisoftwaree@gmail.com">bilicisoftwaree@gmail.com</a></li>
                     <li><a href="https://play.google.com/store/apps/dev?id=VBTECHLABS" target="_blank"
@@ -1087,16 +1243,152 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="copyright">
+            <div class="copyright" data-translate="footer_copyright">
                 © 2026 VB TECH LABS. All rights reserved.
             </div>
             <div class="footer-legal">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="app-ads.html">App-ads.txt</a>
-                <a href="#terms">Terms of Service</a>
+                <a href="privacy-policy.html" data-translate="nav_privacy">Privacy Policy</a>
+                <a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a>
+                <a href="#terms" data-translate="footer_terms">Terms of Service</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            tr: {
+                nav_falio: "Falio App",
+                nav_services: "Hizmetler",
+                nav_about: "Hakkımızda",
+                nav_privacy: "Gizlilik Politikası",
+                nav_app_ads: "App-ads.txt",
+                nav_contact: "İletişim",
+                
+                falio_badge: "<span class=\"pulse-dot\"></span>Şimdi Yayında — Ücretsiz İndir",
+                falio_title: "Falio : Astroloji,<br>Rüya & Fal",
+                falio_desc: "Günlük burç yorumlarını keşfet, online canlı fal baktır ve astroloji dünyasına adım at. Falio ile geleceğine ışık tut! ✨",
+                falio_tag_live: "🔮 Canlı Fal",
+                falio_tag_horoscope: "♈ Burç Yorumları",
+                falio_tag_astrology: "🌙 Astroloji",
+                falio_tag_tarot: "⭐ Tarot",
+                falio_tag_katina: "🎴 Katina Falı",
+                falio_play_small: "HEMEN İNDİR",
+                falio_appstore_small: "Çok Yakında",
+                
+                hero_subtitle: "Profesyonel Teknoloji Çözümleri",
+                hero_title: "Yenilikçi Mobil<br>& Yazılım Geliştirme",
+                hero_desc: "VB TECH LABS, modern işletmeler için ölçeklenebilir çözümler sunarak yenilikçi yapay zeka entegrasyonuna sahip kurumsal düzeyde mobil uygulamalar sunar.",
+                
+                services_subtitle: "Uzmanlık Alanlarımız",
+                services_title: "Profesyonel Hizmetler",
+                services_desc: "İş hedeflerinize ulaşmanız için özel olarak tasarlanmış kapsamlı teknoloji çözümleri",
+                service_mobile_title: "Mobil Geliştirme",
+                service_mobile_desc: "En yüksek performans ve kullanıcı deneyimi sağlayan, modern frameworklerle geliştirilmiş yerel ve hibrit mobil uygulamalar.",
+                service_ai_title: "Yapay Zeka Entegrasyonu",
+                service_ai_desc: "Makine öğrenimi modelleri, doğal dil işleme ve bilgisayarlı görü dahil olmak üzere gelişmiş yapay zeka çözümleri.",
+                service_enterprise_title: "Kurumsal Çözümler",
+                service_enterprise_desc: "Operasyonları kolaylaştırmak ve iş büyümesini teşvik etmek için tasarlanmış ölçeklenebilir kurumsal yazılım sistemleri.",
+                service_security_title: "Güvenlik & Uyum",
+                service_security_desc: "Endüstri standardı güvenlik protokolleri ve uluslararası veri koruma düzenlemeleriyle uyumluluk.",
+                service_cloud_title: "Bulut Altyapısı",
+                service_cloud_desc: "Yüksek erişilebilirlik, ölçeklenebilirlik ve felaket kurtarma özelliklerine sahip güçlü bulut tabanlı çözümler.",
+                service_analytics_title: "Analiz & Öngörüler",
+                service_analytics_desc: "Bilinçli karar vermeyi kolaylaştıran, veriye dayalı analitik platformlar.",
+                
+                stats_subtitle: "Etkimiz",
+                stats_title: "Dünya Genelinde Güvenilen Çözümler",
+                stats_active_users: "Aktif Kullanıcı",
+                stats_uptime: "Çalışma Süresi",
+                stats_support: "Destek",
+                stats_satisfaction: "Memnuniyet",
+                
+                footer_company_desc: "Modern işletmeler için yapay zeka destekli çözümlerde uzmanlaşmış profesyonel mobil ve yazılım geliştirme şirketi.",
+                footer_company_title: "Şirket",
+                footer_services_title: "Hizmetler",
+                footer_contact_title: "İletişim",
+                footer_copyright: "© 2026 VB TECH LABS. Tüm hakları saklıdır.",
+                footer_terms: "Kullanım Koşulları"
+            },
+            en: {
+                nav_falio: "Falio App",
+                nav_services: "Services",
+                nav_about: "About",
+                nav_privacy: "Privacy Policy",
+                nav_app_ads: "App-ads.txt",
+                nav_contact: "Contact",
+                
+                falio_badge: "<span class=\"pulse-dot\"></span>Now Live — Free Download",
+                falio_title: "Falio: Astrology,<br>Dream & Tarot",
+                falio_desc: "Discover daily horoscope interpretations, get live fortune telling online, and step into the world of astrology. Light up your future with Falio! ✨",
+                falio_tag_live: "🔮 Live Tarot",
+                falio_tag_horoscope: "♈ Horoscope",
+                falio_tag_astrology: "🌙 Astrology",
+                falio_tag_tarot: "⭐ Tarot Readings",
+                falio_tag_katina: "🎴 Katina Readings",
+                falio_play_small: "DOWNLOAD NOW",
+                falio_appstore_small: "Coming Soon",
+                
+                hero_subtitle: "Professional Technology Solutions",
+                hero_title: "Innovative Mobile<br>& Software Development",
+                hero_desc: "VB TECH LABS delivers enterprise-grade mobile applications with cutting-edge AI integration, providing scalable solutions for modern businesses.",
+                
+                services_subtitle: "Our Expertise",
+                services_title: "Professional Services",
+                services_desc: "Comprehensive technology solutions tailored to meet your business objectives",
+                service_mobile_title: "Mobile Development",
+                service_mobile_desc: "Native and cross-platform mobile applications built with modern frameworks, ensuring optimal performance and user experience.",
+                service_ai_title: "AI Integration",
+                service_ai_desc: "Advanced artificial intelligence solutions including machine learning models, natural language processing, and computer vision.",
+                service_enterprise_title: "Enterprise Solutions",
+                service_enterprise_desc: "Scalable enterprise software systems designed to streamline operations and drive business growth.",
+                service_security_title: "Security & Compliance",
+                service_security_desc: "Industry-standard security protocols and compliance with international data protection regulations.",
+                service_cloud_title: "Cloud Infrastructure",
+                service_cloud_desc: "Robust cloud-based solutions with high availability, scalability, and disaster recovery capabilities.",
+                service_analytics_title: "Analytics & Insights",
+                service_analytics_desc: "Data-driven analytics platforms providing actionable insights for informed decision-making.",
+                
+                stats_subtitle: "Our Impact",
+                stats_title: "Trusted by Businesses Worldwide",
+                stats_active_users: "Active Users",
+                stats_uptime: "Uptime",
+                stats_support: "Support",
+                stats_satisfaction: "Satisfaction",
+                
+                footer_company_desc: "Professional mobile and software development company specializing in AI-powered solutions for modern enterprises.",
+                footer_company_title: "Company",
+                footer_services_title: "Services",
+                footer_contact_title: "Contact",
+                footer_copyright: "© 2026 VB TECH LABS. All rights reserved.",
+                footer_terms: "Terms of Service"
+            }
+        };
+
+        function switchLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update active button classes
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById('lang-' + lang);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            // Translate all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Initial language check
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
+            switchLanguage(savedLang);
+        });
+    </script>
 </body>
 
 </html>
