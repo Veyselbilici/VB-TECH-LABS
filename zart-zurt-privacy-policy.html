@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Zart Zurt Privacy Policy - Learn how we handle your data in our entertainment application">
+    <meta name="keywords" content="privacy policy, zart zurt, VB TECH LABS, entertainment app, sounds, cartoon">
+    <title>Privacy Policy - Zart Zurt | VB TECH LABS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #0f1729;
+            --secondary-navy: #1a2332;
+            --accent-blue: #2563eb;
+            --accent-gold: #d4af37;
+            --accent-orange: #f97316;
+            --accent-pink: #ec4899;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(26, 35, 50, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary-navy);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-small {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-blue), #1e40af);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-subtitle {
+            color: var(--accent-orange);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(236, 72, 153, 0.15));
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fdba74;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-badge .emoji {
+            font-size: 1.1rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .intro-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-orange);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .intro-box p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .intro-box strong {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .no-data-banner {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .no-data-banner .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .no-data-banner h3 {
+            color: #4ade80;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            margin-top: 0;
+        }
+
+        .no-data-banner p {
+            color: var(--text-secondary);
+            margin: 0;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        ul li {
+            color: var(--text-secondary);
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            background: rgba(249, 115, 22, 0.08);
+            border: 1px solid rgba(249, 115, 22, 0.25);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .highlight-box-blue {
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .highlight-box-blue h3 {
+            margin-top: 0;
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+        }
+
+        .highlight-box-blue p {
+            margin-bottom: 0;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(236, 72, 153, 0.1));
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+            color: var(--accent-orange);
+            justify-content: center;
+        }
+
+        .contact-section p {
+            margin-bottom: 2rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            text-decoration: none;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .toc-list {
+            list-style: decimal;
+            padding-left: 1.5rem;
+        }
+
+        .toc-list li {
+            padding: 0.5rem 0;
+            padding-left: 0.5rem;
+        }
+
+        .toc-list li::before {
+            content: none;
+        }
+
+        .toc-list a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc-list a:hover {
+            color: #fdba74;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .header-content {
+                padding: 0 1.5rem;
+            }
+
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .no-data-banner {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-small">VB</div>
+            <div class="header-title">VB TECH LABS</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="page-header">
+            <div class="app-badge">
+                <span class="emoji">🎭</span>
+                Zart Zurt — Şaka, Troll Sesler
+            </div>
+            <div class="page-subtitle">Legal Documentation</div>
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">📅 Last Updated: July 2026</p>
+        </div>
+
+        <div class="intro-box">
+            <p><strong>Zart Zurt</strong> is a fun entertainment application developed by <strong>VB TECH LABS</strong>.
+                The app features cartoon characters, funny sounds, and troll effects designed purely for entertainment
+                purposes. This Privacy Policy explains how we handle information when you use Zart Zurt. <strong>Our app
+                    does not require any registration or login.</strong></p>
+        </div>
+
+        <div class="no-data-banner">
+            <div class="icon">🛡️</div>
+            <h3>No Personal Data Collection</h3>
+            <p>Zart Zurt does not collect any personal information from its users. There is no registration, no login,
+                no account creation. We do not ask for your name, email, phone number, or any other personal data. Your
+                privacy is fully respected.</p>
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol class="toc-list">
+                <li><a href="#zz-section1">Application Overview</a></li>
+                <li><a href="#zz-section2">Information We Do NOT Collect</a></li>
+                <li><a href="#zz-section3">Third-Party Services</a></li>
+                <li><a href="#zz-section4">Advertisements</a></li>
+                <li><a href="#zz-section5">Data Security</a></li>
+                <li><a href="#zz-section6">Children's Privacy</a></li>
+                <li><a href="#zz-section7">Changes to This Privacy Policy</a></li>
+                <li><a href="#zz-section8">Contact Us</a></li>
+            </ol>
+        </div>
+
+        <h2 id="zz-section1">🎭 1. Application Overview</h2>
+        <p>Zart Zurt is a free entertainment application that provides:</p>
+        <ul>
+            <li>Funny cartoon characters and animations</li>
+            <li>Troll sounds and sound effects</li>
+            <li>Joke and prank content for entertainment</li>
+            <li>A fun, lighthearted experience with no competitive or social features</li>
+        </ul>
+        <p>The application is designed purely for entertainment purposes. It does not require any user account, login, or
+            registration to use. All features are available without providing any personal information.</p>
+
+        <h2 id="zz-section2">🔒 2. Information We Do NOT Collect</h2>
+        <p>We want to be completely transparent: <strong>Zart Zurt does not collect any personally identifiable
+                information.</strong> Specifically, we do NOT collect:</p>
+        <ul>
+            <li>Names, email addresses, or phone numbers</li>
+            <li>User accounts, passwords, or login credentials</li>
+            <li>Location data or GPS information</li>
+            <li>Contacts, photos, or files from your device</li>
+            <li>Messages, call logs, or browsing history</li>
+            <li>Financial or payment information</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3>🎯 Minimal Data Principle</h3>
+            <p>Since Zart Zurt is a standalone entertainment app with no user accounts or social features, we follow a
+                strict minimal data principle. The app functions entirely on your device without requiring any personal
+                data.</p>
+        </div>
+
+        <h2 id="zz-section3">🔧 3. Third-Party Services</h2>
+        <p>Our application may use the following third-party services for functionality and analytics purposes. These
+            services may collect certain non-personal, anonymized data:</p>
+
+        <div class="highlight-box">
+            <h3>Google Play Services</h3>
+            <p>Used for app distribution and core functionality on Android devices. Google Play Services is required for
+                the app to function properly on Android. For more information, please refer to
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
+                    style="color: var(--accent-orange);">Google's Privacy Policy</a>.
+            </p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Google AdMob</h3>
+            <p>We use AdMob to display advertisements within the app. AdMob may collect device identifiers (such as
+                Advertising ID) and use cookies or similar technologies to serve ads, including personalized ads based on
+                user interests. You can opt out of personalized advertising through your device's ad settings. For more
+                details, see
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
+                    style="color: var(--accent-orange);">Google's Privacy Policy</a>.
+            </p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Firebase Analytics</h3>
+            <p>We may use Firebase Analytics to collect anonymous usage statistics and crash reports, helping us improve
+                app performance and user experience. This data is aggregated and does not identify individual users. For
+                more information, see
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
+                    style="color: var(--accent-orange);">Firebase Privacy Policy</a>.
+            </p>
+        </div>
+
+        <h2 id="zz-section4">📢 4. Advertisements</h2>
+        <p>Zart Zurt is a free application supported by advertisements. We use Google AdMob to display ads within the
+            app. These ads may include:</p>
+        <ul>
+            <li>Banner ads displayed at various positions in the app</li>
+            <li>Interstitial ads shown between screens or actions</li>
+            <li>Rewarded ads that users can choose to watch for additional content</li>
+        </ul>
+        <p>Ad networks may use your device's Advertising ID to serve relevant advertisements. You can reset your
+            Advertising ID or opt out of personalized ads through your device settings:</p>
+        <ul>
+            <li><strong>Android:</strong> Settings → Google → Ads → Reset advertising ID / Opt out of Ads
+                Personalization</li>
+        </ul>
+
+        <h2 id="zz-section5">🔐 5. Data Security</h2>
+        <p>Although we do not collect personal data, we are committed to ensuring the security of our application. We
+            implement the following measures:</p>
+        <ul>
+            <li>All third-party SDKs used are from reputable, well-known providers (Google)</li>
+            <li>We regularly update our app and dependencies to address security vulnerabilities</li>
+            <li>The app does not request unnecessary device permissions</li>
+            <li>All network communications use encrypted (HTTPS/SSL) connections</li>
+        </ul>
+
+        <h2 id="zz-section6">👶 6. Children's Privacy</h2>
+        <p>Zart Zurt is a fun entertainment app suitable for a general audience. However, the app is not specifically
+            directed at children under the age of 13.</p>
+        <p>We do not knowingly collect any personal information from children or any other users. Since no registration
+            or login is required, no personal data of any kind is collected from users of any age.</p>
+
+        <div class="highlight-box-blue">
+            <h3>🎈 Family-Friendly Content</h3>
+            <p>While Zart Zurt contains cartoon characters and fun sounds suitable for general audiences, parents and
+                guardians are encouraged to monitor their children's app usage and manage ad preferences through device
+                settings.</p>
+        </div>
+
+        <h2 id="zz-section7">🔄 7. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time to reflect changes in our practices, third-party services,
+            or legal requirements. We will notify you of any changes by:</p>
+        <ul>
+            <li>Posting the new Privacy Policy on this page</li>
+            <li>Updating the "Last Updated" date at the top of this Privacy Policy</li>
+            <li>Displaying an in-app notification for significant changes</li>
+        </ul>
+        <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are
+            effective when they are posted on this page.</p>
+
+        <div class="contact-section" id="zz-section8">
+            <h2>📧 Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or about the Zart Zurt application, please don't
+                hesitate to contact us:</p>
+            <a href="mailto:bilicisoftwaree@gmail.com" class="contact-email">
+                <span>✉️</span>
+                <span>bilicisoftwaree@gmail.com</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2026 VB TECH LABS. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
