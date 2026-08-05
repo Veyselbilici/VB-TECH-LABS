@@ -465,19 +465,17 @@
                 information.</strong> Specifically, we do NOT collect:</p>
         <ul>
             <li>Names, email addresses, or phone numbers</li>
-            <li>User accounts, passwords, or login credentials</li>
+            <li>User accounts, passwords, or personal login credentials</li>
             <li>Location data or GPS information</li>
             <li>Health, fitness, or physical activity tracking data</li>
-            <li>Contacts, photos, or files from your device</li>
+            <li>Contacts, personal photos, or private files from your device</li>
             <li>Messages, call logs, or browsing history</li>
-            <li>Financial or payment information</li>
+            <li>Credit card, bank account, or payment credentials (all payments are processed directly by Google Play)</li>
         </ul>
 
         <div class="highlight-box">
             <h3>🎯 Minimal Data Principle</h3>
-            <p>Since Zart Zurt is a standalone entertainment app with no user accounts or social features, we follow a
-                strict minimal data principle. The app functions entirely on your device without requiring any personal
-                data.</p>
+            <p>Zart Zurt does not require registration or personal user profile creation. We only store an anonymous FCM device token for sending notifications and verifying subscription access via Google Play Store.</p>
         </div>
 
         <h2 id="zz-section3">📲 3. Device Sensors & Shake Detection (Voice-Changing Feature)</h2>
@@ -489,16 +487,30 @@
             <p style="margin-top: 1rem;">Motion and accelerometer data are evaluated strictly in real time on your local device to trigger sound effects. <strong>No sensor data or motion history is stored, recorded, analyzed, or transmitted</strong> to any external server or third party.</p>
         </div>
 
-        <h2 id="zz-section4">🔧 4. Third-Party Services</h2>
-        <p>Our application may use the following third-party services for functionality and analytics purposes. These
-            services may collect certain non-personal, anonymized data:</p>
+        <h2 id="zz-section4">🔧 4. Third-Party Services & RevenueCat Integration</h2>
+        <p>Our application utilizes third-party SDKs and services for core functionality, audio hosting, subscription management, notifications, and analytics:</p>
 
         <div class="highlight-box">
-            <h3>Google Play Services</h3>
-            <p>Used for app distribution and core functionality on Android devices. Google Play Services is required for
-                the app to function properly on Android. For more information, please refer to
+            <h3>Google Play Services & Google Play Billing</h3>
+            <p>Used for app distribution, system integration, and processing optional monthly subscription packages. All in-app purchase transactions and payment billing are handled directly and securely by Google Play Billing. <strong>We do not process, collect, or store credit card details on our own servers.</strong> For details, see
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
                     style="color: var(--accent-orange);">Google's Privacy Policy</a>.
+            </p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>RevenueCat (Subscription Management)</h3>
+            <p>We use <strong>RevenueCat</strong> to manage in-app subscriptions, verify active paid features, and validate purchase receipts provided by Google Play Billing / App Store. RevenueCat processes anonymous App User IDs and purchase status data strictly to grant subscription access. RevenueCat does not store or process raw financial or payment card details. For details, see
+                <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener"
+                    style="color: var(--accent-orange);">RevenueCat's Privacy Policy</a>.
+            </p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Firebase Services (FCM Device Token & Storage)</h3>
+            <p>We use <strong>Firebase Cloud Messaging (FCM)</strong> to maintain an anonymous device token strictly to deliver push notifications and app updates. We also use <strong>Firebase Storage</strong> to host and deliver our custom audio sound files to the app. No personal credentials, user profiles, or personal identity information are collected or stored in Firebase. For more information, see
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
+                    style="color: var(--accent-orange);">Firebase Privacy Policy</a>.
             </p>
         </div>
 
@@ -515,27 +527,17 @@
 
         <div class="highlight-box">
             <h3>Firebase Analytics</h3>
-            <p>We may use Firebase Analytics to collect anonymous usage statistics and crash reports, helping us improve
-                app performance and user experience. This data is aggregated and does not identify individual users. For
-                more information, see
+            <p>We use Firebase Analytics to collect anonymous, aggregated usage statistics and performance crash reports, helping us improve app performance and user experience. For more information, see
                 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
                     style="color: var(--accent-orange);">Firebase Privacy Policy</a>.
             </p>
         </div>
 
-        <h2 id="zz-section5">📢 5. Advertisements</h2>
-        <p>Zart Zurt is a free application supported by advertisements. We use Google AdMob to display ads within the
-            app. These ads may include:</p>
+        <h2 id="zz-section5">💳 5. Subscriptions, Payments & Advertisements</h2>
+        <p>Zart Zurt offers both free ad-supported features and optional paid monthly subscription packages:</p>
         <ul>
-            <li>Banner ads displayed at various positions in the app</li>
-            <li>Interstitial ads shown between screens or actions</li>
-            <li>Rewarded ads that users can choose to watch for additional content</li>
-        </ul>
-        <p>Ad networks may use your device's Advertising ID to serve relevant advertisements. You can reset your
-            Advertising ID or opt out of personalized ads through your device settings:</p>
-        <ul>
-            <li><strong>Android:</strong> Settings → Google → Ads → Reset advertising ID / Opt out of Ads
-                Personalization</li>
+            <li><strong>In-App Subscriptions (RevenueCat & Google Play):</strong> Optional monthly subscription packages are available to unlock premium sound features or ad-free experiences. Subscription billing and auto-renewals are handled securely through Google Play Store, and active subscription rights are validated via RevenueCat.</li>
+            <li><strong>Advertisements (Google AdMob):</strong> Free users may see banner, interstitial, or rewarded video ads. You can manage or reset your advertising ID in your Android device settings (Settings → Google → Ads).</li>
         </ul>
 
         <h2 id="zz-section6">🔐 6. Data Security</h2>
