@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PeriyoDoz uygulamasındaki hesabınızı ve tüm kişisel verilerinizi kalıcı olarak silmek için bu sayfayı kullanın.">
+    <meta name="keywords" content="hesap silme, veri silme, PeriyoDoz, VBTech Labs, account deletion">
+    <title>Hesap ve Veri Silme - PeriyoDoz | VB TECH LABS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #0f1729;
+            --secondary-navy: #1a2332;
+            --accent-blue: #2563eb;
+            --accent-rose: #e11d6a;
+            --accent-rose-soft: rgba(225, 29, 106, 0.12);
+            --accent-amber: #d97706;
+            --accent-amber-soft: rgba(217, 119, 6, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(26, 35, 50, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary-navy);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-small {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-blue), #1e40af);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .app-badge {
+            margin-left: auto;
+            background: var(--accent-rose-soft);
+            border: 1px solid rgba(225, 29, 106, 0.3);
+            color: #f472b6;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* Hero */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.12) 0%, rgba(225, 29, 106, 0.1) 100%);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #e11d6a, #9f1239);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.6rem;
+            flex-shrink: 0;
+            box-shadow: 0 12px 30px rgba(225, 29, 106, 0.35);
+        }
+
+        .hero-text .page-subtitle {
+            color: #fbbf24;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.35);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .warning-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .warning-box p {
+            color: #fcd34d;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .warning-box strong {
+            color: #fbbf24;
+        }
+
+        /* Method cards */
+        .method-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: border-color 0.3s;
+        }
+
+        .method-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .method-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .method-num {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .method-num.green {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+        }
+
+        .method-num.blue {
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: #60a5fa;
+        }
+
+        .method-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .method-subtitle {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.15rem;
+        }
+
+        /* Steps */
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .steps li:last-child {
+            border-bottom: none;
+        }
+
+        .step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .steps li strong {
+            color: var(--text-primary);
+        }
+
+        /* Email highlight */
+        .email-highlight {
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 10px;
+            padding: 1.25rem 1.75rem;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .email-highlight span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .email-highlight a {
+            color: #60a5fa;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .email-highlight a:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+
+        .subject-tag {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: #93c5fd;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            font-family: monospace;
+        }
+
+        /* Timeline */
+        .timeline-box {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .timeline-box h2 {
+            color: #34d399;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .timeline-items {
+            list-style: none;
+        }
+
+        .timeline-items li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.7rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .timeline-items li::before {
+            content: '✓';
+            color: #34d399;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .timeline-items li strong {
+            color: var(--text-primary);
+        }
+
+        /* CTA email button */
+        .cta-contact {
+            background: linear-gradient(135deg, rgba(225, 29, 106, 0.1), rgba(37, 99, 235, 0.08));
+            border: 1px solid rgba(225, 29, 106, 0.25);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .cta-contact h3 {
+            color: #f472b6;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-contact p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            background: var(--accent-rose);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            background: #be185d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(225, 29, 106, 0.4);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .method-card {
+                padding: 1.75rem;
+            }
+
+            .header-content {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-small">VB</div>
+            <div class="header-title">VB TECH LABS</div>
+            <div class="app-badge">PeriyoDoz</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="/" class="back-link">&#8592; Ana Sayfaya Dön</a>
+
+        <!-- Hero -->
+        <div class="hero-banner">
+            <div class="app-icon">&#128138;</div>
+            <div class="hero-text">
+                <div class="page-subtitle">Hesap &amp; Veri Yönetimi</div>
+                <h1>Hesap ve Veri Silme Talebi</h1>
+                <p>PeriyoDoz uygulamasındaki hesabınızı ve ilişkili tüm kişisel / sağlık verilerinizi kalıcı olarak silmek için aşağıdaki yöntemlerden birini kullanabilirsiniz.</p>
+            </div>
+        </div>
+
+        <!-- Warning -->
+        <div class="warning-box">
+            <div class="warning-icon">&#9888;&#65039;</div>
+            <p><strong>Önemli Uyarı:</strong> Hesap silme işlemi geri alınamaz. İlaç geçmişiniz, döngü kayıtlarınız ve tüm kişisel verileriniz kalıcı olarak silinir. Bu işlemi yalnızca uygulamayı tamamen bırakmak istiyorsanız yapın.</p>
+        </div>
+
+        <!-- Method 1 -->
+        <div class="method-card">
+            <div class="method-header">
+                <div class="method-num green">1</div>
+                <div>
+                    <div class="method-title">Uygulama İçinden Silme</div>
+                    <div class="method-subtitle">Önerilen yöntem — Anında gerçekleşir</div>
+                </div>
+            </div>
+
+            <ol class="steps">
+                <li>
+                    <div class="step-num">1</div>
+                    <div>PeriyoDoz uygulamasını açın ve hesabınıza <strong>giriş yapın</strong>.</div>
+                </li>
+                <li>
+                    <div class="step-num">2</div>
+                    <div>Alt menüden <strong>"Profil"</strong> (Ayarlar) sekmesine gidin.</div>
+                </li>
+                <li>
+                    <div class="step-num">3</div>
+                    <div>En altta bulunan <strong>"Hesabımı ve Tüm Verilerimi Sil"</strong> butonuna tıklayın.</div>
+                </li>
+                <li>
+                    <div class="step-num">4</div>
+                    <div>Açılan onay ekranında silme işlemini <strong>doğrulayın</strong>. Hesabınız ve tüm verileriniz anında silinir.</div>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Method 2 -->
+        <div class="method-card">
+            <div class="method-header">
+                <div class="method-num blue">2</div>
+                <div>
+                    <div class="method-title">E-posta ile Talep Etme</div>
+                    <div class="method-subtitle">Uygulamaya erişiminiz yoksa bu yöntemi kullanın</div>
+                </div>
+            </div>
+
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.7;">
+                PeriyoDoz'a kayıt olurken kullandığınız e-posta adresiniz üzerinden aşağıdaki adrese talep gönderin. Talebiniz en geç <strong style="color: var(--text-primary);">7 gün</strong> içinde işleme alınır.
+            </p>
+
+            <div class="email-highlight">
+                <span>&#128231; E-posta:</span>
+                <a href="mailto:bilicisoftwaree@gmail.com">bilicisoftwaree@gmail.com</a>
+            </div>
+
+            <div style="margin-top: 1rem; padding: 1rem 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                <span style="color: var(--text-muted); font-size: 0.85rem;">Konu satırı:</span>
+                <span class="subject-tag" style="margin-left: 0.75rem;">Hesap Silme Talebi - PeriyoDoz</span>
+            </div>
+        </div>
+
+        <!-- Timeline / What gets deleted -->
+        <div class="timeline-box">
+            <h2>&#128197; Silinme Süreci ve Kapsam</h2>
+            <ul class="timeline-items">
+                <li>Talebiniz alındıktan sonra en geç <strong>7 gün</strong> içinde tüm veriler kalıcı olarak silinir.</li>
+                <li>Hesabınız ve <strong>tüm alt profiller</strong> veritabanından kaldırılır.</li>
+                <li>İlaç geçmişiniz, <strong>hatırlatıcılarınız</strong> ve bildirim ayarlarınız silinir.</li>
+                <li>Su tüketimi ve <strong>hidrasyon kayıtlarınız</strong> kalıcı olarak kaldırılır.</li>
+                <li>Adet <strong>döngüsü ve sağlık verileri</strong> sunucularımızdan tamamen silinir.</li>
+                <li>Silme işlemi <strong>geri alınamaz</strong> ve veriler kurtarılamaz.</li>
+            </ul>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-contact">
+            <h3>&#128172; Başka Sorularınız mı Var?</h3>
+            <p>Hesap veya veri silme ile ilgili herhangi bir sorunuz varsa bizimle iletişime geçebilirsiniz.</p>
+            <a href="mailto:bilicisoftwaree@gmail.com" class="contact-email">
+                <span>&#9993;&#65039;</span>
+                <span>bilicisoftwaree@gmail.com</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 VB TECH LABS &middot; PeriyoDoz &middot; Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

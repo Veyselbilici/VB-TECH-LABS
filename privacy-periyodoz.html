@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PeriyoDoz Gizlilik Politikası - Kişisel verilerinizin nasıl toplandığı, kullanıldığı ve korunduğu hakkında bilgi edinin.">
+    <meta name="keywords" content="gizlilik politikası, PeriyoDoz, VBTech Labs, sağlık uygulaması, ilaç takibi">
+    <title>Gizlilik Politikası - PeriyoDoz | VB TECH LABS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #0f1729;
+            --secondary-navy: #1a2332;
+            --accent-blue: #2563eb;
+            --accent-gold: #d4af37;
+            --accent-rose: #e11d6a;
+            --accent-rose-soft: rgba(225, 29, 106, 0.12);
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(26, 35, 50, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary-navy);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-small {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-blue), #1e40af);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .app-badge {
+            margin-left: auto;
+            background: var(--accent-rose-soft);
+            border: 1px solid rgba(225, 29, 106, 0.3);
+            color: #f472b6;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(225, 29, 106, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+            border: 1px solid rgba(225, 29, 106, 0.25);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #e11d6a, #9f1239);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.6rem;
+            flex-shrink: 0;
+            box-shadow: 0 12px 30px rgba(225, 29, 106, 0.35);
+        }
+
+        .hero-text .page-subtitle {
+            color: #f472b6;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            margin: 0;
+        }
+
+        .intro-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-rose);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .intro-box p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .intro-box strong {
+            color: #f472b6;
+            font-weight: 600;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .toc-list {
+            list-style: decimal;
+            padding-left: 1.5rem;
+        }
+
+        .toc-list li {
+            padding: 0.5rem 0;
+            padding-left: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .toc-list li::before {
+            content: none;
+        }
+
+        .toc-list a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc-list a:hover {
+            color: #60a5fa;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        ul li {
+            color: var(--text-secondary);
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.7;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-rose);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        ul li strong {
+            color: var(--text-primary);
+        }
+
+        .highlight-box {
+            background: rgba(225, 29, 106, 0.06);
+            border: 1px solid rgba(225, 29, 106, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #f472b6;
+            font-size: 1.15rem;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .highlight-box.blue {
+            background: rgba(37, 99, 235, 0.08);
+            border-color: rgba(37, 99, 235, 0.25);
+        }
+
+        .highlight-box.blue h3 {
+            color: #60a5fa;
+        }
+
+        .security-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(225, 29, 106, 0.1), rgba(37, 99, 235, 0.08));
+            border: 1px solid rgba(225, 29, 106, 0.25);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+            color: #f472b6;
+            justify-content: center;
+        }
+
+        .contact-section p {
+            margin-bottom: 2rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            background: var(--accent-rose);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            background: #be185d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(225, 29, 106, 0.4);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .header-content {
+                padding: 0 1.5rem;
+            }
+
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .security-badges {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-small">VB</div>
+            <div class="header-title">VB TECH LABS</div>
+            <div class="app-badge">PeriyoDoz</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="/" class="back-link">&#8592; Ana Sayfaya Dön</a>
+
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <div class="app-icon">&#128138;</div>
+            <div class="hero-text">
+                <div class="page-subtitle">Yasal Belge &middot; Gizlilik</div>
+                <h1>Gizlilik Politikası</h1>
+                <p class="last-updated">&#128197; Son Güncelleme: 11 Ağustos 2026</p>
+            </div>
+        </div>
+
+        <!-- Intro -->
+        <div class="intro-box">
+            <p><strong>VBTech Labs</strong> ("biz", "bize" veya "bizim"), <strong>PeriyoDoz</strong> mobil uygulamasını
+                (bundan böyle "Uygulama" olarak anılacaktır) işletmektedir. Bu sayfa, Uygulamamızı kullandığınızda
+                kişisel verilerin toplanması, kullanılması ve ifşa edilmesiyle ilgili politikalarımız hakkında sizi
+                bilgilendirmek için hazırlanmıştır. Kullanıcı gizliliği bizim için en yüksek önceliktir.</p>
+        </div>
+
+        <!-- TOC -->
+        <div class="toc">
+            <h3>&#128203; İçindekiler</h3>
+            <ol class="toc-list">
+                <li><a href="#section1">Toplanan Veriler ve Kullanım Amacı</a></li>
+                <li><a href="#section2">Veri Güvenliği ve Saklama</a></li>
+                <li><a href="#section3">Üçüncü Taraf Hizmetler</a></li>
+                <li><a href="#section4">Veri Silme Hakkı (Hesap Kapatma)</a></li>
+                <li><a href="#section5">İletişim</a></li>
+            </ol>
+        </div>
+
+        <!-- Section 1 -->
+        <h2 id="section1">&#128203; 1. Toplanan Veriler ve Kullanım Amacı</h2>
+        <p>Uygulamamızı kullanırken, size hizmet verebilmek ve deneyiminizi geliştirmek için aşağıdaki kişisel
+            bilgileri toplayabiliriz:</p>
+
+        <div class="highlight-box">
+            <h3>&#128100; Hesap Bilgileri</h3>
+            <p>E-posta adresi ve isim — profil oluşturma ve hesap yönetimi amacıyla toplanır.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>&#129656; Sağlık ve Tıbbi Veriler</h3>
+            <p>İlaç kullanım saatleri, su tüketim verileri (hidrasyon takibi) ve adet döngüsü bilgileri
+                <strong>yalnızca kullanıcı tarafından isteğe bağlı girildiğinde</strong> toplanır.
+            </p>
+        </div>
+
+        <p>Bu veriler yalnızca uygulamanın temel işlevlerini — hatırlatıcılar, ilaç etkileşim uyarıları ve döngü
+            takibi — yerine getirmek amacıyla kullanılır. Verileriniz hiçbir şekilde reklam amacıyla profiliniz
+            oluşturmak için kullanılmaz.</p>
+
+        <!-- Section 2 -->
+        <h2 id="section2">&#128274; 2. Veri Güvenliği ve Saklama</h2>
+        <p>Verilerinizin güvenliği bizim için son derece önemlidir. Aşağıdaki güvenlik önlemlerini uyguluyoruz:</p>
+
+        <div class="security-badges">
+            <div class="badge"><span>&#128274;</span><span>HTTPS / SSL Şifreleme</span></div>
+            <div class="badge"><span>&#128737;</span><span>Erişim Denetimi</span></div>
+            <div class="badge"><span>&#128683;</span><span>Reklam Verisi Paylaşımı Yok</span></div>
+            <div class="badge"><span>&#128138;</span><span>Sağlık Verisi Satışı Yok</span></div>
+        </div>
+
+        <ul>
+            <li>Tüm veriler aktarım sırasında <strong>HTTPS/SSL</strong> protokolüyle şifrelenir.</li>
+            <li>Sağlık verileriniz yetkisiz kişilerle veya <strong>üçüncü taraf reklam şirketleriyle kesinlikle
+                    paylaşılmaz ve satılmaz</strong>.</li>
+            <li>Veriler yalnızca hizmetin gerektirdiği süre boyunca saklanır; hesabınızı sildiğinizde kalıcı olarak
+                kaldırılır.</li>
+        </ul>
+
+        <!-- Section 3 -->
+        <h2 id="section3">&#128295; 3. Üçüncü Taraf Hizmetler</h2>
+        <p>Uygulamamız, temel işlevlerini yerine getirmek için aşağıdaki güvenilir üçüncü taraf hizmetleri
+            kullanmaktadır. Bu hizmetler kendi gizlilik politikalarına tabi olarak çalışır.</p>
+
+        <div class="highlight-box blue">
+            <h3>&#128293; Google Firebase</h3>
+            <p>Hesap yönetimi (kimlik doğrulama) ve güvenli veritabanı işlemleri için kullanılmaktadır. Firebase,
+                Google'ın kurumsal düzeyde güvenlik standartlarına uygun şekilde çalışır.</p>
+        </div>
+
+        <div class="highlight-box blue">
+            <h3>&#128179; RevenueCat</h3>
+            <p>Uygulama içi satın alımların ve premium abonelik yönetiminin güvenli biçimde işlenmesi için
+                kullanılmaktadır. Ödeme bilgileriniz RevenueCat altyapısı üzerinden işlenir ve bizimle paylaşılmaz.</p>
+        </div>
+
+        <!-- Section 4 -->
+        <h2 id="section4">&#128465; 4. Veri Silme Hakkı (Hesap Kapatma)</h2>
+        <p>Kullanıcılar diledikleri zaman hesaplarını ve ilişkili tüm sağlık verilerini kalıcı olarak silebilirler.
+            Bunun için iki yol mevcuttur:</p>
+
+        <ul>
+            <li>Uygulama içindeki <strong>"Hesabımı ve Tüm Verilerimi Sil"</strong> seçeneğini kullanarak anında
+                silebilirsiniz.</li>
+            <li>Aşağıdaki e-posta adresimize ulaşarak silme talebinde bulunabilirsiniz; talebiniz en geç <strong>72
+                    saat</strong> içinde işleme alınır.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3>&#9888;&#65039; Önemli Not</h3>
+            <p>Hesabınızın silinmesi geri alınamaz bir işlemdir. İlaç geçmişiniz, döngü verileriniz ve tüm kişisel
+                bilgileriniz sunucularımızdan kalıcı olarak kaldırılır.</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact-section" id="section5">
+            <h2>&#128231; 5. İletişim</h2>
+            <p>Bu Gizlilik Politikası hakkında sorularınız varsa, veri silme talebinde bulunmak istiyorsanız veya
+                herhangi bir konuda bizimle iletişime geçmek isterseniz:</p>
+            <a href="mailto:bilicisoftwaree@vbtechlabs.com" class="contact-email">
+                <span>&#9993;&#65039;</span>
+                <span>bilicisoftwaree@vbtechlabs.com</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 VB TECH LABS &middot; PeriyoDoz Gizlilik Politikası &middot; Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
