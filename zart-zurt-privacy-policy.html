@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Zart Zurt Privacy Policy - Learn how we handle your data in our entertainment application">
-    <meta name="keywords" content="privacy policy, zart zurt, VB TECH LABS, entertainment app, sounds, cartoon">
-    <title>Privacy Policy - Zart Zurt | VB TECH LABS</title>
+        content="Zart Zurt Privacy Policy / Gizlilik Politikası - Learn how we handle your data in our entertainment application - VB TECH LABS">
+    <meta name="keywords" content="privacy policy, gizlilik politikası, zart zurt, VB TECH LABS, entertainment app, sounds, cartoon">
+    <title>Gizlilik Politikası / Privacy Policy - Zart Zurt | VB TECH LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
     <style>
         :root {
@@ -46,7 +46,7 @@
             background: rgba(26, 35, 50, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 0;
+            padding: 1.25rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -58,53 +58,126 @@
             padding: 0 2rem;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 1rem;
         }
 
         .logo-small {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--accent-blue), #1e40af);
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
         }
 
         .header-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: var(--text-primary);
+        }
+
+        .header-nav-wrap {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Sub Navigation Tabs */
+        .app-subnav {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .subnav-link {
+            padding: 0.5rem 0.95rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            transition: all 0.25s ease;
+        }
+
+        .subnav-link:hover {
+            color: white;
+            background: rgba(249, 115, 22, 0.15);
+            border-color: rgba(249, 115, 22, 0.4);
+        }
+
+        .subnav-link.active {
+            color: white;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .lang-switcher button {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher button.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            box-shadow: 0 2px 10px rgba(249, 115, 22, 0.4);
+        }
+
+        .lang-switcher button:hover:not(.active) {
+            color: #fff;
         }
 
         /* Main Content */
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem 5rem;
         }
 
-        .back-link {
-            display: inline-flex;
+        .nav-breadcrumbs {
+            display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 3rem;
-            transition: all 0.3s;
-            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
-        .back-link:hover {
-            gap: 0.8rem;
+        .nav-breadcrumbs a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 500;
         }
 
         .page-header {
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .page-subtitle {
@@ -113,32 +186,28 @@
             font-weight: 600;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .app-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(236, 72, 153, 0.15));
+            background: rgba(249, 115, 22, 0.15);
             border: 1px solid rgba(249, 115, 22, 0.3);
             border-radius: 50px;
             padding: 0.5rem 1.25rem;
             font-size: 0.85rem;
             font-weight: 600;
             color: #fdba74;
-            margin-bottom: 1.5rem;
-        }
-
-        .app-badge .emoji {
-            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             letter-spacing: -0.02em;
         }
 
@@ -153,7 +222,7 @@
             border-left: 4px solid var(--accent-orange);
             padding: 2rem;
             border-radius: 8px;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .intro-box p {
@@ -194,248 +263,6 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.8;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-top: 3.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        ul {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        ul li {
-            color: var(--text-secondary);
-            padding: 0.75rem 0;
-            padding-left: 2rem;
-            position: relative;
-            line-height: 1.7;
-        }
-
-        ul li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-orange);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .highlight-box {
-            background: rgba(249, 115, 22, 0.08);
-            border: 1px solid rgba(249, 115, 22, 0.25);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-        }
-
-        .highlight-box h3 {
-            margin-top: 0;
-            color: var(--accent-orange);
-            font-size: 1.2rem;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-        }
-
-        .highlight-box-blue {
-            background: rgba(37, 99, 235, 0.08);
-            border: 1px solid rgba(37, 99, 235, 0.25);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-        }
-
-        .highlight-box-blue h3 {
-            margin-top: 0;
-            color: var(--accent-blue);
-            font-size: 1.2rem;
-        }
-
-        .highlight-box-blue p {
-            margin-bottom: 0;
-        }
-
-        .contact-section {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(236, 72, 153, 0.1));
-            border: 1px solid rgba(249, 115, 22, 0.3);
-            border-radius: 16px;
-            padding: 3rem;
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            margin-top: 0;
-            color: var(--accent-orange);
-            justify-content: center;
-        }
-
-        .contact-section p {
-            margin-bottom: 2rem;
-        }
-
-        .contact-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: white;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
-            text-decoration: none;
-            font-weight: 600;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .contact-email:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
-        }
-
-        footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Table of Contents */
-        .toc {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0 3rem;
-        }
-
-        .toc h3 {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-
-        .toc-list {
-            list-style: decimal;
-            padding-left: 1.5rem;
-        }
-
-        .toc-list li {
-            padding: 0.5rem 0;
-            padding-left: 0.5rem;
-        }
-
-        .toc-list li::before {
-            content: none;
-        }
-
-        .toc-list a {
-            color: var(--accent-orange);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .toc-list a:hover {
-            color: #fdba74;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 3rem 1.5rem;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            h3 {
-                font-size: 1.2rem;
-            }
-
-            .header-content {
-                padding: 0 1.5rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .app-subnav {
-                width: 100%;
-            }
-
-            .quick-nav-bar {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-section {
-                padding: 2rem 1.5rem;
-            }
-
-            .no-data-banner {
-                padding: 2rem 1.5rem;
-            }
-        }
-
-        /* Sub Navigation Tabs */
-        .app-subnav {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .subnav-link {
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            color: var(--text-secondary);
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            transition: all 0.25s ease;
-        }
-
-        .subnav-link:hover {
-            color: white;
-            background: rgba(249, 115, 22, 0.15);
-            border-color: rgba(249, 115, 22, 0.4);
-        }
-
-        .subnav-link.active {
-            color: white;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
-            border-color: transparent;
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
         }
 
         /* Quick Switcher Cards */
@@ -480,40 +307,226 @@
             color: var(--text-secondary);
             margin: 0;
         }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 3.5rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        ul li {
+            color: var(--text-secondary);
+            padding: 0.6rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: rgba(249, 115, 22, 0.08);
+            border: 1px solid rgba(249, 115, 22, 0.25);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: var(--accent-orange);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .highlight-box-blue {
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box-blue h3 {
+            margin-top: 0;
+            color: #60a5fa;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box-blue p {
+            margin-bottom: 0;
+        }
+
+        /* TOC */
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            font-size: 1.15rem;
+        }
+
+        .toc-list {
+            list-style: decimal;
+            padding-left: 1.5rem;
+        }
+
+        .toc-list li {
+            padding: 0.4rem 0;
+            padding-left: 0.25rem;
+        }
+
+        .toc-list li::before {
+            content: none;
+        }
+
+        .toc-list a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc-list a:hover {
+            color: #fdba74;
+            text-decoration: underline;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(236, 72, 153, 0.1));
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+            color: var(--accent-orange);
+            justify-content: center;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .header-nav-wrap {
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .app-subnav {
+                width: 100%;
+            }
+            .container {
+                padding: 2.5rem 1.25rem;
+            }
+            h1 {
+                font-size: 2.1rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="header-content" style="justify-content: space-between;">
+        <div class="header-content">
             <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none; color: white;">
-                <div class="logo-small" style="background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));">ZZ</div>
+                <div class="logo-small">ZZ</div>
                 <div class="header-title">Zart Zurt &bull; VB TECH LABS</div>
             </a>
-            <nav class="app-subnav">
-                <a href="index.html#zart-zurt-app" class="subnav-link">🏠 Ana Sayfa</a>
-                <a href="zart-zurt-privacy-policy.html" class="subnav-link active">🛡️ Gizlilik Politikası</a>
-                <a href="zart-zurt-terms.html" class="subnav-link">📜 Kullanım Koşulları</a>
-                <a href="zart-zurt-support.html" class="subnav-link">🎧 Destek & SSS</a>
-            </nav>
+            <div class="header-nav-wrap">
+                <nav class="app-subnav">
+                    <a href="index.html#zart-zurt-app" class="subnav-link" data-translate="nav_home">🏠 Ana Sayfa</a>
+                    <a href="zart-zurt-privacy-policy.html" class="subnav-link active" data-translate="nav_privacy">🛡️ Gizlilik Politikası</a>
+                    <a href="zart-zurt-terms.html" class="subnav-link" data-translate="nav_terms">📜 Kullanım Koşulları</a>
+                    <a href="zart-zurt-support.html" class="subnav-link" data-translate="nav_support">🎧 Destek & SSS</a>
+                </nav>
+                <div class="lang-switcher">
+                    <button id="lang-tr" class="active" onclick="switchLanguage('tr')">TR</button>
+                    <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="container">
-        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-muted);">
-            <a href="index.html" style="color: var(--accent-orange); text-decoration: none;">VB TECH LABS</a> &gt;
-            <a href="index.html#zart-zurt-app" style="color: var(--accent-orange); text-decoration: none;">Zart Zurt</a> &gt;
-            <span>Gizlilik Politikası (Privacy Policy)</span>
+        <div class="nav-breadcrumbs">
+            <a href="index.html">VB TECH LABS</a> &gt;
+            <a href="index.html#zart-zurt-app">Zart Zurt</a> &gt;
+            <span data-translate="breadcrumb_p">Gizlilik Politikası (Privacy Policy)</span>
         </div>
 
         <div class="page-header">
-            <div class="app-badge">
+            <div class="app-badge" data-translate="badge">
                 <span class="emoji">🎭</span>
                 Zart Zurt — Şaka, Troll Sesler
             </div>
-            <div class="page-subtitle">Legal Documentation</div>
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">📅 Last Updated: August 2026</p>
+            <div class="page-subtitle" data-translate="subtitle">Yasal Dokümantasyon & Güvenlik</div>
+            <h1 data-translate="title">Gizlilik Politikası (Privacy Policy)</h1>
+            <p class="last-updated" data-translate="updated">📅 Son Güncelleme: Mart 2026 &bull; Sürüm 1.2</p>
         </div>
 
         <!-- Quick navigation to Terms and Support -->
@@ -521,186 +534,177 @@
             <a href="zart-zurt-terms.html" class="quick-nav-card">
                 <span class="card-icon">📜</span>
                 <div class="card-info">
-                    <h4>Kullanım Koşulları (Terms)</h4>
-                    <p>Sözleşme & lisans şartları</p>
+                    <h4 data-translate="card_t_title">Kullanım Koşulları (Terms)</h4>
+                    <p data-translate="card_t_desc">Sözleşme & lisans şartları</p>
                 </div>
             </a>
             <a href="zart-zurt-support.html" class="quick-nav-card">
                 <span class="card-icon">🎧</span>
                 <div class="card-info">
-                    <h4>Destek & SSS (Support)</h4>
-                    <p>Yardım ve sorun giderme</p>
+                    <h4 data-translate="card_s_title">Destek & SSS (Support)</h4>
+                    <p data-translate="card_s_desc">Yardım ve sorun giderme</p>
                 </div>
             </a>
             <a href="mailto:bilicisoftwaree@gmail.com" class="quick-nav-card">
                 <span class="card-icon">✉️</span>
                 <div class="card-info">
-                    <h4>Doğrudan İletişim</h4>
+                    <h4 data-translate="card_c_title">Doğrudan İletişim</h4>
                     <p>bilicisoftwaree@gmail.com</p>
                 </div>
             </a>
         </div>
 
-        <div class="intro-box">
-            <p><strong>Zart Zurt</strong> is a fun entertainment application developed by <strong>VB TECH LABS</strong>.
-                The app features cartoon characters, funny sounds, and troll effects designed purely for entertainment
-                purposes. This Privacy Policy explains how we handle information when you use Zart Zurt. <strong>Our app
-                    does not require any registration or login.</strong></p>
+        <!-- TURKISH PRIVACY POLICY -->
+        <div id="privacy-tr">
+            <div class="intro-box">
+                <p><strong>Zart Zurt</strong>, <strong>VB TECH LABS</strong> tarafından geliştirilmiş bir eğlence mobil uygulamasıdır. Çizgi karakterler, troll ve komik ses efektleri ile saf mizah ve eğlence sunar. <strong>Uygulamamız herhangi bir kayıt, giriş veya hesap oluşturma gerektirmez.</strong></p>
+            </div>
+
+            <div class="no-data-banner">
+                <div class="icon">🛡️</div>
+                <h3>Sıfır Kişisel Veri Toplama</h3>
+                <p>Zart Zurt, kullanıcılarından kesinlikle hiçbir kişisel veri toplamaz. İsim, e-posta, telefon numarası veya profil bilgisi istemez ve saklamaz. Gizliliğiniz tam olarak korunmaktadır.</p>
+            </div>
+
+            <div class="toc">
+                <h3>İçindekiler</h3>
+                <ol class="toc-list">
+                    <li><a href="#tr-p1">1. Uygulama Genel Bakışı</a></li>
+                    <li><a href="#tr-p2">2. Kesinlikle Toplamadığımız Bilgiler</a></li>
+                    <li><a href="#tr-p3">3. Cihaz Sensörleri & Salla-Ses Değiştir Modu</a></li>
+                    <li><a href="#tr-p4">4. Üçüncü Taraf Hizmetleri (Google Play, RevenueCat, Firebase, AdMob)</a></li>
+                    <li><a href="#tr-p5">5. Abonelikler ve Reklamlar</a></li>
+                    <li><a href="#tr-p6">6. Veri Güvenliği</a></li>
+                    <li><a href="#tr-p7">7. Çocukların Gizliliği</a></li>
+                    <li><a href="#tr-p8">8. Gizlilik Politikasındaki Değişiklikler</a></li>
+                    <li><a href="#tr-p9">9. Bize Ulaşın</a></li>
+                </ol>
+            </div>
+
+            <h2 id="tr-p1">🎭 1. Uygulama Genel Bakışı</h2>
+            <p>Zart Zurt; eğlenceli çizgi animasyonlar, komik ses efektleri ve telefonu salladıkça ses perdesini modüle eden interaktif özellikler sunan ücretsiz bir eğlence uygulamasıdır. Herhangi bir kullanıcı hesabı veya kişisel kayıt gerekmez.</p>
+
+            <h2 id="tr-p2">🔒 2. Kesinlikle Toplamadığımız Bilgiler</h2>
+            <p>Şeffaflık ilkemiz gereği: <strong>Zart Zurt hiçbir kişisel kimlik bilgisini toplamaz:</strong></p>
+            <ul>
+                <li>Ad, soyad, e-posta veya telefon numaraları</li>
+                <li>Kullanıcı hesapları, şifreler veya profil bilgileri</li>
+                <li>GPS veya konum bilgileri</li>
+                <li>Sağlık, fitness, adım veya fiziksel aktivite verileri</li>
+                <li>Rehber, fotoğraflar veya özel cihaz dosyaları</li>
+                <li>Kredi kartı veya finansal ödeme bilgileri (tüm işlemler Google Play tarafından işlenir)</li>
+            </ul>
+
+            <h2 id="tr-p3">📲 3. Cihaz Sensörleri & Salla-Ses Değiştir Modu</h2>
+            <p>Uygulamamız yalnızca "Salla" modunda telefonunuzun ivmeölçer hareket sensörünü ses perdesini değiştirmek için kullanır.</p>
+            <div class="highlight-box">
+                <h3>⚠️ Google Play & App Store Uygunluk Beyanı</h3>
+                <p><strong>Bu uygulama kesinlikle bir sağlık, egzersiz veya fitness takipçisi DEĞİLDİR.</strong> İvmeölçer verileri yalnızca o an ses efektini tetiklemek için yerel cihaz belleğinde işlenir. Hiçbir sensör verisi kaydedilmez veya harici sunuculara aktarılmaz.</p>
+            </div>
+
+            <h2 id="tr-p4">🔧 4. Üçüncü Taraf Entegrasyonları</h2>
+            <div class="highlight-box">
+                <h3>Google Play Billing & RevenueCat</h3>
+                <p>İsteğe bağlı abonelikler ve reklam kaldırma satın alımları doğrudan Google Play Billing güvencesindedir. Aktif abonelik hakları <strong>RevenueCat</strong> güvenli altyapısıyla doğrulanır. Finansal kart bilgileriniz tarafımızca asla tutulmaz.</p>
+            </div>
+            <div class="highlight-box">
+                <h3>Google AdMob & Firebase</h3>
+                <p>Ücretsiz kullanıcılara reklam sunumu için AdMob, ses dosyası barındırma ve anonim kaza raporları için Firebase altyapısı kullanılır. Kişisel veri toplanmaz.</p>
+            </div>
+
+            <h2 id="tr-p5">💳 5. Abonelikler ve Reklamlar</h2>
+            <p>Abonelikler Google Play Store üzerinden kolayca yönetilebilir ve iptal edilebilir. Reklam tercihlerinizi Android Cihaz Ayarları &gt; Google &gt; Reklamlar bölümünden kişiselleştirebilirsiniz.</p>
+
+            <h2 id="tr-p6">🔐 6. Veri Güvenliği</h2>
+            <p>Kişisel veri toplamamakla birlikte, tüm ağ iletişimlerinde şifreli HTTPS/SSL protokolleri kullanılır ve yalnızca Google gibi güvenilir SDK sağlayıcıları tercih edilir.</p>
+
+            <h2 id="tr-p7">👶 7. Çocukların Gizliliği</h2>
+            <p>Zart Zurt genel kitleye yönelik mizahi bir uygulamadır. 13 yaş altı çocuklar da dahil hiçbir kullanıcıdan kişisel veri toplanmaz.</p>
+
+            <h2 id="tr-p8">🔄 8. Politika Değişiklikleri</h2>
+            <p>Gizlilik politikamızdaki her türlü güncelleme bu sayfada yayımlanır ve en üstteki güncelleme tarihi yenilenir.</p>
         </div>
 
-        <div class="no-data-banner">
-            <div class="icon">🛡️</div>
-            <h3>No Personal Data Collection</h3>
-            <p>Zart Zurt does not collect any personal information from its users. There is no registration, no login,
-                no account creation. We do not ask for your name, email, phone number, or any other personal data. Your
-                privacy is fully respected.</p>
+        <!-- ENGLISH PRIVACY POLICY (Full Google Play Compliant Original) -->
+        <div id="privacy-en" style="display: none;">
+            <div class="intro-box">
+                <p><strong>Zart Zurt</strong> is a fun entertainment application developed by <strong>VB TECH LABS</strong>.
+                    The app features cartoon characters, funny sounds, and troll effects designed purely for entertainment
+                    purposes. This Privacy Policy explains how we handle information when you use Zart Zurt. <strong>Our app
+                        does not require any registration or login.</strong></p>
+            </div>
+
+            <div class="no-data-banner">
+                <div class="icon">🛡️</div>
+                <h3>No Personal Data Collection</h3>
+                <p>Zart Zurt does not collect any personal information from its users. There is no registration, no login,
+                    no account creation. We do not ask for your name, email, phone number, or any other personal data. Your
+                    privacy is fully respected.</p>
+            </div>
+
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ol class="toc-list">
+                    <li><a href="#zz-section1">1. Application Overview</a></li>
+                    <li><a href="#zz-section2">2. Information We Do NOT Collect</a></li>
+                    <li><a href="#zz-section3">3. Device Sensors & Shake Detection (Voice-Changing Feature)</a></li>
+                    <li><a href="#zz-section4">4. Third-Party Services & RevenueCat Integration</a></li>
+                    <li><a href="#zz-section5">5. Subscriptions, Payments & Advertisements</a></li>
+                    <li><a href="#zz-section6">6. Data Security</a></li>
+                    <li><a href="#zz-section7">7. Children's Privacy</a></li>
+                    <li><a href="#zz-section8">8. Changes to This Privacy Policy</a></li>
+                    <li><a href="#zz-section9">9. Contact Us</a></li>
+                </ol>
+            </div>
+
+            <h2 id="zz-section1">🎭 1. Application Overview</h2>
+            <p>Zart Zurt is a free entertainment application that provides funny cartoon characters, troll sound effects, and a shake-to-change voice pitch feature. It does not require any user account or registration to use.</p>
+
+            <h2 id="zz-section2">🔒 2. Information We Do NOT Collect</h2>
+            <p>We want to be completely transparent: <strong>Zart Zurt does not collect any personally identifiable information:</strong></p>
+            <ul>
+                <li>Names, email addresses, or phone numbers</li>
+                <li>User accounts, passwords, or personal login credentials</li>
+                <li>Location data or GPS information</li>
+                <li>Health, fitness, or physical activity tracking data</li>
+                <li>Contacts, personal photos, or private files from your device</li>
+                <li>Credit card or payment credentials (all payments are processed directly by Google Play)</li>
+            </ul>
+
+            <h2 id="zz-section3">📲 3. Device Sensors & Shake Detection (Voice-Changing Feature)</h2>
+            <p>Zart Zurt utilizes your device's built-in accelerometer strictly to detect when the device is shaken in order to trigger the interactive voice-changing sound feature.</p>
+            <div class="highlight-box">
+                <h3>⚠️ Important Declaration for Google Play & App Store Compliance</h3>
+                <p><strong>This app is for entertainment only. It uses the accelerometer/shake detection for a voice-changing feature. It is NOT a health or fitness app and does not track physical activity.</strong></p>
+                <p style="margin-top: 1rem;">Motion and accelerometer data are evaluated strictly in real time on your local device. <strong>No sensor data is stored, recorded, analyzed, or transmitted</strong> to any external server.</p>
+            </div>
+
+            <h2 id="zz-section4">🔧 4. Third-Party Services & RevenueCat Integration</h2>
+            <div class="highlight-box">
+                <h3>Google Play Billing & RevenueCat</h3>
+                <p>Optional in-app subscriptions and ad removal passes are securely processed by <strong>Google Play Billing</strong> and verified via <strong>RevenueCat</strong>. We do not process, collect, or store payment card details on our own servers.</p>
+            </div>
+            <div class="highlight-box">
+                <h3>Google AdMob & Firebase</h3>
+                <p>We use Google AdMob to serve advertisements in the free version. Device identifiers (such as Advertising ID) may be used by AdMob. We also use Firebase for delivering sound assets and anonymous crash diagnostics.</p>
+            </div>
+
+            <h2 id="zz-section5">💳 5. Subscriptions, Payments & Advertisements</h2>
+            <p>Zart Zurt offers optional monthly subscriptions to unlock premium sound packs or remove advertisements. Subscriptions can be canceled at any time via the Google Play Store app under Subscriptions.</p>
+
+            <h2 id="zz-section6">🔐 6. Data Security</h2>
+            <p>All network communications utilize encrypted (HTTPS/SSL) connections and only reputable SDK providers (Google) are used.</p>
+
+            <h2 id="zz-section7">👶 7. Children's Privacy</h2>
+            <p>Zart Zurt is an entertainment app suitable for general audiences. We do not knowingly collect personal information from users of any age.</p>
+
+            <h2 id="zz-section8">🔄 8. Changes to This Privacy Policy</h2>
+            <p>Any updates to this Privacy Policy will be posted on this page with an updated date.</p>
         </div>
-
-        <div class="toc">
-            <h3>Table of Contents</h3>
-            <ol class="toc-list">
-                <li><a href="#zz-section1">Application Overview</a></li>
-                <li><a href="#zz-section2">Information We Do NOT Collect</a></li>
-                <li><a href="#zz-section3">Device Sensors & Shake Detection (Voice-Changing Feature)</a></li>
-                <li><a href="#zz-section4">Third-Party Services</a></li>
-                <li><a href="#zz-section5">Advertisements</a></li>
-                <li><a href="#zz-section6">Data Security</a></li>
-                <li><a href="#zz-section7">Children's Privacy</a></li>
-                <li><a href="#zz-section8">Changes to This Privacy Policy</a></li>
-                <li><a href="#zz-section9">Contact Us</a></li>
-            </ol>
-        </div>
-
-        <h2 id="zz-section1">🎭 1. Application Overview</h2>
-        <p>Zart Zurt is a free entertainment application that provides:</p>
-        <ul>
-            <li>Funny cartoon characters and animations</li>
-            <li>Troll sounds and sound effects</li>
-            <li>Shake-to-change voice pitch & sound effect feature</li>
-            <li>Joke and prank content for entertainment</li>
-            <li>A fun, lighthearted experience with no competitive or social features</li>
-        </ul>
-        <p>The application is designed purely for entertainment purposes. It does not require any user account, login, or
-            registration to use. All features are available without providing any personal information.</p>
-
-        <h2 id="zz-section2">🔒 2. Information We Do NOT Collect</h2>
-        <p>We want to be completely transparent: <strong>Zart Zurt does not collect any personally identifiable
-                information.</strong> Specifically, we do NOT collect:</p>
-        <ul>
-            <li>Names, email addresses, or phone numbers</li>
-            <li>User accounts, passwords, or personal login credentials</li>
-            <li>Location data or GPS information</li>
-            <li>Health, fitness, or physical activity tracking data</li>
-            <li>Contacts, personal photos, or private files from your device</li>
-            <li>Messages, call logs, or browsing history</li>
-            <li>Credit card, bank account, or payment credentials (all payments are processed directly by Google Play)</li>
-        </ul>
-
-        <div class="highlight-box">
-            <h3>🎯 Minimal Data Principle</h3>
-            <p>Zart Zurt does not require registration or personal user profile creation. We only store an anonymous FCM device token for sending notifications and verifying subscription access via Google Play Store.</p>
-        </div>
-
-        <h2 id="zz-section3">📲 3. Device Sensors & Shake Detection (Voice-Changing Feature)</h2>
-        <p>Zart Zurt utilizes your device's built-in motion sensors (accelerometer) strictly to detect when the device is shaken in order to trigger the interactive voice-changing sound feature.</p>
-
-        <div class="highlight-box">
-            <h3>⚠️ Important Declaration for Google Play & App Store Compliance</h3>
-            <p><strong>This app is for entertainment only. It uses the accelerometer/shake detection for a voice-changing feature. It is NOT a health or fitness app and does not track physical activity.</strong></p>
-            <p style="margin-top: 1rem;">Motion and accelerometer data are evaluated strictly in real time on your local device to trigger sound effects. <strong>No sensor data or motion history is stored, recorded, analyzed, or transmitted</strong> to any external server or third party.</p>
-        </div>
-
-        <h2 id="zz-section4">🔧 4. Third-Party Services & RevenueCat Integration</h2>
-        <p>Our application utilizes third-party SDKs and services for core functionality, audio hosting, subscription management, notifications, and analytics:</p>
-
-        <div class="highlight-box">
-            <h3>Google Play Services & Google Play Billing</h3>
-            <p>Used for app distribution, system integration, and processing optional monthly subscription packages. All in-app purchase transactions and payment billing are handled directly and securely by Google Play Billing. <strong>We do not process, collect, or store credit card details on our own servers.</strong> For details, see
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
-                    style="color: var(--accent-orange);">Google's Privacy Policy</a>.
-            </p>
-        </div>
-
-        <div class="highlight-box">
-            <h3>RevenueCat (Subscription Management)</h3>
-            <p>We use <strong>RevenueCat</strong> to manage in-app subscriptions, verify active paid features, and validate purchase receipts provided by Google Play Billing / App Store. RevenueCat processes anonymous App User IDs and purchase status data strictly to grant subscription access. RevenueCat does not store or process raw financial or payment card details. For details, see
-                <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener"
-                    style="color: var(--accent-orange);">RevenueCat's Privacy Policy</a>.
-            </p>
-        </div>
-
-        <div class="highlight-box">
-            <h3>Firebase Services (FCM Device Token & Storage)</h3>
-            <p>We use <strong>Firebase Cloud Messaging (FCM)</strong> to maintain an anonymous device token strictly to deliver push notifications and app updates. We also use <strong>Firebase Storage</strong> to host and deliver our custom audio sound files to the app. No personal credentials, user profiles, or personal identity information are collected or stored in Firebase. For more information, see
-                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
-                    style="color: var(--accent-orange);">Firebase Privacy Policy</a>.
-            </p>
-        </div>
-
-        <div class="highlight-box">
-            <h3>Google AdMob</h3>
-            <p>We use AdMob to display advertisements within the app. AdMob may collect device identifiers (such as
-                Advertising ID) and use cookies or similar technologies to serve ads, including personalized ads based on
-                user interests. You can opt out of personalized advertising through your device's ad settings. For more
-                details, see
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
-                    style="color: var(--accent-orange);">Google's Privacy Policy</a>.
-            </p>
-        </div>
-
-        <div class="highlight-box">
-            <h3>Firebase Analytics</h3>
-            <p>We use Firebase Analytics to collect anonymous, aggregated usage statistics and performance crash reports, helping us improve app performance and user experience. For more information, see
-                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener"
-                    style="color: var(--accent-orange);">Firebase Privacy Policy</a>.
-            </p>
-        </div>
-
-        <h2 id="zz-section5">💳 5. Subscriptions, Payments & Advertisements</h2>
-        <p>Zart Zurt offers both free ad-supported features and optional paid monthly subscription packages:</p>
-        <ul>
-            <li><strong>In-App Subscriptions (RevenueCat & Google Play):</strong> Optional monthly subscription packages are available to unlock premium sound features or ad-free experiences. Subscription billing and auto-renewals are handled securely through Google Play Store, and active subscription rights are validated via RevenueCat.</li>
-            <li><strong>Advertisements (Google AdMob):</strong> Free users may see banner, interstitial, or rewarded video ads. You can manage or reset your advertising ID in your Android device settings (Settings → Google → Ads).</li>
-        </ul>
-
-        <h2 id="zz-section6">🔐 6. Data Security</h2>
-        <p>Although we do not collect personal data, we are committed to ensuring the security of our application. We
-            implement the following measures:</p>
-        <ul>
-            <li>All third-party SDKs used are from reputable, well-known providers (Google)</li>
-            <li>We regularly update our app and dependencies to address security vulnerabilities</li>
-            <li>The app does not request unnecessary device permissions</li>
-            <li>All network communications use encrypted (HTTPS/SSL) connections</li>
-        </ul>
-
-        <h2 id="zz-section7">👶 7. Children's Privacy</h2>
-        <p>Zart Zurt is a fun entertainment app suitable for a general audience. However, the app is not specifically
-            directed at children under the age of 13.</p>
-        <p>We do not knowingly collect any personal information from children or any other users. Since no registration
-            or login is required, no personal data of any kind is collected from users of any age.</p>
-
-        <div class="highlight-box-blue">
-            <h3>🎈 Family-Friendly Content</h3>
-            <p>While Zart Zurt contains cartoon characters and fun sounds suitable for general audiences, parents and
-                guardians are encouraged to monitor their children's app usage and manage ad preferences through device
-                settings.</p>
-        </div>
-
-        <h2 id="zz-section8">🔄 8. Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time to reflect changes in our practices, third-party services,
-            or legal requirements. We will notify you of any changes by:</p>
-        <ul>
-            <li>Posting the new Privacy Policy on this page</li>
-            <li>Updating the "Last Updated" date at the top of this Privacy Policy</li>
-            <li>Displaying an in-app notification for significant changes</li>
-        </ul>
-        <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are
-            effective when they are posted on this page.</p>
 
         <div class="contact-section" id="zz-section9">
-            <h2>📧 Contact Us & Support</h2>
-            <p>If you have any questions about this Privacy Policy or about the Zart Zurt application, please don't
-                hesitate to contact us:</p>
+            <h2 data-translate="contact_heading">📧 Contact Us & Support</h2>
+            <p data-translate="contact_desc">If you have any questions about this Privacy Policy or about Zart Zurt, please don't hesitate to contact us:</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
                 <a href="mailto:bilicisoftwaree@gmail.com" class="contact-email">
                     <span>✉️</span>
@@ -708,24 +712,114 @@
                 </a>
                 <a href="zart-zurt-terms.html" class="contact-email" style="background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-color);">
                     <span>📜</span>
-                    <span>Kullanım Koşulları (Terms)</span>
+                    <span data-translate="btn_t">Kullanım Koşulları (Terms)</span>
                 </a>
                 <a href="zart-zurt-support.html" class="contact-email" style="background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-color);">
                     <span>🎧</span>
-                    <span>Destek & SSS (Support)</span>
+                    <span data-translate="btn_s">Destek & SSS (Support)</span>
                 </a>
             </div>
         </div>
 
         <footer>
-            <p style="margin-bottom: 0.5rem;">© 2026 VB TECH LABS &bull; Zart Zurt. All rights reserved.</p>
+            <p style="margin-bottom: 0.5rem;" data-translate="footer_copy">© 2026 VB TECH LABS &bull; Zart Zurt. Tüm hakları saklıdır.</p>
             <p style="font-size: 0.85rem;">
-                <a href="zart-zurt-privacy-policy.html" style="color: var(--accent-orange); text-decoration: none; margin: 0 0.5rem;">Privacy Policy</a> &bull;
-                <a href="zart-zurt-terms.html" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;">Terms of Service</a> &bull;
-                <a href="zart-zurt-support.html" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;">Support & FAQ</a>
+                <a href="zart-zurt-privacy-policy.html" style="color: var(--accent-orange); text-decoration: none; margin: 0 0.5rem;" data-translate="f_priv">Privacy Policy</a> &bull;
+                <a href="zart-zurt-terms.html" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;" data-translate="f_terms">Terms of Service</a> &bull;
+                <a href="zart-zurt-support.html" style="color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem;" data-translate="f_sup">Support & FAQ</a>
             </p>
         </footer>
     </div>
+
+    <script>
+        const translations = {
+            tr: {
+                nav_home: "🏠 Ana Sayfa",
+                nav_privacy: "🛡️ Gizlilik Politikası",
+                nav_terms: "📜 Kullanım Koşulları",
+                nav_support: "🎧 Destek & SSS",
+                breadcrumb_p: "Gizlilik Politikası (Privacy Policy)",
+                badge: "<span class=\"emoji\">🎭</span> Zart Zurt — Şaka, Troll Sesler",
+                subtitle: "Yasal Dokümantasyon & Güvenlik",
+                title: "Gizlilik Politikası (Privacy Policy)",
+                updated: "📅 Son Güncelleme: Mart 2026 &bull; Sürüm 1.2",
+                card_t_title: "Kullanım Koşulları (Terms)",
+                card_t_desc: "Sözleşme & lisans şartları",
+                card_s_title: "Destek & SSS (Support)",
+                card_s_desc: "Yardım ve sorun giderme",
+                card_c_title: "Doğrudan İletişim",
+                contact_heading: "📧 İletişim & Destek",
+                contact_desc: "Bu Gizlilik Politikası veya Zart Zurt uygulaması hakkında her türlü sorunuz için bize ulaşın:",
+                btn_t: "Kullanım Koşulları (Terms)",
+                btn_s: "Destek & SSS (Support)",
+                footer_copy: "© 2026 VB TECH LABS &bull; Zart Zurt. Tüm hakları saklıdır.",
+                f_priv: "Gizlilik Politikası",
+                f_terms: "Kullanım Koşulları",
+                f_sup: "Destek & SSS"
+            },
+            en: {
+                nav_home: "🏠 Home",
+                nav_privacy: "🛡️ Privacy Policy",
+                nav_terms: "📜 Terms of Service",
+                nav_support: "🎧 Support & FAQ",
+                breadcrumb_p: "Privacy Policy",
+                badge: "<span class=\"emoji\">🎭</span> Zart Zurt — Prank & Troll Sounds",
+                subtitle: "Legal Documentation & Compliance",
+                title: "Privacy Policy",
+                updated: "📅 Last Updated: March 2026 &bull; Version 1.2",
+                card_t_title: "Terms of Service",
+                card_t_desc: "Agreement & licensing terms",
+                card_s_title: "Support & FAQ",
+                card_s_desc: "Help & troubleshooting",
+                card_c_title: "Direct Contact",
+                contact_heading: "📧 Contact Us & Support",
+                contact_desc: "If you have any questions about this Privacy Policy or about Zart Zurt, please don't hesitate to contact us:",
+                btn_t: "Terms of Service",
+                btn_s: "Support & FAQ",
+                footer_copy: "© 2026 VB TECH LABS &bull; Zart Zurt. All rights reserved.",
+                f_priv: "Privacy Policy",
+                f_terms: "Terms of Service",
+                f_sup: "Support & FAQ"
+            }
+        };
+
+        function switchLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Toggle active buttons
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById('lang-' + lang);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Toggle content blocks
+            const trBlock = document.getElementById('privacy-tr');
+            const enBlock = document.getElementById('privacy-en');
+            if (lang === 'en') {
+                if (trBlock) trBlock.style.display = 'none';
+                if (enBlock) enBlock.style.display = 'block';
+            } else {
+                if (trBlock) trBlock.style.display = 'block';
+                if (enBlock) enBlock.style.display = 'none';
+            }
+
+            // Translate elements with data-translate
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
+            switchLanguage(savedLang);
+        });
+    </script>
 </body>
 
 </html>

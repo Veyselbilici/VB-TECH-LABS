@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Zart Zurt Destek, Yardım ve Sıkça Sorulan Sorular (FAQ) Merkezi - VB TECH LABS">
-    <meta name="keywords" content="zart zurt destek, zart zurt support, zart zurt yardım, VB TECH LABS, sıkça sorulan sorular, salla ses modu">
+    <meta name="keywords" content="zart zurt destek, zart zurt support, zart zurt yardım, VB TECH LABS, sıkça sorulan sorular, FAQ">
     <title>Destek & SSS - Zart Zurt | VB TECH LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,6 +90,12 @@
             font-weight: 700;
         }
 
+        .header-nav-wrap {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         /* Sub Navigation Tabs */
         .app-subnav {
             display: flex;
@@ -98,7 +104,7 @@
         }
 
         .subnav-link {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.95rem;
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -120,6 +126,40 @@
             background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
             border-color: transparent;
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .lang-switcher button {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher button.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            box-shadow: 0 2px 10px rgba(249, 115, 22, 0.4);
+        }
+
+        .lang-switcher button:hover:not(.active) {
+            color: #fff;
         }
 
         /* Container */
@@ -157,8 +197,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(236, 72, 153, 0.15));
-            border: 1px solid rgba(249, 115, 22, 0.3);
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.35);
             border-radius: 50px;
             padding: 0.5rem 1.25rem;
             font-size: 0.85rem;
@@ -280,17 +320,9 @@
             font-weight: 600;
             font-size: 1.05rem;
             color: white;
-            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            user-select: none;
-        }
-
-        .faq-question span.toggle-icon {
-            color: var(--accent-orange);
-            font-size: 1.2rem;
-            transition: transform 0.3s;
         }
 
         .faq-answer {
@@ -416,6 +448,11 @@
                 align-items: flex-start;
                 gap: 1rem;
             }
+            .header-nav-wrap {
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
             .app-subnav {
                 width: 100%;
             }
@@ -439,12 +476,18 @@
                 <div class="logo-small">ZZ</div>
                 <div class="header-title">Zart Zurt &bull; VB TECH LABS</div>
             </a>
-            <nav class="app-subnav">
-                <a href="index.html#zart-zurt-app" class="subnav-link">🏠 Ana Sayfa</a>
-                <a href="zart-zurt-privacy-policy.html" class="subnav-link">🛡️ Gizlilik Politikası</a>
-                <a href="zart-zurt-terms.html" class="subnav-link">📜 Kullanım Koşulları</a>
-                <a href="zart-zurt-support.html" class="subnav-link active">🎧 Destek & SSS</a>
-            </nav>
+            <div class="header-nav-wrap">
+                <nav class="app-subnav">
+                    <a href="index.html#zart-zurt-app" class="subnav-link" data-translate="nav_home">🏠 Ana Sayfa</a>
+                    <a href="zart-zurt-privacy-policy.html" class="subnav-link" data-translate="nav_privacy">🛡️ Gizlilik Politikası</a>
+                    <a href="zart-zurt-terms.html" class="subnav-link" data-translate="nav_terms">📜 Kullanım Koşulları</a>
+                    <a href="zart-zurt-support.html" class="subnav-link active" data-translate="nav_support">🎧 Destek & SSS</a>
+                </nav>
+                <div class="lang-switcher">
+                    <button id="lang-tr" class="active" onclick="switchLanguage('tr')">TR</button>
+                    <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -452,41 +495,41 @@
         <div class="nav-breadcrumbs">
             <a href="index.html">VB TECH LABS</a> &gt;
             <a href="index.html#zart-zurt-app">Zart Zurt</a> &gt;
-            <span>Destek & Yardım Merkezi (Support)</span>
+            <span data-translate="breadcrumb_support">Destek & Yardım Merkezi (Support)</span>
         </div>
 
         <div class="page-header">
-            <div class="app-badge">
+            <div class="app-badge" data-translate="sup_badge">
                 <span>🎧</span> Zart Zurt Destek & Yardım Merkezi
             </div>
-            <div class="page-subtitle">Sorun Giderme & Kullanıcı Desteği</div>
-            <h1>Nasıl Yardımcı Olabiliriz?</h1>
-            <p class="support-hero-desc">Zart Zurt ile ilgili sorularınız, teknik destek talepleriniz, abonelik işlemleri ve eğlenceli ses önerileriniz için buradayız.</p>
+            <div class="page-subtitle" data-translate="sup_subtitle">Sorun Giderme & Kullanıcı Desteği</div>
+            <h1 data-translate="sup_title">Nasıl Yardımcı Olabiliriz?</h1>
+            <p class="support-hero-desc" data-translate="sup_desc">Zart Zurt ile ilgili sorularınız, teknik destek talepleriniz, abonelik işlemleri ve eğlenceli ses önerileriniz için buradayız.</p>
         </div>
 
         <!-- 3 Pillars of Support -->
         <div class="support-cards">
             <div class="support-card">
                 <div class="icon">💬</div>
-                <h3>E-posta ile İletişim</h3>
-                <p>Sorularınızı ve hata bildirimlerinizi doğrudan geliştirici ekibimize iletin.</p>
-                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Destek%20Talebi" class="action-link">
+                <h3 data-translate="card_email_title">E-posta ile İletişim</h3>
+                <p data-translate="card_email_desc">Sorularınızı ve hata bildirimlerinizi doğrudan geliştirici ekibimize iletin.</p>
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Support" class="action-link">
                     bilicisoftwaree@gmail.com &rarr;
                 </a>
             </div>
             <div class="support-card">
                 <div class="icon">💳</div>
-                <h3>Abonelik & İade</h3>
-                <p>Google Play Store üzerinden satın alımlarınızı ve aboneliklerinizi yönetin.</p>
-                <a href="#faq-purchases" class="action-link">
+                <h3 data-translate="card_sub_title">Abonelik & İade</h3>
+                <p data-translate="card_sub_desc">Google Play Store üzerinden satın alımlarınızı ve aboneliklerinizi yönetin.</p>
+                <a href="#faq-purchases" class="action-link" data-translate="card_sub_btn">
                     Abonelik Adımlarını Gör &rarr;
                 </a>
             </div>
             <div class="support-card">
                 <div class="icon">🛡️</div>
-                <h3>Güvenlik & Haklar</h3>
-                <p>Uygulamanın veri gizliliği ve kullanım sözleşmesini detaylı inceleyin.</p>
-                <a href="zart-zurt-privacy-policy.html" class="action-link">
+                <h3 data-translate="card_sec_title">Güvenlik & Haklar</h3>
+                <p data-translate="card_sec_desc">Uygulamanın veri gizliliği ve kullanım sözleşmesini detaylı inceleyin.</p>
+                <a href="zart-zurt-privacy-policy.html" class="action-link" data-translate="card_sec_btn">
                     Gizlilik Politikasını Oku &rarr;
                 </a>
             </div>
@@ -494,127 +537,240 @@
 
         <!-- FAQ Section -->
         <div class="faq-section">
-            <h2 class="section-heading">❓ Sıkça Sorulan Sorular (SSS)</h2>
+            <h2 class="section-heading" data-translate="faq_heading">❓ Sıkça Sorulan Sorular (SSS)</h2>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>1. Sesler çalmıyor veya çok kısık geliyor, ne yapmalıyım?</span>
-                    <span class="toggle-icon">▾</span>
+                    <span data-translate="q1">1. Sesler çalmıyor veya çok kısık geliyor, ne yapmalıyım?</span>
                 </div>
-                <div class="faq-answer">
+                <div class="faq-answer" data-translate="a1">
                     <p>Ses sorunlarının %95'i cihaz ses ayarlarından kaynaklanmaktadır. Lütfen şunları kontrol edin:</p>
                     <ol>
-                        <li><strong>Medya Ses Seviyesi:</strong> Telefonunuzun yan ses açma tuşuna bastığınızda "Zil Sesi" değil, <strong>"Medya / Uygulama Sesi"</strong> seviyesinin açık ve yüksek olduğundan emin olun.</li>
-                        <li><strong>Sessiz / Titreşim Modu:</strong> Bazı telefon modellerinde (veya iOS cihazlarda yan sessize alma mandalı açıkken) oyun/şaka sesleri sessize alınabilir. Sessiz moddan çıkın.</li>
-                        <li><strong>Bluetooth Bağlantıları:</strong> Cihazınız bir Bluetooth kulaklığa, hoparlöre veya araç teybine bağlıysa ses oraya iletiliyor olabilir.</li>
+                        <li><strong>Medya Ses Seviyesi:</strong> Telefonunuzun yan ses tuşuna bastığınızda "Zil Sesi" değil, <strong>"Medya / Uygulama Sesi"</strong> seviyesinin açık ve yüksek olduğundan emin olun.</li>
+                        <li><strong>Sessiz Mod:</strong> Cihazınızın sessiz / titreşim modunda veya "Rahatsız Etmeyin" modunda olmadığını kontrol edin.</li>
+                        <li><strong>Bluetooth Bağlantıları:</strong> Cihazınız bir Bluetooth kulaklığa bağlıysa ses oraya iletiliyor olabilir.</li>
                     </ol>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>2. Telefonu sallayarak ses değiştirme (Shake to change voice) nasıl çalışır?</span>
-                    <span class="toggle-icon">▾</span>
+                    <span data-translate="q2">2. Telefonu sallayarak ses değiştirme (Shake mode) nasıl çalışır?</span>
                 </div>
-                <div class="faq-answer">
-                    <p>Zart Zurt'un özel "Salla" modu, telefonunuzun yerleşik ivmeölçerini (hareket algılayıcı) kullanır:</p>
+                <div class="faq-answer" data-translate="a2">
+                    <p>Zart Zurt'un özel "Salla" modu, telefonunuzun ivmeölçerini (hareket algılayıcı) kullanır:</p>
                     <ul>
-                        <li>Uygulamada bir ses çalarken telefonunuzu hafifçe salladığınızda sesin perdesi (pitch) komik bir şekilde yükselir veya değişir.</li>
-                        <li><strong>Önemli Bilgi:</strong> Bu özellik tamamen anlık eğlence amaçlıdır. Cihazınızdan hiçbir hareket verisi, adım sayısı veya sağlık/fitness bilgisi toplanmaz veya kaydedilmez.</li>
+                        <li>Uygulamada ses çalarken telefonunuzu hafifçe salladığınızda ses perdesi (pitch) komik bir şekilde yükselir veya değişir.</li>
+                        <li><strong>Önemli Bilgi:</strong> Bu özellik tamamen anlık eğlence amaçlıdır. Cihazınızdan hiçbir hareket verisi veya sağlık/fitness bilgisi toplanmaz veya kaydedilmez.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="faq-item" id="faq-purchases">
                 <div class="faq-question">
-                    <span>3. Abonelik veya paket satın aldım ama özellikler açılmadı, ne yapmalıyım?</span>
-                    <span class="toggle-icon">▾</span>
+                    <span data-translate="q3">3. Satın aldığım abonelik veya özellikler açılmadı (Restore Purchases)?</span>
                 </div>
-                <div class="faq-answer">
-                    <p>Google Play Store ödemenizi onayladıktan sonra yetkilendirme RevenueCat altyapısı ile kontrol edilir. Nadiren ağ gecikmesi yaşanırsa:</p>
+                <div class="faq-answer" data-translate="a3">
+                    <p>Google Play Store ödemenizi onayladıktan sonra yetkilendirme RevenueCat altyapısı ile kontrol edilir:</p>
                     <ol>
                         <li>Uygulama içerisindeki <strong>"Satın Alımları Geri Yükle" (Restore Purchases)</strong> butonuna dokunun.</li>
-                        <li>Cihazınızda Google Play Store'da oturum açtığınız e-posta hesabı ile satın alma yaptığınız hesabın aynı olduğundan emin olun.</li>
-                        <li>Uygulamayı tamamen kapatıp (arka plandan kaydırıp sonlandırın) yeniden açın.</li>
-                        <li>Sorun devam ederse Google Play faturanızdaki Sipariş Numarasını (GPA.xxxx-xxxx-xxxx) bize e-posta ile gönderin; hemen kontrol edelim.</li>
+                        <li>Google Play Store'da oturum açtığınız e-posta hesabı ile satın alma yaptığınız hesabın aynı olduğundan emin olun.</li>
+                        <li>Uygulamayı tamamen kapatıp yeniden açın.</li>
+                        <li>Sorun sürerse Google Play faturanızdaki Sipariş Numarasını (GPA.xxxx) bize e-posta ile gönderin; hemen yardımcı olalım.</li>
                     </ol>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>4. Aboneliğimi nasıl iptal edebilir veya durdurabilirim?</span>
-                    <span class="toggle-icon">▾</span>
+                    <span data-translate="q4">4. Aboneliğimi nasıl iptal edebilirim?</span>
                 </div>
-                <div class="faq-answer">
-                    <p>Tüm abonelikler Google Play Store güvencesiyle yönetilir. İstediğiniz zaman şu adımlarla iptal edebilirsiniz:</p>
+                <div class="faq-answer" data-translate="a4">
+                    <p>Tüm abonelikler Google Play Store güvencesiyle yönetilir. İstediğiniz an şu adımlarla iptal edebilirsiniz:</p>
                     <ol>
-                        <li>Cihazınızda <strong>Google Play Store</strong> uygulamasını açın.</li>
-                        <li>Sağ üst köşedeki <strong>Profil simgenize</strong> dokunun.</li>
+                        <li><strong>Google Play Store</strong> uygulamasını açın.</li>
+                        <li>Sağ üstteki <strong>Profil simgenize</strong> dokunun.</li>
                         <li><strong>Ödemeler ve Abonelikler &gt; Abonelikler</strong> yolunu izleyin.</li>
-                        <li>Listeden <strong>Zart Zurt</strong> uygulamasını seçin ve <strong>"Aboneliği İptal Et"</strong> butonuna dokunun.</li>
+                        <li><strong>Zart Zurt</strong> uygulamasını seçin ve <strong>"Aboneliği İptal Et"</strong>e dokunun.</li>
                     </ol>
-                    <p>Aboneliğinizi iptal etseniz bile, ödediğiniz dönemin sonuna kadar tüm özelliklerden yararlanmaya devam edersiniz.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>5. Reklamları tamamen nasıl kapatabilirim?</span>
-                    <span class="toggle-icon">▾</span>
+                    <span data-translate="q5">5. Reklamları tamamen nasıl kapatabilirim?</span>
                 </div>
-                <div class="faq-answer">
-                    <p>Uygulama içerisindeki "Reklamları Kaldır" (Ad-Free) seçeneğini kullanarak banner ve tam ekran reklamları kalıcı olarak kaldırabilir, kesintisiz şaka keyfi yaşayabilirsiniz.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>6. Uygulama ortam seslerimi veya mikrofonumu dinliyor mu?</span>
-                    <span class="toggle-icon">▾</span>
-                </div>
-                <div class="faq-answer">
-                    <p><strong>Kesinlikle HAYIR!</strong> Zart Zurt mikrofon izni istemez, ortam dinlemesi yapmaz ve cihazınızdan herhangi bir ses kaydetmez. Çalınan tüm sesler uygulamanın kendi içinde yer alan çizgi karakter ve troll efekt sesleridir.</p>
+                <div class="faq-answer" data-translate="a5">
+                    <p>Uygulama içerisindeki "Reklamları Kaldır" (Ad-Free) seçeneğini kullanarak banner ve tam ekran reklamları kalıcı olarak kaldırabilirsiniz.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>7. Yeni bir komik ses veya karakter fikrim var, önerebilir miyim?</span>
-                    <span class="toggle-icon">▾</span>
+                    <span data-translate="q6">6. Uygulama ortam seslerimi veya mikrofonumu dinliyor mu?</span>
                 </div>
-                <div class="faq-answer">
-                    <p>Harika olur! Kullanıcılarımızın önerdiği komik ses efektleri ve çizgi karakterleri güncellemelerle eklemeyi çok seviyoruz. Önerilerinizi <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Yeni%20Ses%20Önerisi" style="color:var(--accent-orange);">bilicisoftwaree@gmail.com</a> adresine iletebilirsiniz.</p>
+                <div class="faq-answer" data-translate="a6">
+                    <p><strong>Kesinlikle HAYIR!</strong> Zart Zurt mikrofon izni istemez, ortam dinlemesi yapmaz ve cihazınızdan herhangi bir ses kaydetmez. Çalınan tüm sesler uygulamanın kendi kütüphanesindedir.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span data-translate="q7">7. Yeni bir komik ses veya karakter fikrim var, önerebilir miyim?</span>
+                </div>
+                <div class="faq-answer" data-translate="a7">
+                    <p>Harika olur! Kullanıcılarımızın önerdiği komik ses efektleri ve çizgi karakterleri eklemeyi çok seviyoruz. Önerilerinizi <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Yeni%20Ses%20Önerisi" style="color:var(--accent-orange);">bilicisoftwaree@gmail.com</a> adresine iletebilirsiniz.</p>
                 </div>
             </div>
         </div>
 
         <!-- Direct Contact Box -->
         <div class="contact-box">
-            <h2>Sorununuz Çözülmedi mi?</h2>
-            <p>Destek ekibimiz uygulamanızla ilgili her türlü soru ve sorunda size yardımcı olmaktan memnuniyet duyar. Genellikle 24 saat içinde yanıt veriyoruz.</p>
+            <h2 data-translate="box_title">Sorununuz Çözülmedi mi?</h2>
+            <p data-translate="box_desc">Destek ekibimiz her türlü soru ve sorunda size yardımcı olmaktan memnuniyet duyar. Genellikle 24 saat içinde yanıt veriyoruz.</p>
 
-            <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Teknik%20Destek%20Talebi" class="contact-email-btn">
+            <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Destek%20Talebi" class="contact-email-btn" data-translate="box_btn">
                 <span>✉️</span>
                 <span>Destek Talebi Gönder</span>
             </a>
 
             <div class="template-links">
-                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Abonelik%20Sorunu" class="template-btn">💳 Abonelik Sorunu Bildir</a>
-                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Hata%20Bildirimi" class="template-btn">🐛 Hata / Bug Bildir</a>
-                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Yeni%20Ses%20Önerisi" class="template-btn">💡 Yeni Ses / Özellik Öner</a>
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Subscription%20Issue" class="template-btn" data-translate="t_sub">💳 Abonelik Sorunu Bildir</a>
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Bug%20Report" class="template-btn" data-translate="t_bug">🐛 Hata / Bug Bildir</a>
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Feature%20Suggestion" class="template-btn" data-translate="t_idea">💡 Yeni Ses / Özellik Öner</a>
             </div>
 
             <div class="info-checklist">
-                <strong>Hızlı Çözüm İpucu:</strong>
-                Destek e-postanızda cihaz modelinizi (örn: Samsung S23, Xiaomi 13), Android sürümünüzü ve karşılaştığınız durumun kısa bir açıklamasını belirtmeniz sorununuzu çok daha hızlı çözmemizi sağlar.
+                <strong data-translate="tip_title">Hızlı Çözüm İpucu:</strong>
+                <span data-translate="tip_desc">Destek e-postanızda cihaz modelinizi (örn: Samsung S23), işletim sistemi sürümünüzü ve karşılaştığınız durumun kısa bir açıklamasını belirtmeniz sorununuzu çok daha hızlı çözmemizi sağlar.</span>
             </div>
         </div>
 
         <footer>
-            <p>© 2026 VB TECH LABS &bull; Zart Zurt Destek Merkezi. Tüm hakları saklıdır.</p>
+            <p data-translate="footer_text">© 2026 VB TECH LABS &bull; Zart Zurt Destek Merkezi. Tüm hakları saklıdır.</p>
         </footer>
     </div>
+
+    <script>
+        const translations = {
+            tr: {
+                nav_home: "🏠 Ana Sayfa",
+                nav_privacy: "🛡️ Gizlilik Politikası",
+                nav_terms: "📜 Kullanım Koşulları",
+                nav_support: "🎧 Destek & SSS",
+                breadcrumb_support: "Destek & Yardım Merkezi (Support)",
+                sup_badge: "<span>🎧</span> Zart Zurt Destek & Yardım Merkezi",
+                sup_subtitle: "Sorun Giderme & Kullanıcı Desteği",
+                sup_title: "Nasıl Yardımcı Olabiliriz?",
+                sup_desc: "Zart Zurt ile ilgili sorularınız, teknik destek talepleriniz, abonelik işlemleri ve eğlenceli ses önerileriniz için buradayız.",
+
+                card_email_title: "E-posta ile İletişim",
+                card_email_desc: "Sorularınızı ve hata bildirimlerinizi doğrudan geliştirici ekibimize iletin.",
+                card_sub_title: "Abonelik & İade",
+                card_sub_desc: "Google Play Store üzerinden satın alımlarınızı ve aboneliklerinizi yönetin.",
+                card_sub_btn: "Abonelik Adımlarını Gör &rarr;",
+                card_sec_title: "Güvenlik & Haklar",
+                card_sec_desc: "Uygulamanın veri gizliliği ve kullanım sözleşmesini detaylı inceleyin.",
+                card_sec_btn: "Gizlilik Politikasını Oku &rarr;",
+
+                faq_heading: "❓ Sıkça Sorulan Sorular (SSS)",
+                q1: "1. Sesler çalmıyor veya çok kısık geliyor, ne yapmalıyım?",
+                a1: "<p>Ses sorunlarının %95'i cihaz ses ayarlarından kaynaklanmaktadır. Lütfen şunları kontrol edin:</p><ol><li><strong>Medya Ses Seviyesi:</strong> Telefonunuzun yan ses tuşuna bastığınızda \"Zil Sesi\" değil, <strong>\"Medya / Uygulama Sesi\"</strong> seviyesinin açık ve yüksek olduğundan emin olun.</li><li><strong>Sessiz Mod:</strong> Cihazınızın sessiz / titreşim modunda veya \"Rahatsız Etmeyin\" modunda olmadığını kontrol edin.</li><li><strong>Bluetooth Bağlantıları:</strong> Cihazınız bir Bluetooth kulaklığa bağlıysa ses oraya iletiliyor olabilir.</li></ol>",
+                q2: "2. Telefonu sallayarak ses değiştirme (Shake mode) nasıl çalışır?",
+                a2: "<p>Zart Zurt'un özel \"Salla\" modu, telefonunuzun ivmeölçerini (hareket algılayıcı) kullanır:</p><ul><li>Uygulamada ses çalarken telefonunuzu hafifçe salladığınızda ses perdesi (pitch) komik bir şekilde yükselir veya değişir.</li><li><strong>Önemli Bilgi:</strong> Bu özellik tamamen anlık eğlence amaçlıdır. Cihazınızdan hiçbir hareket verisi veya sağlık/fitness bilgisi toplanmaz veya kaydedilmez.</li></ul>",
+                q3: "3. Satın aldığım abonelik veya özellikler açılmadı (Restore Purchases)?",
+                a3: "<p>Google Play Store ödemenizi onayladıktan sonra yetkilendirme RevenueCat altyapısı ile kontrol edilir:</p><ol><li>Uygulama içerisindeki <strong>\"Satın Alımları Geri Yükle\" (Restore Purchases)</strong> butonuna dokunun.</li><li>Google Play Store'da oturum açtığınız e-posta hesabı ile satın alma yaptığınız hesabın aynı olduğundan emin olun.</li><li>Uygulamayı tamamen kapatıp yeniden açın.</li><li>Sorun sürerse Google Play faturanızdaki Sipariş Numarasını (GPA.xxxx) bize e-posta ile gönderin; hemen yardımcı olalım.</li></ol>",
+                q4: "4. Aboneliğimi nasıl iptal edebilirim?",
+                a4: "<p>Tüm abonelikler Google Play Store güvencesiyle yönetilir. İstediğiniz an şu adımlarla iptal edebilirsiniz:</p><ol><li><strong>Google Play Store</strong> uygulamasını açın.</li><li>Sağ üstteki <strong>Profil simgenize</strong> dokunun.</li><li><strong>Ödemeler ve Abonelikler &gt; Abonelikler</strong> yolunu izleyin.</li><li><strong>Zart Zurt</strong> uygulamasını seçin ve <strong>\"Aboneliği İptal Et\"</strong>e dokunun.</li></ol>",
+                q5: "5. Reklamları tamamen nasıl kapatabilirim?",
+                a5: "<p>Uygulama içerisindeki \"Reklamları Kaldır\" (Ad-Free) seçeneğini kullanarak banner ve tam ekran reklamları kalıcı olarak kaldırabilirsiniz.</p>",
+                q6: "6. Uygulama ortam seslerimi veya mikrofonumu dinliyor mu?",
+                a6: "<p><strong>Kesinlikle HAYIR!</strong> Zart Zurt mikrofon izni istemez, ortam dinlemesi yapmaz ve cihazınızdan herhangi bir ses kaydetmez. Çalınan tüm sesler uygulamanın kendi kütüphanesindedir.</p>",
+                q7: "7. Yeni bir komik ses veya karakter fikrim var, önerebilir miyim?",
+                a7: "<p>Harika olur! Kullanıcılarımızın önerdiği komik ses efektleri ve çizgi karakterleri eklemeyi çok seviyoruz. Önerilerinizi <a href=\"mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Yeni%20Ses%20Önerisi\" style=\"color:var(--accent-orange);\">bilicisoftwaree@gmail.com</a> adresine iletebilirsiniz.</p>",
+
+                box_title: "Sorununuz Çözülmedi mi?",
+                box_desc: "Destek ekibimiz her türlü soru ve sorunda size yardımcı olmaktan memnuniyet duyar. Genellikle 24 saat içinde yanıt veriyoruz.",
+                box_btn: "<span>✉️</span><span>Destek Talebi Gönder</span>",
+                t_sub: "💳 Abonelik Sorunu Bildir",
+                t_bug: "🐛 Hata / Bug Bildir",
+                t_idea: "💡 Yeni Ses / Özellik Öner",
+                tip_title: "Hızlı Çözüm İpucu:",
+                tip_desc: "Destek e-postanızda cihaz modelinizi (örn: Samsung S23), işletim sistemi sürümünüzü ve karşılaştığınız durumun kısa bir açıklamasını belirtmeniz sorununuzu çok daha hızlı çözmemizi sağlar.",
+                footer_text: "© 2026 VB TECH LABS &bull; Zart Zurt Destek Merkezi. Tüm hakları saklıdır."
+            },
+            en: {
+                nav_home: "🏠 Home",
+                nav_privacy: "🛡️ Privacy Policy",
+                nav_terms: "📜 Terms of Service",
+                nav_support: "🎧 Support & FAQ",
+                breadcrumb_support: "Support & Help Center",
+                sup_badge: "<span>🎧</span> Zart Zurt Support & Help Center",
+                sup_subtitle: "Troubleshooting & User Assistance",
+                sup_title: "How Can We Help You?",
+                sup_desc: "We are here to assist with any questions regarding Zart Zurt, technical inquiries, subscription management, and fun sound suggestions.",
+
+                card_email_title: "Email Support",
+                card_email_desc: "Send your questions, reports, or feedback directly to our developer team.",
+                card_sub_title: "Subscriptions & Refunds",
+                card_sub_desc: "Manage your active in-app subscriptions securely via Google Play Store.",
+                card_sub_btn: "View Subscription Steps &rarr;",
+                card_sec_title: "Privacy & Legal Terms",
+                card_sec_desc: "Learn more about our zero personal data collection policy and terms of use.",
+                card_sec_btn: "Read Privacy Policy &rarr;",
+
+                faq_heading: "❓ Frequently Asked Questions (FAQ)",
+                q1: "1. Sounds are not playing or are very low volume, what should I do?",
+                a1: "<p>Over 95% of audio issues are resolved through device volume settings. Please check:</p><ol><li><strong>Media Volume:</strong> Ensure your <strong>\"Media Volume\"</strong> (not Ringtone volume) is turned up.</li><li><strong>Silent / Mute Mode:</strong> Check if your device is in silent, vibrate, or Do Not Disturb mode.</li><li><strong>Bluetooth Devices:</strong> If connected to Bluetooth headphones or speakers, audio may be routed there.</li></ol>",
+                q2: "2. How does the Shake-to-Pitch Mode work?",
+                a2: "<p>Zart Zurt's shake feature utilizes your device's built-in accelerometer sensor:</p><ul><li>While playing a sound, gently shaking your phone modulates the audio pitch in real time for funny results.</li><li><strong>Important:</strong> This feature is solely for real-time sound effects. No motion or sensor data is ever recorded, tracked, or sent to external servers.</li></ul>",
+                q3: "3. I purchased a subscription but features remain locked (Restore Purchases)?",
+                a3: "<p>Purchases are securely verified via Google Play Billing and RevenueCat:</p><ol><li>Tap the <strong>\"Restore Purchases\"</strong> button inside the app settings or shop screen.</li><li>Ensure you are signed in to the Google Play Store with the exact Google account used for purchase.</li><li>Restart the app (force close and reopen).</li><li>If the issue persists, email us your Google Play GPA order number (GPA.xxxx) and we will resolve it promptly.</li></ol>",
+                q4: "4. How do I cancel my subscription?",
+                a4: "<p>All subscriptions are handled directly through Google Play Store:</p><ol><li>Open the <strong>Google Play Store</strong> app.</li><li>Tap your <strong>Profile icon</strong> at the top right.</li><li>Go to <strong>Payments & Subscriptions &gt; Subscriptions</strong>.</li><li>Select <strong>Zart Zurt</strong> and tap <strong>\"Cancel Subscription\"</strong>.</li></ol>",
+                q5: "5. How can I remove all advertisements?",
+                a5: "<p>You can purchase the optional \"Remove Ads\" pass inside the app to eliminate all banner and interstitial advertisements.</p>",
+                q6: "6. Does the app access my microphone or record surrounding audio?",
+                a6: "<p><strong>ABSOLUTELY NOT!</strong> Zart Zurt does not request microphone permissions and does not record or listen to audio. All hilarious sounds are pre-recorded sound effects.</p>",
+                q7: "7. Can I suggest a new sound effect or character?",
+                a7: "<p>We'd love to hear your ideas! Send your funny sound suggestions to <a href=\"mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Sound%20Suggestion\" style=\"color:var(--accent-orange);\">bilicisoftwaree@gmail.com</a>.</p>",
+
+                box_title: "Still Need Assistance?",
+                box_desc: "Our support team is happy to assist you with any questions. We typically respond within 24 hours.",
+                box_btn: "<span>✉️</span><span>Submit Support Request</span>",
+                t_sub: "💳 Report Subscription Issue",
+                t_bug: "🐛 Report a Bug",
+                t_idea: "💡 Suggest a New Sound",
+                tip_title: "Fast Resolution Tip:",
+                tip_desc: "Include your device model (e.g. Samsung S23), Android version, and a brief description of what occurred so we can resolve your issue as quickly as possible.",
+                footer_text: "© 2026 VB TECH LABS &bull; Zart Zurt Support Center. All rights reserved."
+            }
+        };
+
+        function switchLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById('lang-' + lang);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
+            switchLanguage(savedLang);
+        });
+    </script>
 </body>
 
 </html>

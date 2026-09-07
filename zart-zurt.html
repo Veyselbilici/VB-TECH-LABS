@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Zart Zurt - Şaka, Troll ve Komik Sesler Uygulaması | VB TECH LABS. Eğlenceli çizgi animasyonlar, salla ses değiştir modu ve 100+ komik ses efekti.">
-    <meta name="keywords" content="zart zurt, komik sesler, troll sesler, şaka uygulaması, ses efektleri, VB TECH LABS">
+    <meta name="keywords" content="zart zurt, komik sesler, troll sesler, şaka uygulaması, ses efektleri, prank app, funny sounds, VB TECH LABS">
     <title>Zart Zurt — Şaka, Troll & Komik Sesler | VB TECH LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,16 +93,22 @@
             font-weight: 700;
         }
 
+        .header-nav-wrap {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
         .nav-links {
             display: flex;
-            gap: 0.6rem;
+            gap: 0.5rem;
             list-style: none;
             align-items: center;
             flex-wrap: wrap;
         }
 
         .nav-link-btn {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.95rem;
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -126,6 +132,40 @@
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .lang-switcher button {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher button.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            box-shadow: 0 2px 10px rgba(249, 115, 22, 0.4);
+        }
+
+        .lang-switcher button:hover:not(.active) {
+            color: #fff;
+        }
+
         /* Hero Showcase */
         .hero {
             padding: 8.5rem 2rem 5rem;
@@ -145,7 +185,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(236, 72, 153, 0.15));
+            background: rgba(249, 115, 22, 0.15);
             border: 1px solid rgba(249, 115, 22, 0.35);
             border-radius: 50px;
             padding: 0.5rem 1.25rem;
@@ -155,7 +195,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .pulse-dot {
+        .pulse-dot-orange {
             width: 8px;
             height: 8px;
             background: #f97316;
@@ -172,7 +212,7 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.6rem;
+            font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: 1.25rem;
@@ -183,7 +223,7 @@
         }
 
         .hero-desc {
-            font-size: 1.2rem;
+            font-size: 1.18rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
             line-height: 1.8;
@@ -207,6 +247,13 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
+            transition: all 0.3s;
+        }
+
+        .feature-pill:hover {
+            background: rgba(249, 115, 22, 0.15);
+            border-color: rgba(249, 115, 22, 0.4);
+            transform: translateY(-2px);
         }
 
         /* Store Buttons */
@@ -284,18 +331,18 @@
         }
 
         .app-icon-card {
-            width: 320px;
-            height: 320px;
-            border-radius: 48px;
+            width: 300px;
+            height: 300px;
+            border-radius: 46px;
             overflow: hidden;
             box-shadow:
                 0 25px 60px rgba(0, 0, 0, 0.6),
-                0 0 50px rgba(249, 115, 22, 0.3),
+                0 0 50px rgba(249, 115, 22, 0.35),
                 inset 0 1px 0 rgba(255, 255, 255, 0.4);
             position: relative;
             z-index: 2;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border: 4px solid rgba(255, 255, 255, 0.15);
+            border: 3.5px solid rgba(255, 255, 255, 0.18);
         }
 
         .app-icon-card:hover {
@@ -359,14 +406,14 @@
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 800;
             margin-bottom: 1rem;
         }
 
         .hub-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
@@ -533,6 +580,7 @@
             .hero { padding: 6.5rem 1.25rem 3rem; }
             .hero h1 { font-size: 2rem; }
             .header-content { flex-direction: column; align-items: flex-start; }
+            .header-nav-wrap { width: 100%; justify-content: space-between; flex-wrap: wrap; }
             .nav-links { width: 100%; justify-content: flex-start; }
             .store-btn { width: 100%; justify-content: center; }
         }
@@ -547,13 +595,19 @@
                 <div class="logo-box">ZZ</div>
                 <div class="header-title">Zart Zurt &bull; VB TECH LABS</div>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link-btn">🏠 VB TECH LABS</a></li>
-                <li><a href="zart-zurt.html" class="nav-link-btn active">🎭 Uygulama</a></li>
-                <li><a href="zart-zurt-privacy-policy.html" class="nav-link-btn">🛡️ Gizlilik Politikası</a></li>
-                <li><a href="zart-zurt-terms.html" class="nav-link-btn">📜 Kullanım Koşulları</a></li>
-                <li><a href="zart-zurt-support.html" class="nav-link-btn">🎧 Destek & SSS</a></li>
-            </ul>
+            <div class="header-nav-wrap">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link-btn" data-translate="nav_home">🏠 VB TECH LABS</a></li>
+                    <li><a href="zart-zurt.html" class="nav-link-btn active" data-translate="nav_app">🎭 Uygulama</a></li>
+                    <li><a href="zart-zurt-privacy-policy.html" class="nav-link-btn" data-translate="nav_privacy">🛡️ Gizlilik Politikası</a></li>
+                    <li><a href="zart-zurt-terms.html" class="nav-link-btn" data-translate="nav_terms">📜 Kullanım Koşulları</a></li>
+                    <li><a href="zart-zurt-support.html" class="nav-link-btn" data-translate="nav_support">🎧 Destek & SSS</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button id="lang-tr" class="active" onclick="switchLanguage('tr')">TR</button>
+                    <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -561,35 +615,35 @@
     <main class="hero">
         <div class="hero-grid">
             <div class="hero-text">
-                <div class="app-badge">
-                    <span class="pulse-dot"></span>
+                <div class="app-badge" data-translate="hero_badge">
+                    <span class="pulse-dot-orange"></span>
                     Yeni Eğlence Uygulaması — Şaka & Troll Sesler
                 </div>
-                <h1>Zart Zurt : Şaka, Troll & Komik Sesler</h1>
-                <p class="hero-desc">
+                <h1 data-translate="hero_title">Zart Zurt : Şaka, Troll & Komik Sesler</h1>
+                <p class="hero-desc" data-translate="hero_desc">
                     Arkadaşlarınıza en komik şakaları yapın! Yüzlerce eğlenceli ses efekti, sevimli çizgi animasyonlar ve telefonu salladıkça ses perdesini değiştiren interaktif mod ile sınırsız kahkaha.
                 </p>
 
                 <div class="features-pills">
-                    <span class="feature-pill">🎭 Çizgi Karakterler</span>
-                    <span class="feature-pill">🔊 100+ Troll & Efekt Sesi</span>
-                    <span class="feature-pill">📳 Salla-Ses Değiştir Modu</span>
-                    <span class="feature-pill">⚡ Çevrimdışı Çalışma</span>
-                    <span class="feature-pill">🛡️ Sıfır Veri Toplama</span>
+                    <span class="feature-pill" data-translate="pill_characters">🎭 Çizgi Karakterler</span>
+                    <span class="feature-pill" data-translate="pill_sounds">🔊 100+ Troll & Efekt Sesi</span>
+                    <span class="feature-pill" data-translate="pill_shake">📳 Salla-Ses Değiştir Modu</span>
+                    <span class="feature-pill" data-translate="pill_offline">⚡ Çevrimdışı Çalışma</span>
+                    <span class="feature-pill" data-translate="pill_nodata">🛡️ Sıfır Veri Toplama</span>
                 </div>
 
                 <div class="store-buttons">
                     <a href="https://play.google.com/store/apps/details?id=com.veysel35.zartzurt" target="_blank" rel="noopener" class="store-btn">
                         <svg viewBox="0 0 24 24" fill="white"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
                         <span class="store-btn-text">
-                            <small>HEMEN İNDİR</small>
+                            <small data-translate="store_play_small">HEMEN İNDİR</small>
                             <strong>Google Play</strong>
                         </span>
                     </a>
                     <a href="#" class="store-btn" style="opacity: 0.65; cursor: default;">
                         <svg viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
                         <span class="store-btn-text">
-                            <small>Çok Yakında</small>
+                            <small data-translate="store_apple_small">Çok Yakında</small>
                             <strong>App Store</strong>
                         </span>
                     </a>
@@ -599,7 +653,7 @@
             <div class="visual-container">
                 <div class="orbit-glow"></div>
                 <div class="app-icon-card">
-                    <img src="zart-zurt-icon.jpg" alt="Zart Zurt Uygulama İkonu">
+                    <img src="zart-zurt-icon.jpg" alt="Zart Zurt App Icon">
                 </div>
                 <span class="floating-bubble">💨</span>
                 <span class="floating-bubble">🎺</span>
@@ -613,8 +667,8 @@
     <section class="hub-section">
         <div class="hub-container">
             <div class="section-header">
-                <div class="section-subtitle">Yasal Belgeler & Kullanıcı Desteği</div>
-                <h2 class="section-title">Gerekli Tüm Bilgiler & Sözleşmeler</h2>
+                <div class="section-subtitle" data-translate="hub_subtitle">Yasal Belgeler & Kullanıcı Desteği</div>
+                <h2 class="section-title" data-translate="hub_title">Gerekli Tüm Bilgiler & Sözleşmeler</h2>
             </div>
 
             <div class="hub-grid">
@@ -622,30 +676,30 @@
                 <a href="zart-zurt-privacy-policy.html" class="hub-card">
                     <div class="card-top">
                         <div class="badge-icon">🛡️</div>
-                        <h3>Gizlilik Politikası</h3>
-                        <p>Kişisel verilerinizin toplanmadığını, şeffaf sensor ve bildirim politikalarımızı detaylarıyla inceleyin.</p>
+                        <h3 data-translate="card_privacy_title">Gizlilik Politikası</h3>
+                        <p data-translate="card_privacy_desc">Kişisel verilerinizin toplanmadığını, şeffaf sensor ve bildirim politikalarımızı detaylarıyla inceleyin.</p>
                     </div>
-                    <div class="card-action">Politikayı İncele &rarr;</div>
+                    <div class="card-action" data-translate="card_privacy_btn">Politikayı İncele &rarr;</div>
                 </a>
 
                 <!-- Terms of Service -->
                 <a href="zart-zurt-terms.html" class="hub-card">
                     <div class="card-top">
                         <div class="badge-icon">📜</div>
-                        <h3>Kullanım Koşulları (Terms)</h3>
-                        <p>Eğlence amacı, Google Play & RevenueCat abonelik koşulları, telif ve kullanım hakları sözleşmesi.</p>
+                        <h3 data-translate="card_terms_title">Kullanım Koşulları (Terms)</h3>
+                        <p data-translate="card_terms_desc">Eğlence amacı, Google Play & RevenueCat abonelik koşulları, telif ve kullanım hakları sözleşmesi.</p>
                     </div>
-                    <div class="card-action">Sözleşmeyi Oku &rarr;</div>
+                    <div class="card-action" data-translate="card_terms_btn">Sözleşmeyi Oku &rarr;</div>
                 </a>
 
                 <!-- Support & Help -->
                 <a href="zart-zurt-support.html" class="hub-card">
                     <div class="card-top">
                         <div class="badge-icon">🎧</div>
-                        <h3>Destek & SSS (Support)</h3>
-                        <p>Sıkça sorulan sorular, ses ayarları, abonelik iptali veya geri yükleme adımları ve doğrudan iletişim.</p>
+                        <h3 data-translate="card_support_title">Destek & SSS (Support)</h3>
+                        <p data-translate="card_support_desc">Sıkça sorulan sorular, ses ayarları, abonelik iptali veya geri yükleme adımları ve doğrudan iletişim.</p>
                     </div>
-                    <div class="card-action">Destek Merkezine Git &rarr;</div>
+                    <div class="card-action" data-translate="card_support_btn">Destek Merkezine Git &rarr;</div>
                 </a>
             </div>
         </div>
@@ -654,30 +708,30 @@
     <!-- App Highlights -->
     <section class="features-section">
         <div class="section-header">
-            <div class="section-subtitle">Öne Çıkan Özellikler</div>
-            <h2 class="section-title">Neden Zart Zurt?</h2>
+            <div class="section-subtitle" data-translate="feat_subtitle">Öne Çıkan Özellikler</div>
+            <h2 class="section-title" data-translate="feat_title">Neden Zart Zurt?</h2>
         </div>
 
         <div class="features-grid">
             <div class="feature-card">
                 <div class="icon">📳</div>
-                <h4>Salla & Ses Değiştir</h4>
-                <p>Telefonunuzu salladıkça ses perdesi komik şekilde değişir. İvmeölçer verileri sadece o anda ses üretmek için kullanılır, asla kaydedilmez.</p>
+                <h4 data-translate="feat_1_title">Salla & Ses Değiştir</h4>
+                <p data-translate="feat_1_desc">Telefonunuzu salladıkça ses perdesi komik şekilde değişir. İvmeölçer verileri sadece o anda ses üretmek için kullanılır, asla kaydedilmez.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">🎭</div>
-                <h4>Eğlenceli Çizgi Karakterler</h4>
-                <p>Her ses efektine eşlik eden sevimli çizgi karakterler ve görsel animasyonlar ile gülümseten deneyim.</p>
+                <h4 data-translate="feat_2_title">Eğlenceli Çizgi Karakterler</h4>
+                <p data-translate="feat_2_desc">Her ses efektine eşlik eden sevimli çizgi karakterler ve görsel animasyonlar ile gülümseten deneyim.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">🔒</div>
-                <h4>Kayıt & Giriş Yok</h4>
-                <p>Hesap açmak, şifre belirlemek veya kişisel bilgi girmek gerekmez. Yükleyin ve anında kullanmaya başlayın.</p>
+                <h4 data-translate="feat_3_title">Kayıt & Giriş Yok</h4>
+                <p data-translate="feat_3_desc">Hesap açmak, şifre belirlemek veya kişisel bilgi girmek gerekmez. Yükleyin ve anında kullanmaya başlayın.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">💳</div>
-                <h4>Güvenli Google Play Ödemeleri</h4>
-                <p>İsteğe bağlı reklam kaldırma ve abonelikler doğrudan Google Play Billing ve RevenueCat ile güvenle yönetilir.</p>
+                <h4 data-translate="feat_4_title">Güvenli Google Play Ödemeleri</h4>
+                <p data-translate="feat_4_desc">İsteğe bağlı reklam kaldırma ve abonelikler doğrudan Google Play Billing ve RevenueCat ile güvenle yönetilir.</p>
             </div>
         </div>
     </section>
@@ -686,17 +740,139 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="index.html">Ana Sayfa</a>
-                <a href="zart-zurt-privacy-policy.html">Gizlilik Politikası</a>
-                <a href="zart-zurt-terms.html">Kullanım Koşulları</a>
-                <a href="zart-zurt-support.html">Destek & SSS</a>
-                <a href="mailto:bilicisoftwaree@gmail.com">İletişim</a>
+                <a href="index.html" data-translate="nav_home">Ana Sayfa</a>
+                <a href="zart-zurt-privacy-policy.html" data-translate="nav_privacy">Gizlilik Politikası</a>
+                <a href="zart-zurt-terms.html" data-translate="nav_terms">Kullanım Koşulları</a>
+                <a href="zart-zurt-support.html" data-translate="nav_support">Destek & SSS</a>
+                <a href="mailto:bilicisoftwaree@gmail.com" data-translate="nav_contact">İletişim</a>
             </div>
-            <div class="footer-copy">
+            <div class="footer-copy" data-translate="footer_copy">
                 &copy; 2026 VB TECH LABS &bull; Zart Zurt. Tüm hakları saklıdır.
             </div>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            tr: {
+                nav_home: "🏠 VB TECH LABS",
+                nav_app: "🎭 Uygulama",
+                nav_privacy: "🛡️ Gizlilik Politikası",
+                nav_terms: "📜 Kullanım Koşulları",
+                nav_support: "🎧 Destek & SSS",
+                nav_contact: "İletişim",
+
+                hero_badge: "<span class=\"pulse-dot-orange\"></span>Yeni Eğlence Uygulaması — Şaka & Troll Sesler",
+                hero_title: "Zart Zurt : Şaka, Troll & Komik Sesler",
+                hero_desc: "Arkadaşlarınıza en komik şakaları yapın! Yüzlerce eğlenceli ses efekti, sevimli çizgi animasyonlar ve telefonu salladıkça ses perdesini değiştiren interaktif mod ile sınırsız kahkaha.",
+                pill_characters: "🎭 Çizgi Karakterler",
+                pill_sounds: "🔊 100+ Troll & Efekt Sesi",
+                pill_shake: "📳 Salla-Ses Değiştir Modu",
+                pill_offline: "⚡ Çevrimdışı Çalışma",
+                pill_nodata: "🛡️ Sıfır Veri Toplama",
+
+                store_play_small: "HEMEN İNDİR",
+                store_apple_small: "Çok Yakında",
+
+                hub_subtitle: "Yasal Belgeler & Kullanıcı Desteği",
+                hub_title: "Gerekli Tüm Bilgiler & Sözleşmeler",
+                card_privacy_title: "Gizlilik Politikası",
+                card_privacy_desc: "Kişisel verilerinizin toplanmadığını, şeffaf sensor ve bildirim politikalarımızı detaylarıyla inceleyin.",
+                card_privacy_btn: "Politikayı İncele &rarr;",
+                card_terms_title: "Kullanım Koşulları (Terms)",
+                card_terms_desc: "Eğlence amacı, Google Play & RevenueCat abonelik koşulları, telif ve kullanım hakları sözleşmesi.",
+                card_terms_btn: "Sözleşmeyi Oku &rarr;",
+                card_support_title: "Destek & SSS (Support)",
+                card_support_desc: "Sıkça sorulan sorular, ses ayarları, abonelik iptali veya geri yükleme adımları ve doğrudan iletişim.",
+                card_support_btn: "Destek Merkezine Git &rarr;",
+
+                feat_subtitle: "Öne Çıkan Özellikler",
+                feat_title: "Neden Zart Zurt?",
+                feat_1_title: "Salla & Ses Değiştir",
+                feat_1_desc: "Telefonunuzu salladıkça ses perdesi komik şekilde değişir. İvmeölçer verileri sadece o anda ses üretmek için kullanılır, asla kaydedilmez.",
+                feat_2_title: "Eğlenceli Çizgi Karakterler",
+                feat_2_desc: "Her ses efektine eşlik eden sevimli çizgi karakterler ve görsel animasyonlar ile gülümseten deneyim.",
+                feat_3_title: "Kayıt & Giriş Yok",
+                feat_3_desc: "Hesap açmak, şifre belirlemek veya kişisel bilgi girmek gerekmez. Yükleyin ve anında kullanmaya başlayın.",
+                feat_4_title: "Güvenli Google Play Ödemeleri",
+                feat_4_desc: "İsteğe bağlı reklam kaldırma ve abonelikler doğrudan Google Play Billing ve RevenueCat ile güvenle yönetilir.",
+
+                footer_copy: "© 2026 VB TECH LABS &bull; Zart Zurt. Tüm hakları saklıdır."
+            },
+            en: {
+                nav_home: "🏠 VB TECH LABS",
+                nav_app: "🎭 App",
+                nav_privacy: "🛡️ Privacy Policy",
+                nav_terms: "📜 Terms of Service",
+                nav_support: "🎧 Support & FAQ",
+                nav_contact: "Contact",
+
+                hero_badge: "<span class=\"pulse-dot-orange\"></span>New Entertainment App — Prank & Troll Sounds",
+                hero_title: "Zart Zurt: Prank, Troll & Funny Sounds",
+                hero_desc: "Play the funniest pranks on your friends! Hundreds of hilarious sound effects, cute cartoon animations, and an interactive shake-to-pitch feature for endless laughter.",
+                pill_characters: "🎭 Cartoon Characters",
+                pill_sounds: "🔊 100+ Troll & Prank Sounds",
+                pill_shake: "📳 Shake-to-Pitch Mode",
+                pill_offline: "⚡ Offline Ready",
+                pill_nodata: "🛡️ Zero Data Collection",
+
+                store_play_small: "DOWNLOAD NOW",
+                store_apple_small: "Coming Soon",
+
+                hub_subtitle: "Legal Documents & User Support",
+                hub_title: "Essential Information & Legal Terms",
+                card_privacy_title: "Privacy Policy",
+                card_privacy_desc: "Learn how your data is protected with our zero personal data collection policy and transparent sensor disclaimers.",
+                card_privacy_btn: "View Policy &rarr;",
+                card_terms_title: "Terms of Service",
+                card_terms_desc: "Entertainment disclaimer, Google Play & RevenueCat subscription management, copyright, and usage terms.",
+                card_terms_btn: "Read Terms &rarr;",
+                card_support_title: "Support & FAQ",
+                card_support_desc: "Frequently asked questions, volume troubleshooting, subscription management/restore, and direct developer contact.",
+                card_support_btn: "Visit Support Center &rarr;",
+
+                feat_subtitle: "Core Highlights",
+                feat_title: "Why Zart Zurt?",
+                feat_1_title: "Shake & Pitch Shift",
+                feat_1_desc: "Shake your device to dynamically alter the pitch of sounds. Sensor data is processed entirely in real time on-device and never stored.",
+                feat_2_title: "Fun Cartoon Characters",
+                feat_2_desc: "Delightful animations and whimsical characters accompany every sound effect for maximum entertainment value.",
+                feat_3_title: "No Registration or Login",
+                feat_3_desc: "Zero barrier to fun. No account creation, passwords, or personal credentials are ever required.",
+                feat_4_title: "Secure Google Play Billing",
+                feat_4_desc: "Optional ad-free passes and premium packs are safely processed through Google Play Billing and validated via RevenueCat.",
+
+                footer_copy: "© 2026 VB TECH LABS &bull; Zart Zurt. All rights reserved."
+            }
+        };
+
+        function switchLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update active buttons
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById('lang-' + lang);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            // Translate all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        // Initial language check
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
+            switchLanguage(savedLang);
+        });
+    </script>
 </body>
 
 </html>

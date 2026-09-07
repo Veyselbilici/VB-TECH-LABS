@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Zart Zurt Kullanım Koşulları ve Sözleşmesi (Terms of Service) - VB TECH LABS">
-    <meta name="keywords" content="kullanım koşulları, terms of service, zart zurt, VB TECH LABS, sözleşme, eğlence uygulaması">
-    <title>Kullanım Koşulları - Zart Zurt | VB TECH LABS</title>
+        content="Zart Zurt Terms of Service / Kullanım Koşulları ve Sözleşmesi - VB TECH LABS">
+    <meta name="keywords" content="kullanım koşulları, terms of service, zart zurt, VB TECH LABS, sözleşme, EULA">
+    <title>Kullanım Koşulları / Terms of Service - Zart Zurt | VB TECH LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
     <style>
         :root {
@@ -90,6 +90,12 @@
             font-weight: 700;
         }
 
+        .header-nav-wrap {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         /* Sub Navigation Tabs */
         .app-subnav {
             display: flex;
@@ -98,7 +104,7 @@
         }
 
         .subnav-link {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.95rem;
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -120,6 +126,40 @@
             background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
             border-color: transparent;
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .lang-switcher button {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.65rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher button.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            box-shadow: 0 2px 10px rgba(249, 115, 22, 0.4);
+        }
+
+        .lang-switcher button:hover:not(.active) {
+            color: #fff;
         }
 
         /* Main Container */
@@ -156,8 +196,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(236, 72, 153, 0.15));
-            border: 1px solid rgba(249, 115, 22, 0.3);
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.35);
             border-radius: 50px;
             padding: 0.5rem 1.25rem;
             font-size: 0.85rem;
@@ -251,7 +291,7 @@
             margin: 0;
         }
 
-        /* Content Headings & Lists */
+        /* Headings & Lists */
         h2 {
             font-size: 1.6rem;
             font-weight: 700;
@@ -261,14 +301,6 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
         }
 
         p {
@@ -336,7 +368,6 @@
             margin-bottom: 0;
         }
 
-        /* TOC */
         .toc {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -376,7 +407,6 @@
             text-decoration: underline;
         }
 
-        /* Contact Section */
         .contact-section {
             background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(236, 72, 153, 0.1));
             border: 1px solid rgba(249, 115, 22, 0.3);
@@ -447,6 +477,11 @@
                 align-items: flex-start;
                 gap: 1rem;
             }
+            .header-nav-wrap {
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
             .app-subnav {
                 width: 100%;
             }
@@ -467,12 +502,18 @@
                 <div class="logo-small">ZZ</div>
                 <div class="header-title">Zart Zurt &bull; VB TECH LABS</div>
             </a>
-            <nav class="app-subnav">
-                <a href="index.html#zart-zurt-app" class="subnav-link">🏠 Ana Sayfa</a>
-                <a href="zart-zurt-privacy-policy.html" class="subnav-link">🛡️ Gizlilik Politikası</a>
-                <a href="zart-zurt-terms.html" class="subnav-link active">📜 Kullanım Koşulları</a>
-                <a href="zart-zurt-support.html" class="subnav-link">🎧 Destek & SSS</a>
-            </nav>
+            <div class="header-nav-wrap">
+                <nav class="app-subnav">
+                    <a href="index.html#zart-zurt-app" class="subnav-link" data-translate="nav_home">🏠 Ana Sayfa</a>
+                    <a href="zart-zurt-privacy-policy.html" class="subnav-link" data-translate="nav_privacy">🛡️ Gizlilik Politikası</a>
+                    <a href="zart-zurt-terms.html" class="subnav-link active" data-translate="nav_terms">📜 Kullanım Koşulları</a>
+                    <a href="zart-zurt-support.html" class="subnav-link" data-translate="nav_support">🎧 Destek & SSS</a>
+                </nav>
+                <div class="lang-switcher">
+                    <button id="lang-tr" class="active" onclick="switchLanguage('tr')">TR</button>
+                    <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -480,16 +521,16 @@
         <div class="nav-breadcrumbs">
             <a href="index.html">VB TECH LABS</a> &gt;
             <a href="index.html#zart-zurt-app">Zart Zurt</a> &gt;
-            <span>Kullanım Koşulları (Terms of Service)</span>
+            <span data-translate="breadcrumb_terms">Kullanım Koşulları (Terms of Service)</span>
         </div>
 
         <div class="page-header">
-            <div class="app-badge">
+            <div class="app-badge" data-translate="badge">
                 <span>🎭</span> Zart Zurt — Şaka, Troll & Komik Sesler
             </div>
-            <div class="page-subtitle">Hukuki Sözleşme & Şartlar</div>
-            <h1>Kullanım Koşulları (Terms of Service)</h1>
-            <p class="last-updated">📅 Son Güncelleme: Mart 2026 &bull; Sürüm 1.2</p>
+            <div class="page-subtitle" data-translate="subtitle">Hukuki Sözleşme & Şartlar</div>
+            <h1 data-translate="title">Kullanım Koşulları (Terms of Service)</h1>
+            <p class="last-updated" data-translate="updated">📅 Son Güncelleme: Mart 2026 &bull; Sürüm 1.2</p>
         </div>
 
         <!-- Quick navigation cards -->
@@ -497,115 +538,162 @@
             <a href="zart-zurt-privacy-policy.html" class="quick-nav-card">
                 <span class="card-icon">🛡️</span>
                 <div class="card-info">
-                    <h4>Gizlilik Politikası</h4>
-                    <p>Veri güvenliği & çerezler</p>
+                    <h4 data-translate="card_p_title">Gizlilik Politikası</h4>
+                    <p data-translate="card_p_desc">Veri güvenliği & çerezler</p>
                 </div>
             </a>
             <a href="zart-zurt-support.html" class="quick-nav-card">
                 <span class="card-icon">🎧</span>
                 <div class="card-info">
-                    <h4>Destek & SSS</h4>
-                    <p>Yardım ve sorun giderme</p>
+                    <h4 data-translate="card_s_title">Destek & SSS</h4>
+                    <p data-translate="card_s_desc">Yardım ve sorun giderme</p>
                 </div>
             </a>
             <a href="mailto:bilicisoftwaree@gmail.com" class="quick-nav-card">
                 <span class="card-icon">✉️</span>
                 <div class="card-info">
-                    <h4>Geliştirici İletişim</h4>
+                    <h4 data-translate="card_c_title">Geliştirici İletişim</h4>
                     <p>bilicisoftwaree@gmail.com</p>
                 </div>
             </a>
         </div>
 
-        <div class="intro-box">
-            <p>Bu Kullanım Koşulları ("Koşullar"), <strong>VB TECH LABS</strong> ("biz", "bize" veya "Şirket") tarafından geliştirilen <strong>Zart Zurt — Şaka, Troll Sesler</strong> mobil uygulamasını ("Uygulama") indirmeniz, kurmanız veya kullanmanız halinde geçerli olan yasal şartları belirler. Uygulamayı indirerek veya kullanarak bu şartları peşinen kabul etmiş sayılırsınız.</p>
+        <!-- TURKISH CONTENT -->
+        <div id="terms-tr">
+            <div class="intro-box">
+                <p>Bu Kullanım Koşulları ("Koşullar"), <strong>VB TECH LABS</strong> tarafından geliştirilen <strong>Zart Zurt — Şaka, Troll Sesler</strong> mobil uygulamasını ("Uygulama") indirmeniz, kurmanız veya kullanmanız halinde geçerli olan yasal şartları belirler. Uygulamayı kullanarak bu şartları kabul etmiş sayılırsınız.</p>
+            </div>
+
+            <div class="toc">
+                <h3>İçindekiler</h3>
+                <ol class="toc-list">
+                    <li><a href="#tr-sec1">1. Hizmetin Niteliği ve Eğlence Amacı</a></li>
+                    <li><a href="#tr-sec2">2. Kullanıcı Yaşı ve Hesap Gereksinimi Bulunmaması</a></li>
+                    <li><a href="#tr-sec3">3. Cihaz Sensörleri ve Salla-Ses Değiştir Özelliği</a></li>
+                    <li><a href="#tr-sec4">4. Fikri Mülkiyet ve Lisans Hakları</a></li>
+                    <li><a href="#tr-sec5">5. Uygulama İçi Abonelikler ve Ödemeler (RevenueCat & Google Play)</a></li>
+                    <li><a href="#tr-sec6">6. Reklamlar ve Üçüncü Taraf Bağlantıları</a></li>
+                    <li><a href="#tr-sec7">7. Kabul Edilebilir Kullanım ve Şaka Sorumluluğu</a></li>
+                    <li><a href="#tr-sec8">8. Garanti Reddi ve Sorumluluk Sınırı</a></li>
+                    <li><a href="#tr-sec9">9. Koşullarda Değişiklik Yapılması</a></li>
+                    <li><a href="#tr-sec10">10. İletişim ve Destek Talepleri</a></li>
+                </ol>
+            </div>
+
+            <h2 id="tr-sec1">🎭 1. Hizmetin Niteliği ve Eğlence Amacı</h2>
+            <p>Zart Zurt, kullanıcılarına eğlenceli çizgi animasyonlar, komik troll ses efektleri ve ses perdesi değiştirme özellikleri sunan bir <strong>mobil eğlence platformudur</strong>. Yalnızca iyi niyetli mizah amaçlıdır; tıbbi, profesyonel veya hayati bir amaç taşımaz.</p>
+
+            <h2 id="tr-sec2">👤 2. Kullanıcı Yaşı ve Hesap Gereksinimi Bulunmaması</h2>
+            <p>Zart Zurt'u kullanmak için kayıt oluşturmanız, hesap açmanız veya kişisel bilgi girmeniz gerekmez. Uygulama genel kitleye yöneliktir; 13 yaş altındaki bireylerin ebeveyn gözetiminde kullanması tavsiye edilir.</p>
+
+            <h2 id="tr-sec3">📲 3. Cihaz Sensörleri ve Salla-Ses Değiştir Özelliği</h2>
+            <p>Uygulama, "Salla & Ses Değiştir" modunda telefonunuzun yerleşik ivmeölçerini anlık ses tonu modülasyonu için kullanır.</p>
+            <div class="highlight-box">
+                <h3>⚠️ Google Play & App Store Uygunluk Beyanı</h3>
+                <p><strong>Bu uygulama bir sağlık, fitness veya adım takip uygulaması DEĞİLDİR.</strong> İvmeölçer verileri yalnızca o anlık ses efekti tetiklemesi için işlenir. Hiçbir sensör verisi kaydedilmez veya harici sunuculara iletilmez.</p>
+            </div>
+
+            <h2 id="tr-sec4">🎨 4. Fikri Mülkiyet ve Lisans Hakları</h2>
+            <p>Uygulama içerisindeki tüm çizgi animasyonlar, ses tasarımları, logolar ve yazılım kodları VB TECH LABS'e aittir ve fikri mülkiyet mevzuatıyla korunmaktadır. Kaynak kodun kopyalanması veya ses dosyalarının ticari dağıtımı yasaktır.</p>
+
+            <h2 id="tr-sec5">💳 5. Uygulama İçi Abonelikler ve Ödemeler (RevenueCat & Google Play)</h2>
+            <div class="highlight-box-blue">
+                <h3>Güvenli Ödeme Altyapısı</h3>
+                <p>Tüm satın alımlar doğrudan <strong>Google Play Billing</strong> güvencesindedir. VB TECH LABS sunucularında asla kredi kartı bilgisi tutulmaz. Aktif abonelik yetkileri <strong>RevenueCat</strong> ile doğrulanır.</p>
+            </div>
+            <ul>
+                <li><strong>İptal:</strong> Aboneliğinizi dilediğiniz an Google Play Store &gt; Abonelikler menüsünden iptal edebilirsiniz.</li>
+                <li><strong>Geri Yükleme (Restore Purchases):</strong> Cihaz değiştirdiğinizde "Satın Alımları Geri Yükle" butonuyla aktif aboneliğinizi hemen geri alabilirsiniz.</li>
+            </ul>
+
+            <h2 id="tr-sec6">📢 6. Reklamlar ve Üçüncü Taraf Bağlantıları</h2>
+            <p>Ücretsiz versiyonumuzda Google AdMob tarafından sunulan reklamlar gösterilebilir. Reklam tercihlerini cihazınızın Google ayarlarından yönetebilirsiniz.</p>
+
+            <h2 id="tr-sec7">⚠️ 7. Kabul Edilebilir Kullanım ve Şaka Sorumluluğu</h2>
+            <p>Kullanıcılar sesleri acil durum hissi yaratmak veya hastane, ibadethane, sınav salonu gibi ortamlarda rahatsızlık vermek amacıyla kullanmamalıdır. Ses seviyesi ve şakanın ortam uygunluğundan kullanıcı bizzat sorumludur.</p>
+
+            <h2 id="tr-sec8">🛡️ 8. Garanti Reddi ve Sorumluluk Sınırı</h2>
+            <p>Uygulama "olduğu gibi" sunulmaktadır. VB TECH LABS, uygulamanın her cihazda kesintisiz çalışacağına dair mutlak bir garanti vermez ve mevzuatın izin verdiği azami ölçüde dolaylı zararlardan sorumlu tutulamaz.</p>
+
+            <h2 id="tr-sec9">🔄 9. Koşullarda Değişiklik Yapılması</h2>
+            <p>VB TECH LABS bu koşulları güncelleme hakkını saklı tutar. Değişiklikler bu web adresinde yayınlandığı andan itibaren yürürlüğe girer.</p>
         </div>
 
-        <div class="toc">
-            <h3>İçindekiler</h3>
-            <ol class="toc-list">
-                <li><a href="#section1">1. Hizmetin Niteliği ve Eğlence Amacı</a></li>
-                <li><a href="#section2">2. Kullanıcı Yaşı ve Hesap Gereksinimi Bulunmaması</a></li>
-                <li><a href="#section3">3. Cihaz Sensörleri ve Salla-Ses Değiştir Özelliği</a></li>
-                <li><a href="#section4">4. Fikri Mülkiyet ve Lisans Hakları</a></li>
-                <li><a href="#section5">5. Uygulama İçi Abonelikler ve Ödemeler (RevenueCat & Google Play)</a></li>
-                <li><a href="#section6">6. Reklamlar ve Üçüncü Taraf Bağlantıları</a></li>
-                <li><a href="#section7">7. Kabul Edilebilir Kullanım ve Şaka Sorumluluğu</a></li>
-                <li><a href="#section8">8. Garanti Reddi ve Sorumluluk Sınırı</a></li>
-                <li><a href="#section9">9. Koşullarda Değişiklik Yapılması</a></li>
-                <li><a href="#section10">10. İletişim ve Destek Talepleri</a></li>
-            </ol>
+        <!-- ENGLISH CONTENT -->
+        <div id="terms-en" style="display: none;">
+            <div class="intro-box">
+                <p>These Terms of Service ("Terms") govern your use of the mobile application <strong>Zart Zurt — Prank, Troll & Funny Sounds</strong> ("App"), developed by <strong>VB TECH LABS</strong> ("we", "us", or "our"). By downloading, installing, or using the App, you agree to be bound by these Terms.</p>
+            </div>
+
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ol class="toc-list">
+                    <li><a href="#en-sec1">1. Purpose and Entertainment Disclaimer</a></li>
+                    <li><a href="#en-sec2">2. User Age and No Account Requirement</a></li>
+                    <li><a href="#en-sec3">3. Device Sensors & Shake-to-Pitch Detection</a></li>
+                    <li><a href="#en-sec4">4. Intellectual Property Rights</a></li>
+                    <li><a href="#en-sec5">5. In-App Subscriptions & Billing (Google Play & RevenueCat)</a></li>
+                    <li><a href="#en-sec6">6. Advertisements (Google AdMob)</a></li>
+                    <li><a href="#en-sec7">7. Acceptable Use & Prank Responsibility</a></li>
+                    <li><a href="#en-sec8">8. Disclaimer of Warranties & Limitation of Liability</a></li>
+                    <li><a href="#en-sec9">9. Modifications to Terms</a></li>
+                    <li><a href="#en-sec10">10. Contact & Support</a></li>
+                </ol>
+            </div>
+
+            <h2 id="en-sec1">🎭 1. Purpose and Entertainment Disclaimer</h2>
+            <p>Zart Zurt is an entertainment mobile application featuring cartoon characters, funny sound effects, and motion-based pitch modulation. It is designed solely for good-natured humor and entertainment. It carries no medical, professional, or safety-related purpose.</p>
+
+            <h2 id="en-sec2">👤 2. User Age and No Account Requirement</h2>
+            <p>Zart Zurt does NOT require registration, account creation, or login credentials. The app is suitable for general audiences. Parental guidance is recommended for children under 13 when accessing in-app purchase options.</p>
+
+            <h2 id="en-sec3">📲 3. Device Sensors & Shake-to-Pitch Detection</h2>
+            <p>The App accesses your device's built-in accelerometer solely to detect shaking motion in real time to modulate audio pitch.</p>
+            <div class="highlight-box">
+                <h3>⚠️ Compliance Declaration for Google Play & App Store</h3>
+                <p><strong>This app is strictly for entertainment and is NOT a health, fitness, or pedometer app.</strong> Accelerometer data is evaluated strictly in real time on your local device. No sensor data is ever recorded, stored, tracked, or transmitted to any external server.</p>
+            </div>
+
+            <h2 id="en-sec4">🎨 4. Intellectual Property Rights</h2>
+            <p>All artwork, cartoon graphics, sound designs, brand elements, and software source code belong exclusively to VB TECH LABS and are protected under international copyright law. Decompiling, reverse engineering, or redistributing audio assets commercially is prohibited.</p>
+
+            <h2 id="en-sec5">💳 5. In-App Subscriptions & Billing (Google Play & RevenueCat)</h2>
+            <div class="highlight-box-blue">
+                <h3>Secure Payment Processing</h3>
+                <p>All purchases are handled directly and securely through <strong>Google Play Billing</strong>. VB TECH LABS never collects or stores credit card details. Active subscription rights are validated via <strong>RevenueCat</strong>.</p>
+            </div>
+            <ul>
+                <li><strong>Cancellation:</strong> You can manage or cancel your subscription at any time via Google Play Store &gt; Payments & Subscriptions.</li>
+                <li><strong>Restore Purchases:</strong> Reinstalling or switching devices allows you to restore active purchases instantly via the "Restore Purchases" button.</li>
+            </ul>
+
+            <h2 id="en-sec6">📢 6. Advertisements (Google AdMob)</h2>
+            <p>The free tier of the App may display advertisements served by Google AdMob. You can adjust personalized advertising preferences in your device's Google Settings.</p>
+
+            <h2 id="en-sec7">⚠️ 7. Acceptable Use & Prank Responsibility</h2>
+            <p>Users must not use sound effects to cause panic, simulate emergency warnings, or disrupt quiet environments (hospitals, schools, worship spaces). Users are solely responsible for ensuring safe audio volume levels.</p>
+
+            <h2 id="en-sec8">🛡️ 8. Disclaimer of Warranties & Limitation of Liability</h2>
+            <p>The App is provided "AS IS" without warranty of any kind. VB TECH LABS shall not be liable for any indirect, incidental, or consequential damages arising from the use of the App.</p>
+
+            <h2 id="en-sec9">🔄 9. Modifications to Terms</h2>
+            <p>We may update these Terms periodically. Updates become effective immediately upon being published on this page.</p>
         </div>
 
-        <h2 id="section1">🎭 1. Hizmetin Niteliği ve Eğlence Amacı</h2>
-        <p>Zart Zurt, kullanıcılarına eğlenceli çizgi animasyonlar, komik troll ses efektleri, ses perdesi değiştirme ve zararsız şakalar sunan bir <strong>mobil eğlence platformudur</strong>.</p>
-        <p>Uygulama yalnızca iyi niyetli, eğlence ve mizah amaçlı kullanım için hazırlanmıştır. Herhangi bir tıbbi, profesyonel, finansal veya hayati amaç taşımaz.</p>
-
-        <h2 id="section2">👤 2. Kullanıcı Yaşı ve Hesap Gereksinimi Bulunmaması</h2>
-        <p>Zart Zurt'u kullanmak için <strong>herhangi bir kayıt oluşturmanız, hesap açmanız veya kişisel bilgi (ad, e-posta, şifre) girmeniz gerekmez</strong>. Uygulamayı yüklediğiniz andan itibaren tüm temel özelliklere anında erişebilirsiniz.</p>
-        <ul>
-            <li>Genel kitleye uygun mizahi ve karikatürize içerikler barındırır.</li>
-            <li>13 yaşın altındaki bireylerin uygulamayı ebeveyn veya yasal vasi gözetiminde kullanması tavsiye edilir.</li>
-            <li>Uygulama içi satın alımlar ebeveyn denetimine tabi olmalıdır.</li>
-        </ul>
-
-        <h2 id="section3">📲 3. Cihaz Sensörleri ve Salla-Ses Değiştir Özelliği</h2>
-        <p>Uygulama bünyesindeki "Salla & Ses Değiştir" modu, cihazınızın yerleşik ivmeölçer (accelerometer) sensörünü kullanarak hareket tespit eder ve ses perdesini veya çalınan efekti anlık olarak modüle eder.</p>
-        <div class="highlight-box">
-            <h3>⚠️ Google Play & App Store Uygunluk Beyanı</h3>
-            <p><strong>Bu uygulama kesinlikle bir sağlık, egzersiz, adım sayar veya fitness takip uygulaması DEĞİLDİR.</strong> İvmeölçer verileri yalnızca ve tamamen o anlık ses tetiklemesi için yerel cihaz belleğinde işlenir. Hiçbir hareket veya sensör verisi kaydedilmez, harici sunucuya iletilmez veya üçüncü taraflarla paylaşılmaz.</p>
-        </div>
-
-        <h2 id="section4">🎨 4. Fikri Mülkiyet ve Lisans Hakları</h2>
-        <p>Zart Zurt uygulaması içerisindeki tüm yazılım kodları, çizgi karakter illüstrasyonları, özel ses tasarımları, logolar, grafikler ve VB TECH LABS markası uluslararası telif ve fikri mülkiyet kanunları ile korunmaktadır.</p>
-        <ul>
-            <li>Kullanıcılara uygulamayı kendi kişisel cihazlarında ticari olmayan amaçlarla kullanabilmeleri için münhasır olmayan, devredilemez ve geri alınabilir bir kullanım lisansı verilir.</li>
-            <li>Uygulamanın kaynak kodunu kopyalamak, parçalara ayırmak (reverse engineer), ses dosyalarını toplu olarak ayıklayıp ticari olarak yeniden dağıtmak kesinlikle yasaktır.</li>
-        </ul>
-
-        <h2 id="section5">💳 5. Uygulama İçi Abonelikler ve Ödemeler (RevenueCat & Google Play)</h2>
-        <p>Zart Zurt, ücretsiz özelliklerin yanı sıra reklamları kaldırmak ve ek premium ses paketlerine erişim sağlamak amacıyla isteğe bağlı abonelik veya uygulama içi satın alım seçenekleri sunabilir:</p>
-        <div class="highlight-box-blue">
-            <h3>Ödeme ve Güvenlik Altyapısı</h3>
-            <p>Tüm satın alma işlemleri doğrudan <strong>Google Play Billing</strong> (veya Apple App Store) altyapısı üzerinden güvenle gerçekleştirilir. <strong>VB TECH LABS sunucularında asla kredi kartı veya banka bilgisi tutulmaz veya işlenmez.</strong></p>
-        </div>
-        <ul>
-            <li><strong>Abonelik Yönetimi ve İptal:</strong> Abonelikler dönem sonundan en az 24 saat önce iptal edilmediği sürece otomatik olarak yenilenebilir. Aboneliğinizi dilediğiniz an Google Play Store &gt; Profil &gt; Ödemeler ve Abonelikler menüsünden iptal edebilirsiniz.</li>
-            <li><strong>Satın Alımları Geri Yükleme (Restore Purchases):</strong> Cihaz değiştirdiğinizde veya uygulamayı yeniden yüklediğinizde, aktif aboneliğinizi uygulama içi "Satın Alımları Geri Yükle" butonu ile kolayca geri yükleyebilirsiniz. Abonelik yetkilendirmesi <strong>RevenueCat</strong> güvenli altyapısı ile doğrulanır.</li>
-            <li><strong>İadeler:</strong> İade talepleri Google Play / App Store'un kendi standart tüketici politikalarına tabidir.</li>
-        </ul>
-
-        <h2 id="section6">📢 6. Reklamlar ve Üçüncü Taraf Bağlantıları</h2>
-        <p>Uygulamanın ücretsiz sunulan bölümlerinde Google AdMob aracılığıyla reklam gösterimleri yapılabilir. Bu reklamlar üçüncü taraf ağlar tarafından yönetilir. Reklam verenlerin web siteleri ve hizmetleri üzerindeki eylemleriniz ilgili reklam verenin kendi gizlilik ve kullanım şartlarına tabidir.</p>
-
-        <h2 id="section7">⚠️ 7. Kabul Edilebilir Kullanım ve Şaka Sorumluluğu</h2>
-        <p>Zart Zurt eğlenceli şakalar yapmak için tasarlanmıştır. Kullanıcılar:</p>
-        <ul>
-            <li>Ses efektlerini insanları panikletmek, acil durum veya tehlike hissi yaratmak amacıyla kullanmamalıdır.</li>
-            <li>Hastaneler, ibadethaneler, okullardaki sınav ortamları veya sessizlik gerektiren kamusal alanlarda rahatsızlık vermekten kaçınmalıdır.</li>
-            <li>Seslerin yüksek ses seviyesinde başkalarının kulağına çok yakın çalınarak işitme rahatsızlığı oluşturmasından kullanıcı bizzat sorumludur.</li>
-        </ul>
-
-        <h2 id="section8">🛡️ 8. Garanti Reddi ve Sorumluluk Sınırı</h2>
-        <p>Uygulama "olduğu gibi" (as is) ve "mevcut olduğu şekilde" (as available) sunulmaktadır. VB TECH LABS, uygulamanın kesintisiz, hatasız veya her cihaz modelinde kusursuz çalışacağına dair zımni veya sarih bir garanti vermez.</p>
-        <p>Yürürlükteki mevzuatın izin verdiği azami ölçüde, uygulamanın kullanımından kaynaklanabilecek doğrudan veya dolaylı maddi/manevi zararlardan VB TECH LABS sorumlu tutulamaz.</p>
-
-        <h2 id="section9">🔄 9. Koşullarda Değişiklik Yapılması</h2>
-        <p>VB TECH LABS, bu Kullanım Koşullarını zaman zaman güncelleme hakkını saklı tutar. Güncellenen koşullar bu sayfada yayımlandığı tarihten itibaren yürürlüğe girer. Önemli değişiklikler uygulama içerisinde veya web sitemizde duyurulacaktır.</p>
-
-        <div class="contact-section" id="section10">
-            <h2>📧 10. İletişim ve Destek</h2>
-            <p>Kullanım koşulları, lisanslama, öneriler veya teknik destek için bize her zaman ulaşabilirsiniz:</p>
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2 data-translate="contact_heading">📧 İletişim ve Destek</h2>
+            <p data-translate="contact_desc">Kullanım koşulları, lisanslama, öneriler veya teknik destek için bize her zaman ulaşabilirsiniz:</p>
             <div class="contact-buttons">
-                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Kullanım%20Koşulları%20Hakkında" class="contact-btn contact-btn-primary">
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Terms%20Inquiry" class="contact-btn contact-btn-primary">
                     <span>✉️</span>
                     <span>bilicisoftwaree@gmail.com</span>
                 </a>
-                <a href="zart-zurt-support.html" class="contact-btn contact-btn-secondary">
+                <a href="zart-zurt-support.html" class="contact-btn contact-btn-secondary" data-translate="btn_sup">
                     <span>🎧</span>
                     <span>Destek & SSS Sayfası</span>
                 </a>
-                <a href="zart-zurt-privacy-policy.html" class="contact-btn contact-btn-secondary">
+                <a href="zart-zurt-privacy-policy.html" class="contact-btn contact-btn-secondary" data-translate="btn_priv">
                     <span>🛡️</span>
                     <span>Gizlilik Politikası</span>
                 </a>
@@ -613,9 +701,93 @@
         </div>
 
         <footer>
-            <p>© 2026 VB TECH LABS &bull; Zart Zurt. Tüm hakları saklıdır.</p>
+            <p data-translate="footer_text">© 2026 VB TECH LABS &bull; Zart Zurt. Tüm hakları saklıdır.</p>
         </footer>
     </div>
+
+    <script>
+        const translations = {
+            tr: {
+                nav_home: "🏠 Ana Sayfa",
+                nav_privacy: "🛡️ Gizlilik Politikası",
+                nav_terms: "📜 Kullanım Koşulları",
+                nav_support: "🎧 Destek & SSS",
+                breadcrumb_terms: "Kullanım Koşulları (Terms of Service)",
+                badge: "<span>🎭</span> Zart Zurt — Şaka, Troll & Komik Sesler",
+                subtitle: "Hukuki Sözleşme & Şartlar",
+                title: "Kullanım Koşulları (Terms of Service)",
+                updated: "📅 Son Güncelleme: Mart 2026 &bull; Sürüm 1.2",
+                card_p_title: "Gizlilik Politikası",
+                card_p_desc: "Veri güvenliği & çerezler",
+                card_s_title: "Destek & SSS",
+                card_s_desc: "Yardım ve sorun giderme",
+                card_c_title: "Geliştirici İletişim",
+                contact_heading: "📧 İletişim ve Destek",
+                contact_desc: "Kullanım koşulları, lisanslama veya teknik destek için bize her zaman ulaşabilirsiniz:",
+                btn_sup: "<span>🎧</span><span>Destek & SSS Sayfası</span>",
+                btn_priv: "<span>🛡️</span><span>Gizlilik Politikası</span>",
+                footer_text: "© 2026 VB TECH LABS &bull; Zart Zurt. Tüm hakları saklıdır."
+            },
+            en: {
+                nav_home: "🏠 Home",
+                nav_privacy: "🛡️ Privacy Policy",
+                nav_terms: "📜 Terms of Service",
+                nav_support: "🎧 Support & FAQ",
+                breadcrumb_terms: "Terms of Service & EULA",
+                badge: "<span>🎭</span> Zart Zurt — Prank & Troll Sounds",
+                subtitle: "Legal Agreement & Terms",
+                title: "Terms of Service (EULA)",
+                updated: "📅 Last Updated: March 2026 &bull; Version 1.2",
+                card_p_title: "Privacy Policy",
+                card_p_desc: "Data protection & privacy",
+                card_s_title: "Support & FAQ",
+                card_s_desc: "Help & troubleshooting",
+                card_c_title: "Developer Contact",
+                contact_heading: "📧 Contact & Inquiries",
+                contact_desc: "For questions about these terms, licensing, or technical assistance, feel free to contact us:",
+                btn_sup: "<span>🎧</span><span>Support & FAQ Page</span>",
+                btn_priv: "<span>🛡️</span><span>Privacy Policy</span>",
+                footer_text: "© 2026 VB TECH LABS &bull; Zart Zurt. All rights reserved."
+            }
+        };
+
+        function switchLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Toggle language buttons
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById('lang-' + lang);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Toggle content blocks
+            const trBlock = document.getElementById('terms-tr');
+            const enBlock = document.getElementById('terms-en');
+            if (lang === 'en') {
+                if (trBlock) trBlock.style.display = 'none';
+                if (enBlock) enBlock.style.display = 'block';
+            } else {
+                if (trBlock) trBlock.style.display = 'block';
+                if (enBlock) enBlock.style.display = 'none';
+            }
+
+            // Translate elements with data-translate
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
+            switchLanguage(savedLang);
+        });
+    </script>
 </body>
 
 </html>
