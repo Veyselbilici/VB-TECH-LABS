@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Zart Zurt Destek, Yardım ve Sıkça Sorulan Sorular (FAQ) Merkezi - VB TECH LABS">
+    <meta name="keywords" content="zart zurt destek, zart zurt support, zart zurt yardım, VB TECH LABS, sıkça sorulan sorular, salla ses modu">
+    <title>Destek & SSS - Zart Zurt | VB TECH LABS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #0f1729;
+            --secondary-navy: #1a2332;
+            --accent-blue: #2563eb;
+            --accent-gold: #d4af37;
+            --accent-orange: #f97316;
+            --accent-pink: #ec4899;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(26, 35, 50, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary-navy);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-small {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Sub Navigation Tabs */
+        .app-subnav {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .subnav-link {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            transition: all 0.25s ease;
+        }
+
+        .subnav-link:hover {
+            color: white;
+            background: rgba(249, 115, 22, 0.15);
+            border-color: rgba(249, 115, 22, 0.4);
+        }
+
+        .subnav-link.active {
+            color: white;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem 5rem;
+        }
+
+        .nav-breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .nav-breadcrumbs a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(236, 72, 153, 0.15));
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fdba74;
+            margin-bottom: 1.25rem;
+        }
+
+        .page-subtitle {
+            color: var(--accent-orange);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .support-hero-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* Support Status Grid */
+        .support-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .support-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .support-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(249, 115, 22, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .support-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .support-card h3 {
+            font-size: 1.15rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .support-card a.action-link {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .support-card a.action-link:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-heading {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .faq-item {
+            background: rgba(26, 35, 50, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(249, 115, 22, 0.35);
+        }
+
+        .faq-question {
+            padding: 1.25rem 1.5rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-question span.toggle-icon {
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        .faq-answer strong {
+            color: #fdba74;
+        }
+
+        .faq-answer ol, .faq-answer ul {
+            padding-left: 1.25rem;
+            margin: 0.75rem 0;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Direct Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(236, 72, 153, 0.12));
+            border: 1px solid rgba(249, 115, 22, 0.35);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-box h2 {
+            font-size: 1.8rem;
+            color: var(--accent-orange);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-box p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 1.75rem;
+            font-size: 1rem;
+        }
+
+        .contact-email-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 1rem 2.25rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+            transition: all 0.3s;
+        }
+
+        .contact-email-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.6);
+        }
+
+        .template-links {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .template-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.45rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .template-btn:hover {
+            color: white;
+            background: rgba(249, 115, 22, 0.2);
+            border-color: rgba(249, 115, 22, 0.4);
+        }
+
+        .info-checklist {
+            background: rgba(15, 23, 41, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem;
+            max-width: 550px;
+            margin: 2rem auto 0;
+            text-align: left;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .info-checklist strong {
+            color: var(--text-secondary);
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .app-subnav {
+                width: 100%;
+            }
+            .container {
+                padding: 2.5rem 1.25rem;
+            }
+            h1 {
+                font-size: 2.1rem;
+            }
+            .contact-box {
+                padding: 2rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="brand-link">
+                <div class="logo-small">ZZ</div>
+                <div class="header-title">Zart Zurt &bull; VB TECH LABS</div>
+            </a>
+            <nav class="app-subnav">
+                <a href="index.html#zart-zurt-app" class="subnav-link">🏠 Ana Sayfa</a>
+                <a href="zart-zurt-privacy-policy.html" class="subnav-link">🛡️ Gizlilik Politikası</a>
+                <a href="zart-zurt-terms.html" class="subnav-link">📜 Kullanım Koşulları</a>
+                <a href="zart-zurt-support.html" class="subnav-link active">🎧 Destek & SSS</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="nav-breadcrumbs">
+            <a href="index.html">VB TECH LABS</a> &gt;
+            <a href="index.html#zart-zurt-app">Zart Zurt</a> &gt;
+            <span>Destek & Yardım Merkezi (Support)</span>
+        </div>
+
+        <div class="page-header">
+            <div class="app-badge">
+                <span>🎧</span> Zart Zurt Destek & Yardım Merkezi
+            </div>
+            <div class="page-subtitle">Sorun Giderme & Kullanıcı Desteği</div>
+            <h1>Nasıl Yardımcı Olabiliriz?</h1>
+            <p class="support-hero-desc">Zart Zurt ile ilgili sorularınız, teknik destek talepleriniz, abonelik işlemleri ve eğlenceli ses önerileriniz için buradayız.</p>
+        </div>
+
+        <!-- 3 Pillars of Support -->
+        <div class="support-cards">
+            <div class="support-card">
+                <div class="icon">💬</div>
+                <h3>E-posta ile İletişim</h3>
+                <p>Sorularınızı ve hata bildirimlerinizi doğrudan geliştirici ekibimize iletin.</p>
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Destek%20Talebi" class="action-link">
+                    bilicisoftwaree@gmail.com &rarr;
+                </a>
+            </div>
+            <div class="support-card">
+                <div class="icon">💳</div>
+                <h3>Abonelik & İade</h3>
+                <p>Google Play Store üzerinden satın alımlarınızı ve aboneliklerinizi yönetin.</p>
+                <a href="#faq-purchases" class="action-link">
+                    Abonelik Adımlarını Gör &rarr;
+                </a>
+            </div>
+            <div class="support-card">
+                <div class="icon">🛡️</div>
+                <h3>Güvenlik & Haklar</h3>
+                <p>Uygulamanın veri gizliliği ve kullanım sözleşmesini detaylı inceleyin.</p>
+                <a href="zart-zurt-privacy-policy.html" class="action-link">
+                    Gizlilik Politikasını Oku &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="section-heading">❓ Sıkça Sorulan Sorular (SSS)</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>1. Sesler çalmıyor veya çok kısık geliyor, ne yapmalıyım?</span>
+                    <span class="toggle-icon">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ses sorunlarının %95'i cihaz ses ayarlarından kaynaklanmaktadır. Lütfen şunları kontrol edin:</p>
+                    <ol>
+                        <li><strong>Medya Ses Seviyesi:</strong> Telefonunuzun yan ses açma tuşuna bastığınızda "Zil Sesi" değil, <strong>"Medya / Uygulama Sesi"</strong> seviyesinin açık ve yüksek olduğundan emin olun.</li>
+                        <li><strong>Sessiz / Titreşim Modu:</strong> Bazı telefon modellerinde (veya iOS cihazlarda yan sessize alma mandalı açıkken) oyun/şaka sesleri sessize alınabilir. Sessiz moddan çıkın.</li>
+                        <li><strong>Bluetooth Bağlantıları:</strong> Cihazınız bir Bluetooth kulaklığa, hoparlöre veya araç teybine bağlıysa ses oraya iletiliyor olabilir.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>2. Telefonu sallayarak ses değiştirme (Shake to change voice) nasıl çalışır?</span>
+                    <span class="toggle-icon">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Zart Zurt'un özel "Salla" modu, telefonunuzun yerleşik ivmeölçerini (hareket algılayıcı) kullanır:</p>
+                    <ul>
+                        <li>Uygulamada bir ses çalarken telefonunuzu hafifçe salladığınızda sesin perdesi (pitch) komik bir şekilde yükselir veya değişir.</li>
+                        <li><strong>Önemli Bilgi:</strong> Bu özellik tamamen anlık eğlence amaçlıdır. Cihazınızdan hiçbir hareket verisi, adım sayısı veya sağlık/fitness bilgisi toplanmaz veya kaydedilmez.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" id="faq-purchases">
+                <div class="faq-question">
+                    <span>3. Abonelik veya paket satın aldım ama özellikler açılmadı, ne yapmalıyım?</span>
+                    <span class="toggle-icon">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Google Play Store ödemenizi onayladıktan sonra yetkilendirme RevenueCat altyapısı ile kontrol edilir. Nadiren ağ gecikmesi yaşanırsa:</p>
+                    <ol>
+                        <li>Uygulama içerisindeki <strong>"Satın Alımları Geri Yükle" (Restore Purchases)</strong> butonuna dokunun.</li>
+                        <li>Cihazınızda Google Play Store'da oturum açtığınız e-posta hesabı ile satın alma yaptığınız hesabın aynı olduğundan emin olun.</li>
+                        <li>Uygulamayı tamamen kapatıp (arka plandan kaydırıp sonlandırın) yeniden açın.</li>
+                        <li>Sorun devam ederse Google Play faturanızdaki Sipariş Numarasını (GPA.xxxx-xxxx-xxxx) bize e-posta ile gönderin; hemen kontrol edelim.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>4. Aboneliğimi nasıl iptal edebilir veya durdurabilirim?</span>
+                    <span class="toggle-icon">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Tüm abonelikler Google Play Store güvencesiyle yönetilir. İstediğiniz zaman şu adımlarla iptal edebilirsiniz:</p>
+                    <ol>
+                        <li>Cihazınızda <strong>Google Play Store</strong> uygulamasını açın.</li>
+                        <li>Sağ üst köşedeki <strong>Profil simgenize</strong> dokunun.</li>
+                        <li><strong>Ödemeler ve Abonelikler &gt; Abonelikler</strong> yolunu izleyin.</li>
+                        <li>Listeden <strong>Zart Zurt</strong> uygulamasını seçin ve <strong>"Aboneliği İptal Et"</strong> butonuna dokunun.</li>
+                    </ol>
+                    <p>Aboneliğinizi iptal etseniz bile, ödediğiniz dönemin sonuna kadar tüm özelliklerden yararlanmaya devam edersiniz.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>5. Reklamları tamamen nasıl kapatabilirim?</span>
+                    <span class="toggle-icon">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Uygulama içerisindeki "Reklamları Kaldır" (Ad-Free) seçeneğini kullanarak banner ve tam ekran reklamları kalıcı olarak kaldırabilir, kesintisiz şaka keyfi yaşayabilirsiniz.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>6. Uygulama ortam seslerimi veya mikrofonumu dinliyor mu?</span>
+                    <span class="toggle-icon">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Kesinlikle HAYIR!</strong> Zart Zurt mikrofon izni istemez, ortam dinlemesi yapmaz ve cihazınızdan herhangi bir ses kaydetmez. Çalınan tüm sesler uygulamanın kendi içinde yer alan çizgi karakter ve troll efekt sesleridir.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>7. Yeni bir komik ses veya karakter fikrim var, önerebilir miyim?</span>
+                    <span class="toggle-icon">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Harika olur! Kullanıcılarımızın önerdiği komik ses efektleri ve çizgi karakterleri güncellemelerle eklemeyi çok seviyoruz. Önerilerinizi <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Yeni%20Ses%20Önerisi" style="color:var(--accent-orange);">bilicisoftwaree@gmail.com</a> adresine iletebilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Direct Contact Box -->
+        <div class="contact-box">
+            <h2>Sorununuz Çözülmedi mi?</h2>
+            <p>Destek ekibimiz uygulamanızla ilgili her türlü soru ve sorunda size yardımcı olmaktan memnuniyet duyar. Genellikle 24 saat içinde yanıt veriyoruz.</p>
+
+            <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20Teknik%20Destek%20Talebi" class="contact-email-btn">
+                <span>✉️</span>
+                <span>Destek Talebi Gönder</span>
+            </a>
+
+            <div class="template-links">
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Abonelik%20Sorunu" class="template-btn">💳 Abonelik Sorunu Bildir</a>
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Hata%20Bildirimi" class="template-btn">🐛 Hata / Bug Bildir</a>
+                <a href="mailto:bilicisoftwaree@gmail.com?subject=Zart%20Zurt%20-%20Yeni%20Ses%20Önerisi" class="template-btn">💡 Yeni Ses / Özellik Öner</a>
+            </div>
+
+            <div class="info-checklist">
+                <strong>Hızlı Çözüm İpucu:</strong>
+                Destek e-postanızda cihaz modelinizi (örn: Samsung S23, Xiaomi 13), Android sürümünüzü ve karşılaştığınız durumun kısa bir açıklamasını belirtmeniz sorununuzu çok daha hızlı çözmemizi sağlar.
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 VB TECH LABS &bull; Zart Zurt Destek Merkezi. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
