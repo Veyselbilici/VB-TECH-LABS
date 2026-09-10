@@ -1236,6 +1236,268 @@
             .zz-ring:nth-child(1) { width: 230px; height: 230px; }
             .zz-ring:nth-child(2) { width: 270px; height: 270px; }
         }
+
+        /* PeriyoDoz App Showcase */
+        .periyodoz-showcase {
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #15091a 0%, #1f0c29 40%, #0f1729 100%);
+            border-top: 1px solid rgba(225, 29, 106, 0.25);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .periyodoz-showcase::before {
+            content: '';
+            position: absolute;
+            top: -40%; left: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(225, 29, 106, 0.15) 0%, rgba(147, 51, 234, 0.08) 50%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(50px);
+            pointer-events: none;
+        }
+        .pz-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .pz-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .pz-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(225, 29, 106, 0.15);
+            border: 1px solid rgba(225, 29, 106, 0.35);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #f472b6;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .pulse-dot-rose {
+            width: 8px; height: 8px;
+            background: #e11d6a;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(225, 29, 106, 0.7);
+            animation: pulse-rose 1.8s infinite;
+        }
+        @keyframes pulse-rose {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(225, 29, 106, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(225, 29, 106, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(225, 29, 106, 0.7); }
+        }
+        .pz-title-row {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .pz-app-icon {
+            width: 72px; height: 72px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 2px solid rgba(244, 114, 182, 0.4);
+            box-shadow: 0 8px 25px rgba(225, 29, 106, 0.4);
+            flex-shrink: 0;
+        }
+        .pz-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            background: linear-gradient(135deg, #ffffff 10%, #fbcfe8 60%, #e11d6a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pz-desc {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.75rem;
+            max-width: 580px;
+        }
+        .pz-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-bottom: 2.25rem;
+        }
+        .pz-feature-tag {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 0.5rem 0.95rem;
+            font-size: 0.85rem;
+            color: #f1f5f9;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.3s;
+        }
+        .pz-feature-tag:hover {
+            background: rgba(225, 29, 106, 0.18);
+            border-color: rgba(225, 29, 106, 0.45);
+            transform: translateY(-2px);
+        }
+        .pz-hub-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .pz-hub-btn {
+            background: rgba(26, 35, 50, 0.85);
+            border: 1px solid var(--border-color);
+            padding: 0.65rem 1.2rem;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .pz-hub-btn:hover {
+            color: white;
+            background: rgba(225, 29, 106, 0.18);
+            border-color: rgba(225, 29, 106, 0.45);
+            transform: translateY(-2px);
+        }
+        .pz-hub-btn.pz-highlight-btn {
+            background: rgba(225, 29, 106, 0.2);
+            border-color: rgba(225, 29, 106, 0.4);
+            color: #fbcfe8;
+        }
+        .pz-hub-btn.pz-highlight-btn:hover {
+            background: var(--accent-rose);
+            color: white;
+            box-shadow: 0 4px 15px rgba(225, 29, 106, 0.4);
+        }
+        .pz-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .pz-mockup-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pz-icon-card {
+            width: 280px; height: 280px;
+            border-radius: 44px;
+            overflow: hidden;
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.6),
+                0 0 50px rgba(225, 29, 106, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            border: 3px solid rgba(244, 114, 182, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+        .pz-icon-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow:
+                0 35px 80px rgba(0, 0, 0, 0.7),
+                0 0 70px rgba(225, 29, 106, 0.55);
+        }
+        .pz-icon-card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .pz-card-inner {
+            padding: 1.5rem;
+        }
+        .pz-card-icon {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 6px 15px rgba(225, 29, 106, 0.5));
+        }
+        .pz-card-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        .pz-card-tagline {
+            font-size: 0.85rem;
+            color: #f472b6;
+            font-weight: 600;
+            margin-top: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+        .pz-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(225, 29, 106, 0.25);
+            animation: float 6s ease-in-out infinite;
+        }
+        .pz-ring:nth-child(1) {
+            width: 350px; height: 350px;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .pz-ring:nth-child(2) {
+            width: 420px; height: 420px;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border-color: rgba(168, 85, 247, 0.2);
+            animation-delay: -2s;
+        }
+        .pz-bubble {
+            position: absolute;
+            font-size: 1.8rem;
+            z-index: 3;
+            animation: float-emoji 3.5s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+        }
+        .pz-bubble:nth-child(3) { top: -15px; right: 10px; animation-delay: 0s; }
+        .pz-bubble:nth-child(4) { bottom: 15px; right: -20px; animation-delay: 1.2s; }
+        .pz-bubble:nth-child(5) { bottom: -10px; left: 10px; animation-delay: 2s; }
+        .pz-bubble:nth-child(6) { top: 20px; left: -25px; animation-delay: 0.6s; }
+
+        @media (max-width: 1024px) {
+            .pz-grid { gap: 2.5rem; }
+            .pz-title { font-size: 2.5rem; }
+            .pz-icon-card { width: 230px; height: 230px; border-radius: 36px; }
+            .pz-ring:nth-child(1) { width: 290px; height: 290px; }
+            .pz-ring:nth-child(2) { width: 350px; height: 350px; }
+        }
+        @media (max-width: 768px) {
+            .periyodoz-showcase { padding: 4.5rem 1.5rem 3rem; }
+            .pz-grid { grid-template-columns: 1fr; text-align: center; }
+            .pz-title-row { justify-content: center; }
+            .pz-desc { margin: 0 auto 1.75rem; }
+            .pz-features { justify-content: center; }
+            .pz-hub-links { justify-content: center; }
+            .pz-visual { order: -1; margin-bottom: 2.5rem; }
+            .pz-title { font-size: 2.1rem; }
+        }
+        @media (max-width: 480px) {
+            .pz-title { font-size: 1.7rem; }
+            .pz-app-icon { width: 56px; height: 56px; border-radius: 14px; font-size: 1.7rem; }
+            .pz-icon-card { width: 190px; height: 190px; border-radius: 28px; }
+            .pz-ring:nth-child(1) { width: 230px; height: 230px; }
+            .pz-ring:nth-child(2) { width: 270px; height: 270px; }
+        }
     </style>
 </head>
 
@@ -1251,6 +1513,7 @@
                 <ul class="nav-links">
                     <li><a href="#falio-app" data-translate="nav_falio">Falio App</a></li>
                     <li><a href="#zart-zurt-app" data-translate="nav_zartzurt">Zart Zurt</a></li>
+                    <li><a href="#periyodoz-app" data-translate="nav_periyodoz">PeriyoDoz</a></li>
                     <li><a href="#services" data-translate="nav_services">Services</a></li>
                     <li><a href="#about" data-translate="nav_about">About</a></li>
                     <li><a href="privacy-policy.html" data-translate="nav_privacy">Privacy Policy</a></li>
@@ -1415,6 +1678,79 @@
         </div>
     </section>
 
+    <!-- PeriyoDoz App Showcase -->
+    <section class="periyodoz-showcase" id="periyodoz-app">
+        <div class="pz-container">
+            <div class="pz-grid">
+                <div class="pz-content">
+                    <div class="pz-badge" data-translate="pz_badge">
+                        <span class="pulse-dot-rose"></span>
+                        Sağlık & İlaç Asistanı — Akıllı Takip
+                    </div>
+                    <div class="pz-title-row">
+                        <img src="periyodoz-icon.png" alt="PeriyoDoz App Icon" class="pz-app-icon">
+                        <h2 class="pz-title" data-translate="pz_title">PeriyoDoz : İlaç Hatırlatıcı,<br>Aile Sağlığı & Döngü</h2>
+                    </div>
+                    <p class="pz-desc" data-translate="pz_desc">
+                        İlaçlarınızı asla unutmayın, ailenizin sağlığını güvenle takip edin! Akıllı ilaç etkileşim uyarısı, tansiyon ve şeker ölçümleri, hidrasyon takibi ve adet döngüsü günlüğü ile eksiksiz sağlık asistanınız. 💊🌸
+                    </p>
+                    <div class="pz-features">
+                        <span class="pz-feature-tag" data-translate="pz_tag_reminders">⏰ Akıllı Doz Hatırlatıcı</span>
+                        <span class="pz-feature-tag" data-translate="pz_tag_interactions">🛡️ İlaç Etkileşim Kontrolü</span>
+                        <span class="pz-feature-tag" data-translate="pz_tag_family">👨‍👩‍👧‍👦 Aile & Bakıcı Takibi</span>
+                        <span class="pz-feature-tag" data-translate="pz_tag_water">💧 Su & Hidrasyon</span>
+                        <span class="pz-feature-tag" data-translate="pz_tag_cycle">🌸 Döngü & Sağlık Günlüğü</span>
+                        <span class="pz-feature-tag" data-translate="pz_tag_privacy">🔒 KVKK & GDPR Güvencesi</span>
+                    </div>
+                    <div class="store-buttons">
+                        <a href="https://play.google.com/store/apps/details?id=com.periyodoz.app" target="_blank" rel="noopener" class="store-btn" onclick="if(this.getAttribute('href').includes('details?id=')) return true;">
+                            <svg viewBox="0 0 24 24" fill="white"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+                            <span class="store-btn-text">
+                                <small data-translate="pz_play_small">HEMEN İNDİR</small>
+                                <strong>Google Play</strong>
+                            </span>
+                        </a>
+                        <a href="#" class="store-btn" style="opacity:0.65; cursor:default;">
+                            <svg viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            <span class="store-btn-text">
+                                <small data-translate="pz_appstore_small">Çok Yakında</small>
+                                <strong>App Store</strong>
+                            </span>
+                        </a>
+                    </div>
+                    <!-- Clickable Hub links -->
+                    <div class="pz-hub-links">
+                        <a href="privacy-periyodoz.html" class="pz-hub-btn pz-highlight-btn">
+                            <span>🛡️</span>
+                            <span data-translate="pz_link_privacy">Gizlilik Politikası</span>
+                        </a>
+                        <a href="periyodoz-hesap-silme.html" class="pz-hub-btn">
+                            <span>🗑️</span>
+                            <span data-translate="pz_link_delete">Hesap & Veri Silme</span>
+                        </a>
+                        <a href="mailto:destek@periyodoz.com" class="pz-hub-btn">
+                            <span>🩺</span>
+                            <span data-translate="pz_link_support">Destek Hattı</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="pz-visual">
+                    <div class="pz-mockup-wrapper">
+                        <div class="pz-ring"></div>
+                        <div class="pz-ring"></div>
+                        <span class="pz-bubble">💊</span>
+                        <span class="pz-bubble">⏰</span>
+                        <span class="pz-bubble">💧</span>
+                        <span class="pz-bubble">🌸</span>
+                        <div class="pz-icon-card">
+                            <img src="periyodoz-icon.png" alt="PeriyoDoz App Icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-subtitle" data-translate="hero_subtitle">Professional Technology Solutions</div>
@@ -1541,6 +1877,9 @@
                     <li><a href="#about" data-translate="nav_about">About Us</a></li>
                     <li><a href="#falio-app" data-translate="nav_falio">Falio App</a></li>
                     <li><a href="#zart-zurt-app" data-translate="nav_zartzurt">Zart Zurt App</a></li>
+                    <li><a href="#periyodoz-app" data-translate="nav_periyodoz">PeriyoDoz App</a></li>
+                    <li><a href="privacy-periyodoz.html" data-translate="pz_footer_privacy">PeriyoDoz Gizlilik</a></li>
+                    <li><a href="periyodoz-hesap-silme.html" data-translate="pz_footer_delete">PeriyoDoz Hesap Silme</a></li>
                     <li><a href="zart-zurt-support.html" data-translate="zz_link_support">Zart Zurt Support</a></li>
                     <li><a href="privacy-policy.html" data-translate="nav_privacy">Privacy Policy</a></li>
                     <li><a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a></li>
@@ -1551,6 +1890,7 @@
                 <h3 data-translate="footer_contact_title">Contact</h3>
                 <ul class="footer-links">
                     <li><a href="mailto:bilicisoftwaree@gmail.com">bilicisoftwaree@gmail.com</a></li>
+                    <li><a href="mailto:destek@periyodoz.com">destek@periyodoz.com</a></li>
                     <li><a href="https://play.google.com/store/apps/dev?id=VBTECHLABS" target="_blank"
                             rel="noopener">Google Play Store</a></li>
                     <li><a href="https://github.com/Veyselbilici" target="_blank" rel="noopener">GitHub</a></li>
@@ -1563,6 +1903,8 @@
             </div>
             <div class="footer-legal">
                 <a href="privacy-policy.html" data-translate="nav_privacy">Privacy Policy</a>
+                <a href="privacy-periyodoz.html">PeriyoDoz Privacy</a>
+                <a href="periyodoz-hesap-silme.html">PeriyoDoz Delete</a>
                 <a href="zart-zurt-privacy-policy.html">Zart Zurt Privacy</a>
                 <a href="zart-zurt-terms.html">Zart Zurt Terms</a>
                 <a href="zart-zurt-support.html">Zart Zurt Support</a>
@@ -1577,6 +1919,7 @@
             tr: {
                 nav_falio: "Falio App",
                 nav_zartzurt: "Zart Zurt",
+                nav_periyodoz: "PeriyoDoz",
                 nav_services: "Hizmetler",
                 nav_about: "Hakkımızda",
                 nav_privacy: "Gizlilik Politikası",
@@ -1608,6 +1951,23 @@
                 zz_link_privacy: "Gizlilik Politikası",
                 zz_link_terms: "Kullanım Koşulları",
                 zz_link_support: "Destek & SSS",
+
+                pz_badge: "<span class=\"pulse-dot-rose\"></span>Sağlık & İlaç Asistanı — Akıllı Takip",
+                pz_title: "PeriyoDoz : İlaç Hatırlatıcı,<br>Aile Sağlığı & Döngü",
+                pz_desc: "İlaçlarınızı asla unutmayın, ailenizin sağlığını güvenle takip edin! Akıllı ilaç etkileşim uyarısı, tansiyon ve şeker ölçümleri, hidrasyon takibi ve adet döngüsü günlüğü ile eksiksiz sağlık asistanınız. 💊🌸",
+                pz_tag_reminders: "⏰ Akıllı Doz Hatırlatıcı",
+                pz_tag_interactions: "🛡️ İlaç Etkileşim Kontrolü",
+                pz_tag_family: "👨‍👩‍👧‍👦 Aile & Bakıcı Takibi",
+                pz_tag_water: "💧 Su & Hidrasyon",
+                pz_tag_cycle: "🌸 Döngü & Sağlık Günlüğü",
+                pz_tag_privacy: "🔒 KVKK & GDPR Güvencesi",
+                pz_play_small: "HEMEN İNDİR",
+                pz_appstore_small: "Çok Yakında",
+                pz_link_privacy: "Gizlilik Politikası",
+                pz_link_delete: "Hesap & Veri Silme",
+                pz_link_support: "Destek Hattı",
+                pz_footer_privacy: "PeriyoDoz Gizlilik",
+                pz_footer_delete: "PeriyoDoz Hesap Silme",
                 
                 hero_subtitle: "Profesyonel Teknoloji Çözümleri",
                 hero_title: "Yenilikçi Mobil<br>& Yazılım Geliştirme",
@@ -1646,6 +2006,7 @@
             en: {
                 nav_falio: "Falio App",
                 nav_zartzurt: "Zart Zurt",
+                nav_periyodoz: "PeriyoDoz",
                 nav_services: "Services",
                 nav_about: "About",
                 nav_privacy: "Privacy Policy",
@@ -1677,6 +2038,23 @@
                 zz_link_privacy: "Privacy Policy",
                 zz_link_terms: "Terms of Service",
                 zz_link_support: "Support & FAQ",
+
+                pz_badge: "<span class=\"pulse-dot-rose\"></span>Health & Med Assistant — Smart Tracking",
+                pz_title: "PeriyoDoz : Pill Reminder,<br>Family Health & Cycle",
+                pz_desc: "Never miss your medications and safeguard your family's health! Smart interaction warnings, blood pressure & glucose logs, hydration tracker, and menstrual cycle diary all in one secure app. 💊🌸",
+                pz_tag_reminders: "⏰ Smart Dose Reminders",
+                pz_tag_interactions: "🛡️ Interaction Checks",
+                pz_tag_family: "👨‍👩‍👧‍👦 Family & Caregiver Sync",
+                pz_tag_water: "💧 Water & Hydration",
+                pz_tag_cycle: "🌸 Cycle & Symptom Diary",
+                pz_tag_privacy: "🔒 KVKK & GDPR Compliant",
+                pz_play_small: "DOWNLOAD NOW",
+                pz_appstore_small: "Coming Soon",
+                pz_link_privacy: "Privacy Policy",
+                pz_link_delete: "Delete Account & Data",
+                pz_link_support: "Health Support Line",
+                pz_footer_privacy: "PeriyoDoz Privacy",
+                pz_footer_delete: "PeriyoDoz Data Deletion",
                 
                 hero_subtitle: "Professional Technology Solutions",
                 hero_title: "Innovative Mobile<br>& Software Development",

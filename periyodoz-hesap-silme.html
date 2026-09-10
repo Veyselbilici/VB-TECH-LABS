@@ -129,14 +129,12 @@
         .app-icon {
             width: 90px;
             height: 90px;
-            background: linear-gradient(135deg, #e11d6a, #9f1239);
             border-radius: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.6rem;
+            object-fit: cover;
             flex-shrink: 0;
             box-shadow: 0 12px 30px rgba(225, 29, 106, 0.35);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: #1a2332;
         }
 
         .hero-text .page-subtitle {
@@ -463,11 +461,17 @@
     </header>
 
     <div class="container">
-        <a href="/" class="back-link">&#8592; Ana Sayfaya Dön</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+            <a href="/" class="back-link" style="margin-bottom: 0;">&#8592; Ana Sayfaya Dön</a>
+            <a href="privacy-periyodoz.html" style="color: #f472b6; text-decoration: none; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.9rem; background: rgba(225,29,106,0.1); border: 1px solid rgba(225,29,106,0.3); border-radius: 6px;">
+                <span>🛡️</span>
+                <span>Gizlilik Politikası</span>
+            </a>
+        </div>
 
         <!-- Hero -->
         <div class="hero-banner">
-            <div class="app-icon">&#128138;</div>
+            <img src="periyodoz-icon.png" alt="PeriyoDoz Icon" class="app-icon">
             <div class="hero-text">
                 <div class="page-subtitle">Hesap &amp; Veri Yönetimi</div>
                 <h1>Hesap ve Veri Silme Talebi</h1>
@@ -561,6 +565,10 @@
 
         <footer>
             <p>&copy; 2026 VB TECH LABS &middot; PeriyoDoz &middot; Tüm hakları saklıdır.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                <a href="/" style="color: #f472b6; text-decoration: none;">Ana Sayfa</a> &middot; 
+                <a href="privacy-periyodoz.html" style="color: #f472b6; text-decoration: none;">Gizlilik Politikası (Privacy Policy)</a>
+            </p>
         </footer>
     </div>
 </body>

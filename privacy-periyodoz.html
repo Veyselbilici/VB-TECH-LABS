@@ -5,27 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="PeriyoDoz Gizlilik Politikası - Kişisel verilerinizin nasıl toplandığı, kullanıldığı ve korunduğu hakkında bilgi edinin.">
-    <meta name="keywords" content="gizlilik politikası, PeriyoDoz, VBTech Labs, sağlık uygulaması, ilaç takibi">
-    <title>Gizlilik Politikası - PeriyoDoz | VB TECH LABS</title>
+        content="PeriyoDoz Gizlilik Politikası (Privacy Policy) - Kişisel ve sağlık verilerinizin nasıl işlendiği, korunduğu ve haklarınız hakkında kapsamlı KVKK & GDPR bilgilendirmesi.">
+    <meta name="keywords" content="gizlilik politikası, privacy policy, PeriyoDoz, VB TECH LABS, sağlık uygulaması, ilaç takibi, kvkk, gdpr">
+    <title>Gizlilik Politikası (Privacy Policy) - PeriyoDoz | VB TECH LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
         rel="stylesheet">
     <style>
         :root {
             --primary-navy: #0f1729;
             --secondary-navy: #1a2332;
+            --card-bg: rgba(26, 35, 50, 0.7);
             --accent-blue: #2563eb;
-            --accent-gold: #d4af37;
             --accent-rose: #e11d6a;
+            --accent-rose-hover: #be185d;
             --accent-rose-soft: rgba(225, 29, 106, 0.12);
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
             --border-color: rgba(255, 255, 255, 0.1);
-            --card-bg: rgba(26, 35, 50, 0.6);
         }
 
         * {
@@ -35,332 +37,564 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--primary-navy);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(225, 29, 106, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(37, 99, 235, 0.07) 0%, transparent 45%);
+            background-attachment: fixed;
         }
 
         header {
-            background: rgba(26, 35, 50, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 41, 0.95);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 0;
+            padding: 1.25rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .header-content {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-area {
+            display: flex;
+            align-items: center;
             gap: 1rem;
+            text-decoration: none;
+            color: inherit;
         }
 
         .logo-small {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--accent-blue), #1e40af);
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--accent-rose), #9f1239);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(225, 29, 106, 0.35);
         }
 
         .header-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .app-badge {
-            margin-left: auto;
             background: var(--accent-rose-soft);
-            border: 1px solid rgba(225, 29, 106, 0.3);
+            border: 1px solid rgba(225, 29, 106, 0.35);
             color: #f472b6;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             padding: 0.35rem 0.9rem;
             border-radius: 20px;
             letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-rose);
+            color: white;
+            box-shadow: 0 2px 8px rgba(225, 29, 106, 0.4);
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .top-nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--accent-blue);
+            color: #f472b6;
             text-decoration: none;
             font-weight: 600;
-            margin-bottom: 3rem;
-            transition: all 0.3s;
             font-size: 0.95rem;
+            transition: all 0.2s;
         }
 
         .back-link:hover {
-            gap: 0.8rem;
+            gap: 0.75rem;
+            color: #ffffff;
         }
 
+        .quick-action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #f59e0b;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 0.4rem 0.9rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .quick-action-link:hover {
+            background: rgba(245, 158, 11, 0.2);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Banner */
         .hero-banner {
-            background: linear-gradient(135deg, rgba(225, 29, 106, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
-            border: 1px solid rgba(225, 29, 106, 0.25);
-            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(225, 29, 106, 0.15) 0%, rgba(37, 99, 235, 0.12) 100%);
+            border: 1px solid rgba(225, 29, 106, 0.3);
+            border-radius: 24px;
             padding: 3rem;
             margin-bottom: 3rem;
             display: flex;
             align-items: center;
             gap: 2.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .app-icon {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #e11d6a, #9f1239);
-            border-radius: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.6rem;
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(225, 29, 106, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .app-icon-large {
+            width: 96px;
+            height: 96px;
+            border-radius: 24px;
+            object-fit: cover;
             flex-shrink: 0;
-            box-shadow: 0 12px 30px rgba(225, 29, 106, 0.35);
+            box-shadow: 0 16px 36px rgba(225, 29, 106, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: #1a2332;
         }
 
-        .hero-text .page-subtitle {
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-subtitle {
             color: #f472b6;
-            font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.75rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
+            line-height: 1.2;
             letter-spacing: -0.02em;
         }
 
-        .last-updated {
-            color: var(--text-secondary);
-            font-size: 0.92rem;
+        .last-updated-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Medical Alert Box */
+        .medical-alert {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 4px solid var(--accent-amber);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .medical-alert .alert-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .medical-alert h3 {
+            margin-top: 0;
+            color: #fbbf24;
+            font-size: 1.15rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .medical-alert p {
             margin: 0;
+            color: #e2e8f0;
+            font-size: 0.95rem;
         }
 
-        .intro-box {
-            background: var(--card-bg);
-            border-left: 4px solid var(--accent-rose);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 3rem;
-        }
-
-        .intro-box p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        .intro-box strong {
-            color: #f472b6;
-            font-weight: 600;
-        }
-
-        .toc {
+        /* Table of Contents */
+        .toc-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 2rem;
-            margin: 2rem 0 3rem;
+            margin-bottom: 3.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
 
-        .toc h3 {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
+        .toc-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #f472b6;
         }
 
-        .toc-list {
-            list-style: decimal;
-            padding-left: 1.5rem;
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.75rem 1.5rem;
+            list-style: none;
         }
 
-        .toc-list li {
-            padding: 0.5rem 0;
-            padding-left: 0.5rem;
+        .toc-grid li a {
             color: var(--text-secondary);
-        }
-
-        .toc-list li::before {
-            content: none;
-        }
-
-        .toc-list a {
-            color: var(--accent-blue);
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            transition: all 0.2s;
         }
 
-        .toc-list a:hover {
-            color: #60a5fa;
+        .toc-grid li a:hover {
+            color: #ffffff;
+            background: rgba(225, 29, 106, 0.12);
+            transform: translateX(4px);
         }
 
+        .toc-num {
+            color: #f472b6;
+            font-weight: 700;
+            font-size: 0.85rem;
+            min-width: 20px;
+        }
+
+        /* Section Headings */
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-top: 3.5rem;
+            margin-top: 4rem;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         h3 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            color: var(--text-primary);
-            margin-top: 2.5rem;
+            color: #f472b6;
+            margin-top: 2rem;
             margin-bottom: 1rem;
         }
 
         p {
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            line-height: 1.75;
         }
 
-        ul {
-            list-style: none;
-            margin-bottom: 2rem;
+        strong {
+            color: #ffffff;
+            font-weight: 600;
         }
 
-        ul li {
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1.5rem 0 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: rgba(26, 35, 50, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        th {
+            background: rgba(225, 29, 106, 0.15);
+            color: #ffffff;
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-secondary);
-            padding: 0.75rem 0;
-            padding-left: 2rem;
-            position: relative;
-            line-height: 1.7;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            vertical-align: top;
         }
 
-        ul li:last-child {
+        tr:last-child td {
             border-bottom: none;
         }
 
-        ul li::before {
-            content: '→';
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Highlight Boxes */
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.75rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .info-card.rose {
+            border-left: 4px solid var(--accent-rose);
+            background: rgba(225, 29, 106, 0.06);
+        }
+
+        .info-card.blue {
+            border-left: 4px solid var(--accent-blue);
+            background: rgba(37, 99, 235, 0.06);
+        }
+
+        .info-card.green {
+            border-left: 4px solid var(--accent-green);
+            background: rgba(16, 185, 129, 0.06);
+        }
+
+        .info-card h4 {
+            color: #ffffff;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Feature Bullet List */
+        .custom-list {
+            list-style: none;
+            margin: 1.25rem 0 2rem;
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .custom-list li::before {
+            content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent-rose);
+            top: 0;
+            color: #f472b6;
             font-weight: bold;
             font-size: 1.1rem;
         }
 
-        ul li strong {
-            color: var(--text-primary);
-        }
-
-        .highlight-box {
-            background: rgba(225, 29, 106, 0.06);
-            border: 1px solid rgba(225, 29, 106, 0.2);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2.5rem 0;
-        }
-
-        .highlight-box h3 {
-            margin-top: 0;
-            color: #f472b6;
-            font-size: 1.15rem;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-        }
-
-        .highlight-box.blue {
-            background: rgba(37, 99, 235, 0.08);
-            border-color: rgba(37, 99, 235, 0.25);
-        }
-
-        .highlight-box.blue h3 {
-            color: #60a5fa;
-        }
-
-        .security-badges {
-            display: flex;
+        /* Security Badges Grid */
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0 2rem;
+            margin: 2rem 0;
         }
 
-        .badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 0.6rem 1rem;
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            font-weight: 500;
+        .badge-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.3s ease;
         }
 
-        .contact-section {
-            background: linear-gradient(135deg, rgba(225, 29, 106, 0.1), rgba(37, 99, 235, 0.08));
-            border: 1px solid rgba(225, 29, 106, 0.25);
-            border-radius: 16px;
+        .badge-card:hover {
+            border-color: rgba(225, 29, 106, 0.4);
+            transform: translateY(-3px);
+            background: rgba(225, 29, 106, 0.08);
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-title {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .badge-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Contact & CTA Section */
+        .contact-box {
+            background: linear-gradient(135deg, rgba(225, 29, 106, 0.15) 0%, rgba(37, 99, 235, 0.12) 100%);
+            border: 1px solid rgba(225, 29, 106, 0.35);
+            border-radius: 20px;
             padding: 3rem;
             margin-top: 4rem;
             text-align: center;
         }
 
-        .contact-section h2 {
-            margin-top: 0;
-            color: #f472b6;
+        .contact-box h2 {
+            border-bottom: none;
             justify-content: center;
+            margin-top: 0;
+            margin-bottom: 1rem;
         }
 
-        .contact-section p {
-            margin-bottom: 2rem;
+        .contact-box p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
 
-        .contact-email {
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-contact {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            color: white;
+            gap: 0.6rem;
             background: var(--accent-rose);
+            color: white;
             text-decoration: none;
             font-weight: 600;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            padding: 0.9rem 1.75rem;
+            border-radius: 10px;
             transition: all 0.3s;
-        }
-
-        .contact-email:hover {
-            background: #be185d;
-            transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(225, 29, 106, 0.4);
         }
 
+        .btn-primary-contact:hover {
+            background: var(--accent-rose-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(225, 29, 106, 0.5);
+        }
+
+        .btn-secondary-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.9rem 1.75rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary-contact:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
         footer {
-            margin-top: 4rem;
+            margin-top: 5rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border-color);
             text-align: center;
@@ -368,177 +602,829 @@
             font-size: 0.9rem;
         }
 
+        footer a {
+            color: #f472b6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .container {
-                padding: 3rem 1.5rem;
+                padding: 2rem 1.25rem 4rem;
             }
 
             .hero-banner {
                 flex-direction: column;
                 text-align: center;
-                padding: 2rem;
+                padding: 2rem 1.5rem;
                 gap: 1.5rem;
             }
 
             h1 {
-                font-size: 2.1rem;
+                font-size: 2rem;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
 
-            h3 {
-                font-size: 1.2rem;
+            .medical-alert {
+                flex-direction: column;
+                padding: 1.25rem;
+            }
+
+            .contact-box {
+                padding: 2rem 1.25rem;
             }
 
             .header-content {
-                padding: 0 1.5rem;
-            }
-
-            .contact-section {
-                padding: 2rem 1.5rem;
-            }
-
-            .security-badges {
-                flex-direction: column;
+                padding: 0 1.25rem;
             }
         }
     </style>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <div class="header-content">
-            <div class="logo-small">VB</div>
-            <div class="header-title">VB TECH LABS</div>
-            <div class="app-badge">PeriyoDoz</div>
+            <a href="/" class="brand-area">
+                <div class="logo-small">VB</div>
+                <div class="header-title">VB TECH LABS</div>
+            </a>
+            <div class="header-actions">
+                <div class="app-badge"><span>💊</span> PeriyoDoz</div>
+                <div class="lang-toggle">
+                    <button id="btn-tr" class="lang-btn active" onclick="switchLanguage('tr')">TR</button>
+                    <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="container">
-        <a href="/" class="back-link">&#8592; Ana Sayfaya Dön</a>
-
-        <!-- Hero Banner -->
-        <div class="hero-banner">
-            <div class="app-icon">&#128138;</div>
-            <div class="hero-text">
-                <div class="page-subtitle">Yasal Belge &middot; Gizlilik</div>
-                <h1>Gizlilik Politikası</h1>
-                <p class="last-updated">&#128197; Son Güncelleme: 11 Ağustos 2026</p>
-            </div>
-        </div>
-
-        <!-- Intro -->
-        <div class="intro-box">
-            <p><strong>VBTech Labs</strong> ("biz", "bize" veya "bizim"), <strong>PeriyoDoz</strong> mobil uygulamasını
-                (bundan böyle "Uygulama" olarak anılacaktır) işletmektedir. Bu sayfa, Uygulamamızı kullandığınızda
-                kişisel verilerin toplanması, kullanılması ve ifşa edilmesiyle ilgili politikalarımız hakkında sizi
-                bilgilendirmek için hazırlanmıştır. Kullanıcı gizliliği bizim için en yüksek önceliktir.</p>
-        </div>
-
-        <!-- TOC -->
-        <div class="toc">
-            <h3>&#128203; İçindekiler</h3>
-            <ol class="toc-list">
-                <li><a href="#section1">Toplanan Veriler ve Kullanım Amacı</a></li>
-                <li><a href="#section2">Veri Güvenliği ve Saklama</a></li>
-                <li><a href="#section3">Üçüncü Taraf Hizmetler</a></li>
-                <li><a href="#section4">Veri Silme Hakkı (Hesap Kapatma)</a></li>
-                <li><a href="#section5">İletişim</a></li>
-            </ol>
-        </div>
-
-        <!-- Section 1 -->
-        <h2 id="section1">&#128203; 1. Toplanan Veriler ve Kullanım Amacı</h2>
-        <p>Uygulamamızı kullanırken, size hizmet verebilmek ve deneyiminizi geliştirmek için aşağıdaki kişisel
-            bilgileri toplayabiliriz:</p>
-
-        <div class="highlight-box">
-            <h3>&#128100; Hesap Bilgileri</h3>
-            <p>E-posta adresi ve isim — profil oluşturma ve hesap yönetimi amacıyla toplanır.</p>
-        </div>
-
-        <div class="highlight-box">
-            <h3>&#129656; Sağlık ve Tıbbi Veriler</h3>
-            <p>İlaç kullanım saatleri, su tüketim verileri (hidrasyon takibi) ve adet döngüsü bilgileri
-                <strong>yalnızca kullanıcı tarafından isteğe bağlı girildiğinde</strong> toplanır.
-            </p>
-        </div>
-
-        <p>Bu veriler yalnızca uygulamanın temel işlevlerini — hatırlatıcılar, ilaç etkileşim uyarıları ve döngü
-            takibi — yerine getirmek amacıyla kullanılır. Verileriniz hiçbir şekilde reklam amacıyla profiliniz
-            oluşturmak için kullanılmaz.</p>
-
-        <!-- Section 2 -->
-        <h2 id="section2">&#128274; 2. Veri Güvenliği ve Saklama</h2>
-        <p>Verilerinizin güvenliği bizim için son derece önemlidir. Aşağıdaki güvenlik önlemlerini uyguluyoruz:</p>
-
-        <div class="security-badges">
-            <div class="badge"><span>&#128274;</span><span>HTTPS / SSL Şifreleme</span></div>
-            <div class="badge"><span>&#128737;</span><span>Erişim Denetimi</span></div>
-            <div class="badge"><span>&#128683;</span><span>Reklam Verisi Paylaşımı Yok</span></div>
-            <div class="badge"><span>&#128138;</span><span>Sağlık Verisi Satışı Yok</span></div>
-        </div>
-
-        <ul>
-            <li>Tüm veriler aktarım sırasında <strong>HTTPS/SSL</strong> protokolüyle şifrelenir.</li>
-            <li>Sağlık verileriniz yetkisiz kişilerle veya <strong>üçüncü taraf reklam şirketleriyle kesinlikle
-                    paylaşılmaz ve satılmaz</strong>.</li>
-            <li>Veriler yalnızca hizmetin gerektirdiği süre boyunca saklanır; hesabınızı sildiğinizde kalıcı olarak
-                kaldırılır.</li>
-        </ul>
-
-        <!-- Section 3 -->
-        <h2 id="section3">&#128295; 3. Üçüncü Taraf Hizmetler</h2>
-        <p>Uygulamamız, temel işlevlerini yerine getirmek için aşağıdaki güvenilir üçüncü taraf hizmetleri
-            kullanmaktadır. Bu hizmetler kendi gizlilik politikalarına tabi olarak çalışır.</p>
-
-        <div class="highlight-box blue">
-            <h3>&#128293; Google Firebase</h3>
-            <p>Hesap yönetimi (kimlik doğrulama) ve güvenli veritabanı işlemleri için kullanılmaktadır. Firebase,
-                Google'ın kurumsal düzeyde güvenlik standartlarına uygun şekilde çalışır.</p>
-        </div>
-
-        <div class="highlight-box blue">
-            <h3>&#128179; RevenueCat</h3>
-            <p>Uygulama içi satın alımların ve premium abonelik yönetiminin güvenli biçimde işlenmesi için
-                kullanılmaktadır. Ödeme bilgileriniz RevenueCat altyapısı üzerinden işlenir ve bizimle paylaşılmaz.</p>
-        </div>
-
-        <!-- Section 4 -->
-        <h2 id="section4">&#128465; 4. Veri Silme Hakkı (Hesap Kapatma)</h2>
-        <p>Kullanıcılar diledikleri zaman hesaplarını ve ilişkili tüm sağlık verilerini kalıcı olarak silebilirler.
-            Bunun için iki yol mevcuttur:</p>
-
-        <ul>
-            <li>Uygulama içindeki <strong>"Hesabımı ve Tüm Verilerimi Sil"</strong> seçeneğini kullanarak anında
-                silebilirsiniz.</li>
-            <li>Aşağıdaki e-posta adresimize ulaşarak silme talebinde bulunabilirsiniz; talebiniz en geç <strong>72
-                    saat</strong> içinde işleme alınır.</li>
-        </ul>
-
-        <div class="highlight-box">
-            <h3>&#9888;&#65039; Önemli Not</h3>
-            <p>Hesabınızın silinmesi geri alınamaz bir işlemdir. İlaç geçmişiniz, döngü verileriniz ve tüm kişisel
-                bilgileriniz sunucularımızdan kalıcı olarak kaldırılır.</p>
-        </div>
-
-        <!-- Contact -->
-        <div class="contact-section" id="section5">
-            <h2>&#128231; 5. İletişim</h2>
-            <p>Bu Gizlilik Politikası hakkında sorularınız varsa, veri silme talebinde bulunmak istiyorsanız veya
-                herhangi bir konuda bizimle iletişime geçmek isterseniz:</p>
-            <a href="mailto:bilicisoftwaree@vbtechlabs.com" class="contact-email">
-                <span>&#9993;&#65039;</span>
-                <span>bilicisoftwaree@vbtechlabs.com</span>
+        <!-- Top Nav -->
+        <div class="top-nav-bar">
+            <a href="/" class="back-link">
+                <span>&#8592;</span>
+                <span id="txt-back">Ana Sayfaya Dön</span>
+            </a>
+            <a href="periyodoz-hesap-silme.html" class="quick-action-link">
+                <span>🗑️</span>
+                <span id="txt-delete-page-link">Hesap ve Veri Silme Sayfası &rarr;</span>
             </a>
         </div>
 
+        <!-- ==================== TURKISH VERSION ==================== -->
+        <div id="content-tr">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <img src="periyodoz-icon.png" alt="PeriyoDoz App Icon" class="app-icon-large">
+                <div class="hero-text">
+                    <div class="page-subtitle">KVKK & GDPR Yasal Aydınlatma Metni</div>
+                    <h1>PeriyoDoz Gizlilik Politikası</h1>
+                    <div class="last-updated-badge">
+                        <span>📅</span>
+                        <span>Son Güncelleme ve Yürürlük: 10 Eylül 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medical Alert -->
+            <div class="medical-alert">
+                <div class="alert-icon">⚠️</div>
+                <div>
+                    <h3>Önemli Uyarı: PeriyoDoz Tıbbi Cihaz Değildir</h3>
+                    <p>PeriyoDoz <strong>tıbbi tavsiye, teşhis veya tedavi sağlamaz</strong>. İlaç etkileşim kontrolü dahil tüm özellikler, sınırlı sayıda bilinen etkileşim kategorisine dayanan otomatik bir hatırlatma/bilgilendirme aracıdır ve eksiksiz değildir. İlaçlarınızla ilgili her kararı mutlaka doktorunuza veya eczacınıza danışarak alınız.</p>
+                </div>
+            </div>
+
+            <!-- Security Badges -->
+            <div class="badges-grid">
+                <div class="badge-card">
+                    <div class="badge-icon">🔒</div>
+                    <div class="badge-title">TLS/HTTPS Şifreleme</div>
+                    <p class="badge-desc">Tüm veri aktarımı şifreli tünellerle korunur</p>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">🛡️</div>
+                    <div class="badge-title">Sağlık Verisi Satılmaz</div>
+                    <p class="badge-desc">Tıbbi verileriniz asla reklamcılara satılmaz</p>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">🔑</div>
+                    <div class="badge-title">İzole Yetkilendirme</div>
+                    <p class="badge-desc">Yalnızca siz ve izin verdiğiniz bakıcınız görür</p>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">🗑️</div>
+                    <div class="badge-title">Anında Silme Hakkı</div>
+                    <p class="badge-desc">Tek tıkla hesabınızı ve tüm verileri silin</p>
+                </div>
+            </div>
+
+            <!-- TOC -->
+            <div class="toc-card">
+                <h3><span>📋</span> İçindekiler</h3>
+                <ul class="toc-grid">
+                    <li><a href="#tr-sec1"><span class="toc-num">1.</span> Bu Politika Kimin ve Neyin Hakkında</a></li>
+                    <li><a href="#tr-sec2"><span class="toc-num">2.</span> Önemli Uyarı: Tıbbi Cihaz Değildir</a></li>
+                    <li><a href="#tr-sec3"><span class="toc-num">3.</span> İşlenen Veriler (Hesap & Sağlık)</a></li>
+                    <li><a href="#tr-sec4"><span class="toc-num">4.</span> İşlenme Amaçları ve Hukuki Dayanak</a></li>
+                    <li><a href="#tr-sec5"><span class="toc-num">5.</span> Verilerin Paylaşıldığı Üçüncü Taraflar</a></li>
+                    <li><a href="#tr-sec6"><span class="toc-num">6.</span> Reklamlar (AdMob)</a></li>
+                    <li><a href="#tr-sec7"><span class="toc-num">7.</span> Verilerin Saklanma Süresi</a></li>
+                    <li><a href="#tr-sec8"><span class="toc-num">8.</span> Haklarınız (KVKK m.11 & GDPR)</a></li>
+                    <li><a href="#tr-sec9"><span class="toc-num">9.</span> Veri Güvenliği Önlemleri</a></li>
+                    <li><a href="#tr-sec10"><span class="toc-num">10.</span> Çocukların Gizliliği</a></li>
+                    <li><a href="#tr-sec11"><span class="toc-num">11.</span> Abonelikler ve Ödemeler</a></li>
+                    <li><a href="#tr-sec12"><span class="toc-num">12.</span> Politika Değişiklikleri</a></li>
+                    <li><a href="#tr-sec13"><span class="toc-num">13.</span> Veri Sorumlusu ve İletişim</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <h2 id="tr-sec1"><span>1.</span> Bu Politika Kimin ve Neyin Hakkında</h2>
+            <p>PeriyoDoz ("Uygulama"), ilaç hatırlatma, ölçüm takibi ve aile sağlık yönetimi amacıyla <strong>VB TECH LABS</strong> tarafından geliştirilmiş bir mobil uygulamadır. Bu politika, Uygulama'yı kullandığınızda hangi verilerin işlendiğini, neden işlendiğini, kimlerle paylaşıldığını ve haklarınızı açıklar.</p>
+            <div class="info-card rose">
+                <h4><span>🏢</span> Veri Sorumlusu Bilgileri</h4>
+                <p><strong>Veri Sorumlusu:</strong> Veysel Bilici (VB TECH LABS)<br>
+                <strong>İletişim E-posta:</strong> <a href="mailto:destek@periyodoz.com" style="color:#f472b6;">destek@periyodoz.com</a> / <a href="mailto:bilicisoftwaree@gmail.com" style="color:#f472b6;">bilicisoftwaree@gmail.com</a><br>
+                <strong>Mevzuat:</strong> 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve AB Genel Veri Koruma Tüzüğü (GDPR)</p>
+            </div>
+
+            <!-- Section 2 -->
+            <h2 id="tr-sec2"><span>2.</span> Önemli Uyarı: Uygulama Tıbbi Cihaz Değildir</h2>
+            <p>PeriyoDoz <strong>tıbbi tavsiye, teşhis veya tedavi sağlamaz</strong>. İlaç etkileşim kontrolü dahil tüm özellikler, sınırlı sayıda bilinen etkileşim kategorisine dayanan otomatik bir hatırlatma ve bilgilendirme aracıdır ve eksiksiz değildir. Uygulamada bir uyarı çıkmaması, hiçbir risk olmadığı anlamına gelmez.</p>
+            <p><strong>İlaçlarınızla ilgili her kararı mutlaka hekiminize veya eczacınıza danışarak alınız.</strong></p>
+
+            <!-- Section 3 -->
+            <h2 id="tr-sec3"><span>3.</span> İşlenen Veriler</h2>
+
+            <h3>3.1 Hesap ve Kimlik Verileri</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Veri Türü</th>
+                            <th>Nasıl Toplanır</th>
+                            <th>İşleme Amacı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>E-posta adresi</strong></td>
+                            <td>Kayıt sırasında siz girersiniz</td>
+                            <td>Hesap oluşturma, giriş ve şifre sıfırlama</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Şifre</strong></td>
+                            <td>Kayıt sırasında siz girersiniz</td>
+                            <td>Kimlik doğrulama. Şifreniz <strong>bize hiçbir zaman ulaşmaz</strong>; Google Firebase Authentication tarafından şifrelenmiş olarak saklanır.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ad / Takma Ad</strong></td>
+                            <td>İsteğe bağlı, siz girersiniz</td>
+                            <td>Uygulama içi kişiselleştirme, bakıcı bildirimlerinde isim belirtme</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yaş, Cinsiyet</strong></td>
+                            <td>İsteğe bağlı, siz girersiniz</td>
+                            <td>Özelliklerin uyarlanması (ör. döngü takibi yalnızca ilgili kullanıcılara gösterilir)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telefon numarası</strong></td>
+                            <td>İsteğe bağlı, siz girersiniz</td>
+                            <td>Yalnızca cihazınızda ve hesabınızda saklanır; SMS gönderimi için kullanılmaz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Profil fotoğrafı</strong></td>
+                            <td>İsteğe bağlı, siz yüklersiniz</td>
+                            <td>Uygulama içi profil görseli</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-card blue">
+                <h4><span>👤</span> Anonim Kullanım İmkanı</h4>
+                <p>Uygulamayı hesap açmadan da kullanabilirsiniz. Bu durumda cihazınıza kimliksiz (anonim) bir kimlik atanır ve verileriniz bu kimlikle ilişkilendirilir. E-posta ile kayıt olduğunuzda mevcut verileriniz korunarak bu kimlik hesabınıza yükseltilir.</p>
+            </div>
+
+            <h3>3.2 Sağlık Verileri (Özel Nitelikli Kişisel Veri)</h3>
+            <p>Aşağıdaki veriler <strong>yalnızca siz girdiğiniz takdirde</strong> işlenir. Uygulama bu verileri cihaz sensörlerinden veya üçüncü taraflardan otomatik olarak toplamaz:</p>
+            <ul class="custom-list">
+                <li><strong>İlaç bilgileri:</strong> İlaç adı, dozaj, kullanım saatleri, hatırlatma günleri, stok miktarı, etken madde, kullanım amacı, reçete notları, ilaç kutusu fotoğrafı</li>
+                <li><strong>Kullanım kayıtları:</strong> İlacı aldığınız/atladığınız zamanlar, düzenlilik istatistikleri</li>
+                <li><strong>Ölçümler:</strong> Tansiyon, kilo, kan şekeri değerleri ve ölçüm tarihleri</li>
+                <li><strong>Sağlık günlüğü:</strong> Ağrı, yan etki, ruh hali, uyku, enerji, stres gibi serbest metin notları</li>
+                <li><strong>Döngü takibi:</strong> Âdet günleri, ruh hali, semptomlar, lekelenme, gebelik testi sonucu ve stres/uyku/egzersiz faktörleri</li>
+                <li><strong>Su tüketimi ve uyku hedefleri</strong></li>
+            </ul>
+            <p>Bu veriler KVKK m.6 anlamında <strong>özel nitelikli kişisel veri</strong> sayılır ve yalnızca <strong>açık rızanıza</strong> dayanarak işlenir. Uygulamayı kullanmayı bırakarak veya hesabınızı silerek bu rızayı her zaman geri çekebilirsiniz.</p>
+
+            <h3>3.3 Aile Üyelerine Ait Veriler ve Bakıcı Bağlantısı</h3>
+            <p>Uygulama, aile üyeleri (çocuk, ebeveyn, eş) için alt profiller oluşturmanıza izin verir. Bir aile üyesi için profil oluşturarak, o kişinin verilerini girmeye yetkili olduğunuzu (veli/vasi olduğunuzu ya da kişinin rızasını aldığınızı) beyan etmiş olursunuz.</p>
+            <p>Bir aile üyesini <strong>"bakıcı"</strong> olarak bağladığınızda size özel, tek kullanımlık bir davet kodu üretilir. Kodu kullanan kişi sizin belirlediğiniz kapsamda ("yalnızca ilaçlar" veya "tam paylaşım") verilerinizi görüntüleyebilir. Doz atlandığında bakıcınıza bildirim iletilir. Bu paylaşımı istediğiniz zaman sonlandırabilirsiniz.</p>
+
+            <h3>3.4 Cihaz İzinleri</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>İzin</th>
+                            <th>Kullanım Amacı</th>
+                            <th>Reddedilirse Ne Olur?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kamera</strong></td>
+                            <td>İlaç kutusu fotoğrafı çekmek, barkod okumak</td>
+                            <td>Fotoğrafı galeriden seçebilir veya ilacı elle ekleyebilirsiniz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fotoğraflar / Galeri</strong></td>
+                            <td>Galeriden ilaç veya profil fotoğrafı seçmek</td>
+                            <td>Uygulama çalışmaya devam eder</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bildirimler</strong></td>
+                            <td>İlaç hatırlatmaları ve bakıcı uyarıları</td>
+                            <td>Hatırlatma alamazsınız — bu, uygulamanın temel işlevidir</td>
+                        </tr>
+                        <tr>
+                            <td><strong>İzleme (yalnızca iOS)</strong></td>
+                            <td>Kişiselleştirilmiş reklam</td>
+                            <td>Reklamlar kişiselleştirilmemiş olarak gösterilir</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 4 -->
+            <h2 id="tr-sec4"><span>4.</span> Verilerin İşlenme Amaçları ve Hukuki Dayanağı</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>İşleme Amacı</th>
+                            <th>Hukuki Dayanak (KVKK / GDPR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hesap oluşturma ve kimlik doğrulama</td>
+                            <td>Sözleşmenin kurulması ve ifası (KVKK m.5/2-c)</td>
+                        </tr>
+                        <tr>
+                            <td>İlaç hatırlatmalarının kurulması ve gönderilmesi</td>
+                            <td>Açık rıza (KVKK m.6/2 - Özel nitelikli veri)</td>
+                        </tr>
+                        <tr>
+                            <td>Sağlık verilerinin saklanması ve cihazlar arası senkronizasyon</td>
+                            <td>Açık rıza</td>
+                        </tr>
+                        <tr>
+                            <td>Bakıcılarla veri paylaşımı</td>
+                            <td>Açık rıza</td>
+                        </tr>
+                        <tr>
+                            <td>Abonelik satın alma ve doğrulama</td>
+                            <td>Sözleşmenin ifası</td>
+                        </tr>
+                        <tr>
+                            <td>Reklam gösterimi (ücretsiz sürüm)</td>
+                            <td>Meşru menfaat / Açık rıza (kişiselleştirilmiş reklam için)</td>
+                        </tr>
+                        <tr>
+                            <td>Hata ayıklama, çökme analizi ve teknik güvenlik</td>
+                            <td>Meşru menfaat (KVKK m.5/2-f)</td>
+                        </tr>
+                        <tr>
+                            <td>Yasal yükümlülüklerin yerine getirilmesi</td>
+                            <td>Hukuki yükümlülük (KVKK m.5/2-ç)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 5 -->
+            <h2 id="tr-sec5"><span>5.</span> Verilerin Paylaşıldığı Üçüncü Taraflar</h2>
+            <p>Verilerinizi <strong>satmıyoruz</strong> ve pazarlama amacıyla üçüncü taraflarla paylaşmıyoruz. Uygulamanın güvenli çalışabilmesi için yalnızca aşağıdaki saygın altyapı sağlayıcıları kullanılmaktadır:</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sağlayıcı</th>
+                            <th>Aktarılan Veri</th>
+                            <th>Kullanım Amacı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Google Firebase</strong> (Auth, Firestore, Cloud Storage, Functions)</td>
+                            <td>Hesap bilgileri, sağlık verileri, fotoğraflar</td>
+                            <td>Bulutta güvenli saklama ve cihazlar arası senkronizasyon (Bölge: Avrupa / eur3)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Firebase Analytics & Crashlytics</strong></td>
+                            <td>Ekran görüntülemeleri, cihaz bilgisi, hata yığını</td>
+                            <td>Kullanım istatistikleri, çökme tespiti ve performans iyileştirme (Sağlık verisi içermez)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Cloud Vision</strong></td>
+                            <td>İlaç kutusu fotoğrafı (yalnızca tarama yapıldığında)</td>
+                            <td>Kutu üzerindeki metnin okunması (OCR)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google AdMob</strong></td>
+                            <td>Reklam kimliği, yaklaşık konum (ülke düzeyi), cihaz bilgisi</td>
+                            <td>Reklam gösterimi (<strong>yalnızca ücretsiz sürümde</strong>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RevenueCat</strong></td>
+                            <td>Anonim kullanıcı kimliği, satın alma fişi</td>
+                            <td>Abonelik durumunun ve faturalandırmanın doğrulanması</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Apple App Store / Google Play</strong></td>
+                            <td>Satın alma bilgileri</td>
+                            <td>Ödeme tahsilatı. Kredi kartı bilgileriniz bize asla ulaşmaz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Expo Push Service</strong></td>
+                            <td>Bildirim jetonu (push token), bildirim metni</td>
+                            <td>Hatırlatma ve bakıcı bildirimlerinin iletilmesi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 6 -->
+            <h2 id="tr-sec6"><span>6.</span> Reklamlar</h2>
+            <p>Ücretsiz sürümde Google AdMob üzerinden reklam gösterilir.</p>
+            <ul class="custom-list">
+                <li><strong>Premium aboneliğe geçtiğinizde reklamlar tamamen kaldırılır.</strong></li>
+                <li>Avrupa Birliği ve Birleşik Krallık'taki kullanıcılara reklam kişiselleştirmesi için Google'ın rıza formu (UMP) gösterilir.</li>
+                <li>iOS'ta uygulama açıldığında izleme izni sorulur; reddedilirse reklamlar kişiselleştirilmeden gösterilir.</li>
+                <li><strong>Sağlık verileriniz reklam hedeflemesi için asla kullanılmaz ve reklam ağlarıyla paylaşılmaz.</strong></li>
+            </ul>
+
+            <!-- Section 7 -->
+            <h2 id="tr-sec7"><span>7.</span> Verilerin Saklanma Süresi</h2>
+            <p>Verileriniz, hesabınız aktif kaldığı sürece saklanır. Hesabınızı sildiğinizde tüm sağlık verileriniz (ilaçlar, ölçümler, günlük kayıtları, aile profilleri ve hesap bilgileriniz) <strong>kalıcı olarak silinir</strong>. Hizmet sağlayıcıların toplu analitik verileri en fazla 14 ay saklanır.</p>
+
+            <!-- Section 8 -->
+            <h2 id="tr-sec8"><span>8.</span> Haklarınız (KVKK m.11 ve GDPR)</h2>
+            <p>KVKK m.11 ve GDPR kapsamında kişisel verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini isteme, silinmesini talep etme ve açık rızanızı geri çekme haklarına sahipsiniz.</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kullanmak İstediğiniz Hak</th>
+                            <th>Uygulama İçinden Nasıl Yapılır?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Verilerinizi düzeltme</strong></td>
+                            <td>Hesap ve profil ekranlarından doğrudan düzenleyebilirsiniz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Verilerinizin kopyasını alma</strong></td>
+                            <td>Ayarlar &rarr; PDF Sağlık Raporu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hesabınızı ve tüm verileri silme</strong></td>
+                            <td><a href="periyodoz-hesap-silme.html" style="color:#f472b6; font-weight:bold;">Hesap &rarr; Hesabımı Sil</a> veya <a href="periyodoz-hesap-silme.html" style="color:#f472b6;">Hesap Silme Sayfası</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bakıcı paylaşımını durdurma</strong></td>
+                            <td>Bakıcı ekranından bağlantıyı kaldırın</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bildirimleri kapatma</strong></td>
+                            <td>Ayarlar &rarr; Bildirimler</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Diğer tüm talepleriniz için <a href="mailto:destek@periyodoz.com" style="color:#f472b6; font-weight:600;">destek@periyodoz.com</a> adresine yazabilirsiniz. Başvurularınız en geç <strong>30 gün</strong> içinde yanıtlanır.</p>
+
+            <!-- Section 9-13 -->
+            <h2 id="tr-sec9"><span>9.</span> Veri Güvenliği</h2>
+            <p>Tüm veri aktarımı <strong>TLS/HTTPS</strong> ile şifrelenir. Sunucu tarafındaki güvenlik kuralları, her kullanıcının yalnızca kendi verisine erişebilmesini teknik olarak zorunlu kılar. Şifreniz Firebase Authentication ile şifrelenir ve tarafımızca görülemez.</p>
+
+            <h2 id="tr-sec10"><span>10.</span> Çocukların Gizliliği</h2>
+            <p>Uygulama 13 yaşın altındaki çocuklara doğrudan yönelik değildir. Ebeveynler, veli/vasi sıfatıyla çocukları için alt profil oluşturabilir; bu veriler ebeveynin sorumluluğunda işlenir. İzniniz dışında bir veri girişi olduğunu düşünüyorsanız lütfen bizimle iletişime geçiniz.</p>
+
+            <h2 id="tr-sec11"><span>11.</span> Abonelikler ve Ödemeler</h2>
+            <p>Premium abonelikler Apple App Store ve Google Play üzerinden satın alınır. Ödeme kartı bilgileriniz bize hiçbir zaman ulaşmaz, işlem tamamen Apple ve Google tarafından yürütülür.</p>
+
+            <h2 id="tr-sec12"><span>12.</span> Politika Değişiklikleri</h2>
+            <p>Bu politika güncellendiğinde uygulama içinde bildirim yapılır ve sayfanın başındaki tarih yenilenir.</p>
+
+            <h2 id="tr-sec13"><span>13.</span> Veri Sorumlusu ve İletişim</h2>
+            <div class="contact-box">
+                <h2><span>📬</span> İletişim ve Destek</h2>
+                <p>Gizlilik politikamızla ilgili herhangi bir sorunuz, öneriniz veya veri silme talebiniz için bize dilediğiniz zaman ulaşabilirsiniz.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:destek@periyodoz.com" class="btn-primary-contact">
+                        <span>✉️</span>
+                        <span>destek@periyodoz.com</span>
+                    </a>
+                    <a href="periyodoz-hesap-silme.html" class="btn-secondary-contact">
+                        <span>🗑️</span>
+                        <span>Hesap Silme Rehberi</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== ENGLISH VERSION ==================== -->
+        <div id="content-en" style="display: none;">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <img src="periyodoz-icon.png" alt="PeriyoDoz App Icon" class="app-icon-large">
+                <div class="hero-text">
+                    <div class="page-subtitle">GDPR & KVKK Compliance Document</div>
+                    <h1>PeriyoDoz Privacy Policy</h1>
+                    <div class="last-updated-badge">
+                        <span>📅</span>
+                        <span>Last Updated & Effective Date: 10 September 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medical Alert -->
+            <div class="medical-alert">
+                <div class="alert-icon">⚠️</div>
+                <div>
+                    <h3>Important Notice: PeriyoDoz is Not a Medical Device</h3>
+                    <p>PeriyoDoz <strong>does not provide medical advice, diagnosis, or treatment</strong>. All features, including the medicine interaction check, are automated reminder and information tools based on a limited set of known interaction categories, and are not exhaustive. Always consult your doctor or pharmacist for any decision about your medication.</p>
+                </div>
+            </div>
+
+            <!-- Security Badges -->
+            <div class="badges-grid">
+                <div class="badge-card">
+                    <div class="badge-icon">🔒</div>
+                    <div class="badge-title">TLS/HTTPS Encryption</div>
+                    <p class="badge-desc">All network traffic is encrypted end-to-end</p>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">🛡️</div>
+                    <div class="badge-title">No Health Data Sold</div>
+                    <p class="badge-desc">Your medical details are never sold to advertisers</p>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">🔑</div>
+                    <div class="badge-title">Isolated Access</div>
+                    <p class="badge-desc">Only accessible by you and authorized caregivers</p>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">🗑️</div>
+                    <div class="badge-title">Right to Erasure</div>
+                    <p class="badge-desc">Delete your account and all data at any time</p>
+                </div>
+            </div>
+
+            <!-- TOC -->
+            <div class="toc-card">
+                <h3><span>📋</span> Table of Contents</h3>
+                <ul class="toc-grid">
+                    <li><a href="#en-sec1"><span class="toc-num">1.</span> Who We Are and What This Covers</a></li>
+                    <li><a href="#en-sec2"><span class="toc-num">2.</span> Important: Not a Medical Device</a></li>
+                    <li><a href="#en-sec3"><span class="toc-num">3.</span> Data We Process</a></li>
+                    <li><a href="#en-sec4"><span class="toc-num">4.</span> Purposes & Legal Basis</a></li>
+                    <li><a href="#en-sec5"><span class="toc-num">5.</span> Third Parties We Share Data With</a></li>
+                    <li><a href="#en-sec6"><span class="toc-num">6.</span> Advertising (Google AdMob)</a></li>
+                    <li><a href="#en-sec7"><span class="toc-num">7.</span> Data Retention Period</a></li>
+                    <li><a href="#en-sec8"><span class="toc-num">8.</span> Your Rights (GDPR & KVKK)</a></li>
+                    <li><a href="#en-sec9"><span class="toc-num">9.</span> Data Security Measures</a></li>
+                    <li><a href="#en-sec10"><span class="toc-num">10.</span> Children's Privacy</a></li>
+                    <li><a href="#en-sec11"><span class="toc-num">11.</span> Subscriptions & Payments</a></li>
+                    <li><a href="#en-sec12"><span class="toc-num">12.</span> Changes to This Policy</a></li>
+                    <li><a href="#en-sec13"><span class="toc-num">13.</span> Data Controller & Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <h2 id="en-sec1"><span>1.</span> Who We Are and What This Covers</h2>
+            <p>PeriyoDoz (the "App") is a mobile application for medication reminders, vital measurements, and family health tracking operated by <strong>VB TECH LABS</strong>. This policy explains what data is processed when you use the App, why, who it is shared with, and what rights you have.</p>
+            <div class="info-card rose">
+                <h4><span>🏢</span> Data Controller Details</h4>
+                <p><strong>Data Controller:</strong> Veysel Bilici (VB TECH LABS)<br>
+                <strong>Email Contact:</strong> <a href="mailto:destek@periyodoz.com" style="color:#f472b6;">destek@periyodoz.com</a> / <a href="mailto:bilicisoftwaree@gmail.com" style="color:#f472b6;">bilicisoftwaree@gmail.com</a><br>
+                <strong>Regulations:</strong> EU General Data Protection Regulation (GDPR) & Turkish Personal Data Protection Law (KVKK)</p>
+            </div>
+
+            <!-- Section 2 -->
+            <h2 id="en-sec2"><span>2.</span> Important: Not a Medical Device</h2>
+            <p>PeriyoDoz <strong>does not provide medical advice, diagnosis, or treatment</strong>. All features, including the medicine interaction check, are automated reminder and information tools based on a limited set of known interaction categories, and are not exhaustive. The absence of a warning in the App does not mean there is no risk. Always consult your doctor or pharmacist for any decision about your medication.</p>
+
+            <!-- Section 3 -->
+            <h2 id="en-sec3"><span>3.</span> Data We Process</h2>
+            <h3>3.1 Account & Identity Data</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>How Collected</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Email address</strong></td>
+                            <td>You enter it at sign-up</td>
+                            <td>Account creation, sign-in, password reset</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Password</strong></td>
+                            <td>You enter it at sign-up</td>
+                            <td>Authentication. Your password <strong>never reaches us</strong>; it is stored encrypted by Firebase Auth.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Name / Nickname</strong></td>
+                            <td>Optional, entered by you</td>
+                            <td>In-app personalization, caregiver alerts attribution</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Age, Gender</strong></td>
+                            <td>Optional, entered by you</td>
+                            <td>Tailoring features (e.g. cycle tracking is only shown to relevant users)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phone number</strong></td>
+                            <td>Optional, entered by you</td>
+                            <td>Stored on your device and account only; never used for marketing SMS</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Profile photo</strong></td>
+                            <td>Optional, uploaded by you</td>
+                            <td>In-app profile image</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3.2 Health Data (Special Category Data)</h3>
+            <p>The following is processed <strong>only if you enter it</strong>. The App does not collect this automatically from sensors or third parties:</p>
+            <ul class="custom-list">
+                <li><strong>Medication details:</strong> Name, dosage, times, reminder days, stock, active ingredient, purpose, prescription notes, box photo</li>
+                <li><strong>Adherence records:</strong> When you took or missed a dose, adherence statistics</li>
+                <li><strong>Measurements:</strong> Blood pressure, weight, blood glucose values and dates</li>
+                <li><strong>Health journal:</strong> Notes on pain, side effects, mood, sleep, energy, and stress</li>
+                <li><strong>Cycle tracking:</strong> Period days, mood, symptoms, spotting, pregnancy test results</li>
+                <li><strong>Water intake and sleep targets</strong></li>
+            </ul>
+            <p>This is <strong>special category data</strong> under GDPR Article 9, processed solely on the basis of your <strong>explicit consent</strong>. You may withdraw consent anytime by deleting your account.</p>
+
+            <h3>3.3 Device Permissions</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Permission</th>
+                            <th>Purpose</th>
+                            <th>If Denied</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Camera</strong></td>
+                            <td>Photo of medication box, barcode scanning</td>
+                            <td>You can pick from gallery or enter manually</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Photos / Media</strong></td>
+                            <td>Select photo from device gallery</td>
+                            <td>App continues functioning normally</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Notifications</strong></td>
+                            <td>Dose reminders and caregiver alerts</td>
+                            <td>You won't receive timely reminders (core feature)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tracking (iOS)</strong></td>
+                            <td>Personalized ads (free version)</td>
+                            <td>Non-personalized ads will be shown instead</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 4 -->
+            <h2 id="en-sec4"><span>4.</span> Purposes & Legal Basis</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Purpose</th>
+                            <th>Legal Basis (GDPR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Account creation and authentication</td>
+                            <td>Performance of contract (Art. 6(1)(b))</td>
+                        </tr>
+                        <tr>
+                            <td>Medication reminders & health tracking</td>
+                            <td>Explicit consent (Art. 9(2)(a))</td>
+                        </tr>
+                        <tr>
+                            <td>Caregiver data sharing</td>
+                            <td>Explicit consent</td>
+                        </tr>
+                        <tr>
+                            <td>Subscription verification</td>
+                            <td>Performance of contract</td>
+                        </tr>
+                        <tr>
+                            <td>Ad serving (free tier)</td>
+                            <td>Legitimate interest / Consent</td>
+                        </tr>
+                        <tr>
+                            <td>Crash analytics & security</td>
+                            <td>Legitimate interest (Art. 6(1)(f))</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 5 -->
+            <h2 id="en-sec5"><span>5.</span> Third Parties We Share Data With</h2>
+            <p>We do not sell your personal data. We utilize industry-leading cloud providers to operate the service:</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Data Shared</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Google Firebase</strong> (EU region)</td>
+                            <td>Account data, encrypted health entries</td>
+                            <td>Cloud storage and real-time syncing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Cloud Vision</strong></td>
+                            <td>Box photo (only upon your scan request)</td>
+                            <td>OCR text recognition on packaging</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google AdMob</strong></td>
+                            <td>Advertising ID, device info (free version only)</td>
+                            <td>In-app advertising</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RevenueCat</strong></td>
+                            <td>Anonymous user ID, receipt data</td>
+                            <td>In-app subscription management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Apple / Google In-App Purchases</strong></td>
+                            <td>Purchase metadata</td>
+                            <td>Payment handling. We never see your card info</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Expo Push Service</strong></td>
+                            <td>Push token, reminder title</td>
+                            <td>Dispatching caregiver notifications</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 6-13 -->
+            <h2 id="en-sec6"><span>6.</span> Advertising</h2>
+            <p>Free tier users may see advertisements via Google AdMob. <strong>Subscribing to Premium completely removes all advertisements.</strong> Health and medical data is strictly never used for ad targeting.</p>
+
+            <h2 id="tr-sec7"><span>7.</span> Data Retention</h2>
+            <p>Your data is retained as long as your account remains active. When you delete your account, all health records, family profiles, and credentials are permanently purged from our servers.</p>
+
+            <h2 id="en-sec8"><span>8.</span> Your Rights (GDPR & KVKK)</h2>
+            <p>You have the right to access, rectify, port, and permanently delete your personal information.</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Your Right</th>
+                            <th>How to Exercise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Rectify data</strong></td>
+                            <td>Directly edit within your profile / medicine screen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Export data</strong></td>
+                            <td>Settings &rarr; Export Health PDF Report</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Delete account & all data</strong></td>
+                            <td><a href="periyodoz-hesap-silme.html" style="color:#f472b6; font-weight:bold;">Account &rarr; Delete Account</a> or visit the <a href="periyodoz-hesap-silme.html" style="color:#f472b6;">Account Deletion Page</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="en-sec9"><span>9.</span> Data Security</h2>
+            <p>All data in transit is protected using TLS/HTTPS encryption. Firestore security rules ensure that each user can only read and write their own records.</p>
+
+            <h2 id="en-sec10"><span>10.</span> Children's Privacy</h2>
+            <p>The App is not directed at children under 13. Parents or guardians may manage medication records on behalf of their children under parental responsibility.</p>
+
+            <h2 id="en-sec11"><span>11.</span> Subscriptions</h2>
+            <p>Subscriptions are billed through Apple App Store or Google Play. You can manage or cancel your subscription at any time via your device's store settings.</p>
+
+            <h2 id="en-sec12"><span>12.</span> Changes to This Policy</h2>
+            <p>We may update this policy periodically. We will notify you in-app upon significant revisions.</p>
+
+            <h2 id="en-sec13"><span>13.</span> Contact & Data Controller</h2>
+            <div class="contact-box">
+                <h2><span>📬</span> Questions & Data Inquiries</h2>
+                <p>Feel free to reach out to us regarding any privacy inquiries or account requests:</p>
+                <div class="contact-buttons">
+                    <a href="mailto:destek@periyodoz.com" class="btn-primary-contact">
+                        <span>✉️</span>
+                        <span>destek@periyodoz.com</span>
+                    </a>
+                    <a href="periyodoz-hesap-silme.html" class="btn-secondary-contact">
+                        <span>🗑️</span>
+                        <span>Account Deletion Guide</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
         <footer>
-            <p>&copy; 2026 VB TECH LABS &middot; PeriyoDoz Gizlilik Politikası &middot; Tüm hakları saklıdır.</p>
+            <p>&copy; 2026 VB TECH LABS &middot; PeriyoDoz &middot; <span id="txt-footer-rights">Tüm hakları saklıdır.</span></p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                <a href="/">VB TECH LABS</a> &middot; 
+                <a href="privacy-policy.html">General Privacy Policy</a> &middot; 
+                <a href="periyodoz-hesap-silme.html">PeriyoDoz Hesap Silme</a>
+            </p>
         </footer>
     </div>
+
+    <!-- Script for language toggling -->
+    <script>
+        function switchLanguage(lang) {
+            localStorage.setItem('periyodoz_policy_lang', lang);
+            
+            const trContent = document.getElementById('content-tr');
+            const enContent = document.getElementById('content-en');
+            const btnTr = document.getElementById('btn-tr');
+            const btnEn = document.getElementById('btn-en');
+            const txtBack = document.getElementById('txt-back');
+            const txtDeleteLink = document.getElementById('txt-delete-page-link');
+            const txtFooterRights = document.getElementById('txt-footer-rights');
+
+            if (lang === 'en') {
+                trContent.style.display = 'none';
+                enContent.style.display = 'block';
+                btnTr.classList.remove('active');
+                btnEn.classList.add('active');
+                if (txtBack) txtBack.textContent = 'Back to Home';
+                if (txtDeleteLink) txtDeleteLink.innerHTML = 'Account & Data Deletion Page &rarr;';
+                if (txtFooterRights) txtFooterRights.textContent = 'All rights reserved.';
+                document.documentElement.lang = 'en';
+            } else {
+                trContent.style.display = 'block';
+                enContent.style.display = 'none';
+                btnEn.classList.remove('active');
+                btnTr.classList.add('active');
+                if (txtBack) txtBack.textContent = 'Ana Sayfaya Dön';
+                if (txtDeleteLink) txtDeleteLink.innerHTML = 'Hesap ve Veri Silme Sayfası &rarr;';
+                if (txtFooterRights) txtFooterRights.textContent = 'Tüm hakları saklıdır.';
+                document.documentElement.lang = 'tr';
+            }
+        }
+
+        // Initialize based on saved preference or browser language
+        document.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('periyodoz_policy_lang');
+            if (saved === 'en') {
+                switchLanguage('en');
+            } else {
+                switchLanguage('tr');
+            }
+        });
+    </script>
 </body>
 
 </html>
