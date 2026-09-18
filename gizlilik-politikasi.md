@@ -16,7 +16,7 @@
 PeriyoDoz ("Uygulama"), ilaç hatırlatma ve aile sağlık takibi amacıyla geliştirilmiş bir mobil uygulamadır. Bu politika, Uygulama'yı kullandığınızda hangi verilerin işlendiğini, neden işlendiğini, kimlerle paylaşıldığını ve haklarınızı açıklar.
 
 **Veri sorumlusu:** `[VERİ SORUMLUSU]`
-**İletişim:** destek@periyodoz.com
+**İletişim:** bilicisoftwaree@gmail.com
 **Adres:** `[ADRES]`
 
 Bu politika 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) kapsamında hazırlanmıştır.
@@ -181,7 +181,7 @@ KVKK m.11 ve GDPR uyarınca şu haklara sahipsiniz:
 | Bakıcı paylaşımını durdurma | Bakıcı ekranından bağlantıyı kaldırın |
 | Bildirimleri kapatma | Ayarlar → Bildirimler |
 
-Diğer talepleriniz için **destek@periyodoz.com** adresine yazabilirsiniz. Başvurularınız en geç **30 gün** içinde yanıtlanır.
+Diğer talepleriniz için **bilicisoftwaree@gmail.com** adresine yazabilirsiniz. Başvurularınız en geç **30 gün** içinde yanıtlanır.
 
 Ayrıca Türkiye'de Kişisel Verileri Koruma Kurumu'na (kvkk.gov.tr), AB'de ise bulunduğunuz ülkenin veri koruma otoritesine şikâyette bulunma hakkınız vardır.
 
@@ -204,7 +204,7 @@ Hiçbir sistem %100 güvenli değildir. Verilerinizi etkileyen bir güvenlik ihl
 
 Uygulama **13 yaşın altındaki çocuklara yönelik değildir** ve doğrudan çocuklardan veri toplamaz.
 
-Ebeveynler, çocukları için alt profil oluşturabilir. Bu durumda çocuğa ait sağlık verileri, **veli/vasi sıfatıyla ve onun sorumluluğunda** girilir. Bir çocuğun verisinin rızanız dışında girildiğini düşünüyorsanız destek@periyodoz.com adresinden bize bildirin; ilgili veriyi derhal sileriz.
+Ebeveynler, çocukları için alt profil oluşturabilir. Bu durumda çocuğa ait sağlık verileri, **veli/vasi sıfatıyla ve onun sorumluluğunda** girilir. Bir çocuğun verisinin rızanız dışında girildiğini düşünüyorsanız bilicisoftwaree@gmail.com adresinden bize bildirin; ilgili veriyi derhal sileriz.
 
 ---
 
@@ -229,6 +229,6 @@ Bu politikayı zaman zaman güncelleyebiliriz. Önemli bir değişiklik olduğun
 
 Gizlilikle ilgili her türlü soru, talep ve şikâyet için:
 
-**E-posta:** destek@periyodoz.com
+**E-posta:** bilicisoftwaree@gmail.com
 **Veri sorumlusu:** `[VERİ SORUMLUSU]`
 **Adres:** `[ADRES]`

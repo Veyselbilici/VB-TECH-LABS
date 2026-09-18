@@ -16,7 +16,7 @@
 PeriyoDoz (the "App") is a mobile application for medication reminders and family health tracking. This policy explains what data is processed when you use the App, why, who it is shared with, and what rights you have.
 
 **Data controller:** `[DATA CONTROLLER]`
-**Contact:** destek@periyodoz.com
+**Contact:** bilicisoftwaree@gmail.com
 **Address:** `[ADDRESS]`
 
 This policy is written to comply with the EU General Data Protection Regulation (GDPR) and Turkish Law No. 6698 on the Protection of Personal Data (KVKK).
@@ -181,7 +181,7 @@ Under GDPR and KVKK you have the right to:
 | Stop caregiver sharing | Remove the link on the Caregiver screen |
 | Turn off notifications | Settings → Notifications |
 
-For anything else, write to **destek@periyodoz.com**. We respond to requests within **30 days**.
+For anything else, write to **bilicisoftwaree@gmail.com**. We respond to requests within **30 days**.
 
 You also have the right to lodge a complaint with your national data protection authority (in Turkey: the Personal Data Protection Authority, kvkk.gov.tr).
 
@@ -204,7 +204,7 @@ No system is completely secure. In the event of a breach affecting your data, we
 
 The App is **not directed at children under 13** and does not knowingly collect data directly from children.
 
-Parents may create sub-profiles for their children. In that case the child's health data is entered **by the parent or guardian and under their responsibility**. If you believe a child's data has been entered without your consent, contact destek@periyodoz.com and we will delete it promptly.
+Parents may create sub-profiles for their children. In that case the child's health data is entered **by the parent or guardian and under their responsibility**. If you believe a child's data has been entered without your consent, contact bilicisoftwaree@gmail.com and we will delete it promptly.
 
 ---
 
@@ -229,6 +229,6 @@ We may update this policy from time to time. When a material change is made, we 
 
 For any privacy question, request or complaint:
 
-**Email:** destek@periyodoz.com
+**Email:** bilicisoftwaree@gmail.com
 **Data controller:** `[DATA CONTROLLER]`
 **Address:** `[ADDRESS]`
