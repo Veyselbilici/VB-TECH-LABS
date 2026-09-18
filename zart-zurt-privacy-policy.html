@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Zart Zurt Privacy Policy / Gizlilik Politikası - Learn how we handle your data in our entertainment application - VB TECH LABS">
-    <meta name="keywords" content="privacy policy, gizlilik politikası, zart zurt, VB TECH LABS, entertainment app, sounds, cartoon">
-    <title>Gizlilik Politikası / Privacy Policy - Zart Zurt | VB TECH LABS</title>
+        content="Zart Zurt Gizlilik Politikası ve Kullanım Koşulları (Privacy Policy & Terms of Use / EULA) - Sıfır veri toplama güvencesi, Apple App Store & Google Play abonelik şartları, otomatik yenileme ve lisans sözleşmesi.">
+    <meta name="keywords" content="gizlilik politikası, kullanım koşulları, privacy policy, terms of use, EULA, zart zurt, VB TECH LABS, apple subscriptions, app store, in-app purchase, prank app">
+    <title>Gizlilik Politikası & Kullanım Koşulları (Terms of Use / EULA) - Zart Zurt | VB TECH LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -487,6 +487,249 @@
                 font-size: 2.1rem;
             }
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .terms-anchor {
+            scroll-margin-top: 100px;
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+        /* Top Legal Tabs Switcher */
+        .legal-nav-tabs {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 4px;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .legal-tab-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 0.45rem 1rem;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .legal-tab-link:hover {
+            color: #ffffff;
+            background: rgba(249, 115, 22, 0.15);
+        }
+
+        .legal-tab-link.active {
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            box-shadow: 0 2px 10px rgba(249, 115, 22, 0.35);
+        }
+
+        /* Apple & Subscription Specific Cards */
+        .apple-compliance-card {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.35);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin: 1.75rem 0;
+            position: relative;
+        }
+
+        .apple-compliance-card.warning-border {
+            border-color: rgba(245, 158, 11, 0.45);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(249, 115, 22, 0.08) 100%);
+        }
+
+        .apple-compliance-card .compliance-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-header .apple-icon-badge {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .compliance-header h4 {
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .plan-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.75rem;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-box:hover {
+            border-color: rgba(249, 115, 22, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .plan-box.featured {
+            border-color: var(--accent-orange);
+            background: linear-gradient(180deg, rgba(249, 115, 22, 0.1) 0%, var(--card-bg) 100%);
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.2);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .plan-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+        }
+
+        .plan-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .plan-features li {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            padding: 0.35rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: 800;
+        }
+
+        .steps-box {
+            background: rgba(15, 23, 41, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem 1.75rem;
+            margin: 1.25rem 0;
+        }
+
+        .steps-box ol {
+            padding-left: 1.4rem;
+            margin: 0;
+        }
+
+        .steps-box ol li {
+            color: var(--text-secondary);
+            margin-bottom: 0.65rem;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        .steps-box ol li strong {
+            color: #ffffff;
+        }
+
+        .eula-action-box {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.14) 0%, rgba(236, 72, 153, 0.16) 100%);
+            border: 2px solid rgba(249, 115, 22, 0.45);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .eula-action-text {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .eula-action-text h4 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+
+        .eula-action-text p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .btn-eula-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #ffffff;
+            color: #0f1729;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.85rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+        }
+
+        .btn-eula-link:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
+        }
     </style>
 </head>
 
@@ -513,10 +756,21 @@
     </header>
 
     <div class="container">
-        <div class="nav-breadcrumbs">
-            <a href="index.html">VB TECH LABS</a> &gt;
-            <a href="index.html#zart-zurt-app">Zart Zurt</a> &gt;
-            <span data-translate="breadcrumb_p">Gizlilik Politikası (Privacy Policy)</span>
+        <div id="privacy-top" class="terms-anchor"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+            <div class="nav-breadcrumbs" style="margin-bottom: 0;">
+                <a href="index.html">VB TECH LABS</a> &gt;
+                <a href="index.html#zart-zurt-app">Zart Zurt</a> &gt;
+                <span data-translate="breadcrumb_p">Gizlilik & Kullanım Koşulları</span>
+            </div>
+            <div class="legal-nav-tabs">
+                <a href="#privacy-top" class="legal-tab-link active" id="tab-link-privacy" onclick="activateLegalTab('privacy')">
+                    <span>🔒</span> <span id="txt-tab-privacy">Gizlilik Politikası</span>
+                </a>
+                <a href="#terms" class="legal-tab-link" id="tab-link-terms" onclick="activateLegalTab('terms')">
+                    <span>⚖️</span> <span id="txt-tab-terms">Kullanım Koşulları & EULA</span>
+                </a>
+            </div>
         </div>
 
         <div class="page-header">
@@ -525,8 +779,8 @@
                 Zart Zurt — Şaka, Troll Sesler
             </div>
             <div class="page-subtitle" data-translate="subtitle">Yasal Dokümantasyon & Güvenlik</div>
-            <h1 data-translate="title">Gizlilik Politikası (Privacy Policy)</h1>
-            <p class="last-updated" data-translate="updated">📅 Son Güncelleme: Mart 2026 &bull; Sürüm 1.2</p>
+            <h1 data-translate="title">Gizlilik Politikası & Kullanım Koşulları</h1>
+            <p class="last-updated" data-translate="updated">📅 Son Güncelleme: 18 Eylül 2026 &bull; Sürüm 1.2</p>
         </div>
 
         <!-- Quick navigation to Terms and Support -->
@@ -573,7 +827,7 @@
                     <li><a href="#tr-p2">2. Kesinlikle Toplamadığımız Bilgiler</a></li>
                     <li><a href="#tr-p3">3. Cihaz Sensörleri & Salla-Ses Değiştir Modu</a></li>
                     <li><a href="#tr-p4">4. Üçüncü Taraf Hizmetleri (Google Play, RevenueCat, Firebase, AdMob)</a></li>
-                    <li><a href="#tr-p5">5. Abonelikler ve Reklamlar</a></li>
+                    <li><a href="#tr-p5">5. Abonelik Şartları, Satın Alımlar ve Kullanım Koşulları (EULA)</a></li>
                     <li><a href="#tr-p6">6. Veri Güvenliği</a></li>
                     <li><a href="#tr-p7">7. Çocukların Gizliliği</a></li>
                     <li><a href="#tr-p8">8. Gizlilik Politikasındaki Değişiklikler</a></li>
@@ -604,16 +858,112 @@
 
             <h2 id="tr-p4">🔧 4. Üçüncü Taraf Entegrasyonları</h2>
             <div class="highlight-box">
-                <h3>Google Play Billing & RevenueCat</h3>
-                <p>İsteğe bağlı abonelikler ve reklam kaldırma satın alımları doğrudan Google Play Billing güvencesindedir. Aktif abonelik hakları <strong>RevenueCat</strong> güvenli altyapısıyla doğrulanır. Finansal kart bilgileriniz tarafımızca asla tutulmaz.</p>
+                <h3>Google Play Billing, Apple In-App Purchase & RevenueCat</h3>
+                <p>İsteğe bağlı abonelikler ve reklam kaldırma satın alımları doğrudan <strong>Apple App Store</strong> ve <strong>Google Play Billing</strong> güvencesindedir. Aktif abonelik hakları <strong>RevenueCat</strong> güvenli altyapısıyla doğrulanır. Finansal kart bilgileriniz tarafımızca asla tutulmaz.</p>
             </div>
             <div class="highlight-box">
                 <h3>Google AdMob & Firebase</h3>
                 <p>Ücretsiz kullanıcılara reklam sunumu için AdMob, ses dosyası barındırma ve anonim kaza raporları için Firebase altyapısı kullanılır. Kişisel veri toplanmaz.</p>
             </div>
 
-            <h2 id="tr-p5">💳 5. Abonelikler ve Reklamlar</h2>
-            <p>Abonelikler Google Play Store üzerinden kolayca yönetilebilir ve iptal edilebilir. Reklam tercihlerinizi Android Cihaz Ayarları &gt; Google &gt; Reklamlar bölümünden kişiselleştirebilirsiniz.</p>
+            <!-- Section 5: Subscriptions, In-App Purchases & EULA -->
+            <div id="terms" class="terms-anchor"></div>
+            <div id="eula" class="terms-anchor"></div>
+            <div id="terms-of-use" class="terms-anchor"></div>
+            <div id="kullanim-kosullari" class="terms-anchor"></div>
+            <h2 id="tr-p5">⚖️ 5. Abonelik Şartları, Satın Alımlar ve Kullanım Koşulları (Terms of Use / EULA)</h2>
+
+            <!-- Apple Store Transparency Alert -->
+            <div class="apple-compliance-card">
+                <div class="compliance-header">
+                    <div class="apple-icon-badge">🍎</div>
+                    <div>
+                        <h4>Apple App Store & Google Play Yasal Abonelik Şeffaflığı</h4>
+                        <p style="margin:0; font-size:0.88rem; color:#94a3b8;">Apple App Store İnceleme Kılavuzu Kural 3.1.2 (Subscriptions) ve Tüketici Hakları uyarınca hazırlanmıştır.</p>
+                    </div>
+                </div>
+                <p style="margin-bottom:0.75rem; color:#e2e8f0; font-size:0.95rem;">
+                    Zart Zurt uygulamasında sunulan Premium / VIP ses paketleri ve Reklamsız Sürüm satın alımları, Apple ve Google'ın güvenli uygulama içi satın alma (In-App Purchase) altyapısı üzerinden tahsil edilir. Kredi kartı bilgileriniz VB TECH LABS sunucularına asla iletilmez ve saklanmaz.
+                </p>
+            </div>
+
+            <p>Zart Zurt temel özellikleri ve popüler troll sesleriyle ücretsizdir. Reklamsız ve tüm ses efektlerinin kilidini açan aşağıdaki isteğe bağlı otomatik yenilenen paketler sunulmaktadır:</p>
+
+            <div class="plans-grid">
+                <div class="plan-box">
+                    <div class="plan-title">Aylık VIP Ses Paketi</div>
+                    <div class="plan-desc">Aylık olarak faturalandırılan otomatik yenilenen abonelik.</div>
+                    <ul class="plan-features">
+                        <li>100+ premium ses ve özel animasyon kilidi</li>
+                        <li>Tamamen reklamsız kesintisiz deneyim</li>
+                        <li>Gelişmiş salla-ses perde modülasyonu</li>
+                        <li>Yeni eklenecek troll seslere anında erişim</li>
+                    </ul>
+                </div>
+                <div class="plan-box featured">
+                    <div class="plan-badge">Popüler</div>
+                    <div class="plan-title">Yıllık VIP / Sınırsız</div>
+                    <div class="plan-desc">Yıllık indirimli olarak faturalandırılan otomatik yenilenen abonelik.</div>
+                    <ul class="plan-features">
+                        <li>Tüm Aylık VIP ses özellikleri dahildir</li>
+                        <li>Önemli oranda yıllık fiyat tasarrufu</li>
+                        <li>Tüm yeni karakter güncellemelerine sınırsız erişim</li>
+                        <li>Kesintisiz çevrimdışı ses kütüphanesi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="apple-compliance-card warning-border">
+                <div class="compliance-header">
+                    <div class="apple-icon-badge">🔄</div>
+                    <div>
+                        <h4>Otomatik Yenileme (Auto-Renewal) Şartları ve Bildirimi</h4>
+                        <p style="margin:0; font-size:0.88rem; color:#94a3b8;">Apple Guideline 3.1.2 gereği zorunlu bilgilendirme</p>
+                    </div>
+                </div>
+                <ul class="custom-list" style="margin-bottom:0;">
+                    <li><strong>Ödeme Tahsilatı:</strong> Satın alma onaylandığında ücret kullanıcının <strong>Apple Kimliği (Apple ID / iTunes Hesabı)</strong> veya Google Play hesabından tahsil edilir.</li>
+                    <li><strong>Otomatik Yenileme Kuralı:</strong> Abonelik, mevcut abonelik süresinin bitiminden en az <strong>24 saat önce</strong> otomatik yenileme kapatılmadığı sürece kendiliğinden otomatik olarak yenilenir.</li>
+                    <li><strong>Hesap Tahsilat Zamanı:</strong> Mevcut dönemin bitiminden önceki <strong>24 saat içinde</strong>, Apple ID / iTunes hesabından yenileme ücreti tahsil edilir ve yenileme tutarı belirtilir.</li>
+                </ul>
+            </div>
+
+            <div class="steps-box">
+                <p style="margin-bottom:0.75rem; color:#ffffff; font-weight:700;">📱 iOS (iPhone / iPad) Cihazlarda İptal Adımları:</p>
+                <ol>
+                    <li>iPhone veya iPad'inizde <strong>Ayarlar (Settings)</strong> uygulamasını açın.</li>
+                    <li>En üstteki <strong>[Adınız / Apple Kimliğiniz]</strong> alanına dokunun.</li>
+                    <li><strong>"Abonelikler" (Subscriptions)</strong> seçeneğine dokunun.</li>
+                    <li>Listeden <strong>Zart Zurt</strong> uygulamasını seçin.</li>
+                    <li><strong>"Aboneliği İptal Et" (Cancel Subscription)</strong> butonuna dokunun ve onaylayın.</li>
+                </ol>
+            </div>
+
+            <div class="steps-box">
+                <p style="margin-bottom:0.75rem; color:#ffffff; font-weight:700;">🤖 Android Cihazlarda İptal Adımları:</p>
+                <ol>
+                    <li><strong>Google Play Store</strong> uygulamasını açın &rarr; Profil Simgesi &rarr; <strong>Ödemeler ve Abonelikler</strong> &rarr; <strong>Abonelikler</strong> &rarr; <strong>Zart Zurt</strong> &rarr; <strong>"Aboneliği İptal Et"</strong>.</li>
+                </ol>
+            </div>
+
+            <p><strong>Ücretsiz Deneme:</strong> Varsa sunulan ücretsiz deneme süresinin kullanılmayan kısmı, kullanıcı ilgili aboneliği satın aldığında feragat edilir.</p>
+            <p><strong>İadeler:</strong> Apple App Store üzerinden yapılan satın alımların iadesi Apple politikalarına tabidir ve <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent-orange); font-weight:bold;">reportaproblem.apple.com</a> adresi üzerinden talep edilebilir.</p>
+
+            <!-- EULA Link Box -->
+            <div class="eula-action-box">
+                <div class="eula-action-text">
+                    <h4>⚖️ Apple Standart Lisans Sözleşmesi (EULA)</h4>
+                    <p>Zart Zurt iOS uygulaması, Apple'ın resmi <strong>Standart Son Kullanıcı Lisans Sözleşmesi (Standard EULA)</strong> şartlarına tabidir. Uygulamayı indirerek veya kullanarak hem Apple Standart EULA şartlarını hem de VB TECH LABS kullanım kurallarını kabul etmiş sayılırsınız.</p>
+                </div>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="btn-eula-link">
+                    <span>Apple Standart EULA Metni ↗</span>
+                </a>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔊 İşitme Güvenliği ve Eğlence Sorumluluk Reddi</h3>
+                <p>Zart Zurt yalnızca mizah ve eğlence amaçlıdır. Ses efektleri yüksek ses düzeyinde bir kişinin kulağının hemen dibinde çalınmamalıdır; aşırı ses seviyeleri geçici veya kalıcı işitme rahatsızlığına yol açabilir. Kullanıcılar sesleri çevreye zarar vermeyecek ve acil durum algısı yaratmayacak şekilde kullanmakla yükümlüdür.</p>
+            </div>
 
             <h2 id="tr-p6">🔐 6. Veri Güvenliği</h2>
             <p>Kişisel veri toplamamakla birlikte, tüm ağ iletişimlerinde şifreli HTTPS/SSL protokolleri kullanılır ve yalnızca Google gibi güvenilir SDK sağlayıcıları tercih edilir.</p>
@@ -649,7 +999,7 @@
                     <li><a href="#zz-section2">2. Information We Do NOT Collect</a></li>
                     <li><a href="#zz-section3">3. Device Sensors & Shake Detection (Voice-Changing Feature)</a></li>
                     <li><a href="#zz-section4">4. Third-Party Services & RevenueCat Integration</a></li>
-                    <li><a href="#zz-section5">5. Subscriptions, Payments & Advertisements</a></li>
+                    <li><a href="#zz-section5">5. Subscriptions, In-App Purchases & Terms of Use (EULA)</a></li>
                     <li><a href="#zz-section6">6. Data Security</a></li>
                     <li><a href="#zz-section7">7. Children's Privacy</a></li>
                     <li><a href="#zz-section8">8. Changes to This Privacy Policy</a></li>
@@ -664,9 +1014,9 @@
             <p>We want to be completely transparent: <strong>Zart Zurt does not collect any personally identifiable information:</strong></p>
             <ul>
                 <li>Names, email addresses, or phone numbers</li>
-                <li>User accounts, passwords, or personal login credentials</li>
-                <li>Location data or GPS information</li>
-                <li>Health, fitness, or physical activity tracking data</li>
+                <li>User accounts, passwords, or profile credentials</li>
+                <li>Precise GPS or location data</li>
+                <li>Health, fitness, step counting, or physical activity records</li>
                 <li>Contacts, personal photos, or private files from your device</li>
                 <li>Credit card or payment credentials (all payments are processed directly by Google Play)</li>
             </ul>
@@ -681,16 +1031,110 @@
 
             <h2 id="zz-section4">🔧 4. Third-Party Services & RevenueCat Integration</h2>
             <div class="highlight-box">
-                <h3>Google Play Billing & RevenueCat</h3>
-                <p>Optional in-app subscriptions and ad removal passes are securely processed by <strong>Google Play Billing</strong> and verified via <strong>RevenueCat</strong>. We do not process, collect, or store payment card details on our own servers.</p>
+                <h3>Google Play Billing, Apple In-App Purchase & RevenueCat</h3>
+                <p>Optional in-app subscriptions and ad removal passes are securely processed by <strong>Apple App Store</strong> and <strong>Google Play Billing</strong> and verified via <strong>RevenueCat</strong>. We do not process, collect, or store payment card details on our own servers.</p>
             </div>
             <div class="highlight-box">
                 <h3>Google AdMob & Firebase</h3>
                 <p>We use Google AdMob to serve advertisements in the free version. Device identifiers (such as Advertising ID) may be used by AdMob. We also use Firebase for delivering sound assets and anonymous crash diagnostics.</p>
             </div>
 
-            <h2 id="zz-section5">💳 5. Subscriptions, Payments & Advertisements</h2>
-            <p>Zart Zurt offers optional monthly subscriptions to unlock premium sound packs or remove advertisements. Subscriptions can be canceled at any time via the Google Play Store app under Subscriptions.</p>
+            <!-- Section 5: Subscriptions, In-App Purchases & EULA -->
+            <div id="en-terms" class="terms-anchor"></div>
+            <div id="en-eula" class="terms-anchor"></div>
+            <h2 id="zz-section5">⚖️ 5. Subscriptions, In-App Purchases & Terms of Use (EULA)</h2>
+
+            <!-- Apple Store Transparency Alert -->
+            <div class="apple-compliance-card">
+                <div class="compliance-header">
+                    <div class="apple-icon-badge">🍎</div>
+                    <div>
+                        <h4>Apple App Store & Google Play Legal Subscription Transparency</h4>
+                        <p style="margin:0; font-size:0.88rem; color:#94a3b8;">Compliant with Apple App Store Review Guideline 3.1.2 (Subscriptions) & Consumer Rights.</p>
+                    </div>
+                </div>
+                <p style="margin-bottom:0.75rem; color:#e2e8f0; font-size:0.95rem;">
+                    All VIP Sound Passes and Ad-Free upgrades in Zart Zurt are processed through Apple's In-App Purchase and Google Play Billing systems. VB TECH LABS never handles or stores payment card information.
+                </p>
+            </div>
+
+            <p>Zart Zurt is free with essential funny soundboards. To enjoy an ad-free experience with all cartoon sound effects unlocked, the following auto-renewing subscriptions are offered:</p>
+
+            <div class="plans-grid">
+                <div class="plan-box">
+                    <div class="plan-title">Monthly VIP Sound Pass</div>
+                    <div class="plan-desc">Billed on a recurring monthly cycle with automatic renewal.</div>
+                    <ul class="plan-features">
+                        <li>Unlock 100+ funny troll sounds & character animations</li>
+                        <li>Completely ad-free continuous playback</li>
+                        <li>Advanced shake-to-pitch sound modulations</li>
+                        <li>Instant access to upcoming seasonal sound updates</li>
+                    </ul>
+                </div>
+                <div class="plan-box featured">
+                    <div class="plan-badge">Popular</div>
+                    <div class="plan-title">Annual VIP / Unlimited</div>
+                    <div class="plan-desc">Billed annually at a discounted rate with automatic renewal.</div>
+                    <ul class="plan-features">
+                        <li>Includes all Monthly VIP sound features</li>
+                        <li>Significant annual pricing savings</li>
+                        <li>Unlimited lifetime access to future character packs</li>
+                        <li>Full offline sound playback library</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="apple-compliance-card warning-border">
+                <div class="compliance-header">
+                    <div class="apple-icon-badge">🔄</div>
+                    <div>
+                        <h4>Auto-Renewal Terms & Disclosures</h4>
+                        <p style="margin:0; font-size:0.88rem; color:#94a3b8;">Mandatory disclosure under Apple Guideline 3.1.2</p>
+                    </div>
+                </div>
+                <ul class="custom-list" style="margin-bottom:0;">
+                    <li><strong>Payment Billing:</strong> Payment will be charged to your <strong>Apple ID / iTunes Account</strong> or Google Play Account upon confirmation of purchase.</li>
+                    <li><strong>Automatic Renewal:</strong> Subscription automatically renews unless auto-renew is turned off at least <strong>24 hours before the end of the current billing period</strong>.</li>
+                    <li><strong>Account Renewal Charge:</strong> Your account will be charged for renewal within the <strong>24 hours prior to the end of the current period</strong>, and will specify the cost of renewal.</li>
+                </ul>
+            </div>
+
+            <div class="steps-box">
+                <p style="margin-bottom:0.75rem; color:#ffffff; font-weight:700;">📱 How to Cancel on iOS (iPhone / iPad):</p>
+                <ol>
+                    <li>Open the <strong>Settings</strong> app on your device.</li>
+                    <li>Tap your <strong>[Name / Apple ID]</strong> banner at the top.</li>
+                    <li>Tap <strong>"Subscriptions"</strong>.</li>
+                    <li>Select <strong>Zart Zurt</strong> from your active subscriptions.</li>
+                    <li>Tap <strong>"Cancel Subscription"</strong> and confirm.</li>
+                </ol>
+            </div>
+
+            <div class="steps-box">
+                <p style="margin-bottom:0.75rem; color:#ffffff; font-weight:700;">🤖 How to Cancel on Android:</p>
+                <ol>
+                    <li>Open <strong>Google Play Store</strong> &rarr; Profile icon &rarr; <strong>Payments & subscriptions</strong> &rarr; <strong>Subscriptions</strong> &rarr; <strong>Zart Zurt</strong> &rarr; <strong>Cancel subscription</strong>.</li>
+                </ol>
+            </div>
+
+            <p><strong>Free Trial:</strong> Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription, where applicable.</p>
+            <p><strong>Refunds:</strong> Purchases made via Apple App Store are subject to Apple's refund policies. To request a refund, please visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent-orange); font-weight:bold;">reportaproblem.apple.com</a>.</p>
+
+            <!-- EULA Link Box -->
+            <div class="eula-action-box">
+                <div class="eula-action-text">
+                    <h4>⚖️ Standard Apple End User License Agreement (EULA)</h4>
+                    <p>Zart Zurt for iOS is licensed to you subject to Apple's official <strong>Standard Licensed Application End User License Agreement (Standard EULA)</strong>. By downloading or using the App, you agree to the Apple Standard EULA and VB TECH LABS Terms.</p>
+                </div>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="btn-eula-link">
+                    <span>Apple Standard EULA ↗</span>
+                </a>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔊 Hearing Safety & Entertainment Disclaimer</h3>
+                <p>Zart Zurt is designed purely for comedy and entertainment. Sound effects should never be played at excessive volumes directly next to anyone's ears, as loud noise may cause temporary or permanent hearing discomfort. Users are responsible for exercising good judgment in public and sensitive environments.</p>
+            </div>
 
             <h2 id="zz-section6">🔐 6. Data Security</h2>
             <p>All network communications utilize encrypted (HTTPS/SSL) connections and only reputable SDK providers (Google) are used.</p>
@@ -778,10 +1222,52 @@
                 btn_s: "Support & FAQ",
                 footer_copy: "© 2026 VB TECH LABS &bull; Zart Zurt. All rights reserved.",
                 f_priv: "Privacy Policy",
-                f_terms: "Terms of Service",
-                f_sup: "Support & FAQ"
+                f_terms: "Terms of Service & EULA",
+                f_sup: "Support & FAQ",
+                txt_tab_privacy: "Privacy Policy",
+                txt_tab_terms: "Terms of Use & EULA"
             }
         };
+
+        function activateLegalTab(tab) {
+            const tabPrivacy = document.getElementById('tab-link-privacy');
+            const tabTerms = document.getElementById('tab-link-terms');
+            const isEn = document.documentElement.lang === 'en';
+
+            if (tab === 'terms') {
+                if (tabTerms) tabTerms.classList.add('active');
+                if (tabPrivacy) tabPrivacy.classList.remove('active');
+                const targetId = isEn ? 'en-terms' : 'terms';
+                const el = document.getElementById(targetId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                if (tabPrivacy) tabPrivacy.classList.add('active');
+                if (tabTerms) tabTerms.classList.remove('active');
+                const el = document.getElementById('privacy-top');
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        function checkHashAndScroll() {
+            const hash = window.location.hash.toLowerCase();
+            if (hash === '#terms' || hash === '#eula' || hash === '#terms-of-use' || hash === '#kullanim-kosullari' || hash === '#en-terms' || hash === '#en-eula') {
+                const tabPrivacy = document.getElementById('tab-link-privacy');
+                const tabTerms = document.getElementById('tab-link-terms');
+                if (tabTerms) tabTerms.classList.add('active');
+                if (tabPrivacy) tabPrivacy.classList.remove('active');
+
+                const isEn = document.documentElement.lang === 'en';
+                const targetId = isEn ? 'en-terms' : 'terms';
+                setTimeout(() => {
+                    const el = document.getElementById(targetId);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
 
         function switchLanguage(lang) {
             localStorage.setItem('preferredLanguage', lang);
@@ -812,12 +1298,20 @@
                 }
             });
 
+            // Update tab texts
+            const txtPrivacy = document.getElementById('txt-tab-privacy');
+            const txtTerms = document.getElementById('txt-tab-terms');
+            if (txtPrivacy) txtPrivacy.textContent = lang === 'en' ? 'Privacy Policy' : 'Gizlilik Politikası';
+            if (txtTerms) txtTerms.textContent = lang === 'en' ? 'Terms of Use & EULA' : 'Kullanım Koşulları & EULA';
+
             document.documentElement.lang = lang;
+            checkHashAndScroll();
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
             switchLanguage(savedLang);
+            checkHashAndScroll();
         });
     </script>
 </body>

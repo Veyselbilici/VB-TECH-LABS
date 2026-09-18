@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="PeriyoDoz Gizlilik Politikası (Privacy Policy) - Kişisel ve sağlık verilerinizin nasıl işlendiği, korunduğu ve haklarınız hakkında kapsamlı KVKK & GDPR bilgilendirmesi.">
-    <meta name="keywords" content="gizlilik politikası, privacy policy, PeriyoDoz, VB TECH LABS, sağlık uygulaması, ilaç takibi, kvkk, gdpr">
-    <title>Gizlilik Politikası (Privacy Policy) - PeriyoDoz | VB TECH LABS</title>
+        content="PeriyoDoz Gizlilik Politikası ve Kullanım Koşulları (Privacy Policy & Terms of Use / EULA) - Kişisel ve sağlık verileri koruması, Apple App Store & Google Play abonelik şartları, otomatik yenileme ve lisans sözleşmesi.">
+    <meta name="keywords" content="gizlilik politikası, kullanım koşulları, privacy policy, terms of use, EULA, PeriyoDoz, VB TECH LABS, abonelik şartları, in-app purchase, apple subscription, kvkk, gdpr">
+    <title>Gizlilik Politikası & Kullanım Koşulları (Terms of Use / EULA) - PeriyoDoz | VB TECH LABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -611,9 +611,269 @@
             text-decoration: underline;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .terms-anchor {
+            scroll-margin-top: 100px;
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+        /* Top Legal Tabs Switcher */
+        .legal-nav-tabs {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 4px;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .legal-tab-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 0.45rem 1rem;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .legal-tab-link:hover {
+            color: #ffffff;
+            background: rgba(225, 29, 106, 0.15);
+        }
+
+        .legal-tab-link.active {
+            color: #ffffff;
+            background: var(--accent-rose);
+            box-shadow: 0 2px 10px rgba(225, 29, 106, 0.35);
+        }
+
+        /* Apple & Subscription Specific Cards */
+        .apple-compliance-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(225, 29, 106, 0.1) 100%);
+            border: 1px solid rgba(37, 99, 235, 0.35);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin: 1.75rem 0;
+            position: relative;
+        }
+
+        .apple-compliance-card.warning-border {
+            border-color: rgba(245, 158, 11, 0.45);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(225, 29, 106, 0.08) 100%);
+        }
+
+        .apple-compliance-card .compliance-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-header .apple-icon-badge {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .compliance-header h4 {
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .plan-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.75rem;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-box:hover {
+            border-color: rgba(225, 29, 106, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .plan-box.featured {
+            border-color: var(--accent-rose);
+            background: linear-gradient(180deg, rgba(225, 29, 106, 0.1) 0%, var(--card-bg) 100%);
+            box-shadow: 0 8px 24px rgba(225, 29, 106, 0.2);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-rose);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .plan-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+        }
+
+        .plan-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .plan-features li {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            padding: 0.35rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: 800;
+        }
+
+        .steps-box {
+            background: rgba(15, 23, 41, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem 1.75rem;
+            margin: 1.25rem 0;
+        }
+
+        .steps-box ol {
+            padding-left: 1.4rem;
+            margin: 0;
+        }
+
+        .steps-box ol li {
+            color: var(--text-secondary);
+            margin-bottom: 0.65rem;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        .steps-box ol li strong {
+            color: #ffffff;
+        }
+
+        .steps-box ol li:last-child {
+            margin-bottom: 0;
+        }
+
+        .eula-action-box {
+            background: linear-gradient(135deg, rgba(225, 29, 106, 0.14) 0%, rgba(37, 99, 235, 0.16) 100%);
+            border: 2px solid rgba(225, 29, 106, 0.45);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .eula-action-text {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .eula-action-text h4 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+
+        .eula-action-text p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .btn-eula-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #ffffff;
+            color: #0f1729;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.85rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+        }
+
+        .btn-eula-link:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1.25rem 4rem;
+            }
+
+            .legal-nav-tabs {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .legal-tab-link {
+                flex: 1;
+                justify-content: center;
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 0.4rem 0.6rem;
             }
 
             .hero-banner {
@@ -634,6 +894,17 @@
             .medical-alert {
                 flex-direction: column;
                 padding: 1.25rem;
+            }
+
+            .eula-action-box {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .btn-eula-link {
+                justify-content: center;
             }
 
             .contact-box {
@@ -666,12 +937,20 @@
     </header>
 
     <div class="container">
-        <!-- Top Nav -->
+        <!-- Top Nav & Legal Quick Navigation Tabs -->
         <div class="top-nav-bar">
             <a href="/" class="back-link">
                 <span>&#8592;</span>
                 <span id="txt-back">Ana Sayfaya Dön</span>
             </a>
+            <div class="legal-nav-tabs">
+                <a href="#privacy-top" class="legal-tab-link active" id="tab-link-privacy" onclick="activateLegalTab('privacy')">
+                    <span>🔒</span> <span id="txt-tab-privacy">Gizlilik Politikası</span>
+                </a>
+                <a href="#terms" class="legal-tab-link" id="tab-link-terms" onclick="activateLegalTab('terms')">
+                    <span>⚖️</span> <span id="txt-tab-terms">Kullanım Koşulları & EULA</span>
+                </a>
+            </div>
             <a href="periyodoz-hesap-silme.html" class="quick-action-link">
                 <span>🗑️</span>
                 <span id="txt-delete-page-link">Hesap ve Veri Silme Sayfası &rarr;</span>
@@ -680,15 +959,16 @@
 
         <!-- ==================== TURKISH VERSION ==================== -->
         <div id="content-tr">
+            <div id="privacy-top" class="terms-anchor"></div>
             <!-- Hero Banner -->
             <div class="hero-banner">
                 <img src="periyodoz-icon.png" alt="PeriyoDoz App Icon" class="app-icon-large">
                 <div class="hero-text">
-                    <div class="page-subtitle">KVKK & GDPR Yasal Aydınlatma Metni</div>
-                    <h1>PeriyoDoz Gizlilik Politikası</h1>
+                    <div class="page-subtitle">KVKK & GDPR Yasal Aydınlatma & Apple EULA Metni</div>
+                    <h1>PeriyoDoz Gizlilik Politikası & Kullanım Koşulları</h1>
                     <div class="last-updated-badge">
                         <span>📅</span>
-                        <span>Son Güncelleme ve Yürürlük: 10 Eylül 2026</span>
+                        <span>Son Güncelleme ve Yürürlük: 18 Eylül 2026</span>
                     </div>
                 </div>
             </div>
@@ -740,7 +1020,7 @@
                     <li><a href="#tr-sec8"><span class="toc-num">8.</span> Haklarınız (KVKK m.11 & GDPR)</a></li>
                     <li><a href="#tr-sec9"><span class="toc-num">9.</span> Veri Güvenliği Önlemleri</a></li>
                     <li><a href="#tr-sec10"><span class="toc-num">10.</span> Çocukların Gizliliği</a></li>
-                    <li><a href="#tr-sec11"><span class="toc-num">11.</span> Abonelikler ve Ödemeler</a></li>
+                    <li><a href="#tr-sec11"><span class="toc-num">11.</span> Abonelik Şartları, Satın Alımlar ve Kullanım Koşulları (EULA)</a></li>
                     <li><a href="#tr-sec12"><span class="toc-num">12.</span> Politika Değişiklikleri</a></li>
                     <li><a href="#tr-sec13"><span class="toc-num">13.</span> Veri Sorumlusu ve İletişim</a></li>
                 </ul>
@@ -1022,8 +1302,129 @@
             <h2 id="tr-sec10"><span>10.</span> Çocukların Gizliliği</h2>
             <p>Uygulama 13 yaşın altındaki çocuklara doğrudan yönelik değildir. Ebeveynler, veli/vasi sıfatıyla çocukları için alt profil oluşturabilir; bu veriler ebeveynin sorumluluğunda işlenir. İzniniz dışında bir veri girişi olduğunu düşünüyorsanız lütfen bizimle iletişime geçiniz.</p>
 
-            <h2 id="tr-sec11"><span>11.</span> Abonelikler ve Ödemeler</h2>
-            <p>Premium abonelikler Apple App Store ve Google Play üzerinden satın alınır. Ödeme kartı bilgileriniz bize hiçbir zaman ulaşmaz, işlem tamamen Apple ve Google tarafından yürütülür.</p>
+            <!-- Section 11: Subscriptions, In-App Purchases & EULA -->
+            <div id="terms" class="terms-anchor"></div>
+            <div id="eula" class="terms-anchor"></div>
+            <div id="terms-of-use" class="terms-anchor"></div>
+            <div id="kullanim-kosullari" class="terms-anchor"></div>
+            <h2 id="tr-sec11"><span>11.</span> Abonelik Şartları, Satın Alımlar ve Kullanım Koşulları (Terms of Use / EULA)</h2>
+
+            <!-- Apple Store Transparency Alert -->
+            <div class="apple-compliance-card">
+                <div class="compliance-header">
+                    <div class="apple-icon-badge">🍎</div>
+                    <div>
+                        <h4>Apple App Store & Google Play Yasal Abonelik Şeffaflığı</h4>
+                        <p style="margin:0; font-size:0.88rem; color:#94a3b8;">Apple App Store İnceleme Kılavuzu Kural 3.1.2 (Subscriptions) ve Tüketici Hakları uyarınca hazırlanmıştır.</p>
+                    </div>
+                </div>
+                <p style="margin-bottom:0.75rem; color:#e2e8f0; font-size:0.95rem;">
+                    PeriyoDoz uygulamasında sunulan Premium abonelik paketleri, Apple ve Google'ın güvenli uygulama içi satın alma (In-App Purchase) altyapısı üzerinden tahsil edilir. Kredi kartı veya banka bilgileriniz VB TECH LABS sunucularına asla iletilmez ve saklanmaz.
+                </p>
+            </div>
+
+            <h3>11.1 Abonelik Paketleri ve Kapsamı</h3>
+            <p>PeriyoDoz'un temel ilaç ve hatırlatma özellikleri ücretsizdir. Daha kapsamlı sağlık yönetimi ve aile takibi sağlamak amacıyla aşağıdaki otomatik yenilenen <strong>PeriyoDoz Premium</strong> abonelik seçenekleri sunulmaktadır:</p>
+
+            <div class="plans-grid">
+                <div class="plan-box">
+                    <div class="plan-title">Aylık Premium</div>
+                    <div class="plan-desc">Aylık olarak faturalandırılan otomatik yenilenen abonelik.</div>
+                    <ul class="plan-features">
+                        <li>Sınırsız ilaç ve takviye kaydı</li>
+                        <li>Gelişmiş tansiyon, şeker ve nabız analizleri</li>
+                        <li>Sınırsız aile profili ve bakıcı senkronizasyonu</li>
+                        <li>Tamamen reklamsız kullanıcı deneyimi</li>
+                        <li>Ayrıntılı PDF Sağlık Raporu dışa aktarımı</li>
+                    </ul>
+                </div>
+                <div class="plan-box featured">
+                    <div class="plan-badge">En Avantajlı</div>
+                    <div class="plan-title">Yıllık Premium</div>
+                    <div class="plan-desc">Yıllık indirimli olarak faturalandırılan otomatik yenilenen abonelik.</div>
+                    <ul class="plan-features">
+                        <li>Tüm Aylık Premium özellikleri dahildir</li>
+                        <li>Önemli oranda yıllık fiyat tasarrufu</li>
+                        <li>Öncelikli müşteri ve teknik destek</li>
+                        <li>Kesintisiz yıllık sağlık ve ölçüm arşivi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>11.2 Ödeme ve Faturalandırma Kuralları</h3>
+            <ul class="custom-list">
+                <li><strong>Ödeme Tahsilatı:</strong> Satın alma işlemi kullanıcı tarafından onaylandığında, ilgili ücret kullanıcının <strong>Apple Kimliği (Apple ID / iTunes Hesabı)</strong> veya Google Play Hesabı üzerinden tahsil edilir.</li>
+                <li><strong>Fiyatlandırma:</strong> Abonelik ücretleri ülkeye ve yerel para birimine göre değişiklik gösterebilir; kesin ücret, satın alma onay ekranında yerel para biriminiz cinsinden açıkça gösterilir.</li>
+            </ul>
+
+            <div class="apple-compliance-card warning-border">
+                <div class="compliance-header">
+                    <div class="apple-icon-badge">🔄</div>
+                    <div>
+                        <h4>11.3 Otomatik Yenileme (Auto-Renewal) Şartları ve Bildirimi</h4>
+                        <p style="margin:0; font-size:0.88rem; color:#94a3b8;">Apple Guideline 3.1.2 gereği zorunlu bilgilendirme</p>
+                    </div>
+                </div>
+                <ul class="custom-list" style="margin-bottom:0;">
+                    <li><strong>Otomatik Yenileme Kuralı:</strong> Abonelik, mevcut abonelik süresinin bitiminden en az <strong>24 saat önce</strong> otomatik yenileme kapatılmadığı sürece kendiliğinden otomatik olarak yenilenir.</li>
+                    <li><strong>Hesap Tahsilat Zamanı:</strong> Mevcut dönemin bitiminden önceki <strong>24 saat içinde</strong>, kullanıcının Apple ID / iTunes hesabından yenileme ücreti tahsil edilir ve yenileme maliyeti açıkça belirtilir.</li>
+                    <li><strong>Fiyat Değişiklikleri:</strong> Herhangi bir fiyat güncellemesinde Apple/Google tarafından kullanıcıya önceden e-posta ve bildirim gönderilir; onayınız alınmadan yüksek fiyat yansıtılmaz.</li>
+                </ul>
+            </div>
+
+            <h3>11.4 Abonelik Yönetimi ve İptal Prosedürü</h3>
+            <p>Aboneliğinizi dilediğiniz zaman iptal edebilir veya planınızı değiştirebilirsiniz. <strong>Önemli:</strong> Uygulamayı cihazınızdan silmek (kaldırmak) aboneliğinizi otomatik olarak durdurmaz veya iptal etmez; aboneliği mağaza ayarlarından yönetmeniz gerekir.</p>
+
+            <div class="steps-box">
+                <p style="margin-bottom:0.75rem; color:#ffffff; font-weight:700;">📱 iOS (iPhone / iPad) Cihazlarda İptal Adımları:</p>
+                <ol>
+                    <li>iPhone veya iPad'inizde <strong>Ayarlar (Settings)</strong> uygulamasını açın.</li>
+                    <li>En üstte yer alan <strong>[Adınız / Apple Kimliğiniz]</strong> alanına dokunun.</li>
+                    <li><strong>"Abonelikler" (Subscriptions)</strong> seçeneğine dokunun.</li>
+                    <li>Aktif abonelikleriniz arasından <strong>PeriyoDoz</strong> uygulamasını seçin.</li>
+                    <li><strong>"Aboneliği İptal Et" (Cancel Subscription)</strong> butonuna dokunun ve işlemi onaylayın.</li>
+                </ol>
+                <p style="margin-top:0.75rem; margin-bottom:0; font-size:0.85rem; color:#94a3b8;">
+                    İptal ettiğinizde, mevcut ödenmiş dönemin son gününe kadar Premium özelliklerden kesintisiz yararlanmaya devam edersiniz. Yeni dönem için kartınızdan ücret çekilmez.
+                </p>
+            </div>
+
+            <div class="steps-box">
+                <p style="margin-bottom:0.75rem; color:#ffffff; font-weight:700;">🤖 Android Cihazlarda İptal Adımları:</p>
+                <ol>
+                    <li><strong>Google Play Store</strong> uygulamasını açın.</li>
+                    <li>Sağ üstteki <strong>Profil simgenize</strong> dokunun.</li>
+                    <li><strong>Ödemeler ve Abonelikler &rarr; Abonelikler</strong> menüsüne girin.</li>
+                    <li><strong>PeriyoDoz</strong>'u seçip <strong>"Aboneliği İptal Et"</strong>e dokunun.</li>
+                </ol>
+            </div>
+
+            <h3>11.5 Ücretsiz Deneme Süresi (Free Trial)</h3>
+            <p>Uygulama içinde herhangi bir ücretsiz deneme süresi teklif edildiğinde, deneme süresinin bitimine en az 24 saat kala abonelik iptal edilmediği takdirde, deneme süresi bittiğinde abonelik otomatik olarak seçilen ücretli plana dönüşür ve Apple/Google hesabınızdan tahsilat yapılır. Varsa sunulan ücretsiz deneme süresinin kullanılmayan kısmı, kullanıcı ilgili yayına/pakete ücretli abonelik satın aldığında feragat edilmiş sayılır.</p>
+
+            <h3>11.6 İade Politikası (Refunds)</h3>
+            <p>Uygulama içi satın alımlar ve abonelikler Apple App Store ve Google Play üzerinden yürütülmektedir. Geliştirici olarak VB TECH LABS'in kullanıcının Apple/Google hesabına doğrudan para iadesi yapma yetkisi bulunmamaktadır:</p>
+            <ul class="custom-list">
+                <li><strong>Apple App Store İadeleri:</strong> Para iadesi talepleri yalnızca Apple tarafından değerlendirilir. Satın alma fişinizle birlikte resmi <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" style="color:#f472b6; font-weight:bold;">reportaproblem.apple.com</a> adresi üzerinden Apple'a iade başvurusunda bulunabilirsiniz.</li>
+                <li><strong>Google Play İadeleri:</strong> İlk 48 saat içindeki talepler doğrudan Google Play web sitesi üzerinden, sonraki talepler için ise destek ekibimizle iletişime geçilerek değerlendirilir.</li>
+            </ul>
+
+            <!-- EULA Link Box (Official Apple Standard EULA) -->
+            <div class="eula-action-box">
+                <div class="eula-action-text">
+                    <h4>⚖️ Lisans Sözleşmesi & Kullanım Koşulları (EULA)</h4>
+                    <p>PeriyoDoz iOS uygulaması, Apple'ın resmi <strong>Standart Son Kullanıcı Lisans Sözleşmesi (Standard EULA)</strong> şartlarına tabidir. Uygulamayı indirerek veya kullanarak hem Apple Standart Lisans Sözleşmesi'ni hem de VB TECH LABS Şartları'nı kabul etmiş sayılırsınız.</p>
+                </div>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="btn-eula-link">
+                    <span>Apple Standart EULA Metni ↗</span>
+                </a>
+            </div>
+
+            <h3>11.7 Fikri Mülkiyet ve Lisans Hakları</h3>
+            <p>PeriyoDoz uygulamasının tasarımı, kaynak kodları, logoları, veritabanı yapıları ve tüm içeriği VB TECH LABS'e aittir. Kullanıcıya yalnızca kişisel, ticari olmayan, devredilemez ve geri alınabilir sınırlı bir kullanım lisansı verilmektedir. Uygulamanın kaynak kodunun kopyalanması, tersine mühendislikle çözülmesi veya izinsiz dağıtılması kesinlikle yasaktır.</p>
+
+            <h3>11.8 Tıbbi Sorumluluk Reddi (Disclaimer of Medical Liability)</h3>
+            <p>PeriyoDoz bir tıbbi cihaz veya klinik teşhis/tedavi sistemi değildir. Hatırlatma bildirimleri ve sağlık grafikleri yalnızca bilgilendirme ve kişisel takip amaçlıdır. Cihaz bildirimlerinin gecikmesi, internet kesintisi veya kullanıcı hatalarından kaynaklanabilecek durumlarda VB TECH LABS hukuki veya tıbbi sorumluluk kabul etmez. Sağlığınızla ve ilaç tedavinizle ilgili kararları mutlaka uzman hekiminize danışarak veriniz.</p>
 
             <h2 id="tr-sec12"><span>12.</span> Politika Değişiklikleri</h2>
             <p>Bu politika güncellendiğinde uygulama içinde bildirim yapılır ve sayfanın başındaki tarih yenilenir.</p>
@@ -1047,15 +1448,16 @@
 
         <!-- ==================== ENGLISH VERSION ==================== -->
         <div id="content-en" style="display: none;">
+            <div id="en-privacy-top" class="terms-anchor"></div>
             <!-- Hero Banner -->
             <div class="hero-banner">
                 <img src="periyodoz-icon.png" alt="PeriyoDoz App Icon" class="app-icon-large">
                 <div class="hero-text">
-                    <div class="page-subtitle">GDPR & KVKK Compliance Document</div>
-                    <h1>PeriyoDoz Privacy Policy</h1>
+                    <div class="page-subtitle">GDPR, KVKK Compliance & Apple EULA Terms</div>
+                    <h1>PeriyoDoz Privacy Policy & Terms of Use</h1>
                     <div class="last-updated-badge">
                         <span>📅</span>
-                        <span>Last Updated & Effective Date: 10 September 2026</span>
+                        <span>Last Updated & Effective Date: 18 September 2026</span>
                     </div>
                 </div>
             </div>
@@ -1107,7 +1509,7 @@
                     <li><a href="#en-sec8"><span class="toc-num">8.</span> Your Rights (GDPR & KVKK)</a></li>
                     <li><a href="#en-sec9"><span class="toc-num">9.</span> Data Security Measures</a></li>
                     <li><a href="#en-sec10"><span class="toc-num">10.</span> Children's Privacy</a></li>
-                    <li><a href="#en-sec11"><span class="toc-num">11.</span> Subscriptions & Payments</a></li>
+                    <li><a href="#en-sec11"><span class="toc-num">11.</span> Subscriptions, In-App Purchases & Terms of Use (EULA)</a></li>
                     <li><a href="#en-sec12"><span class="toc-num">12.</span> Changes to This Policy</a></li>
                     <li><a href="#en-sec13"><span class="toc-num">13.</span> Data Controller & Contact</a></li>
                 </ul>
@@ -1347,8 +1749,127 @@
             <h2 id="en-sec10"><span>10.</span> Children's Privacy</h2>
             <p>The App is not directed at children under 13. Parents or guardians may manage medication records on behalf of their children under parental responsibility.</p>
 
-            <h2 id="en-sec11"><span>11.</span> Subscriptions</h2>
-            <p>Subscriptions are billed through Apple App Store or Google Play. You can manage or cancel your subscription at any time via your device's store settings.</p>
+            <!-- Section 11: Subscriptions, In-App Purchases & EULA -->
+            <div id="en-terms" class="terms-anchor"></div>
+            <div id="en-eula" class="terms-anchor"></div>
+            <h2 id="en-sec11"><span>11.</span> Subscriptions, In-App Purchases & Terms of Use (EULA)</h2>
+
+            <!-- Apple Store Transparency Alert -->
+            <div class="apple-compliance-card">
+                <div class="compliance-header">
+                    <div class="apple-icon-badge">🍎</div>
+                    <div>
+                        <h4>Apple App Store & Google Play Legal Subscription Transparency</h4>
+                        <p style="margin:0; font-size:0.88rem; color:#94a3b8;">Compliant with Apple App Store Review Guideline 3.1.2 (Subscriptions) & Consumer Protection Standards.</p>
+                    </div>
+                </div>
+                <p style="margin-bottom:0.75rem; color:#e2e8f0; font-size:0.95rem;">
+                    All Premium subscription purchases made through PeriyoDoz are processed securely through Apple's In-App Purchase and Google Play Billing systems. VB TECH LABS never receives, accesses, or stores your credit card or financial details.
+                </p>
+            </div>
+
+            <h3>11.1 Subscription Plans & Benefits</h3>
+            <p>Core features of PeriyoDoz are available free of charge. To unlock unlimited health tracking and multi-caregiver syncing, the following auto-renewing <strong>PeriyoDoz Premium</strong> subscription tiers are offered:</p>
+
+            <div class="plans-grid">
+                <div class="plan-box">
+                    <div class="plan-title">Monthly Premium</div>
+                    <div class="plan-desc">Billed on a recurring monthly cycle with automatic renewal.</div>
+                    <ul class="plan-features">
+                        <li>Unlimited medication & supplement tracking</li>
+                        <li>Advanced blood pressure, glucose & pulse charts</li>
+                        <li>Unlimited family profiles & caregiver synchronization</li>
+                        <li>Completely ad-free experience</li>
+                        <li>Detailed PDF Health Report export for doctors</li>
+                    </ul>
+                </div>
+                <div class="plan-box featured">
+                    <div class="plan-badge">Best Value</div>
+                    <div class="plan-title">Annual Premium</div>
+                    <div class="plan-desc">Billed on a discounted recurring yearly cycle with automatic renewal.</div>
+                    <ul class="plan-features">
+                        <li>Includes all Monthly Premium features</li>
+                        <li>Significant discount compared to monthly pricing</li>
+                        <li>Priority customer & technical support</li>
+                        <li>Continuous yearly health and measurement history</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>11.2 Payment & Billing Terms</h3>
+            <ul class="custom-list">
+                <li><strong>Payment:</strong> Payment will be charged to your <strong>Apple ID / iTunes Account</strong> or Google Play Account upon confirmation of purchase.</li>
+                <li><strong>Pricing:</strong> Subscription prices may vary by region or local currency; the exact amount is clearly displayed on the in-app confirmation screen before you authorize the purchase.</li>
+            </ul>
+
+            <div class="apple-compliance-card warning-border">
+                <div class="compliance-header">
+                    <div class="apple-icon-badge">🔄</div>
+                    <div>
+                        <h4>11.3 Auto-Renewal Terms & Disclosures</h4>
+                        <p style="margin:0; font-size:0.88rem; color:#94a3b8;">Mandatory disclosure under Apple Guideline 3.1.2</p>
+                    </div>
+                </div>
+                <ul class="custom-list" style="margin-bottom:0;">
+                    <li><strong>Automatic Renewal:</strong> Subscription automatically renews unless auto-renew is turned off at least <strong>24 hours before the end of the current billing period</strong>.</li>
+                    <li><strong>Account Renewal Charge:</strong> Your account will be charged for renewal within the <strong>24 hours prior to the end of the current period</strong>, and will identify the cost of the renewal.</li>
+                    <li><strong>Price Changes:</strong> In the event of a subscription price increase, Apple or Google will notify you in advance and request your explicit consent before applying new rates.</li>
+                </ul>
+            </div>
+
+            <h3>11.4 Managing & Cancelling Subscriptions</h3>
+            <p>You may manage your subscription or turn off auto-renewal at any time. <strong>Please Note:</strong> Deleting or uninstalling the app from your device does not cancel your subscription. You must manage your subscription through your store account settings.</p>
+
+            <div class="steps-box">
+                <p style="margin-bottom:0.75rem; color:#ffffff; font-weight:700;">📱 How to Cancel on iOS (iPhone / iPad):</p>
+                <ol>
+                    <li>Open the <strong>Settings</strong> app on your iPhone or iPad.</li>
+                    <li>Tap your <strong>[Name / Apple ID]</strong> banner at the top of the screen.</li>
+                    <li>Tap <strong>"Subscriptions"</strong>.</li>
+                    <li>Select <strong>PeriyoDoz</strong> from the list of active subscriptions.</li>
+                    <li>Tap <strong>"Cancel Subscription"</strong> and confirm your choice.</li>
+                </ol>
+                <p style="margin-top:0.75rem; margin-bottom:0; font-size:0.85rem; color:#94a3b8;">
+                    If you cancel, you will maintain access to all Premium features until the end of your current prepaid billing cycle. No further charges will occur.
+                </p>
+            </div>
+
+            <div class="steps-box">
+                <p style="margin-bottom:0.75rem; color:#ffffff; font-weight:700;">🤖 How to Cancel on Android:</p>
+                <ol>
+                    <li>Open the <strong>Google Play Store</strong> app.</li>
+                    <li>Tap your <strong>Profile icon</strong> in the upper-right corner.</li>
+                    <li>Go to <strong>Payments & subscriptions &rarr; Subscriptions</strong>.</li>
+                    <li>Select <strong>PeriyoDoz</strong> and tap <strong>"Cancel subscription"</strong>.</li>
+                </ol>
+            </div>
+
+            <h3>11.5 Free Trial Period</h3>
+            <p>Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication or tier, where applicable. If you do not cancel at least 24 hours prior to the expiration of the trial, the trial will automatically transition into a paid recurring subscription.</p>
+
+            <h3>11.6 Refund Policy</h3>
+            <p>In-app purchases and subscriptions are handled entirely by Apple and Google. Developers do not possess the administrative authority to issue direct financial refunds to your payment method:</p>
+            <ul class="custom-list">
+                <li><strong>Apple App Store Refunds:</strong> All refund requests must be submitted directly to Apple through their official portal at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" style="color:#f472b6; font-weight:bold;">reportaproblem.apple.com</a>.</li>
+                <li><strong>Google Play Refunds:</strong> Users may request refunds within 48 hours of purchase through Google Play's automated refund tool or by contacting customer support.</li>
+            </ul>
+
+            <!-- EULA Link Box (Official Apple Standard EULA) -->
+            <div class="eula-action-box">
+                <div class="eula-action-text">
+                    <h4>⚖️ End User License Agreement (EULA) & Terms</h4>
+                    <p>PeriyoDoz for iOS is licensed to you subject to Apple's official <strong>Standard Licensed Application End User License Agreement (Apple Standard EULA)</strong>. By downloading, installing, or using PeriyoDoz, you agree to be bound by the Apple Standard EULA and the VB TECH LABS Terms of Use.</p>
+                </div>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="btn-eula-link">
+                    <span>Apple Standard EULA ↗</span>
+                </a>
+            </div>
+
+            <h3>11.7 Intellectual Property & License Grant</h3>
+            <p>All software, designs, algorithms, logos, and content associated with PeriyoDoz are the proprietary intellectual property of VB TECH LABS. You are granted a limited, personal, non-exclusive, non-transferable, revocable license to use the App strictly in accordance with these terms. You agree not to copy, reverse engineer, decompile, or redistribute any part of the App.</p>
+
+            <h3>11.8 Disclaimer of Medical Liability</h3>
+            <p>PeriyoDoz is designed strictly as an informational medication reminder and personal wellness tracking tool. It is not a medical device, nor does it deliver professional medical diagnoses, prescriptions, or clinical treatment plans. VB TECH LABS assumes no liability for missed dosages, technical notification failures, device errors, or improper medication intake. Always consult your healthcare provider for clinical medical advice.</p>
 
             <h2 id="en-sec12"><span>12.</span> Changes to This Policy</h2>
             <p>We may update this policy periodically. We will notify you in-app upon significant revisions.</p>
@@ -1375,14 +1896,39 @@
             <p>&copy; 2026 VB TECH LABS &middot; PeriyoDoz &middot; <span id="txt-footer-rights">Tüm hakları saklıdır.</span></p>
             <p style="margin-top: 0.5rem; font-size: 0.85rem;">
                 <a href="/">VB TECH LABS</a> &middot; 
-                <a href="privacy-policy.html">General Privacy Policy</a> &middot; 
+                <a href="#privacy-top" id="txt-footer-privacy">Gizlilik Politikası</a> &middot; 
+                <a href="#terms" id="txt-footer-terms">Kullanım Koşulları & EULA</a> &middot; 
                 <a href="periyodoz-hesap-silme.html">PeriyoDoz Hesap Silme</a>
             </p>
         </footer>
     </div>
 
-    <!-- Script for language toggling -->
+    <!-- Script for language toggling & Legal Navigation -->
     <script>
+        function activateLegalTab(tab) {
+            const tabPrivacy = document.getElementById('tab-link-privacy');
+            const tabTerms = document.getElementById('tab-link-terms');
+            const isEn = document.documentElement.lang === 'en';
+
+            if (tab === 'terms') {
+                if (tabTerms) tabTerms.classList.add('active');
+                if (tabPrivacy) tabPrivacy.classList.remove('active');
+                const targetId = isEn ? 'en-terms' : 'terms';
+                const el = document.getElementById(targetId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                if (tabPrivacy) tabPrivacy.classList.add('active');
+                if (tabTerms) tabTerms.classList.remove('active');
+                const targetId = isEn ? 'en-privacy-top' : 'privacy-top';
+                const el = document.getElementById(targetId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
         function switchLanguage(lang) {
             localStorage.setItem('periyodoz_policy_lang', lang);
             
@@ -1393,6 +1939,10 @@
             const txtBack = document.getElementById('txt-back');
             const txtDeleteLink = document.getElementById('txt-delete-page-link');
             const txtFooterRights = document.getElementById('txt-footer-rights');
+            const txtTabPrivacy = document.getElementById('txt-tab-privacy');
+            const txtTabTerms = document.getElementById('txt-tab-terms');
+            const txtFooterPrivacy = document.getElementById('txt-footer-privacy');
+            const txtFooterTerms = document.getElementById('txt-footer-terms');
 
             if (lang === 'en') {
                 trContent.style.display = 'none';
@@ -1402,6 +1952,10 @@
                 if (txtBack) txtBack.textContent = 'Back to Home';
                 if (txtDeleteLink) txtDeleteLink.innerHTML = 'Account & Data Deletion Page &rarr;';
                 if (txtFooterRights) txtFooterRights.textContent = 'All rights reserved.';
+                if (txtTabPrivacy) txtTabPrivacy.textContent = 'Privacy Policy';
+                if (txtTabTerms) txtTabTerms.textContent = 'Terms of Use & EULA';
+                if (txtFooterPrivacy) txtFooterPrivacy.textContent = 'Privacy Policy';
+                if (txtFooterTerms) txtFooterTerms.textContent = 'Terms of Use & EULA';
                 document.documentElement.lang = 'en';
             } else {
                 trContent.style.display = 'block';
@@ -1411,7 +1965,31 @@
                 if (txtBack) txtBack.textContent = 'Ana Sayfaya Dön';
                 if (txtDeleteLink) txtDeleteLink.innerHTML = 'Hesap ve Veri Silme Sayfası &rarr;';
                 if (txtFooterRights) txtFooterRights.textContent = 'Tüm hakları saklıdır.';
+                if (txtTabPrivacy) txtTabPrivacy.textContent = 'Gizlilik Politikası';
+                if (txtTabTerms) txtTabTerms.textContent = 'Kullanım Koşulları & EULA';
+                if (txtFooterPrivacy) txtFooterPrivacy.textContent = 'Gizlilik Politikası';
+                if (txtFooterTerms) txtFooterTerms.textContent = 'Kullanım Koşulları & EULA';
                 document.documentElement.lang = 'tr';
+            }
+
+            // If URL hash points to terms, scroll there in the newly visible language
+            checkHashAndScroll();
+        }
+
+        function checkHashAndScroll() {
+            const hash = window.location.hash.toLowerCase();
+            if (hash === '#terms' || hash === '#eula' || hash === '#terms-of-use' || hash === '#kullanim-kosullari' || hash === '#en-terms' || hash === '#en-eula') {
+                const tabPrivacy = document.getElementById('tab-link-privacy');
+                const tabTerms = document.getElementById('tab-link-terms');
+                if (tabTerms) tabTerms.classList.add('active');
+                if (tabPrivacy) tabPrivacy.classList.remove('active');
+
+                const isEn = document.documentElement.lang === 'en';
+                const targetId = isEn ? 'en-terms' : 'terms';
+                setTimeout(() => {
+                    const el = document.getElementById(targetId);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
             }
         }
 
@@ -1423,6 +2001,7 @@
             } else {
                 switchLanguage('tr');
             }
+            checkHashAndScroll();
         });
     </script>
 </body>
