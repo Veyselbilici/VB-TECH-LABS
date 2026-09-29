@@ -216,6 +216,7 @@ Premium abonelikler App Store veya Google Play üzerinden satın alınır ve oto
 - Dönem bitiminden en az 24 saat önce iptal etmezseniz abonelik aynı ücretle yenilenir.
 - Aboneliğinizi mağaza hesabınızın ayarlarından yönetebilir veya iptal edebilirsiniz.
 - **Ödeme bilgileriniz (kart numarası vb.) bize hiçbir zaman ulaşmaz** — ödemeyi tamamen Apple/Google işler. Biz yalnızca aboneliğin aktif olup olmadığı bilgisini alırız.
+- **Adil Kullanım Politikası:** Sınırsız özellikler (barkod tarama, ilaç kaydı, aile profili vb.), hizmetin kötüye kullanımını önlemek amacıyla makul kişisel kullanım kapsamında sunulur.
 
 ---
 
