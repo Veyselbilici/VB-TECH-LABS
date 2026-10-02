@@ -370,6 +370,30 @@
             color: var(--text-muted);
         }
 
+        .qr-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #f1f5f9;
+            padding: 0.45rem 1rem;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-top: 0.75rem;
+        }
+
+        .qr-download-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
         .platform-badge {
             display: inline-flex;
             align-items: center;
@@ -452,6 +476,11 @@
             <span class="qr-label" id="qr-label">iPhone veya Android kameranızla tarayarak hemen indirin:</span>
             <img id="qr-code-img" class="qr-code-img" alt="QR Kodu" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vb-tech-labs.vercel.app/periyodoz">
             <span style="display:block; font-size:0.72rem; color:#f472b6; font-weight:600; margin-top:2px;" id="qr-hint">📱 Taranan cihazı otomatik algılar</span>
+            <div>
+                <a href="../periyodoz-qr.png" download="periyodoz-qr.png" class="qr-download-btn" id="qr-download-btn">
+                    📥 QR Kodu İndir (PNG)
+                </a>
+            </div>
         </div>
 
         <!-- Footer Navigation -->
