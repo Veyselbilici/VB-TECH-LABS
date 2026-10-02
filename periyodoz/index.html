@@ -449,8 +449,9 @@
 
         <!-- Desktop QR Code -->
         <div class="qr-section" id="qr-section">
-            <span class="qr-label" id="qr-label">Telefonunuzun kamerası ile tarayarak hemen indirin:</span>
-            <img id="qr-code-img" class="qr-code-img" alt="QR Kodu" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://apps.apple.com/tr/app/periyodoz-i-laç-sağlık-takibi/id6813403404?l=tr">
+            <span class="qr-label" id="qr-label">iPhone veya Android kameranızla tarayarak hemen indirin:</span>
+            <img id="qr-code-img" class="qr-code-img" alt="QR Kodu" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vb-tech-labs.vercel.app/periyodoz">
+            <span style="display:block; font-size:0.72rem; color:#f472b6; font-weight:600; margin-top:2px;" id="qr-hint">📱 Taranan cihazı otomatik algılar</span>
         </div>
 
         <!-- Footer Navigation -->
@@ -501,7 +502,8 @@
                 appleText: "App Store'dan İndir",
                 googleSub: "Android Cihazlar İçin",
                 googleText: "Google Play'den İndir",
-                qrLabel: "Telefonunuzun kamerası ile tarayarak hemen indirin:",
+                qrLabel: "iPhone veya Android kameranızla tarayarak hemen indirin:",
+                qrHint: "📱 Taranan cihazı otomatik algılar",
                 features: ["⏰ Doz Hatırlatıcı", "🌸 Döngü Günlüğü", "🛡️ Etkileşim Kontrolü", "👨‍👩‍👧 Aile Takibi"],
                 home: "← Ana Sayfa",
                 privacy: "Gizlilik Politikası",
@@ -523,7 +525,8 @@
                 appleText: "Download on App Store",
                 googleSub: "For Android Devices",
                 googleText: "Get it on Google Play",
-                qrLabel: "Scan with your phone camera to download instantly:",
+                qrLabel: "Scan with your iPhone or Android camera to download:",
+                qrHint: "📱 Automatically detects your device",
                 features: ["⏰ Dose Reminder", "🌸 Cycle Diary", "🛡️ Interaction Check", "👨‍👩‍👧 Family Sync"],
                 home: "← Home Page",
                 privacy: "Privacy Policy",
@@ -554,6 +557,8 @@
 
             document.getElementById('app-tagline').textContent = t.tagline;
             document.getElementById('qr-label').textContent = t.qrLabel;
+            var qrHintEl = document.getElementById('qr-hint');
+            if (qrHintEl) qrHintEl.textContent = t.qrHint;
             document.getElementById('footer-home').textContent = t.home;
             document.getElementById('footer-privacy').textContent = t.privacy;
             document.getElementById('footer-delete').textContent = t.delete;
@@ -608,7 +613,8 @@
                 document.getElementById('google-btn-text').textContent = t.googleText;
 
                 qrSection.classList.add('show');
-                qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + encodeURIComponent(appStoreLink);
+                var smartUrl = window.location.origin ? (window.location.origin + '/periyodoz') : window.location.href;
+                qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(smartUrl);
             }
         }
 
