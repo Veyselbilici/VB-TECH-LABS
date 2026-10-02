@@ -500,6 +500,127 @@
             border-color: rgba(139,92,246,0.4);
             transform: translateY(-2px);
         }
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .hamburger:hover { background: rgba(255,255,255,0.08); }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile Nav Drawer */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 999;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .mobile-nav.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-nav-drawer {
+            position: absolute;
+            top: 0; right: 0;
+            width: min(320px, 85vw);
+            height: 100%;
+            background: rgba(15, 23, 41, 0.98);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding: 5rem 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+            overflow-y: auto;
+        }
+        .mobile-nav.open .mobile-nav-drawer {
+            transform: translateX(0);
+        }
+        .mobile-nav-close {
+            position: absolute;
+            top: 1.25rem; right: 1.25rem;
+            background: rgba(255,255,255,0.08);
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .mobile-nav-close:hover { background: rgba(255,255,255,0.15); }
+        .mobile-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            transition: all 0.2s;
+            display: block;
+        }
+        .mobile-nav a:hover {
+            color: #fff;
+            background: rgba(37,99,235,0.12);
+        }
+        .mobile-nav-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 0.5rem 0;
+        }
+        .mobile-lang {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .mobile-lang button {
+            flex: 1;
+            padding: 0.6rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.05);
+            color: #8b8fa3;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .mobile-lang button.active {
+            background: #8b5cf6;
+            border-color: #8b5cf6;
+            color: #fff;
+        }
+
         .store-buttons {
             display: flex;
             gap: 1rem;
@@ -517,7 +638,7 @@
             text-decoration: none;
             color: white;
             transition: all 0.3s;
-            min-width: 180px;
+            min-width: 170px;
         }
         .store-btn:hover {
             transform: translateY(-3px);
@@ -849,13 +970,23 @@
             .nav-links {
                 display: none;
             }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-nav {
+                display: block;
+            }
+            /* Hide desktop lang switcher on very small screens to save space */
+            nav > div > .lang-switcher {
+                display: none;
+            }
 
             .hero {
-                padding: 4rem 1.5rem 3rem;
+                padding: 4.5rem 1.25rem 3rem;
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero-description {
@@ -872,11 +1003,11 @@
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.75rem;
             }
 
             .falio-showcase {
-                padding: 7rem 1.5rem 3rem;
+                padding: 5rem 1.25rem 3rem;
             }
 
             .falio-grid {
@@ -889,20 +1020,30 @@
             }
 
             .falio-app-icon {
-                width: 72px;
-                height: 72px;
+                width: 68px;
+                height: 68px;
                 border-radius: 18px;
             }
 
-            .falio-desc { margin: 0 auto 2rem; }
+            .falio-desc { margin: 0 auto 1.75rem; max-width: 100%; }
 
             .falio-features { justify-content: center; }
 
-            .store-buttons { justify-content: center; }
+            .store-buttons {
+                justify-content: center;
+                gap: 0.75rem;
+            }
+
+            .store-btn {
+                min-width: 0;
+                flex: 1;
+                max-width: 200px;
+                padding: 0.7rem 1rem;
+            }
 
             .social-link { justify-content: center; }
 
-            .falio-title { font-size: 2rem; }
+            .falio-title { font-size: 1.9rem; }
 
             .falio-visual { order: -1; margin-bottom: 2rem; }
 
@@ -935,32 +1076,52 @@
             }
             .phones-row { gap: 0.75rem; }
 
-            .social-links-row { justify-content: center; }
+            .social-links-row {
+                justify-content: center;
+                gap: 0.75rem;
+            }
+            .social-card {
+                padding: 0.65rem 1rem;
+                font-size: 0.88rem;
+            }
 
             .orbit-ring:nth-child(1) { width: 300px; height: 300px; }
             .orbit-ring:nth-child(2) { width: 360px; height: 360px; }
 
-            .services { padding: 4rem 1.5rem; }
-            .stats { padding: 4rem 1.5rem; }
+            .services { padding: 4rem 1.25rem; }
+            .stats { padding: 4rem 1.25rem; }
+            .section-header { margin-bottom: 2.5rem; }
 
+            .footer-content { gap: 2rem; }
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
+                gap: 0.75rem;
             }
 
             .footer-legal {
-                flex-direction: column;
-                gap: 0.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem 1rem;
+            }
+
+            /* Hub link buttons on mobile */
+            .pz-hub-links, .zz-hub-links {
+                justify-content: center;
+            }
+            .pz-hub-btn, .zz-hub-btn {
+                font-size: 0.82rem;
+                padding: 0.55rem 0.9rem;
             }
         }
 
         /* Responsive - Small Mobile */
         @media (max-width: 480px) {
-            .falio-showcase {
-                padding: 6rem 1rem 2rem;
+            .falio-showcase, .zartzurt-showcase, .periyodoz-showcase {
+                padding: 5rem 1rem 2.5rem;
             }
 
-            .falio-title { font-size: 1.6rem; }
+            .falio-title { font-size: 1.55rem; }
 
             .falio-app-icon {
                 width: 56px;
@@ -972,11 +1133,20 @@
                 gap: 0.75rem;
             }
 
-            .falio-desc { font-size: 0.95rem; }
-
+            .falio-desc { font-size: 0.93rem; }
             .falio-feature-tag { font-size: 0.75rem; padding: 0.4rem 0.75rem; }
 
-            .store-btn { min-width: 150px; padding: 0.6rem 1rem; }
+            .store-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .store-btn {
+                width: 100%;
+                max-width: 260px;
+                min-width: 0;
+                justify-content: center;
+                padding: 0.7rem 1.25rem;
+            }
 
             .phone-mockup {
                 border-radius: 14px !important;
@@ -1005,14 +1175,26 @@
             }
             .phones-row { gap: 0.5rem; }
 
-            .hero h1 { font-size: 1.8rem; }
-            .hero { padding: 3rem 1rem 2rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .hero { padding: 3.5rem 1rem 2rem; }
 
             .stats-grid { gap: 1.5rem; }
             .stat-number { font-size: 2.5rem; }
 
             .services-grid { gap: 1rem; }
             .service-card { padding: 1.5rem; }
+
+            nav {
+                padding: 1rem 1.25rem;
+            }
+            .brand-name {
+                font-size: 1.2rem;
+            }
+            .logo {
+                width: 42px;
+                height: 42px;
+                font-size: 1.2rem;
+            }
         }
 
         /* Zart Zurt App Showcase */
@@ -1518,28 +1700,50 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="index.html" class="logo-container" aria-label="VB TECH LABS Ana Sayfa" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); if(history.replaceState) { history.replaceState(null, '', window.location.pathname); } return (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') ? false : true;">
+            <a href="/" class="logo-container" aria-label="VB TECH LABS Ana Sayfa" onclick="if(window.location.pathname==='/'||window.location.pathname==='/index.html'){window.scrollTo({top:0,behavior:'smooth'});return false;}">
                 <div class="logo">VB</div>
                 <span class="brand-name">VB TECH LABS</span>
             </a>
-            <div style="display: flex; align-items: center; gap: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
                 <ul class="nav-links">
                     <li><a href="#falio-app" data-translate="nav_falio">Falio App</a></li>
                     <li><a href="#zart-zurt-app" data-translate="nav_zartzurt">Zart Zurt</a></li>
                     <li><a href="#periyodoz-app" data-translate="nav_periyodoz">PeriyoDoz</a></li>
                     <li><a href="#services" data-translate="nav_services">Services</a></li>
                     <li><a href="#about" data-translate="nav_about">About</a></li>
-                    <li><a href="privacy-policy.html" data-translate="nav_privacy">Privacy Policy</a></li>
-                    <li><a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a></li>
                     <li><a href="mailto:bilicisoftwaree@gmail.com" data-translate="nav_contact">Contact</a></li>
                 </ul>
                 <div class="lang-switcher">
                     <button id="lang-tr" class="active" onclick="switchLanguage('tr')">TR</button>
                     <button id="lang-en" onclick="switchLanguage('en')">EN</button>
                 </div>
+                <button class="hamburger" id="hamburger-btn" aria-label="Menü" onclick="toggleMobileNav()">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </nav>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="mobile-nav" onclick="closeMobileNav(event)">
+        <div class="mobile-nav-drawer">
+            <button class="mobile-nav-close" onclick="toggleMobileNav()" aria-label="Kapat">✕</button>
+            <a href="#falio-app" data-translate="nav_falio" onclick="toggleMobileNav()">🔮 Falio App</a>
+            <a href="#zart-zurt-app" data-translate="nav_zartzurt" onclick="toggleMobileNav()">🎭 Zart Zurt</a>
+            <a href="#periyodoz-app" data-translate="nav_periyodoz" onclick="toggleMobileNav()">💊 PeriyoDoz</a>
+            <div class="mobile-nav-divider"></div>
+            <a href="#services" data-translate="nav_services" onclick="toggleMobileNav()">Hizmetler</a>
+            <a href="#about" data-translate="nav_about" onclick="toggleMobileNav()">Hakkımızda</a>
+            <div class="mobile-nav-divider"></div>
+            <a href="privacy-periyodoz.html">🛡️ PeriyoDoz Gizlilik</a>
+            <a href="privacy-falio.html">🛡️ Falio Gizlilik & Şartlar</a>
+            <a href="mailto:bilicisoftwaree@gmail.com" data-translate="nav_contact">✉️ İletişim</a>
+            <div class="mobile-lang">
+                <button id="mobile-lang-tr" class="active" onclick="switchLanguage('tr'); updateMobileLangBtns('tr');">TR</button>
+                <button id="mobile-lang-en" onclick="switchLanguage('en'); updateMobileLangBtns('en');">EN</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Falio App Showcase -->
     <section class="falio-showcase" id="falio-app">
@@ -2150,7 +2354,29 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'tr';
             switchLanguage(savedLang);
+            updateMobileLangBtns(savedLang);
         });
+
+        // Mobile Nav
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobile-nav');
+            const btn = document.getElementById('hamburger-btn');
+            const isOpen = nav.classList.toggle('open');
+            btn.classList.toggle('open', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        function closeMobileNav(e) {
+            // close only if clicking the backdrop (not the drawer itself)
+            if (e.target === document.getElementById('mobile-nav')) {
+                toggleMobileNav();
+            }
+        }
+
+        function updateMobileLangBtns(lang) {
+            document.getElementById('mobile-lang-tr').classList.toggle('active', lang === 'tr');
+            document.getElementById('mobile-lang-en').classList.toggle('active', lang === 'en');
+        }
     </script>
 </body>
 
