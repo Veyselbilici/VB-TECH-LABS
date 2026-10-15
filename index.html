@@ -98,33 +98,61 @@
         .nav-links a.nav-cta { color: #0a0a0d; background: var(--text); font-weight: 600; margin-left: .35rem; }
         .nav-links a.nav-cta:hover { background: var(--signal); }
         .lang-switcher { display: flex; padding: 3px; border-radius: 11px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); }
-        .lang-switcher button, .mobile-lang button {
-            padding: .32rem .65rem; border-radius: 8px; font-family: var(--mono); font-size: .74rem; font-weight: 500; letter-spacing: .06em; color: var(--text-3); transition: all .25s;
+        .lang-switcher button {
+            padding: .32rem .65rem; border-radius: 8px; font-family: var(--mono); font-size: .74rem; font-weight: 500; letter-spacing: .06em; color: var(--text-3); transition: background .25s, color .25s;
         }
-        .lang-switcher button.active, .mobile-lang button.active { background: var(--text); color: #0a0a0d; }
+        .lang-switcher button.active { background: var(--text); color: #0a0a0d; }
         .hamburger { display: none; width: 42px; height: 42px; border-radius: 12px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); }
         .hamburger span { width: 18px; height: 1.6px; background: var(--text); border-radius: 2px; transition: transform .35s var(--ease), opacity .2s; }
         .hamburger.open span:nth-child(1) { transform: translateY(6.6px) rotate(45deg); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: translateY(-6.6px) rotate(-45deg); }
 
-        .mobile-nav { position: fixed; inset: 0; z-index: 1200; background: rgba(5, 5, 8, .7); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: opacity .35s var(--ease), visibility .35s; }
+        .mobile-nav { position: fixed; inset: 0; z-index: 1200; background: rgba(4, 4, 7, .66); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility .4s; }
         .mobile-nav.open { opacity: 1; visibility: visible; }
         .mobile-nav-drawer {
-            position: absolute; top: 0; right: 0; bottom: 0; width: min(380px, 88vw);
-            background: var(--bg-2); border-left: 1px solid var(--line-2);
-            padding: calc(1.25rem + env(safe-area-inset-top, 0px)) 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
-            display: flex; flex-direction: column; gap: .15rem; overflow-y: auto;
-            transform: translateX(100%); transition: transform .5s var(--ease);
+            position: absolute; top: 0; right: 0; bottom: 0; width: min(420px, 92vw);
+            background:
+                radial-gradient(420px 260px at 100% 0%, rgba(139, 92, 246, .22), transparent 70%),
+                radial-gradient(380px 260px at 0% 100%, rgba(255, 90, 31, .16), transparent 70%),
+                var(--bg-2);
+            border-left: 1px solid var(--line-2); border-radius: 28px 0 0 28px;
+            padding: calc(.9rem + env(safe-area-inset-top, 0px)) 1.25rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+            display: flex; flex-direction: column; overflow-y: auto; overscroll-behavior: contain;
+            transform: translateX(104%); transition: transform .55s var(--ease), box-shadow .55s;
+            box-shadow: -40px 0 80px -30px rgba(0, 0, 0, .9);
+            touch-action: pan-y;
         }
         .mobile-nav.open .mobile-nav-drawer { transform: none; }
-        .mobile-nav-close { align-self: flex-end; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); margin-bottom: .75rem; font-size: 1.1rem; }
-        .mobile-nav-drawer a { display: flex; align-items: center; gap: .75rem; padding: .85rem .5rem; font-size: 1.12rem; font-weight: 500; border-radius: 12px; color: var(--text); transition: background .2s, padding .3s var(--ease); }
-        .mobile-nav-drawer a:hover { background: rgba(255, 255, 255, .05); padding-left: .85rem; }
-        .mobile-nav-drawer a.sub { font-size: .95rem; color: var(--text-2); }
-        .mobile-nav-divider { height: 1px; background: var(--line); margin: .6rem 0; }
-        .mobile-lang { display: flex; gap: .4rem; margin-top: auto; padding-top: 1.25rem; }
-        .mobile-lang button { border: 1px solid var(--line-2); padding: .6rem 1.1rem; }
+        .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.4rem; }
+        .drawer-head .logo { width: 38px; height: 38px; }
+        .mobile-nav-close { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); font-size: 1.15rem; transition: transform .4s var(--ease), background .25s; }
+        .mobile-nav-close:active { transform: scale(.92) rotate(90deg); }
+        .drawer-label { font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); margin: 1rem 0 .55rem; padding-left: .25rem; }
+        .drawer-app { --c: #a78bfa; display: flex; align-items: center; gap: .9rem; padding: .7rem; margin-bottom: .45rem; border-radius: 18px; background: rgba(255, 255, 255, .035); border: 1px solid var(--line); transition: transform .3s var(--ease), border-color .25s, background .25s; }
+        .drawer-app:active { transform: scale(.985); background: rgba(255, 255, 255, .07); }
+        .drawer-app img { width: 48px; height: 48px; border-radius: 15px; object-fit: cover; border: 1px solid var(--line-2); box-shadow: 0 10px 22px -10px var(--c); flex: none; }
+        .drawer-app span { display: flex; flex-direction: column; min-width: 0; flex: 1; line-height: 1.25; }
+        .drawer-app b { font-size: 1.04rem; font-weight: 650; letter-spacing: -.01em; }
+        .drawer-app small { color: var(--text-2); font-size: .8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .drawer-app svg { color: var(--text-3); font-size: 1.1rem; }
+        .drawer-app.zz { --c: #ff7a1a; }
+        .drawer-app.pz { --c: #ff4d8d; }
+        .drawer-link { display: flex; align-items: center; justify-content: space-between; padding: .95rem .35rem; font-size: 1.25rem; font-weight: 600; letter-spacing: -.02em; border-bottom: 1px solid var(--line); transition: padding .3s var(--ease), color .2s; }
+        .drawer-link svg { color: var(--text-3); font-size: 1.1rem; transition: transform .3s var(--ease), color .2s; }
+        .drawer-link:active { padding-left: .75rem; color: var(--signal); }
+        .drawer-link:active svg { transform: translateX(4px); color: var(--signal); }
+        .drawer-legal { display: flex; flex-wrap: wrap; gap: .4rem .9rem; padding: .25rem; }
+        .drawer-legal a { font-size: .84rem; color: var(--text-2); padding: .3rem 0; }
+        .drawer-foot { margin-top: auto; padding-top: 1.5rem; display: grid; gap: .75rem; }
+        .drawer-cta { display: flex; align-items: center; justify-content: center; gap: .6rem; padding: 1rem; border-radius: 16px; background: var(--signal); color: #0a0a0d; font-weight: 700; box-shadow: 0 14px 34px -12px rgba(214, 255, 63, .55); transition: transform .3s var(--ease); }
+        .drawer-cta:active { transform: scale(.98); }
+        .mobile-lang { display: flex; padding: 4px; border-radius: 14px; background: rgba(255, 255, 255, .05); border: 1px solid var(--line); }
+        .mobile-lang button { flex: 1; padding: .7rem; border-radius: 10px; font-family: var(--mono); font-size: .8rem; letter-spacing: .08em; color: var(--text-3); transition: background .25s, color .25s; }
+        .mobile-lang button.active { background: var(--text); color: #0a0a0d; }
+        /* staggered entrance */
+        .mobile-nav .stg { opacity: 0; transform: translateX(26px); transition: opacity .5s var(--ease), transform .6s var(--ease); }
+        .mobile-nav.open .stg { opacity: 1; transform: none; transition-delay: calc(.12s + var(--i, 0) * .045s); }
 
         /* ---------- Reveal ---------- */
         .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
@@ -245,7 +273,7 @@
         .hub-btn.hl { color: #0a0a0d; background: var(--c); border-color: transparent; font-weight: 600; }
         .hub-btn.hl:hover { color: #0a0a0d; background: color-mix(in srgb, var(--c) 82%, #fff); }
         .social-links-row { display: flex; gap: .5rem; margin-top: 1rem; }
-        .social-card { display: inline-flex; align-items: center; gap: .55rem; padding: .5rem .85rem; border-radius: 11px; border: 1px solid var(--line); font-size: .84rem; font-weight: 500; color: var(--text-2); transition: all .25s; }
+        .social-card { display: inline-flex; align-items: center; gap: .55rem; padding: .5rem .85rem; border-radius: 11px; border: 1px solid var(--line); font-size: .84rem; font-weight: 500; color: var(--text-2); transition: background .25s, color .25s, border-color .25s; }
         .social-card svg { width: 16px; height: 16px; fill: currentColor; }
         .social-card:hover { color: var(--text); border-color: var(--line-2); background: rgba(255, 255, 255, .05); }
 
@@ -274,6 +302,22 @@
         .chip.k1 { left: 0; top: 12%; animation-delay: -1s; }
         .chip.k2 { right: -2%; top: 26%; animation-delay: -3s; }
         .chip.k3 { left: 6%; bottom: 14%; animation-delay: -4.5s; }
+
+
+        /* video card */
+        .zz-visual { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
+        .video-card { cursor: pointer; position: relative; width: min(100%, 460px); aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; border: 1px solid var(--line-2); background: #000; box-shadow: 0 30px 60px -28px rgba(0, 0, 0, .9); display: block; transition: transform .45s var(--ease), border-color .3s; }
+        .video-card:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, .35); }
+        .video-card img, .video-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
+        .video-card img { transition: transform .8s var(--ease), filter .4s; filter: brightness(.82); }
+        .video-card:hover img { transform: scale(1.05); filter: brightness(.95); }
+        .video-play { position: absolute; left: 50%; top: 50%; width: 68px; height: 68px; margin: -34px 0 0 -34px; border-radius: 50%; display: grid; place-items: center; font-size: 1.6rem; color: #0a0a0d; background: var(--c); box-shadow: 0 0 0 10px color-mix(in srgb, var(--c) 28%, transparent), 0 16px 40px -8px var(--c); transition: transform .4s var(--ease); }
+        .video-play svg { margin-left: 3px; }
+        .video-card:hover .video-play { transform: scale(1.1); }
+        .video-label { position: absolute; left: .8rem; bottom: .8rem; display: inline-flex; align-items: center; gap: .45rem; padding: .4rem .7rem; border-radius: 10px; font-size: .78rem; font-weight: 600; background: rgba(10, 10, 13, .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid var(--line-2); }
+        .video-label svg { color: var(--c); }
+        .video-card.playing { cursor: default; }
+        .video-card.playing:hover { transform: none; }
 
         /* ---------- Services ---------- */
         .services { background: var(--bg-2); border-block: 1px solid var(--line); }
@@ -335,7 +379,7 @@
             position: relative; width: min(440px, 100%); max-height: calc(100svh - 2.5rem); overflow-y: auto; border-radius: 28px; padding: 1.6rem; background: var(--surface); border: 1px solid var(--line-2); box-shadow: 0 40px 100px -20px var(--modal-glow), 0 0 0 1px rgba(255, 255, 255, .03) inset; transform: translateY(24px) scale(.97); transition: transform .5s var(--ease); }
         .app-share-modal-backdrop.active .app-share-modal-card { transform: none; }
         .app-share-modal-card::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--modal-gradient); }
-        .app-share-modal-close { position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); color: var(--text-2); transition: all .25s; }
+        .app-share-modal-close { position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); color: var(--text-2); transition: background .25s, color .25s, border-color .25s; }
         .app-share-modal-close:hover { color: var(--text); background: rgba(255, 255, 255, .12); }
         .app-share-modal-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; padding-right: 2.5rem; }
         .app-share-modal-icon { width: 64px; height: 64px; border-radius: 20px; object-fit: cover; border: 1px solid var(--line-2); box-shadow: 0 12px 26px -10px var(--modal-theme); }
@@ -396,6 +440,33 @@
             .footer-content { grid-template-columns: 1fr; gap: 2.2rem; }
             .chip.k2 { right: 0; }
             .cta-band { border-radius: 26px; }
+            .section { padding: 4rem 0; }
+            .hero { padding: 6.5rem 0 3rem; }
+            .hero-stage { width: min(78%, 300px); margin-bottom: 0; }
+            .cta-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+            .btn { justify-content: center; padding: .9rem .5rem; font-size: .86rem; gap: .35rem; white-space: nowrap; }
+            .app-card .app-visual { order: -1; }
+            .phones-row { width: 100%; height: clamp(290px, 78vw, 380px); }
+            .icon-stage { width: min(78%, 280px); }
+            .chip { font-size: .7rem; padding: .38rem .6rem; }
+            .chip.k2 { right: -6%; }
+            .app-title { font-size: 1.5rem; }
+            .app-desc { font-size: .96rem; }
+            .app-tags { gap: .4rem; }
+            .app-tag { font-size: .78rem; padding: .35rem .6rem; }
+            .hub-links { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; }
+            .hub-btn { justify-content: flex-start; padding: .7rem .75rem; font-size: .8rem; min-width: 0; }
+            .hub-btn span { line-height: 1.25; }
+            .hub-btn svg { align-self: flex-start; margin-top: .1rem; }
+            .hub-btn.hl { grid-column: 1 / -1; justify-content: center; padding: .85rem; font-size: .9rem; }
+            .service-card { display: grid; grid-template-columns: auto 1fr; column-gap: 1rem; padding: 1.25rem; border-radius: 20px; }
+            .service-no { display: none; }
+            .service-icon { grid-row: 1 / 3; margin: 0; width: 46px; height: 46px; font-size: 1.3rem; }
+            .service-title { margin: 0 0 .3rem; font-size: 1.1rem; align-self: end; }
+            .service-description { grid-column: 2; font-size: .92rem; }
+            .stat-item { padding: 1.25rem; }
+            .footer-legal { gap: .4rem 1rem; }
+            .section-header { margin-bottom: 2rem; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
@@ -475,7 +546,7 @@
                     <button id="lang-tr" class="active" onclick="switchLanguage('tr')">TR</button>
                     <button id="lang-en" onclick="switchLanguage('en')">EN</button>
                 </div>
-                <button class="hamburger" id="hamburger-btn" aria-label="Menü" onclick="toggleMobileNav()">
+                <button class="hamburger" id="hamburger-btn" aria-label="Menü" aria-expanded="false" aria-controls="mobile-drawer" onclick="toggleMobileNav()">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -483,22 +554,48 @@
     </header>
 
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav" id="mobile-nav" onclick="closeMobileNav(event)">
-        <div class="mobile-nav-drawer">
-            <button class="mobile-nav-close" onclick="toggleMobileNav()" aria-label="Kapat"><svg class="i"><use href="#i-x"/></svg></button>
-            <a href="#falio-app" data-translate="nav_falio" onclick="toggleMobileNav()">Falio App</a>
-            <a href="#zart-zurt-app" data-translate="nav_zartzurt" onclick="toggleMobileNav()">Zart Zurt</a>
-            <a href="#periyodoz-app" data-translate="nav_periyodoz" onclick="toggleMobileNav()">PeriyoDoz</a>
-            <div class="mobile-nav-divider"></div>
-            <a href="#services" data-translate="nav_services" onclick="toggleMobileNav()">Hizmetler</a>
-            <a href="#about" data-translate="nav_about" onclick="toggleMobileNav()">Hakkımızda</a>
-            <div class="mobile-nav-divider"></div>
-            <a href="privacy-periyodoz.html" class="sub" data-translate="pz_footer_privacy">PeriyoDoz Gizlilik</a>
-            <a href="privacy-falio.html" class="sub" data-translate="falio_privacy_short">Falio Gizlilik & Şartlar</a>
-            <a href="mailto:bilicisoftwaree@gmail.com" data-translate="nav_contact">İletişim</a>
-            <div class="mobile-lang">
-                <button id="mobile-lang-tr" class="active" onclick="switchLanguage('tr'); updateMobileLangBtns('tr');">TR</button>
-                <button id="mobile-lang-en" onclick="switchLanguage('en'); updateMobileLangBtns('en');">EN</button>
+    <div class="mobile-nav" id="mobile-nav" onclick="closeMobileNav(event)" aria-hidden="true">
+        <div class="mobile-nav-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu">
+            <div class="drawer-head stg" style="--i:0">
+                <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0c0c10"/><rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="2"/><path d="M14 18l11 28 7-17" fill="none" stroke="#f4f1ea" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 19v27h7.500a6.500 6.500 0 000-13H40m0 0h5.500a6.500 6.500 0 000-13H40" fill="none" stroke="#d6ff3f" stroke-width="5.500" stroke-linecap="round" stroke-linejoin="round" transform="translate(1 0)"/></svg>
+                <button class="mobile-nav-close" onclick="toggleMobileNav()" aria-label="Kapat"><svg class="i"><use href="#i-x"/></svg></button>
+            </div>
+
+            <div class="drawer-label stg" style="--i:1" data-translate="drawer_apps">Uygulamalar</div>
+            <a href="#falio-app" class="drawer-app stg" style="--i:2" onclick="toggleMobileNav()">
+                <img src="assets/icon-falio.webp" alt="" width="48" height="48">
+                <span><b data-translate="nav_falio">Falio App</b><small data-translate="drawer_falio">Astroloji, rüya & fal</small></span>
+                <svg class="i"><use href="#i-arrow"/></svg>
+            </a>
+            <a href="#zart-zurt-app" class="drawer-app zz stg" style="--i:3" onclick="toggleMobileNav()">
+                <img src="assets/icon-zartzurt.webp" alt="" width="48" height="48">
+                <span><b data-translate="nav_zartzurt">Zart Zurt</b><small data-translate="drawer_zz">Şaka, troll & komik sesler</small></span>
+                <svg class="i"><use href="#i-arrow"/></svg>
+            </a>
+            <a href="#periyodoz-app" class="drawer-app pz stg" style="--i:4" onclick="toggleMobileNav()">
+                <img src="assets/icon-periyodoz.webp" alt="" width="48" height="48">
+                <span><b data-translate="nav_periyodoz">PeriyoDoz</b><small data-translate="drawer_pz">İlaç, aile sağlığı & döngü</small></span>
+                <svg class="i"><use href="#i-arrow"/></svg>
+            </a>
+
+            <div class="drawer-label stg" style="--i:5" data-translate="footer_company_title">Şirket</div>
+            <a href="#services" class="drawer-link stg" style="--i:6" onclick="toggleMobileNav()"><span data-translate="nav_services">Hizmetler</span><svg class="i"><use href="#i-arrow"/></svg></a>
+            <a href="#about" class="drawer-link stg" style="--i:7" onclick="toggleMobileNav()"><span data-translate="nav_about">Hakkımızda</span><svg class="i"><use href="#i-arrow"/></svg></a>
+
+            <div class="drawer-label stg" style="--i:8" data-translate="drawer_legal">Yasal</div>
+            <div class="drawer-legal stg" style="--i:9">
+                <a href="privacy-periyodoz.html" data-translate="pz_footer_privacy">PeriyoDoz Gizlilik</a>
+                <a href="privacy-falio.html" data-translate="falio_privacy_short">Falio Gizlilik & Şartlar</a>
+                <a href="zart-zurt-privacy-policy.html">Zart Zurt Privacy</a>
+                <a href="privacy-policy.html" data-translate="nav_privacy">Gizlilik Politikası</a>
+            </div>
+
+            <div class="drawer-foot stg" style="--i:10">
+                <a href="mailto:bilicisoftwaree@gmail.com" class="drawer-cta"><svg class="i"><use href="#i-mail"/></svg><span data-translate="nav_contact">İletişim</span></a>
+                <div class="mobile-lang">
+                    <button id="mobile-lang-tr" class="active" onclick="switchLanguage('tr'); updateMobileLangBtns('tr');">TR</button>
+                    <button id="mobile-lang-en" onclick="switchLanguage('en'); updateMobileLangBtns('en');">EN</button>
+                </div>
             </div>
         </div>
     </div>
@@ -634,12 +731,16 @@
                             </div>
                         </div>
                         <div class="app-visual zz-visual">
-                            <div class="icon-stage zz-mockup-wrapper">
-                                <div class="ring r1"></div><div class="ring r2"></div>
-                                <span class="chip k1"><svg class="i"><use href="#i-wave"/></svg>100+ SFX</span>
-                                <span class="chip k2"><svg class="i"><use href="#i-vibrate"/></svg>Shake</span>
-                                <span class="chip k3"><svg class="i"><use href="#i-bolt"/></svg>Offline</span>
-                                <div class="icon-card zz-icon-card"><img src="assets/icon-zartzurt.webp" alt="Zart Zurt App Icon" loading="lazy" width="384" height="384"></div>
+                            <div class="ring r1"></div><div class="ring r2"></div>
+                            <div class="phones-row">
+                                <div class="phone-mockup"><img src="assets/zart-zurt/tr-1.webp" data-tr="assets/zart-zurt/tr-1.webp" data-en="assets/zart-zurt/en-1.webp" alt="Zart Zurt - Komik Ses Tahtası" loading="lazy" decoding="async"></div>
+                                <div class="phone-mockup"><img src="assets/zart-zurt/tr-2.webp" data-tr="assets/zart-zurt/tr-2.webp" data-en="assets/zart-zurt/en-2.webp" alt="Zart Zurt - Ünlü Replikler" loading="lazy" decoding="async"></div>
+                                <div class="phone-mockup"><img src="assets/zart-zurt/tr-3.webp" data-tr="assets/zart-zurt/tr-3.webp" data-en="assets/zart-zurt/en-3.webp" alt="Zart Zurt - Şaka & Paylaş" loading="lazy" decoding="async"></div>
+                            </div>
+                            <div role="button" tabindex="0" class="video-card" id="zz-video" data-yt="_8u3ZUVtaOs" aria-label="Zart Zurt tanıtım videosu">
+                                <img src="https://i.ytimg.com/vi/_8u3ZUVtaOs/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+                                <span class="video-play"><svg class="i fill"><use href="#i-play"/></svg></span>
+                                <span class="video-label"><svg class="i"><use href="#i-play"/></svg><span data-translate="zz_video">Tanıtım Videosunu İzle</span></span>
                             </div>
                         </div>
                     </article>
@@ -849,6 +950,8 @@
                 nav_falio: "Falio App", nav_zartzurt: "Zart Zurt", nav_periyodoz: "PeriyoDoz",
                 nav_services: "Hizmetler", nav_about: "Hakkımızda", nav_privacy: "Gizlilik Politikası",
                 nav_app_ads: "App-ads.txt", nav_contact: "İletişim",
+                drawer_apps: "Uygulamalar", drawer_legal: "Yasal",
+                drawer_falio: "Astroloji, rüya & fal", drawer_zz: "Şaka, troll & komik sesler", drawer_pz: "İlaç, aile sağlığı & döngü",
 
                 hero_subtitle: "Bağımsız Mobil Yazılım Stüdyosu",
                 hero_title: "Hayatı kolaylaştıran <em>mobil</em> uygulamalar.",
@@ -871,7 +974,7 @@
                 zz_tag_characters: "Çizgi Karakterler", zz_tag_sounds: "100+ Troll & Efekt Sesi", zz_tag_shake: "Salla-Ses Değiştir Modu", zz_tag_offline: "Çevrimdışı Çalışma", zz_tag_nodata: "Sıfır Veri Toplama",
                 zz_play_small: "HEMEN İNDİR", zz_appstore_small: "HEMEN İNDİR",
                 zz_link_smart: "Paylaş & QR", zz_link_portal: "Akıllı İndirme Sayfası", zz_link_hub: "Uygulama Sayfası",
-                zz_link_privacy: "Gizlilik Politikası", zz_link_terms: "Kullanım Koşulları", zz_link_support: "Destek & SSS",
+                zz_video: "Tanıtım Videosunu İzle", zz_link_privacy: "Gizlilik Politikası", zz_link_terms: "Kullanım Koşulları", zz_link_support: "Destek & SSS",
 
                 pz_badge: "<span class=\"pulse-dot-rose\"></span>Sağlık & İlaç Asistanı — Akıllı Takip",
                 pz_title: "PeriyoDoz : İlaç Hatırlatıcı,<br>Aile Sağlığı & Döngü",
@@ -910,6 +1013,8 @@
                 nav_falio: "Falio App", nav_zartzurt: "Zart Zurt", nav_periyodoz: "PeriyoDoz",
                 nav_services: "Services", nav_about: "About", nav_privacy: "Privacy Policy",
                 nav_app_ads: "App-ads.txt", nav_contact: "Contact",
+                drawer_apps: "Apps", drawer_legal: "Legal",
+                drawer_falio: "Astrology, dream & tarot", drawer_zz: "Pranks, troll & funny sounds", drawer_pz: "Meds, family health & cycle",
 
                 hero_subtitle: "Independent Mobile Software Studio",
                 hero_title: "<em>Mobile</em> apps that make everyday life easier.",
@@ -932,7 +1037,7 @@
                 zz_tag_characters: "Cartoon Characters", zz_tag_sounds: "100+ Troll & Prank Sounds", zz_tag_shake: "Shake-to-Pitch Mode", zz_tag_offline: "Offline Ready", zz_tag_nodata: "Zero Data Collection",
                 zz_play_small: "DOWNLOAD NOW", zz_appstore_small: "DOWNLOAD NOW",
                 zz_link_smart: "Share & QR", zz_link_portal: "Smart Landing Page", zz_link_hub: "App Page",
-                zz_link_privacy: "Privacy Policy", zz_link_terms: "Terms of Service", zz_link_support: "Support & FAQ",
+                zz_video: "Watch the Promo Video", zz_link_privacy: "Privacy Policy", zz_link_terms: "Terms of Service", zz_link_support: "Support & FAQ",
 
                 pz_badge: "<span class=\"pulse-dot-rose\"></span>Health & Med Assistant — Smart Tracking",
                 pz_title: "PeriyoDoz : Pill Reminder,<br>Family Health & Cycle",
@@ -984,6 +1089,8 @@
                 }
             });
 
+            document.querySelectorAll('img[data-' + lang + ']').forEach(img => { img.src = img.getAttribute('data-' + lang); });
+
             const pzAppleBtn = document.getElementById('periyodoz-appstore-btn');
             if (pzAppleBtn) {
                 pzAppleBtn.href = lang === 'tr'
@@ -1011,11 +1118,32 @@
             const btn = document.getElementById('hamburger-btn');
             const isOpen = nav.classList.toggle('open');
             btn.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', String(isOpen));
+            nav.setAttribute('aria-hidden', String(!isOpen));
             document.body.style.overflow = isOpen ? 'hidden' : '';
+            if (isOpen) {
+                const c = nav.querySelector('.mobile-nav-close');
+                if (c) setTimeout(() => c.focus({ preventScroll: true }), 350);
+            } else { btn.focus({ preventScroll: true }); }
         }
         function closeMobileNav(e) {
             if (e.target === document.getElementById('mobile-nav')) toggleMobileNav();
         }
+        // swipe right to close
+        (function () {
+            const drawer = document.getElementById('mobile-drawer');
+            let x0 = null, y0 = 0;
+            drawer.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+            drawer.addEventListener('touchend', e => {
+                if (x0 === null) return;
+                const dx = e.changedTouches[0].clientX - x0, dy = Math.abs(e.changedTouches[0].clientY - y0);
+                x0 = null;
+                if (dx > 70 && dy < 60 && document.getElementById('mobile-nav').classList.contains('open')) toggleMobileNav();
+            }, { passive: true });
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1080 && document.getElementById('mobile-nav').classList.contains('open')) toggleMobileNav();
+            });
+        })();
         function updateMobileLangBtns(lang) {
             document.getElementById('mobile-lang-tr').classList.toggle('active', lang === 'tr');
             document.getElementById('mobile-lang-en').classList.toggle('active', lang === 'en');
@@ -1066,6 +1194,26 @@
                 }, { threshold: .6 });
                 io.observe(el);
             });
+        })();
+
+
+        /* Zart Zurt promo video: load player only on click */
+        (function () {
+            const card = document.getElementById('zz-video');
+            if (!card) return;
+            function load() {
+                if (card.classList.contains('playing')) return;
+                const f = document.createElement('iframe');
+                f.src = 'https://www.youtube-nocookie.com/embed/' + card.dataset.yt + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+                f.title = 'Zart Zurt';
+                f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+                f.allowFullscreen = true;
+                card.innerHTML = '';
+                card.appendChild(f);
+                card.classList.add('playing');
+            }
+            card.addEventListener('click', load);
+            card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); } });
         })();
 
         /* =============================================
