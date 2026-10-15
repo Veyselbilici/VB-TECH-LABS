@@ -305,11 +305,18 @@
 
 
 
-        /* background video */
-        .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: .5; pointer-events: none; }
-        .app-card.has-video::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-            background: linear-gradient(90deg, rgba(14, 14, 19, .94) 0%, rgba(14, 14, 19, .78) 45%, rgba(14, 14, 19, .5) 100%); }
-        @media (max-width: 880px) { .app-card.has-video::after { background: linear-gradient(180deg, rgba(14, 14, 19, .72), rgba(14, 14, 19, .9)); } }
+        /* video banner under the Zart Zurt card */
+        .video-banner { position: relative; border-radius: 28px; overflow: hidden; isolation: isolate; aspect-ratio: 21 / 8; border: 1px solid var(--line-2); background: #000; box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .9); }
+        .banner-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+        .banner-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 10, 13, .78) 0%, rgba(10, 10, 13, .25) 55%, rgba(10, 10, 13, .05) 100%), linear-gradient(0deg, rgba(10, 10, 13, .55), transparent 45%); }
+        .banner-copy { position: absolute; left: clamp(1.1rem, 3vw, 2.4rem); bottom: clamp(1rem, 3vw, 2.2rem); display: grid; gap: .6rem; max-width: 22em; }
+        .banner-tag { display: inline-flex; align-items: center; gap: .45rem; width: fit-content; padding: .35rem .7rem; border-radius: 999px; font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; background: rgba(10, 10, 13, .6); border: 1px solid var(--line-2); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+        .banner-tag svg { color: #ff7a1a; }
+        .banner-copy strong { font-size: clamp(1.2rem, 3vw, 2.1rem); line-height: 1.08; letter-spacing: -.03em; font-weight: 700; text-wrap: balance; }
+        .banner-sound { position: absolute; right: clamp(.9rem, 2.4vw, 1.6rem); bottom: clamp(.9rem, 2.4vw, 1.6rem); display: inline-flex; align-items: center; gap: .5rem; padding: .6rem .95rem; border-radius: 12px; font-size: .84rem; font-weight: 600; background: rgba(10, 10, 13, .66); border: 1px solid var(--line-2); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: background .25s, transform .3s var(--ease); }
+        .banner-sound:hover { background: rgba(255, 255, 255, .16); transform: translateY(-2px); }
+        .banner-sound[aria-pressed="true"] { background: #ff7a1a; color: #0a0a0d; border-color: transparent; }
+        @media (max-width: 880px) { .video-banner { aspect-ratio: 16 / 10; border-radius: 22px; } }
 
         /* video card */
         .zz-visual { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
@@ -326,6 +333,18 @@
         .video-label svg { color: var(--c); }
         .video-card.playing { cursor: default; }
         .video-card.playing:hover { transform: none; }
+
+
+        /* app detail dialog */
+        .hero-card { cursor: pointer; padding: 0; background: none; }
+        .hero-card:hover { filter: brightness(1.08); }
+        .app-detail-backdrop { position: fixed; inset: 0; z-index: 1900; display: grid; place-items: center; padding: 1rem; background: rgba(4, 4, 7, .74); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility .4s; }
+        .app-detail-backdrop.active { opacity: 1; visibility: visible; }
+        .app-detail-card { width: min(1100px, 100%); max-height: calc(100svh - 2rem); overflow-y: auto; overscroll-behavior: contain; transform: translateY(28px) scale(.98); transition: transform .55s var(--ease); background-color: var(--surface); }
+        .app-detail-backdrop.active .app-detail-card { transform: none; }
+        .app-detail-close { position: absolute; top: .9rem; right: .9rem; z-index: 5; width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; background: rgba(255, 255, 255, .08); border: 1px solid var(--line-2); font-size: 1.1rem; transition: background .25s, transform .35s var(--ease); }
+        .app-detail-close:hover { background: rgba(255, 255, 255, .16); transform: rotate(90deg); }
+        .app-detail-card .app-visual { min-height: 0; }
 
         /* ---------- Services ---------- */
         .services { background: var(--bg-2); border-block: 1px solid var(--line); }
@@ -629,10 +648,10 @@
                         <a href="mailto:bilicisoftwaree@gmail.com" class="btn btn-secondary"><span data-translate="hero_cta2">İletişime Geç</span></a>
                     </div>
                 </div>
-                <div class="hero-stage reveal" style="--d:.2s" aria-hidden="true">
-                    <div class="hero-card c1"><img src="assets/icon-falio.webp" alt="" width="384" height="384" decoding="async"></div>
-                    <div class="hero-card c2"><img src="assets/icon-zartzurt.webp" alt="" width="384" height="384" decoding="async"></div>
-                    <div class="hero-card c3"><img src="assets/icon-periyodoz.webp" alt="" width="384" height="384" decoding="async"></div>
+                <div class="hero-stage reveal" style="--d:.2s">
+                    <button type="button" class="hero-card c1" onclick="openAppDetail('falio')" aria-label="Falio"><img src="assets/icon-falio.webp" alt="Falio" width="384" height="384" decoding="async"></button>
+                    <button type="button" class="hero-card c2" onclick="openAppDetail('zartzurt')" aria-label="Zart Zurt"><img src="assets/icon-zartzurt.webp" alt="Zart Zurt" width="384" height="384" decoding="async"></button>
+                    <button type="button" class="hero-card c3" onclick="openAppDetail('periyodoz')" aria-label="PeriyoDoz"><img src="assets/icon-periyodoz.webp" alt="PeriyoDoz" width="384" height="384" decoding="async"></button>
                 </div>
             </div>
             <a href="#falio-app" class="scroll-hint" aria-label="Scroll"><span></span>Scroll</a>
@@ -707,10 +726,7 @@
                     </article>
 
                     <!-- Zart Zurt -->
-                    <article class="app-card zz rev has-video reveal zartzurt-showcase" id="zart-zurt-app">
-                        <video class="bg-video" id="zz-bg-video" muted loop playsinline preload="none" poster="assets/zart-zurt/tr-1.webp" aria-hidden="true" tabindex="-1">
-                            <source src="zartzurt%20video.mp4" type="video/mp4">
-                        </video>
+                    <article class="app-card zz rev reveal zartzurt-showcase" id="zart-zurt-app">
                         <div class="app-content zz-content">
                             <span class="app-index">02 / 03</span>
                             <div class="app-badge zz-badge" data-translate="zz_badge"><span class="pulse-dot-orange"></span>Yeni Eğlence Uygulaması — Şaka & Troll</div>
@@ -758,6 +774,22 @@
                             </div>
                         </div>
                     </article>
+
+                    <!-- Zart Zurt video banner -->
+                    <div class="video-banner reveal" id="zz-banner">
+                        <video class="banner-video" id="zz-bg-video" muted loop playsinline preload="none" poster="assets/zart-zurt/tr-1.webp" aria-hidden="true" tabindex="-1">
+                            <source src="zartzurt%20video.mp4" type="video/mp4">
+                        </video>
+                        <div class="banner-shade"></div>
+                        <div class="banner-copy">
+                            <span class="banner-tag"><svg class="i"><use href="#i-play"/></svg>Zart Zurt</span>
+                            <strong data-translate="zz_banner_title">Kahkaha bir dokunuş uzağında.</strong>
+                        </div>
+                        <button type="button" class="banner-sound" id="zz-banner-sound" aria-pressed="false" aria-label="Sesi aç">
+                            <svg class="i"><use href="#i-wave"/></svg>
+                            <span data-translate="zz_banner_sound">Sesi aç</span>
+                        </button>
+                    </div>
 
                     <!-- PeriyoDoz -->
                     <article class="app-card pz reveal periyodoz-showcase" id="periyodoz-app">
@@ -987,7 +1019,7 @@
                 zz_tag_characters: "Çizgi Karakterler", zz_tag_sounds: "100+ Troll & Efekt Sesi", zz_tag_shake: "Salla-Ses Değiştir Modu", zz_tag_offline: "Çevrimdışı Çalışma", zz_tag_nodata: "Sıfır Veri Toplama",
                 zz_play_small: "HEMEN İNDİR", zz_appstore_small: "HEMEN İNDİR",
                 zz_link_smart: "Paylaş & QR", zz_link_portal: "Akıllı İndirme Sayfası", zz_link_hub: "Uygulama Sayfası",
-                zz_video: "Tanıtım Videosunu İzle", zz_link_privacy: "Gizlilik Politikası", zz_link_terms: "Kullanım Koşulları", zz_link_support: "Destek & SSS",
+                zz_video: "Tanıtım Videosunu İzle", zz_banner_title: "Kahkaha bir dokunuş uzağında.", zz_banner_sound: "Sesi aç", zz_link_privacy: "Gizlilik Politikası", zz_link_terms: "Kullanım Koşulları", zz_link_support: "Destek & SSS",
 
                 pz_badge: "<span class=\"pulse-dot-rose\"></span>Sağlık & İlaç Asistanı — Akıllı Takip",
                 pz_title: "PeriyoDoz : İlaç Hatırlatıcı,<br>Aile Sağlığı & Döngü",
@@ -1050,7 +1082,7 @@
                 zz_tag_characters: "Cartoon Characters", zz_tag_sounds: "100+ Troll & Prank Sounds", zz_tag_shake: "Shake-to-Pitch Mode", zz_tag_offline: "Offline Ready", zz_tag_nodata: "Zero Data Collection",
                 zz_play_small: "DOWNLOAD NOW", zz_appstore_small: "DOWNLOAD NOW",
                 zz_link_smart: "Share & QR", zz_link_portal: "Smart Landing Page", zz_link_hub: "App Page",
-                zz_video: "Watch the Promo Video", zz_link_privacy: "Privacy Policy", zz_link_terms: "Terms of Service", zz_link_support: "Support & FAQ",
+                zz_video: "Watch the Promo Video", zz_banner_title: "Laughter is one tap away.", zz_banner_sound: "Sound on", zz_link_privacy: "Privacy Policy", zz_link_terms: "Terms of Service", zz_link_support: "Support & FAQ",
 
                 pz_badge: "<span class=\"pulse-dot-rose\"></span>Health & Med Assistant — Smart Tracking",
                 pz_title: "PeriyoDoz : Pill Reminder,<br>Family Health & Cycle",
@@ -1218,6 +1250,15 @@
             const conn = navigator.connection || {};
             if (conn.saveData || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.remove(); return; }
             v.muted = true;
+            const sb = document.getElementById('zz-banner-sound');
+            if (sb) sb.addEventListener('click', function () {
+                v.muted = !v.muted;
+                sb.setAttribute('aria-pressed', String(!v.muted));
+                const t = sb.querySelector('span');
+                const l = localStorage.getItem('preferredLanguage') || 'tr';
+                if (t) t.textContent = v.muted ? (l === 'tr' ? 'Sesi aç' : 'Sound on') : (l === 'tr' ? 'Sesi kapat' : 'Sound off');
+                if (!v.muted) { const p = v.play(); if (p && p.catch) p.catch(function () {}); }
+            });
             if (!('IntersectionObserver' in window)) return;
             new IntersectionObserver(function (en) {
                 en.forEach(function (e) {
@@ -1226,6 +1267,57 @@
                 });
             }, { threshold: .15 }).observe(v.parentElement);
         })();
+
+
+        /* App detail dialog: reuses the live showcase sections so copy stays in sync */
+        const detailSources = { falio: '#falio-app', zartzurt: '#zart-zurt-app', periyodoz: '#periyodoz-app' };
+        let detailLastFocus = null;
+
+        function openAppDetail(key) {
+            const src = document.querySelector(detailSources[key]);
+            if (!src) return;
+            const card = document.getElementById('app-detail-card');
+            const lang = localStorage.getItem('preferredLanguage') || 'tr';
+            card.className = 'app-card app-detail-card ' + (key === 'zartzurt' ? 'zz' : key === 'periyodoz' ? 'pz' : 'falio');
+            Array.from(card.children).forEach(n => { if (!n.classList.contains('app-detail-close')) n.remove(); });
+
+            ['.app-content', '.app-visual'].forEach(sel => {
+                const orig = src.querySelector(sel);
+                if (!orig) return;
+                const c = orig.cloneNode(true);
+                c.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
+                c.querySelectorAll('[loading]').forEach(n => n.removeAttribute('loading'));
+                c.querySelectorAll('img[data-' + lang + ']').forEach(img => { img.src = img.getAttribute('data-' + lang); });
+                c.querySelectorAll('button[onclick]').forEach(n => n.addEventListener('click', () => closeAppDetail()));
+                const yt = c.querySelector('.video-card');
+                if (yt && window.__loadYtCard) {
+                    const go = () => window.__loadYtCard(yt);
+                    yt.addEventListener('click', go);
+                    yt.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+                }
+                card.appendChild(c);
+            });
+
+            detailLastFocus = document.activeElement;
+            const bd = document.getElementById('app-detail');
+            bd.classList.add('active');
+            bd.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            card.scrollTop = 0;
+            setTimeout(() => { const b = card.querySelector('.app-detail-close'); if (b) b.focus({ preventScroll: true }); }, 300);
+        }
+
+        function closeAppDetail(e) {
+            if (e && e.target && e.target !== document.getElementById('app-detail') && !e.target.closest('.app-detail-close')) return;
+            const bd = document.getElementById('app-detail');
+            if (!bd || !bd.classList.contains('active')) return;
+            bd.classList.remove('active');
+            bd.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            const card = document.getElementById('app-detail-card');
+            setTimeout(() => card.querySelectorAll('iframe').forEach(f => f.remove()), 400);
+            if (detailLastFocus && detailLastFocus.focus) detailLastFocus.focus({ preventScroll: true });
+        }
 
         /* Zart Zurt promo video: load player only on click */
         (function () {
@@ -1242,6 +1334,17 @@
                 card.appendChild(f);
                 card.classList.add('playing');
             }
+            window.__loadYtCard = function (c) {
+                if (c.classList.contains('playing')) return;
+                var f = document.createElement('iframe');
+                f.src = 'https://www.youtube-nocookie.com/embed/' + c.dataset.yt + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+                f.title = 'Zart Zurt';
+                f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+                f.allowFullscreen = true;
+                c.innerHTML = '';
+                c.appendChild(f);
+                c.classList.add('playing');
+            };
             card.addEventListener('click', load);
             card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); } });
         })();
@@ -1363,6 +1466,7 @@
                 if (modal && modal.classList.contains('active')) closeShareModal();
                 const nav = document.getElementById('mobile-nav');
                 if (nav && nav.classList.contains('open')) toggleMobileNav();
+                closeAppDetail();
             }
         });
 
@@ -1413,6 +1517,13 @@
             siteToastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
         }
     </script>
+
+    <!-- App detail dialog -->
+    <div class="app-detail-backdrop" id="app-detail" onclick="closeAppDetail(event)" aria-hidden="true">
+        <div class="app-card app-detail-card" id="app-detail-card" role="dialog" aria-modal="true" aria-label="App">
+            <button type="button" class="app-detail-close" onclick="closeAppDetail()" aria-label="Kapat"><svg class="i"><use href="#i-x"/></svg></button>
+        </div>
+    </div>
 
     <!-- Quick Share & QR Modal -->
     <div class="app-share-modal-backdrop" id="app-share-modal" onclick="closeShareModal(event)">
