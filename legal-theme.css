@@ -1,0 +1,160 @@
+/* VB TECH LABS — shared theme layer for legal / support pages.
+   Loaded after each page's own styles. It re-themes through the existing
+   CSS variables and a few element rules; page content and URLs are untouched. */
+
+:root {
+    --lt-accent: #a78bfa;
+    --lt-accent-2: #8b5cf6;
+    --lt-font: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --lt-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+    --lt-ease: cubic-bezier(.22, 1, .36, 1);
+
+    /* shared page palette */
+    --primary-navy: #0a0a0d;
+    --secondary-navy: #101015;
+    --primary-bg: #0a0a0d;
+    --secondary-bg: #101015;
+    --card-bg: rgba(20, 20, 26, .78);
+    --text-primary: #f4f1ea;
+    --text-secondary: #b3b2bd;
+    --text-muted: #77767f;
+    --border-color: rgba(255, 255, 255, .09);
+
+    /* map each page's accent variable to the per-app accent */
+    --accent-blue: var(--lt-accent);
+    --accent-gold: var(--lt-accent);
+    --accent-purple: var(--lt-accent);
+    --accent-purple-hover: var(--lt-accent);
+    --accent-rose: var(--lt-accent);
+    --accent-rose-hover: var(--lt-accent);
+    --accent-orange: var(--lt-accent);
+    --accent-pink: var(--lt-accent-2);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+    font-family: var(--lt-font) !important;
+    background: #0a0a0d !important;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    isolation: isolate;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(640px 420px at 10% 0%, color-mix(in srgb, var(--lt-accent-2) 30%, transparent), transparent 70%),
+        radial-gradient(640px 440px at 100% 100%, color-mix(in srgb, var(--lt-accent) 12%, transparent), transparent 70%),
+        linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px) 0 0 / 64px 64px,
+        linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px) 0 0 / 64px 64px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, .4) 60%, rgba(0, 0, 0, .15) 100%);
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, .4) 60%, rgba(0, 0, 0, .15) 100%);
+}
+
+::selection { background: var(--lt-accent); color: #0a0a0d; }
+
+/* ---- header ---- */
+header {
+    background: rgba(10, 10, 13, .72) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    backdrop-filter: blur(18px) saturate(1.4);
+    border-bottom: 1px solid var(--border-color) !important;
+}
+.logo-small {
+    background: #0c0c10 !important;
+    color: var(--lt-accent) !important;
+    border: 1px solid rgba(255, 255, 255, .16) !important;
+    box-shadow: none !important;
+    font-family: var(--lt-font) !important;
+    font-weight: 800;
+    letter-spacing: -.02em;
+}
+.header-title, .brand-name {
+    font-family: var(--lt-font) !important;
+    font-weight: 700 !important;
+    letter-spacing: .02em !important;
+}
+
+/* ---- typography ---- */
+h1, h2, h3, h4,
+.page-header h1, .hero-text h1, .section-title, .toc h2 {
+    font-family: var(--lt-font) !important;
+    letter-spacing: -.025em;
+}
+h1 { font-weight: 700; line-height: 1.05; }
+.page-subtitle, .section-subtitle, .hero-subtitle {
+    font-family: var(--lt-mono) !important;
+    font-size: .74rem !important;
+    letter-spacing: .16em !important;
+    text-transform: uppercase;
+    color: var(--lt-accent) !important;
+}
+.last-updated, .code-title { font-family: var(--lt-mono); }
+a { text-underline-offset: 3px; }
+
+/* ---- surfaces ---- */
+.intro-box, .toc, .highlight-box, .highlight-box-blue, .info-box, .detail-card, .support-card,
+.faq-item, .method-card, .badge-card, .plan-box, .info-card, .quick-nav-card, .warning-box,
+.apple-compliance-card, .steps-box, .contact-section, .code-container, .no-data-banner, .hero-banner {
+    border-radius: 20px !important;
+    border-color: var(--border-color) !important;
+    background-color: var(--card-bg) !important;
+}
+.badge-card, .plan-box, .quick-nav-card, .support-card, .faq-item, .method-card {
+    transition: transform .4s var(--lt-ease), border-color .3s;
+}
+.badge-card:hover, .plan-box:hover, .quick-nav-card:hover, .support-card:hover, .method-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, .22) !important;
+}
+table { border-radius: 14px; overflow: hidden; }
+
+/* ---- links / buttons / chips ---- */
+.back-link, .legal-tab-link, .subnav-link, .contact-btn, .action-link, .template-btn, .copy-btn {
+    border-radius: 12px !important;
+    font-family: var(--lt-font);
+    transition: background .25s, color .25s, border-color .25s, transform .3s var(--lt-ease) !important;
+}
+.subnav-link.active, .legal-tab-link.active, .lang-btn.active {
+    background: var(--text-primary) !important;
+    color: #0a0a0d !important;
+    border-color: transparent !important;
+}
+.lang-btn, .lang-switcher button {
+    font-family: var(--lt-mono) !important;
+    letter-spacing: .06em;
+}
+.app-badge {
+    font-family: var(--lt-mono) !important;
+    letter-spacing: .06em;
+    border-radius: 999px !important;
+}
+.contact-email, .contact-btn:not(.contact-btn-secondary) {
+    background: var(--text-primary) !important;
+    color: #0a0a0d !important;
+    border-radius: 14px !important;
+    font-weight: 600;
+}
+.contact-email:hover, .contact-btn:not(.contact-btn-secondary):hover { background: var(--lt-accent) !important; }
+
+/* ---- footer + scroll ---- */
+footer {
+    background: transparent !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, .14); border-radius: 10px; border: 2px solid #0a0a0d; }
+::-webkit-scrollbar-track { background: #0a0a0d; }
+
+:focus-visible { outline: 2px solid var(--lt-accent); outline-offset: 3px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition-duration: .01ms !important; animation: none !important; }
+}

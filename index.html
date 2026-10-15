@@ -304,8 +304,16 @@
         .chip.k3 { left: 6%; bottom: 14%; animation-delay: -4.5s; }
 
 
+
+        /* background video */
+        .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: .5; pointer-events: none; }
+        .app-card.has-video::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+            background: linear-gradient(90deg, rgba(14, 14, 19, .94) 0%, rgba(14, 14, 19, .78) 45%, rgba(14, 14, 19, .5) 100%); }
+        @media (max-width: 880px) { .app-card.has-video::after { background: linear-gradient(180deg, rgba(14, 14, 19, .72), rgba(14, 14, 19, .9)); } }
+
         /* video card */
         .zz-visual { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
+        .zz-visual .phones-row { margin-bottom: 1.6rem; }
         .video-card { cursor: pointer; position: relative; width: min(100%, 460px); aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; border: 1px solid var(--line-2); background: #000; box-shadow: 0 30px 60px -28px rgba(0, 0, 0, .9); display: block; transition: transform .45s var(--ease), border-color .3s; }
         .video-card:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, .35); }
         .video-card img, .video-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
@@ -699,7 +707,10 @@
                     </article>
 
                     <!-- Zart Zurt -->
-                    <article class="app-card zz rev reveal zartzurt-showcase" id="zart-zurt-app">
+                    <article class="app-card zz rev has-video reveal zartzurt-showcase" id="zart-zurt-app">
+                        <video class="bg-video" id="zz-bg-video" muted loop playsinline preload="none" poster="assets/zart-zurt/tr-1.webp" aria-hidden="true" tabindex="-1">
+                            <source src="zartzurt%20video.mp4" type="video/mp4">
+                        </video>
                         <div class="app-content zz-content">
                             <span class="app-index">02 / 03</span>
                             <div class="app-badge zz-badge" data-translate="zz_badge"><span class="pulse-dot-orange"></span>Yeni Eğlence Uygulaması — Şaka & Troll</div>
@@ -1198,6 +1209,23 @@
             });
         })();
 
+
+
+        /* Zart Zurt background video: play only while visible, respect data saver / reduced motion */
+        (function () {
+            const v = document.getElementById('zz-bg-video');
+            if (!v) return;
+            const conn = navigator.connection || {};
+            if (conn.saveData || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.remove(); return; }
+            v.muted = true;
+            if (!('IntersectionObserver' in window)) return;
+            new IntersectionObserver(function (en) {
+                en.forEach(function (e) {
+                    if (e.isIntersecting) { v.preload = 'auto'; const p = v.play(); if (p && p.catch) p.catch(function () {}); }
+                    else v.pause();
+                });
+            }, { threshold: .15 }).observe(v.parentElement);
+        })();
 
         /* Zart Zurt promo video: load player only on click */
         (function () {
