@@ -306,7 +306,7 @@
 
 
         /* video banner under the Zart Zurt card */
-        .video-banner { position: relative; width: min(100%, 780px); margin-inline: auto; border-radius: 22px; overflow: hidden; isolation: isolate; aspect-ratio: 21 / 9; border: 1px solid var(--line-2); background: #000; box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .9); }
+        .video-banner { order: 3; position: relative; grid-column: 1 / -1; width: 100%; margin: .4rem 0 0; border-radius: 20px; overflow: hidden; isolation: isolate; aspect-ratio: 32 / 9; border: 1px solid var(--line-2); background: #000; }
         .banner-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
         .banner-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 10, 13, .78) 0%, rgba(10, 10, 13, .25) 55%, rgba(10, 10, 13, .05) 100%), linear-gradient(0deg, rgba(10, 10, 13, .55), transparent 45%); }
         .banner-copy { position: absolute; left: clamp(.9rem, 2.4vw, 1.6rem); bottom: clamp(.8rem, 2.2vw, 1.4rem); display: grid; gap: .6rem; max-width: 22em; }
@@ -318,7 +318,8 @@
         .banner-sound[aria-pressed="true"] { background: #ff7a1a; color: #0a0a0d; border-color: transparent; }
         .video-banner.falio .banner-tag svg { color: #a78bfa; }
         .video-banner.falio .banner-sound[aria-pressed="true"] { background: #a78bfa; }
-        @media (max-width: 880px) { .video-banner { width: min(100%, 560px); aspect-ratio: 16 / 9; border-radius: 18px; } }
+        @media (max-width: 1100px) { .video-banner { aspect-ratio: 21 / 9; } }
+        @media (max-width: 880px) { .video-banner { aspect-ratio: 16 / 9; border-radius: 18px; margin-top: 0; } }
 
         /* video card */
         .zz-visual { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
@@ -520,7 +521,7 @@
             .social-card { justify-content: center; }
             .ring.r2 { display: none; }
             /* slimmer banners and compact controls */
-            .video-banner { aspect-ratio: 16 / 9; border-radius: 16px; }
+            .video-banner { aspect-ratio: 16 / 9; border-radius: 14px; }
             .banner-copy strong { font-size: .98rem; max-width: 12em; }
             .banner-tag { font-size: .62rem; padding: .28rem .55rem; }
             .banner-sound { padding: .5rem; border-radius: 11px; }
@@ -751,9 +752,7 @@
                                 <div class="phone-mockup"><img src="assets/falio-shot-3.webp" alt="Falio - Kahve Falı" loading="lazy" decoding="async"></div>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Falio video banner -->
+                                        <!-- (inside card) Falio video banner -->
                     <div class="video-banner falio reveal" id="fa-banner">
                         <video class="banner-video" muted loop playsinline preload="none" poster="assets/falio-shot-2.webp" aria-hidden="true" tabindex="-1">
                             <source src="assets/falio/falio-video.mp4" type="video/mp4">
@@ -768,6 +767,8 @@
                             <span data-translate="zz_banner_sound">Sesi aç</span>
                         </button>
                     </div>
+                    </article>
+
 
                     <!-- Zart Zurt -->
                     <article class="app-card zz rev reveal zartzurt-showcase" id="zart-zurt-app">
@@ -812,9 +813,7 @@
                                 <div class="phone-mockup"><img src="assets/zart-zurt/tr-3.webp" data-tr="assets/zart-zurt/tr-3.webp" data-en="assets/zart-zurt/en-3.webp" alt="Zart Zurt - Şaka & Paylaş" loading="lazy" decoding="async"></div>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Zart Zurt video banner -->
+                                        <!-- (inside card) Zart Zurt video banner -->
                     <div class="video-banner reveal" id="zz-banner">
                         <video class="banner-video" id="zz-bg-video" muted loop playsinline preload="none" poster="assets/zart-zurt/tr-1.webp" aria-hidden="true" tabindex="-1">
                             <source src="zartzurt%20video.mp4" type="video/mp4">
@@ -829,6 +828,8 @@
                             <span data-translate="zz_banner_sound">Sesi aç</span>
                         </button>
                     </div>
+                    </article>
+
 
                     <!-- PeriyoDoz -->
                     <article class="app-card pz reveal periyodoz-showcase" id="periyodoz-app">
