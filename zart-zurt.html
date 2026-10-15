@@ -314,16 +314,10 @@
 
         var currentLang = 'tr';
 
-        var userNavLang = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
-        var savedLang = localStorage.getItem('zartzurt_smart_lang') || localStorage.getItem('preferredLanguage');
-
-        if (savedLang) {
-            currentLang = savedLang;
-        } else if (!userNavLang.startsWith('tr')) {
-            currentLang = 'en';
-        } else {
-            currentLang = 'tr';
-        }
+        var savedLang = null;
+        try { savedLang = localStorage.getItem('zartzurt_smart_lang') || localStorage.getItem('preferredLanguage'); } catch (e) {}
+        // Default language is Turkish; English only when the visitor picked it
+        currentLang = (savedLang === 'en') ? 'en' : 'tr';
 
         var i18n = {
             tr: {

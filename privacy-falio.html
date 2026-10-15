@@ -1379,7 +1379,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const saved = localStorage.getItem('falio_policy_lang');
+            const saved = localStorage.getItem('falio_policy_lang') || localStorage.getItem('preferredLanguage');
             if (saved === 'en') {
                 switchLanguage('en');
             } else {

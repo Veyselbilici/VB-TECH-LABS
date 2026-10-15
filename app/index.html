@@ -101,10 +101,9 @@
             // var appStore = 'https://apps.apple.com/app/falio'; // App Store link gelince eklenecek
 
             // English text for non-Turkish browsers
-            var lang = (navigator.language || 'tr').toLowerCase();
             var saved = null;
             try { saved = localStorage.getItem('preferredLanguage'); } catch (e) {}
-            if (saved === 'en' || (!saved && lang.indexOf('tr') !== 0)) {
+            if (saved === 'en') {
                 document.documentElement.lang = 'en';
                 document.getElementById('subtitle').textContent = 'Redirecting you to the app store...';
                 document.getElementById('redirect-text').textContent = 'If it does not open automatically, tap the button below';

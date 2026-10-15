@@ -295,16 +295,10 @@
 
         var currentLang = 'tr';
 
-        var userNavLang = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
-        var savedLang = localStorage.getItem('periyodoz_smart_lang');
-
-        if (savedLang) {
-            currentLang = savedLang;
-        } else if (!userNavLang.startsWith('tr')) {
-            currentLang = 'en';
-        } else {
-            currentLang = 'tr';
-        }
+        var savedLang = null;
+        try { savedLang = localStorage.getItem('periyodoz_smart_lang') || localStorage.getItem('preferredLanguage'); } catch (e) {}
+        // Default language is Turkish; English only when the visitor picked it
+        currentLang = (savedLang === 'en') ? 'en' : 'tr';
 
         var i18n = {
             tr: {
@@ -394,6 +388,7 @@
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('periyodoz_smart_lang', lang);
+            try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
             updateUI();
         }
 

@@ -234,7 +234,7 @@
             }
         };
         var lang = 'tr';
-        try { lang = localStorage.getItem('preferredLanguage') || ((navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en'); } catch (e) {}
+        try { lang = localStorage.getItem('preferredLanguage') || 'tr'; } catch (e) {}
         if (lang !== 'en') lang = 'tr';
 
         function setLang(l) {

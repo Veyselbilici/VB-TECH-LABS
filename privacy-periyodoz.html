@@ -2056,7 +2056,7 @@
 
         // Initialize based on saved preference or browser language
         document.addEventListener('DOMContentLoaded', () => {
-            const saved = localStorage.getItem('periyodoz_policy_lang');
+            const saved = localStorage.getItem('periyodoz_policy_lang') || localStorage.getItem('preferredLanguage');
             if (saved === 'en') {
                 switchLanguage('en');
             } else {
