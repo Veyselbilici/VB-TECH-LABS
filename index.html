@@ -316,6 +316,8 @@
         .banner-sound { position: absolute; right: clamp(.9rem, 2.4vw, 1.6rem); bottom: clamp(.9rem, 2.4vw, 1.6rem); display: inline-flex; align-items: center; gap: .5rem; padding: .6rem .95rem; border-radius: 12px; font-size: .84rem; font-weight: 600; background: rgba(10, 10, 13, .66); border: 1px solid var(--line-2); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: background .25s, transform .3s var(--ease); }
         .banner-sound:hover { background: rgba(255, 255, 255, .16); transform: translateY(-2px); }
         .banner-sound[aria-pressed="true"] { background: #ff7a1a; color: #0a0a0d; border-color: transparent; }
+        .video-banner.falio .banner-tag svg { color: #a78bfa; }
+        .video-banner.falio .banner-sound[aria-pressed="true"] { background: #a78bfa; }
         @media (max-width: 880px) { .video-banner { aspect-ratio: 16 / 10; border-radius: 22px; } }
 
         /* video card */
@@ -725,6 +727,22 @@
                         </div>
                     </article>
 
+                    <!-- Falio video banner -->
+                    <div class="video-banner falio reveal" id="fa-banner">
+                        <video class="banner-video" muted loop playsinline preload="none" poster="assets/falio-shot-2.webp" aria-hidden="true" tabindex="-1">
+                            <source src="assets/falio/falio-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="banner-shade"></div>
+                        <div class="banner-copy">
+                            <span class="banner-tag"><svg class="i"><use href="#i-play"/></svg>Falio</span>
+                            <strong data-translate="falio_banner_title">Yıldızlar seninle konuşsun.</strong>
+                        </div>
+                        <button type="button" class="banner-sound" aria-pressed="false" aria-label="Sesi aç">
+                            <svg class="i"><use href="#i-wave"/></svg>
+                            <span data-translate="zz_banner_sound">Sesi aç</span>
+                        </button>
+                    </div>
+
                     <!-- Zart Zurt -->
                     <article class="app-card zz rev reveal zartzurt-showcase" id="zart-zurt-app">
                         <div class="app-content zz-content">
@@ -1014,7 +1032,7 @@
                 zz_tag_characters: "Çizgi Karakterler", zz_tag_sounds: "100+ Troll & Efekt Sesi", zz_tag_shake: "Salla-Ses Değiştir Modu", zz_tag_offline: "Çevrimdışı Çalışma", zz_tag_nodata: "Sıfır Veri Toplama",
                 zz_play_small: "HEMEN İNDİR", zz_appstore_small: "HEMEN İNDİR",
                 zz_link_smart: "Paylaş & QR", zz_link_portal: "Akıllı İndirme Sayfası", zz_link_hub: "Uygulama Sayfası",
-                zz_video: "Tanıtım Videosunu İzle", zz_banner_title: "Kahkaha bir dokunuş uzağında.", zz_banner_sound: "Sesi aç", zz_link_privacy: "Gizlilik Politikası", zz_link_terms: "Kullanım Koşulları", zz_link_support: "Destek & SSS",
+                zz_video: "Tanıtım Videosunu İzle", zz_banner_title: "Kahkaha bir dokunuş uzağında.", falio_banner_title: "Yıldızlar seninle konuşsun.", zz_banner_sound: "Sesi aç", zz_link_privacy: "Gizlilik Politikası", zz_link_terms: "Kullanım Koşulları", zz_link_support: "Destek & SSS",
 
                 pz_badge: "<span class=\"pulse-dot-rose\"></span>Sağlık & İlaç Asistanı — Akıllı Takip",
                 pz_title: "PeriyoDoz : İlaç Hatırlatıcı,<br>Aile Sağlığı & Döngü",
@@ -1077,7 +1095,7 @@
                 zz_tag_characters: "Cartoon Characters", zz_tag_sounds: "100+ Troll & Prank Sounds", zz_tag_shake: "Shake-to-Pitch Mode", zz_tag_offline: "Offline Ready", zz_tag_nodata: "Zero Data Collection",
                 zz_play_small: "DOWNLOAD NOW", zz_appstore_small: "DOWNLOAD NOW",
                 zz_link_smart: "Share & QR", zz_link_portal: "Smart Landing Page", zz_link_hub: "App Page",
-                zz_video: "Watch the Promo Video", zz_banner_title: "Laughter is one tap away.", zz_banner_sound: "Sound on", zz_link_privacy: "Privacy Policy", zz_link_terms: "Terms of Service", zz_link_support: "Support & FAQ",
+                zz_video: "Watch the Promo Video", zz_banner_title: "Laughter is one tap away.", falio_banner_title: "Let the stars speak to you.", zz_banner_sound: "Sound on", zz_link_privacy: "Privacy Policy", zz_link_terms: "Terms of Service", zz_link_support: "Support & FAQ",
 
                 pz_badge: "<span class=\"pulse-dot-rose\"></span>Health & Med Assistant — Smart Tracking",
                 pz_title: "PeriyoDoz : Pill Reminder,<br>Family Health & Cycle",
@@ -1238,31 +1256,33 @@
 
 
 
-        /* Zart Zurt background video: play only while visible, respect data saver / reduced motion */
+        /* Video banners: play only while visible, respect data saver / reduced motion */
         (function () {
-            const v = document.getElementById('zz-bg-video');
-            if (!v) return;
             const conn = navigator.connection || {};
-            if (conn.saveData || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.remove(); return; }
-            v.muted = true;
-            const sb = document.getElementById('zz-banner-sound');
-            if (sb) sb.addEventListener('click', function () {
-                v.muted = !v.muted;
-                sb.setAttribute('aria-pressed', String(!v.muted));
-                const t = sb.querySelector('span');
-                const l = localStorage.getItem('preferredLanguage') || 'tr';
-                if (t) t.textContent = v.muted ? (l === 'tr' ? 'Sesi aç' : 'Sound on') : (l === 'tr' ? 'Sesi kapat' : 'Sound off');
-                if (!v.muted) { const p = v.play(); if (p && p.catch) p.catch(function () {}); }
-            });
-            if (!('IntersectionObserver' in window)) return;
-            new IntersectionObserver(function (en) {
-                en.forEach(function (e) {
-                    if (e.isIntersecting) { v.preload = 'auto'; const p = v.play(); if (p && p.catch) p.catch(function () {}); }
-                    else v.pause();
+            const reduce = conn.saveData || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.querySelectorAll('.video-banner').forEach(function (banner) {
+                const v = banner.querySelector('.banner-video');
+                if (!v) return;
+                if (reduce) { v.remove(); return; }
+                v.muted = true;
+                const sb = banner.querySelector('.banner-sound');
+                if (sb) sb.addEventListener('click', function () {
+                    v.muted = !v.muted;
+                    sb.setAttribute('aria-pressed', String(!v.muted));
+                    const t = sb.querySelector('span');
+                    const l = localStorage.getItem('preferredLanguage') || 'tr';
+                    if (t) t.textContent = v.muted ? (l === 'tr' ? 'Sesi aç' : 'Sound on') : (l === 'tr' ? 'Sesi kapat' : 'Sound off');
+                    if (!v.muted) { const p = v.play(); if (p && p.catch) p.catch(function () {}); }
                 });
-            }, { threshold: .15 }).observe(v.parentElement);
+                if (!('IntersectionObserver' in window)) return;
+                new IntersectionObserver(function (en) {
+                    en.forEach(function (e) {
+                        if (e.isIntersecting) { v.preload = 'auto'; const p = v.play(); if (p && p.catch) p.catch(function () {}); }
+                        else v.pause();
+                    });
+                }, { threshold: .15 }).observe(banner);
+            });
         })();
-
 
         /* App detail dialog: reuses the live showcase sections so copy stays in sync */
         const detailSources = { falio: '#falio-app', zartzurt: '#zart-zurt-app', periyodoz: '#periyodoz-app' };
