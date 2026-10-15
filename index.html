@@ -150,6 +150,16 @@
         .mobile-lang { display: flex; padding: 4px; border-radius: 14px; background: rgba(255, 255, 255, .05); border: 1px solid var(--line); }
         .mobile-lang button { flex: 1; padding: .7rem; border-radius: 10px; font-family: var(--mono); font-size: .8rem; letter-spacing: .08em; color: var(--text-3); transition: background .25s, color .25s; }
         .mobile-lang button.active { background: var(--text); color: #0a0a0d; }
+        /* language controls */
+        .lang-quick { display: none; align-items: center; gap: .4rem; height: 40px; padding: 0 .7rem; border-radius: 12px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); font-family: var(--mono); font-size: .76rem; letter-spacing: .08em; font-weight: 500; transition: background .25s, transform .3s var(--ease); }
+        .lang-quick svg { font-size: 1.05rem; color: var(--signal); }
+        .lang-quick:active { transform: scale(.94); background: rgba(255, 255, 255, .12); }
+        @media (max-width: 1080px) { .lang-switcher { display: none; } .lang-quick { display: inline-flex; } }
+        .drawer-lang { display: flex; align-items: center; justify-content: space-between; gap: .9rem; margin-bottom: .4rem; padding: .35rem .35rem .35rem .9rem; border-radius: 16px; background: rgba(255, 255, 255, .04); border: 1px solid var(--line); }
+        .drawer-lang-label { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-2); }
+        .drawer-lang-label svg { color: var(--signal); font-size: 1.05rem; }
+        .drawer-lang .mobile-lang { margin: 0; padding: 3px; flex: 1; max-width: 220px; }
+        .drawer-lang .mobile-lang button { padding: .55rem .4rem; font-size: .78rem; letter-spacing: .02em; }
         /* staggered entrance */
         .mobile-nav .stg { opacity: 0; transform: translateX(26px); transition: opacity .5s var(--ease), transform .6s var(--ease); }
         .mobile-nav.open .stg { opacity: 1; transform: none; transition-delay: calc(.12s + var(--i, 0) * .045s); }
@@ -452,6 +462,32 @@
         .site-toast { position: fixed; left: 50%; bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); z-index: 3000; display: flex; align-items: center; gap: .6rem; padding: .8rem 1.2rem; border-radius: 14px; background: var(--text); color: #0a0a0d; font-weight: 600; font-size: .9rem; box-shadow: 0 20px 50px -14px #000; transform: translate(-50%, 24px); opacity: 0; pointer-events: none; transition: transform .45s var(--ease), opacity .3s; }
         .site-toast.show { transform: translate(-50%, 0); opacity: 1; }
 
+
+        /* ---- glass share modal: page colours bleed through a frosted card ---- */
+        .app-share-modal-backdrop {
+            background: radial-gradient(900px 520px at 50% 40%, rgba(255, 255, 255, .04), transparent 70%), rgba(8, 8, 14, .34) !important;
+            -webkit-backdrop-filter: blur(18px) saturate(1.5) !important;
+            backdrop-filter: blur(18px) saturate(1.5) !important;
+        }
+        .app-share-modal-card {
+            background:
+                linear-gradient(145deg, color-mix(in srgb, var(--modal-theme) 26%, rgba(255, 255, 255, .10)) 0%, rgba(255, 255, 255, .07) 38%, rgba(255, 255, 255, .04) 62%, color-mix(in srgb, var(--modal-theme) 16%, rgba(255, 255, 255, .03)) 100%) !important;
+            border: 1px solid rgba(255, 255, 255, .24) !important;
+            -webkit-backdrop-filter: blur(30px) saturate(1.9) !important;
+            backdrop-filter: blur(30px) saturate(1.9) !important;
+            box-shadow:
+                0 40px 100px -24px var(--modal-glow),
+                0 0 0 1px rgba(255, 255, 255, .04) inset,
+                0 1px 0 rgba(255, 255, 255, .35) inset !important;
+        }
+        .app-share-modal-card::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+            background: radial-gradient(420px 220px at 12% -10%, rgba(255, 255, 255, .22), transparent 70%); }
+        .app-share-modal-url-box input { background: rgba(0, 0, 0, .28) !important; border-color: rgba(255, 255, 255, .18) !important; }
+        .app-share-modal-qr-box { background: rgba(255, 255, 255, .07) !important; border-color: rgba(255, 255, 255, .22) !important; }
+        .app-share-modal-social-btn, .app-share-modal-qr-btn, .app-share-modal-close { background: rgba(255, 255, 255, .09) !important; border-color: rgba(255, 255, 255, .18) !important; }
+        .app-share-modal-social-btn:hover, .app-share-modal-qr-btn:hover, .app-share-modal-close:hover { background: rgba(255, 255, 255, .17) !important; }
+        .app-share-modal-desc, .app-share-modal-qr-caption { color: rgba(244, 241, 234, .78) !important; }
+
         /* ---------- Responsive ---------- */
         @media (max-width: 1080px) {
             .nav-links { display: none; }
@@ -474,8 +510,6 @@
             .logo { width: 36px; height: 36px; }
             .brand-name span { display: none; }
             .nav-right { gap: .5rem; }
-            .lang-switcher { padding: 2px; border-radius: 10px; }
-            .lang-switcher button { padding: .42rem .6rem; font-size: .72rem; }
             .hamburger { width: 40px; height: 40px; }
             .app-card { border-radius: 26px; padding: 1.35rem; }
             .app-icon { width: 56px; height: 56px; border-radius: 18px; }
@@ -619,6 +653,9 @@
                     <button id="lang-tr" class="active" onclick="switchLanguage('tr')">TR</button>
                     <button id="lang-en" onclick="switchLanguage('en')">EN</button>
                 </div>
+                <button type="button" class="lang-quick" id="lang-quick" onclick="quickToggleLang()" aria-label="Change language">
+                    <svg class="i"><use href="#i-globe"/></svg><span id="lang-quick-text">EN</span>
+                </button>
                 <button class="hamburger" id="hamburger-btn" aria-label="Menü" aria-expanded="false" aria-controls="mobile-drawer" onclick="toggleMobileNav()">
                     <span></span><span></span><span></span>
                 </button>
@@ -634,7 +671,15 @@
                 <button class="mobile-nav-close" onclick="toggleMobileNav()" aria-label="Kapat"><svg class="i"><use href="#i-x"/></svg></button>
             </div>
 
-            <div class="drawer-label stg" style="--i:1" data-translate="drawer_apps">Uygulamalar</div>
+            <div class="drawer-lang stg" style="--i:1">
+                <span class="drawer-lang-label"><svg class="i"><use href="#i-globe"/></svg><span data-translate="drawer_language">Dil</span></span>
+                <div class="mobile-lang">
+                    <button id="mobile-lang-tr" class="active" onclick="switchLanguage('tr'); updateMobileLangBtns('tr');">Türkçe</button>
+                    <button id="mobile-lang-en" onclick="switchLanguage('en'); updateMobileLangBtns('en');">English</button>
+                </div>
+            </div>
+
+            <div class="drawer-label stg" style="--i:2" data-translate="drawer_apps">Uygulamalar</div>
             <a href="#falio-app" class="drawer-app stg" style="--i:2" onclick="toggleMobileNav()">
                 <img src="assets/icon-falio.webp" alt="" width="48" height="48">
                 <span><b data-translate="nav_falio">Falio App</b><small data-translate="drawer_falio">Astroloji, rüya & fal</small></span>
@@ -665,10 +710,6 @@
 
             <div class="drawer-foot stg" style="--i:10">
                 <a href="iletisim.html" class="drawer-cta"><svg class="i"><use href="#i-mail"/></svg><span data-translate="nav_contact">İletişim</span></a>
-                <div class="mobile-lang">
-                    <button id="mobile-lang-tr" class="active" onclick="switchLanguage('tr'); updateMobileLangBtns('tr');">TR</button>
-                    <button id="mobile-lang-en" onclick="switchLanguage('en'); updateMobileLangBtns('en');">EN</button>
-                </div>
             </div>
         </div>
     </div>
@@ -1049,7 +1090,7 @@
                 nav_falio: "Falio App", nav_zartzurt: "Zart Zurt", nav_periyodoz: "PeriyoDoz",
                 nav_services: "Hizmetler", nav_about: "Hakkımızda", nav_privacy: "Gizlilik Politikası",
                 nav_app_ads: "App-ads.txt", nav_contact: "İletişim",
-                drawer_apps: "Uygulamalar", drawer_legal: "Yasal",
+                drawer_apps: "Uygulamalar", drawer_legal: "Yasal", drawer_language: "Dil",
                 drawer_falio: "Astroloji, rüya & fal", drawer_zz: "Şaka, troll & komik sesler", drawer_pz: "İlaç, aile sağlığı & döngü",
 
                 hero_subtitle: "Bağımsız Mobil Yazılım Stüdyosu",
@@ -1112,7 +1153,7 @@
                 nav_falio: "Falio App", nav_zartzurt: "Zart Zurt", nav_periyodoz: "PeriyoDoz",
                 nav_services: "Services", nav_about: "About", nav_privacy: "Privacy Policy",
                 nav_app_ads: "App-ads.txt", nav_contact: "Contact",
-                drawer_apps: "Apps", drawer_legal: "Legal",
+                drawer_apps: "Apps", drawer_legal: "Legal", drawer_language: "Language",
                 drawer_falio: "Astrology, dream & tarot", drawer_zz: "Pranks, troll & funny sounds", drawer_pz: "Meds, family health & cycle",
 
                 hero_subtitle: "Independent Mobile Software Studio",
@@ -1178,6 +1219,7 @@
             document.documentElement.lang = lang;
 
             document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+            syncQuickLang(lang);
             const activeBtn = document.getElementById('lang-' + lang);
             if (activeBtn) activeBtn.classList.add('active');
 
@@ -1243,6 +1285,18 @@
                 if (window.innerWidth > 1080 && document.getElementById('mobile-nav').classList.contains('open')) toggleMobileNav();
             });
         })();
+        function quickToggleLang() {
+            const cur = localStorage.getItem('preferredLanguage') || 'tr';
+            const next = cur === 'tr' ? 'en' : 'tr';
+            switchLanguage(next);
+            updateMobileLangBtns(next);
+        }
+        function syncQuickLang(lang) {
+            const t = document.getElementById('lang-quick-text');
+            const b = document.getElementById('lang-quick');
+            if (t) t.textContent = lang === 'tr' ? 'EN' : 'TR';
+            if (b) b.setAttribute('aria-label', lang === 'tr' ? 'Switch to English' : 'Türkçeye geç');
+        }
         function updateMobileLangBtns(lang) {
             document.getElementById('mobile-lang-tr').classList.toggle('active', lang === 'tr');
             document.getElementById('mobile-lang-en').classList.toggle('active', lang === 'en');
