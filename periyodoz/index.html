@@ -229,6 +229,80 @@
             margin-top: 2px;
         }
 
+        .pause-redirect-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f1f5f9;
+            padding: 0.35rem 0.7rem;
+            border-radius: 10px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .pause-redirect-btn:hover {
+            background: rgba(225, 29, 72, 0.25);
+            border-color: #f43f5e;
+            color: #ffffff;
+        }
+
+        .share-url-box {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 4px 6px 4px 12px;
+            margin-bottom: 0.85rem;
+            gap: 8px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .share-url-box:focus-within {
+            border-color: #f43f5e;
+            box-shadow: 0 0 14px rgba(244, 63, 94, 0.25);
+        }
+
+        .share-url-input {
+            flex: 1;
+            min-width: 0;
+            background: transparent;
+            border: none;
+            color: #fda4af;
+            font-size: 0.82rem;
+            font-family: inherit;
+            font-weight: 600;
+            outline: none;
+            cursor: text;
+        }
+
+        .share-url-copy-btn {
+            background: linear-gradient(135deg, #f43f5e, #a855f7);
+            border: none;
+            color: white;
+            padding: 0.45rem 0.85rem;
+            border-radius: 10px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(244, 63, 94, 0.35);
+        }
+
+        .share-url-copy-btn:hover {
+            filter: brightness(1.12);
+            transform: translateY(-1px);
+        }
+
         .cta-container {
             display: flex;
             flex-direction: column;
@@ -322,6 +396,142 @@
             font-weight: 500;
         }
 
+        .qr-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #f1f5f9;
+            padding: 0.45rem 1rem;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .qr-download-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        .qr-buttons-wrap {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        /* Interactive Share System */
+        .share-card-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 1rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .share-header {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .share-buttons-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .share-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #f1f5f9;
+            padding: 0.5rem 0.85rem;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .share-action-btn:hover {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: rgba(244, 63, 94, 0.4);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .share-action-btn.share-main {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(139, 92, 246, 0.25));
+            border-color: rgba(244, 63, 94, 0.4);
+            color: #fda4af;
+        }
+
+        .share-action-btn.share-main:hover {
+            background: linear-gradient(135deg, #f43f5e, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(50px);
+            background: #1e293b;
+            color: #ffffff;
+            border: 1px solid rgba(244, 63, 94, 0.5);
+            padding: 0.75rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--primary-glow);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .platform-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 12px;
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
         .footer-links {
             display: flex;
             align-items: center;
@@ -369,45 +579,6 @@
             font-size: 0.78rem;
             color: var(--text-muted);
         }
-
-        .qr-download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #f1f5f9;
-            padding: 0.45rem 1rem;
-            border-radius: 12px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            margin-top: 0.75rem;
-        }
-
-        .qr-download-btn:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px var(--primary-glow);
-        }
-
-        .platform-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 0.25rem 0.65rem;
-            border-radius: 12px;
-            background: rgba(244, 63, 94, 0.15);
-            color: #fda4af;
-            border: 1px solid rgba(244, 63, 94, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
     </style>
 </head>
 <body>
@@ -432,10 +603,14 @@
         <!-- Status box showing redirection progress -->
         <div class="status-box" id="status-box">
             <div class="spinner" id="spinner"></div>
-            <div>
+            <div style="flex: 1; min-width: 0;">
                 <span class="status-text" id="status-title">Mağazaya yönlendiriliyorsunuz...</span>
                 <span class="status-sub" id="status-desc">Açılmazsa aşağıdaki butona dokunun</span>
             </div>
+            <button type="button" class="pause-redirect-btn" id="btn-pause-redirect" onclick="pauseRedirect()" title="Yönlendirmeyi Durdur">
+                <span>⏸️</span>
+                <span id="pause-btn-text">Durdur</span>
+            </button>
         </div>
 
         <!-- Call to Action Buttons -->
@@ -471,14 +646,53 @@
             <span class="feature-pill">👨‍👩‍👧 Aile Takibi</span>
         </div>
 
+        <!-- Interactive Sharing System -->
+        <div class="share-card-section" id="share-section">
+            <div class="share-header">
+                <span>🔗</span>
+                <span id="share-header-text">Arkadaşlarınla Paylaş</span>
+            </div>
+
+            <!-- Visible Copyable Link Box -->
+            <div class="share-url-box">
+                <input type="text" id="share-url-input" class="share-url-input" readonly value="https://vb-tech-labs.vercel.app/periyodoz" onclick="this.select(); pauseRedirect();">
+                <button type="button" class="share-url-copy-btn" id="btn-copy-box" onclick="copyShareLink()">
+                    <span>📋</span>
+                    <span id="btn-copy-box-label">Kopyala</span>
+                </button>
+            </div>
+
+            <div class="share-buttons-row">
+                <button type="button" class="share-action-btn share-main" id="btn-native-share" onclick="triggerNativeShare()">
+                    <span>📲</span>
+                    <span id="btn-share-label">Paylaş</span>
+                </button>
+                <a href="#" class="share-action-btn" id="btn-share-whatsapp" target="_blank" rel="noopener" onclick="pauseRedirect()">
+                    <span>💬</span>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="#" class="share-action-btn" id="btn-share-telegram" target="_blank" rel="noopener" onclick="pauseRedirect()">
+                    <span>✈️</span>
+                    <span>Telegram</span>
+                </a>
+                <button type="button" class="share-action-btn" id="btn-qr-toggle" onclick="toggleQrCode()">
+                    <span>📱</span>
+                    <span id="btn-qr-toggle-label">QR Kodu Gör</span>
+                </button>
+            </div>
+        </div>
+
         <!-- Desktop QR Code -->
         <div class="qr-section" id="qr-section">
             <span class="qr-label" id="qr-label">iPhone veya Android kameranızla tarayarak hemen indirin:</span>
-            <img id="qr-code-img" class="qr-code-img" alt="QR Kodu" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://vb-tech-labs.vercel.app/periyodoz">
+            <img id="qr-code-img" class="qr-code-img" alt="QR Kodu" src="../periyodoz-qr.png">
             <span style="display:block; font-size:0.72rem; color:#f472b6; font-weight:600; margin-top:2px;" id="qr-hint">📱 Taranan cihazı otomatik algılar</span>
-            <div>
-                <a href="../periyodoz-qr.png" download="periyodoz-qr.png" class="qr-download-btn" id="qr-download-btn">
+            <div class="qr-buttons-wrap">
+                <a href="../periyodoz-qr.png" download="periyodoz-qr.png" class="qr-download-btn" id="qr-download-png">
                     📥 QR Kodu İndir (PNG)
+                </a>
+                <a href="../periyodoz-qr.svg" download="periyodoz-qr.svg" class="qr-download-btn" id="qr-download-svg">
+                    📐 Vektör QR (SVG)
                 </a>
             </div>
         </div>
@@ -489,6 +703,12 @@
             <a href="../privacy-periyodoz.html" class="footer-link" id="footer-privacy">Gizlilik Politikası</a>
             <a href="../periyodoz-hesap-silme.html" class="footer-link" id="footer-delete">Hesap Silme</a>
         </div>
+    </div>
+
+    <!-- Toast Notification for Link Copy -->
+    <div class="toast" id="toast">
+        <span>✅</span>
+        <span id="toast-message">Bağlantı panoya kopyalandı!</span>
     </div>
 
     <script>
@@ -502,7 +722,6 @@
 
         var currentLang = 'tr';
 
-        // Detect language: check saved preference or browser language
         var userNavLang = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
         var savedLang = localStorage.getItem('periyodoz_smart_lang');
 
@@ -534,9 +753,22 @@
                 qrLabel: "iPhone veya Android kameranızla tarayarak hemen indirin:",
                 qrHint: "📱 Taranan cihazı otomatik algılar",
                 features: ["⏰ Doz Hatırlatıcı", "🌸 Döngü Günlüğü", "🛡️ Etkileşim Kontrolü", "👨‍👩‍👧 Aile Takibi"],
+                shareHeader: "Arkadaşlarınla Paylaş",
+                shareLabel: "Paylaş",
+                copyLabel: "Kopyala",
+                copyUrlLabel: "Kopyala",
+                copiedToast: "Bağlantı panoya kopyalandı!",
+                qrDownloadPng: "📥 QR Kodu İndir (PNG)",
+                qrDownloadSvg: "📐 Vektör QR (SVG)",
+                qrShowText: "QR Kodu Gör",
+                qrHideText: "QR Kodu Gizle",
+                pauseBtnText: "Durdur",
+                statusPausedTitle: "⏸️ Yönlendirme Duraklatıldı",
+                statusPausedDesc: "Bağlantıyı kopyalayabilir, QR kodu gösterebilir veya aşağıdaki butonlardan indirebilirsiniz.",
                 home: "← Ana Sayfa",
                 privacy: "Gizlilik Politikası",
-                delete: "Hesap Silme"
+                delete: "Hesap Silme",
+                shareText: "PeriyoDoz: İlaç hatırlatıcı, aile sağlığı & döngü takip asistanı! Hemen ücretsiz indir:"
             },
             en: {
                 tagline: "Pill Reminder, Family Health & Cycle Tracker",
@@ -557,16 +789,68 @@
                 qrLabel: "Scan with your iPhone or Android camera to download:",
                 qrHint: "📱 Automatically detects your device",
                 features: ["⏰ Dose Reminder", "🌸 Cycle Diary", "🛡️ Interaction Check", "👨‍👩‍👧 Family Sync"],
+                shareHeader: "Share with Friends",
+                shareLabel: "Share",
+                copyLabel: "Copy",
+                copyUrlLabel: "Copy",
+                copiedToast: "Link copied to clipboard!",
+                qrDownloadPng: "📥 Download QR (PNG)",
+                qrDownloadSvg: "📐 Vector QR (SVG)",
+                qrShowText: "View QR Code",
+                qrHideText: "Hide QR Code",
+                pauseBtnText: "Pause",
+                statusPausedTitle: "⏸️ Redirection Paused",
+                statusPausedDesc: "You can copy the link, show the QR code, or tap buttons below to open the store.",
                 home: "← Home Page",
                 privacy: "Privacy Policy",
-                delete: "Delete Account"
+                delete: "Delete Account",
+                shareText: "PeriyoDoz: Smart pill reminder, family health & cycle tracker! Download free now:"
             }
         };
+
+        var redirectTimer = null;
+        var isRedirectPaused = false;
+
+        function getSmartShareUrl() {
+            if (window.location.origin && window.location.origin !== "null") {
+                return window.location.origin + '/periyodoz';
+            }
+            return 'https://vb-tech-labs.vercel.app/periyodoz';
+        }
 
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('periyodoz_smart_lang', lang);
             updateUI();
+        }
+
+        function pauseRedirect() {
+            if (redirectTimer) {
+                clearTimeout(redirectTimer);
+                redirectTimer = null;
+            }
+            isRedirectPaused = true;
+            var spinner = document.getElementById('spinner');
+            if (spinner) spinner.style.display = 'none';
+            var pauseBtn = document.getElementById('btn-pause-redirect');
+            if (pauseBtn) pauseBtn.style.display = 'none';
+            var statusTitle = document.getElementById('status-title');
+            var statusDesc = document.getElementById('status-desc');
+            if (statusTitle) statusTitle.textContent = i18n[currentLang].statusPausedTitle;
+            if (statusDesc) statusDesc.textContent = i18n[currentLang].statusPausedDesc;
+        }
+
+        function toggleQrCode() {
+            pauseRedirect();
+            var qrSection = document.getElementById('qr-section');
+            var isShown = qrSection.classList.toggle('show');
+            var qrToggleLabel = document.getElementById('btn-qr-toggle-label');
+            if (qrToggleLabel) {
+                qrToggleLabel.textContent = isShown ? i18n[currentLang].qrHideText : i18n[currentLang].qrShowText;
+            }
+            if (isShown) {
+                qrSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         }
 
         function updateUI() {
@@ -592,6 +876,29 @@
             document.getElementById('footer-privacy').textContent = t.privacy;
             document.getElementById('footer-delete').textContent = t.delete;
 
+            document.getElementById('share-header-text').textContent = t.shareHeader;
+            document.getElementById('btn-share-label').textContent = t.shareLabel;
+            var copyBoxLabel = document.getElementById('btn-copy-box-label');
+            if (copyBoxLabel) copyBoxLabel.textContent = t.copyUrlLabel;
+            var pauseBtnText = document.getElementById('pause-btn-text');
+            if (pauseBtnText) pauseBtnText.textContent = t.pauseBtnText;
+            var qrToggleLabel = document.getElementById('btn-qr-toggle-label');
+            var qrSection = document.getElementById('qr-section');
+            if (qrToggleLabel) {
+                qrToggleLabel.textContent = (qrSection && qrSection.classList.contains('show')) ? t.qrHideText : t.qrShowText;
+            }
+            document.getElementById('qr-download-png').textContent = t.qrDownloadPng;
+            document.getElementById('qr-download-svg').textContent = t.qrDownloadSvg;
+
+            // Setup social share links
+            var smartUrl = getSmartShareUrl();
+            var shareInput = document.getElementById('share-url-input');
+            if (shareInput) shareInput.value = smartUrl;
+
+            var shareMsg = t.shareText + ' ' + smartUrl;
+            document.getElementById('btn-share-whatsapp').href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(shareMsg);
+            document.getElementById('btn-share-telegram').href = 'https://t.me/share/url?url=' + encodeURIComponent(smartUrl) + '&text=' + encodeURIComponent(t.shareText);
+
             // Features pills
             var featuresBox = document.getElementById('features-box');
             featuresBox.innerHTML = '';
@@ -606,13 +913,15 @@
             var statusTitle = document.getElementById('status-title');
             var statusDesc = document.getElementById('status-desc');
             var spinner = document.getElementById('spinner');
-            var qrSection = document.getElementById('qr-section');
             var qrImg = document.getElementById('qr-code-img');
+            var pauseBtn = document.getElementById('btn-pause-redirect');
 
             if (isIOS) {
                 platformBadge.textContent = t.iosBadge;
-                statusTitle.textContent = t.statusIosTitle;
-                statusDesc.textContent = t.statusIosDesc;
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusIosTitle;
+                    statusDesc.textContent = t.statusIosDesc;
+                }
                 btnApple.className = 'store-btn store-btn-primary';
                 btnGoogle.className = 'store-btn store-btn-secondary';
                 document.getElementById('apple-btn-sub').textContent = t.recommended;
@@ -621,8 +930,10 @@
                 document.getElementById('google-btn-text').textContent = t.googleText;
             } else if (isAndroid) {
                 platformBadge.textContent = t.androidBadge;
-                statusTitle.textContent = t.statusAndroidTitle;
-                statusDesc.textContent = t.statusAndroidDesc;
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusAndroidTitle;
+                    statusDesc.textContent = t.statusAndroidDesc;
+                }
                 btnGoogle.className = 'store-btn store-btn-primary';
                 btnApple.className = 'store-btn store-btn-secondary';
                 document.getElementById('google-btn-sub').textContent = t.recommended;
@@ -631,26 +942,82 @@
                 document.getElementById('apple-btn-text').textContent = t.appleText;
             } else {
                 platformBadge.textContent = t.desktopBadge;
-                statusTitle.textContent = t.statusDesktopTitle;
-                statusDesc.textContent = t.statusDesktopDesc;
-                spinner.style.display = 'none';
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusDesktopTitle;
+                    statusDesc.textContent = t.statusDesktopDesc;
+                }
+                if (spinner) spinner.style.display = 'none';
+                if (pauseBtn) pauseBtn.style.display = 'none';
+                btnGoogle.className = 'store-btn store-btn-primary';
                 btnApple.className = 'store-btn store-btn-secondary';
-                btnGoogle.className = 'store-btn store-btn-secondary';
                 document.getElementById('apple-btn-sub').textContent = t.appleSub;
                 document.getElementById('apple-btn-text').textContent = t.appleText;
                 document.getElementById('google-btn-sub').textContent = t.googleSub;
                 document.getElementById('google-btn-text').textContent = t.googleText;
 
                 qrSection.classList.add('show');
-                var smartUrl = window.location.origin ? (window.location.origin + '/periyodoz') : window.location.href;
                 qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(smartUrl);
+            }
+        }
+
+        function showToast(msg) {
+            var toast = document.getElementById('toast');
+            var toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = msg || i18n[currentLang].copiedToast;
+            toast.classList.add('show');
+            setTimeout(function() {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        function copyShareLink() {
+            pauseRedirect();
+            var url = getSmartShareUrl();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(function() {
+                    showToast(i18n[currentLang].copiedToast);
+                }).catch(function() {
+                    fallbackCopy(url);
+                });
+            } else {
+                fallbackCopy(url);
+            }
+        }
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            try {
+                document.execCommand('copy');
+                showToast(i18n[currentLang].copiedToast);
+            } catch (err) {}
+            document.body.removeChild(ta);
+        }
+
+        function triggerNativeShare() {
+            pauseRedirect();
+            var url = getSmartShareUrl();
+            var t = i18n[currentLang];
+            if (navigator.share) {
+                navigator.share({
+                    title: 'PeriyoDoz',
+                    text: t.shareText,
+                    url: url
+                }).catch(function(err) {});
+            } else {
+                copyShareLink();
             }
         }
 
         // Initialize UI
         updateUI();
 
-        // Redirect automatically
+        // Redirect automatically (pausable)
         (function() {
             var target = null;
             if (isIOS) {
@@ -660,9 +1027,11 @@
             }
 
             if (target) {
-                setTimeout(function() {
-                    window.location.href = target;
-                }, 1000);
+                redirectTimer = setTimeout(function() {
+                    if (!isRedirectPaused) {
+                        window.location.href = target;
+                    }
+                }, 1200);
             }
         })();
     </script>

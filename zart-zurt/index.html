@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zart Zurt : Şaka, Troll & Komik Sesler | Hemen İndir</title>
+    
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="Zart Zurt: Yüzlerce troll ses efekti, salla-ses değiştir modu ve sevimli çizgi animasyonlar! App Store ve Google Play'den hemen ücretsiz indirin.">
+    <meta name="keywords" content="Zart Zurt, şaka sesleri, troll sesler, komik sesler, ses efektleri, prank app, funny sounds, zart zurt indir, app store, google play">
+    
+    <!-- Open Graph (WhatsApp, Instagram, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zart Zurt : Şaka, Troll & Komik Sesler — Hemen İndir">
+    <meta property="og:description" content="Arkadaşlarınıza en komik şakaları yapın! Salla-ses değiştir modu ve 100+ komik ses efekti. iOS ve Android için hemen ücretsiz indirin.">
+    <meta property="og:image" content="https://veyselbilici.github.io/VB-TECH-LABS/zart-zurt-icon.jpg">
+    <meta property="og:url" content="https://vb-tech-labs.vercel.app/zart-zurt">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zart Zurt : Şaka, Troll & Komik Sesler">
+    <meta name="twitter:description" content="Arkadaşlarınıza en komik şakaları yapın! iOS ve Android için hemen ücretsiz indirin.">
+    <meta name="twitter:image" content="https://veyselbilici.github.io/VB-TECH-LABS/zart-zurt-icon.jpg">
+
+    <link rel="icon" type="image/jpeg" href="../zart-zurt-icon.jpg">
+    <link rel="apple-touch-icon" href="../zart-zurt-icon.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #f97316;
+            --primary-end: #ec4899;
+            --primary-glow: rgba(249, 115, 22, 0.45);
+            --secondary: #8b5cf6;
+            --secondary-glow: rgba(139, 92, 246, 0.4);
+            --bg-dark: #0b0f19;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at 50% 20%, #2a1420 0%, #0b0f19 75%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, rgba(236, 72, 153, 0.2) 50%, transparent 70%);
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            filter: blur(55px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            padding: 2.2rem 1.8rem;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 40px rgba(249, 115, 22, 0.15);
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(18px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Top Bar with Language Switcher */
+        .card-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.1rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 3px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-end));
+            color: #ffffff;
+            box-shadow: 0 2px 8px var(--primary-glow);
+        }
+
+        .app-icon-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.25rem;
+        }
+
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 24px;
+            object-fit: cover;
+            box-shadow: 0 12px 30px var(--primary-glow);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .app-icon-wrap:hover .app-icon {
+            transform: scale(1.06) rotate(-2deg);
+        }
+
+        .icon-halo {
+            position: absolute;
+            inset: -4px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6);
+            z-index: 1;
+            opacity: 0.7;
+            filter: blur(10px);
+            animation: pulseHalo 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseHalo {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.08); }
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: 1.4rem;
+            z-index: 3;
+            animation: floatEmoji 3s ease-in-out infinite;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+            pointer-events: none;
+        }
+
+        .floating-emoji.e1 { top: -8px; right: -12px; animation-delay: 0s; }
+        .floating-emoji.e2 { bottom: -6px; left: -10px; animation-delay: 1.5s; }
+
+        @keyframes floatEmoji {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(10deg); }
+        }
+
+        h1 {
+            font-size: 1.65rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+            background: linear-gradient(135deg, #ffffff 0%, #fed7aa 50%, #fda4af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.4rem;
+            line-height: 1.45;
+        }
+
+        .status-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1rem;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2.5px solid rgba(249, 115, 22, 0.2);
+            border-top-color: #f97316;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .status-text {
+            font-size: 0.88rem;
+            color: #e2e8f0;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .status-sub {
+            display: block;
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .pause-redirect-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f1f5f9;
+            padding: 0.35rem 0.7rem;
+            border-radius: 10px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .pause-redirect-btn:hover {
+            background: rgba(249, 115, 22, 0.25);
+            border-color: #f97316;
+            color: #ffffff;
+        }
+
+        .share-url-box {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 4px 6px 4px 12px;
+            margin-bottom: 0.85rem;
+            gap: 8px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .share-url-box:focus-within {
+            border-color: #f97316;
+            box-shadow: 0 0 14px rgba(249, 115, 22, 0.25);
+        }
+
+        .share-url-input {
+            flex: 1;
+            min-width: 0;
+            background: transparent;
+            border: none;
+            color: #fdba74;
+            font-size: 0.82rem;
+            font-family: inherit;
+            font-weight: 600;
+            outline: none;
+            cursor: text;
+        }
+
+        .share-url-copy-btn {
+            background: linear-gradient(135deg, #f97316, #ec4899);
+            border: none;
+            color: white;
+            padding: 0.45rem 0.85rem;
+            border-radius: 10px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.35);
+        }
+
+        .share-url-copy-btn:hover {
+            filter: brightness(1.12);
+            transform: translateY(-1px);
+        }
+
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.85rem;
+            padding: 0.95rem 1.4rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.98rem;
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .store-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .store-btn-primary {
+            background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px var(--primary-glow);
+        }
+
+        .store-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px var(--primary-glow);
+            filter: brightness(1.08);
+        }
+
+        .store-btn-secondary {
+            background: rgba(255, 255, 255, 0.07);
+            color: #f1f5f9;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .store-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .btn-text-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            line-height: 1.25;
+        }
+
+        .btn-text-group small {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        .btn-text-group strong {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.45rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .feature-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        /* Interactive Share System */
+        .share-card-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 1rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .share-header {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .share-buttons-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .share-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #f1f5f9;
+            padding: 0.5rem 0.85rem;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .share-action-btn:hover {
+            background: rgba(249, 115, 22, 0.2);
+            border-color: rgba(249, 115, 22, 0.4);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .share-action-btn.share-main {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.25), rgba(236, 72, 153, 0.25));
+            border-color: rgba(249, 115, 22, 0.4);
+            color: #fdba74;
+        }
+
+        .share-action-btn.share-main:hover {
+            background: linear-gradient(135deg, #f97316, #ec4899);
+            color: white;
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        /* Desktop QR Code */
+        .qr-section {
+            display: none;
+            margin-bottom: 1.4rem;
+            padding: 1.2rem;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .qr-section.show {
+            display: block;
+        }
+
+        .qr-code-img {
+            width: 145px;
+            height: 145px;
+            border-radius: 12px;
+            background: white;
+            padding: 8px;
+            margin: 0.5rem auto 0.75rem;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .qr-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .qr-buttons-wrap {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .qr-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #f1f5f9;
+            padding: 0.45rem 0.85rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .qr-download-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(50px);
+            background: #1e293b;
+            color: #ffffff;
+            border: 1px solid rgba(249, 115, 22, 0.5);
+            padding: 0.75rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--primary-glow);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Footer Navigation */
+        .footer-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.78rem;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: #fdba74;
+        }
+
+        .platform-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 12px;
+            background: rgba(249, 115, 22, 0.15);
+            color: #fdba74;
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-topbar">
+            <span class="platform-badge" id="platform-badge">Akıllı Yönlendirme</span>
+            <div class="lang-switch">
+                <button class="lang-btn active" id="btn-tr" onclick="setLanguage('tr')">TR</button>
+                <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+
+        <div class="app-icon-wrap">
+            <div class="icon-halo"></div>
+            <img src="../zart-zurt-icon.jpg" alt="Zart Zurt Icon" class="app-icon">
+            <span class="floating-emoji e1">💨</span>
+            <span class="floating-emoji e2">🎺</span>
+        </div>
+
+        <h1>Zart Zurt</h1>
+        <p class="tagline" id="app-tagline">Şaka, Troll ve Komik Sesler Uygulaması</p>
+
+        <!-- Status box showing redirection progress -->
+        <div class="status-box" id="status-box">
+            <div class="spinner" id="spinner"></div>
+            <div style="flex: 1; min-width: 0;">
+                <span class="status-text" id="status-title">Mağazaya yönlendiriliyorsunuz...</span>
+                <span class="status-sub" id="status-desc">Açılmazsa aşağıdaki butona dokunun</span>
+            </div>
+            <button type="button" class="pause-redirect-btn" id="btn-pause-redirect" onclick="pauseRedirect()" title="Yönlendirmeyi Durdur">
+                <span>⏸️</span>
+                <span id="pause-btn-text">Durdur</span>
+            </button>
+        </div>
+
+        <!-- Call to Action Store Buttons -->
+        <div class="cta-container">
+            <!-- App Store Button -->
+            <a href="https://apps.apple.com/tr/app/zart-zurt-%C5%9Faka-troll-sesler/id6809407795?l=tr" class="store-btn store-btn-secondary" id="btn-apple">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <div class="btn-text-group">
+                    <small id="apple-btn-sub">iPhone / iPad İçin</small>
+                    <strong id="apple-btn-text">App Store'dan İndir</strong>
+                </div>
+            </a>
+
+            <!-- Google Play Button -->
+            <a href="https://play.google.com/store/apps/details?id=com.zartzurt.app" class="store-btn store-btn-primary" id="btn-google">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/>
+                </svg>
+                <div class="btn-text-group">
+                    <small id="google-btn-sub">Android Cihazlar İçin</small>
+                    <strong id="google-btn-text">Google Play'den İndir</strong>
+                </div>
+            </a>
+        </div>
+
+        <!-- Highlight Features -->
+        <div class="features-grid" id="features-box">
+            <span class="feature-pill">🎭 Çizgi Karakterler</span>
+            <span class="feature-pill">🔊 100+ Troll Ses</span>
+            <span class="feature-pill">📳 Salla-Ses Değiştir</span>
+            <span class="feature-pill">⚡ Çevrimdışı Çalışma</span>
+        </div>
+
+        <!-- Interactive Sharing System -->
+        <div class="share-card-section" id="share-section">
+            <div class="share-header">
+                <span>🔗</span>
+                <span id="share-header-text">Arkadaşlarınla Paylaş</span>
+            </div>
+
+            <!-- Visible Copyable Link Box -->
+            <div class="share-url-box">
+                <input type="text" id="share-url-input" class="share-url-input" readonly value="https://vb-tech-labs.vercel.app/zart-zurt" onclick="this.select(); pauseRedirect();">
+                <button type="button" class="share-url-copy-btn" id="btn-copy-box" onclick="copyShareLink()">
+                    <span>📋</span>
+                    <span id="btn-copy-box-label">Kopyala</span>
+                </button>
+            </div>
+
+            <div class="share-buttons-row">
+                <button type="button" class="share-action-btn share-main" id="btn-native-share" onclick="triggerNativeShare()">
+                    <span>📲</span>
+                    <span id="btn-share-label">Paylaş</span>
+                </button>
+                <a href="#" class="share-action-btn" id="btn-share-whatsapp" target="_blank" rel="noopener" onclick="pauseRedirect()">
+                    <span>💬</span>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="#" class="share-action-btn" id="btn-share-telegram" target="_blank" rel="noopener" onclick="pauseRedirect()">
+                    <span>✈️</span>
+                    <span>Telegram</span>
+                </a>
+                <button type="button" class="share-action-btn" id="btn-qr-toggle" onclick="toggleQrCode()">
+                    <span>📱</span>
+                    <span id="btn-qr-toggle-label">QR Kodu Gör</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Desktop QR Code -->
+        <div class="qr-section" id="qr-section">
+            <span class="qr-label" id="qr-label">iPhone veya Android kameranızla tarayarak hemen indirin:</span>
+            <img id="qr-code-img" class="qr-code-img" alt="QR Kodu" src="../zart-zurt-qr.png">
+            <span style="display:block; font-size:0.72rem; color:#fdba74; font-weight:600; margin-top:2px;" id="qr-hint">📱 Taranan cihazı otomatik algılar</span>
+            <div class="qr-buttons-wrap">
+                <a href="../zart-zurt-qr.png" download="zart-zurt-qr.png" class="qr-download-btn" id="qr-download-png">
+                    📥 QR Kodu İndir (PNG)
+                </a>
+                <a href="../zart-zurt-qr.svg" download="zart-zurt-qr.svg" class="qr-download-btn" id="qr-download-svg">
+                    📐 Vektör QR (SVG)
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="footer-links">
+            <a href="../index.html" class="footer-link" id="footer-home">← Ana Sayfa</a>
+            <a href="../zart-zurt-privacy-policy.html" class="footer-link" id="footer-privacy">Gizlilik Politikası</a>
+            <a href="../zart-zurt-terms.html" class="footer-link" id="footer-terms">Kullanım Koşulları</a>
+            <a href="../zart-zurt-support.html" class="footer-link" id="footer-support">Destek & SSS</a>
+        </div>
+    </div>
+
+    <!-- Toast Notification for Link Copy -->
+    <div class="toast" id="toast">
+        <span>✅</span>
+        <span id="toast-message">Bağlantı panoya kopyalandı!</span>
+    </div>
+
+    <script>
+        var APP_STORE_URL_TR = 'https://apps.apple.com/tr/app/zart-zurt-%C5%9Faka-troll-sesler/id6809407795?l=tr';
+        var APP_STORE_URL_EN = 'https://apps.apple.com/us/app/zart-zurt-%C5%9Faka-troll-sesler/id6809407795';
+        var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.zartzurt.app';
+
+        var ua = navigator.userAgent || navigator.vendor || window.opera || '';
+        var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        var isAndroid = /android/i.test(ua);
+
+        var currentLang = 'tr';
+
+        var userNavLang = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
+        var savedLang = localStorage.getItem('zartzurt_smart_lang') || localStorage.getItem('preferredLanguage');
+
+        if (savedLang) {
+            currentLang = savedLang;
+        } else if (!userNavLang.startsWith('tr')) {
+            currentLang = 'en';
+        } else {
+            currentLang = 'tr';
+        }
+
+        var i18n = {
+            tr: {
+                tagline: "Şaka, Troll ve Komik Sesler Uygulaması",
+                iosBadge: "🍏 iOS Algılandı",
+                androidBadge: "📱 Android Algılandı",
+                desktopBadge: "💻 Masaüstü Algılandı",
+                statusIosTitle: "App Store'a Yönlendiriliyorsunuz...",
+                statusIosDesc: "Otomatik açılmazsa App Store butonuna dokunun",
+                statusAndroidTitle: "Google Play'e Yönlendiriliyorsunuz...",
+                statusAndroidDesc: "Otomatik açılmazsa Google Play butonuna dokunun",
+                statusDesktopTitle: "Cihazınıza Uygun Mağazayı Seçin",
+                statusDesktopDesc: "Veya telefonunuzla QR kodu tarayın",
+                recommended: "Önerilen (Cihazınız)",
+                appleSub: "iPhone / iPad İçin",
+                appleText: "App Store'dan İndir",
+                googleSub: "Android Cihazlar İçin",
+                googleText: "Google Play'den İndir",
+                qrLabel: "iPhone veya Android kameranızla tarayarak hemen indirin:",
+                qrHint: "📱 Taranan cihazı otomatik algılar",
+                features: ["🎭 Çizgi Karakterler", "🔊 100+ Troll & Ses Efekti", "📳 Salla-Ses Değiştir Modu", "⚡ Çevrimdışı Çalışma", "🛡️ Sıfır Veri Toplama"],
+                shareHeader: "Arkadaşlarınla Paylaş",
+                shareLabel: "Paylaş",
+                copyLabel: "Kopyala",
+                copyUrlLabel: "Kopyala",
+                copiedToast: "Bağlantı panoya kopyalandı!",
+                qrDownloadPng: "📥 QR Kodu İndir (PNG)",
+                qrDownloadSvg: "📐 Vektör QR (SVG)",
+                qrShowText: "QR Kodu Gör",
+                qrHideText: "QR Kodu Gizle",
+                pauseBtnText: "Durdur",
+                statusPausedTitle: "⏸️ Yönlendirme Duraklatıldı",
+                statusPausedDesc: "Bağlantıyı kopyalayabilir, QR kodu gösterebilir veya aşağıdaki butonlardan indirebilirsiniz.",
+                home: "← Ana Sayfa",
+                privacy: "Gizlilik Politikası",
+                terms: "Kullanım Koşulları",
+                support: "Destek & SSS",
+                shareText: "Zart Zurt: Arkadaşlarına en komik şakaları yap! Salla-ses değiştir modu ve 100+ troll ses efekti. Hemen ücretsiz indir:"
+            },
+            en: {
+                tagline: "Prank, Troll & Funny Sound Effects App",
+                iosBadge: "🍏 iOS Detected",
+                androidBadge: "📱 Android Detected",
+                desktopBadge: "💻 Desktop Detected",
+                statusIosTitle: "Redirecting to App Store...",
+                statusIosDesc: "Tap the App Store button if it does not open automatically",
+                statusAndroidTitle: "Redirecting to Google Play...",
+                statusAndroidDesc: "Tap the Google Play button if it does not open automatically",
+                statusDesktopTitle: "Choose Your App Store",
+                statusDesktopDesc: "Or scan the QR code with your mobile camera",
+                recommended: "Recommended (Your Device)",
+                appleSub: "For iPhone / iPad",
+                appleText: "Download on App Store",
+                googleSub: "For Android Devices",
+                googleText: "Get it on Google Play",
+                qrLabel: "Scan with your iPhone or Android camera to download:",
+                qrHint: "📱 Automatically detects your device",
+                features: ["🎭 Cartoon Characters", "🔊 100+ Troll & Prank Sounds", "📳 Shake-to-Pitch Mode", "⚡ Offline Ready", "🛡️ Zero Data Collection"],
+                shareHeader: "Share with Friends",
+                shareLabel: "Share",
+                copyLabel: "Copy",
+                copyUrlLabel: "Copy",
+                copiedToast: "Link copied to clipboard!",
+                qrDownloadPng: "📥 Download QR (PNG)",
+                qrDownloadSvg: "📐 Vector QR (SVG)",
+                qrShowText: "View QR Code",
+                qrHideText: "Hide QR Code",
+                pauseBtnText: "Pause",
+                statusPausedTitle: "⏸️ Redirection Paused",
+                statusPausedDesc: "You can copy the link, show the QR code, or tap buttons below to open the store.",
+                home: "← Home Page",
+                privacy: "Privacy Policy",
+                terms: "Terms of Service",
+                support: "Support & FAQ",
+                shareText: "Zart Zurt: Play the funniest pranks on your friends! Shake-to-pitch mode & 100+ hilarious sound effects. Download free now:"
+            }
+        };
+
+        var redirectTimer = null;
+        var isRedirectPaused = false;
+
+        function getSmartShareUrl() {
+            if (window.location.origin && window.location.origin !== "null") {
+                return window.location.origin + '/zart-zurt';
+            }
+            return 'https://vb-tech-labs.vercel.app/zart-zurt';
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('zartzurt_smart_lang', lang);
+            localStorage.setItem('preferredLanguage', lang);
+            updateUI();
+        }
+
+        function pauseRedirect() {
+            if (redirectTimer) {
+                clearTimeout(redirectTimer);
+                redirectTimer = null;
+            }
+            isRedirectPaused = true;
+            var spinner = document.getElementById('spinner');
+            if (spinner) spinner.style.display = 'none';
+            var pauseBtn = document.getElementById('btn-pause-redirect');
+            if (pauseBtn) pauseBtn.style.display = 'none';
+            var statusTitle = document.getElementById('status-title');
+            var statusDesc = document.getElementById('status-desc');
+            if (statusTitle) statusTitle.textContent = i18n[currentLang].statusPausedTitle;
+            if (statusDesc) statusDesc.textContent = i18n[currentLang].statusPausedDesc;
+        }
+
+        function toggleQrCode() {
+            pauseRedirect();
+            var qrSection = document.getElementById('qr-section');
+            var isShown = qrSection.classList.toggle('show');
+            var qrToggleLabel = document.getElementById('btn-qr-toggle-label');
+            if (qrToggleLabel) {
+                qrToggleLabel.textContent = isShown ? i18n[currentLang].qrHideText : i18n[currentLang].qrShowText;
+            }
+            if (isShown) {
+                qrSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function updateUI() {
+            var t = i18n[currentLang];
+            var btnTr = document.getElementById('btn-tr');
+            var btnEn = document.getElementById('btn-en');
+            if (btnTr && btnEn) {
+                btnTr.className = 'lang-btn ' + (currentLang === 'tr' ? 'active' : '');
+                btnEn.className = 'lang-btn ' + (currentLang === 'en' ? 'active' : '');
+            }
+
+            var appStoreLink = (currentLang === 'tr') ? APP_STORE_URL_TR : APP_STORE_URL_EN;
+            var btnApple = document.getElementById('btn-apple');
+            var btnGoogle = document.getElementById('btn-google');
+            btnApple.href = appStoreLink;
+            btnGoogle.href = PLAY_STORE_URL;
+
+            document.getElementById('app-tagline').textContent = t.tagline;
+            document.getElementById('qr-label').textContent = t.qrLabel;
+            var qrHintEl = document.getElementById('qr-hint');
+            if (qrHintEl) qrHintEl.textContent = t.qrHint;
+            document.getElementById('footer-home').textContent = t.home;
+            document.getElementById('footer-privacy').textContent = t.privacy;
+            document.getElementById('footer-terms').textContent = t.terms;
+            document.getElementById('footer-support').textContent = t.support;
+
+            document.getElementById('share-header-text').textContent = t.shareHeader;
+            document.getElementById('btn-share-label').textContent = t.shareLabel;
+            var copyBoxLabel = document.getElementById('btn-copy-box-label');
+            if (copyBoxLabel) copyBoxLabel.textContent = t.copyUrlLabel;
+            var pauseBtnText = document.getElementById('pause-btn-text');
+            if (pauseBtnText) pauseBtnText.textContent = t.pauseBtnText;
+            var qrToggleLabel = document.getElementById('btn-qr-toggle-label');
+            var qrSection = document.getElementById('qr-section');
+            if (qrToggleLabel) {
+                qrToggleLabel.textContent = (qrSection && qrSection.classList.contains('show')) ? t.qrHideText : t.qrShowText;
+            }
+            document.getElementById('qr-download-png').textContent = t.qrDownloadPng;
+            document.getElementById('qr-download-svg').textContent = t.qrDownloadSvg;
+
+            // Setup social share links
+            var smartUrl = getSmartShareUrl();
+            var shareInput = document.getElementById('share-url-input');
+            if (shareInput) shareInput.value = smartUrl;
+
+            var shareMsg = t.shareText + ' ' + smartUrl;
+            document.getElementById('btn-share-whatsapp').href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(shareMsg);
+            document.getElementById('btn-share-telegram').href = 'https://t.me/share/url?url=' + encodeURIComponent(smartUrl) + '&text=' + encodeURIComponent(t.shareText);
+
+            var featuresBox = document.getElementById('features-box');
+            featuresBox.innerHTML = '';
+            t.features.forEach(function(feat) {
+                var span = document.createElement('span');
+                span.className = 'feature-pill';
+                span.textContent = feat;
+                featuresBox.appendChild(span);
+            });
+
+            var platformBadge = document.getElementById('platform-badge');
+            var statusTitle = document.getElementById('status-title');
+            var statusDesc = document.getElementById('status-desc');
+            var spinner = document.getElementById('spinner');
+            var qrImg = document.getElementById('qr-code-img');
+            var pauseBtn = document.getElementById('btn-pause-redirect');
+
+            if (isIOS) {
+                platformBadge.textContent = t.iosBadge;
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusIosTitle;
+                    statusDesc.textContent = t.statusIosDesc;
+                }
+                btnApple.className = 'store-btn store-btn-primary';
+                btnGoogle.className = 'store-btn store-btn-secondary';
+                document.getElementById('apple-btn-sub').textContent = t.recommended;
+                document.getElementById('apple-btn-text').textContent = t.appleText;
+                document.getElementById('google-btn-sub').textContent = t.googleSub;
+                document.getElementById('google-btn-text').textContent = t.googleText;
+            } else if (isAndroid) {
+                platformBadge.textContent = t.androidBadge;
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusAndroidTitle;
+                    statusDesc.textContent = t.statusAndroidDesc;
+                }
+                btnGoogle.className = 'store-btn store-btn-primary';
+                btnApple.className = 'store-btn store-btn-secondary';
+                document.getElementById('google-btn-sub').textContent = t.recommended;
+                document.getElementById('google-btn-text').textContent = t.googleText;
+                document.getElementById('apple-btn-sub').textContent = t.appleSub;
+                document.getElementById('apple-btn-text').textContent = t.appleText;
+            } else {
+                platformBadge.textContent = t.desktopBadge;
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusDesktopTitle;
+                    statusDesc.textContent = t.statusDesktopDesc;
+                }
+                if (spinner) spinner.style.display = 'none';
+                if (pauseBtn) pauseBtn.style.display = 'none';
+                btnGoogle.className = 'store-btn store-btn-primary';
+                btnApple.className = 'store-btn store-btn-secondary';
+                document.getElementById('apple-btn-sub').textContent = t.appleSub;
+                document.getElementById('apple-btn-text').textContent = t.appleText;
+                document.getElementById('google-btn-sub').textContent = t.googleSub;
+                document.getElementById('google-btn-text').textContent = t.googleText;
+
+                qrSection.classList.add('show');
+                qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(smartUrl);
+            }
+        }
+
+        function showToast(msg) {
+            var toast = document.getElementById('toast');
+            var toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = msg || i18n[currentLang].copiedToast;
+            toast.classList.add('show');
+            setTimeout(function() {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        function copyShareLink() {
+            pauseRedirect();
+            var url = getSmartShareUrl();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(function() {
+                    showToast(i18n[currentLang].copiedToast);
+                }).catch(function() {
+                    fallbackCopy(url);
+                });
+            } else {
+                fallbackCopy(url);
+            }
+        }
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            try {
+                document.execCommand('copy');
+                showToast(i18n[currentLang].copiedToast);
+            } catch (err) {}
+            document.body.removeChild(ta);
+        }
+
+        function triggerNativeShare() {
+            pauseRedirect();
+            var url = getSmartShareUrl();
+            var t = i18n[currentLang];
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Zart Zurt',
+                    text: t.shareText,
+                    url: url
+                }).catch(function(err) {});
+            } else {
+                copyShareLink();
+            }
+        }
+
+        updateUI();
+
+        // Auto-redirect for mobile devices (pausable)
+        (function() {
+            var target = null;
+            if (isIOS) {
+                target = (currentLang === 'tr') ? APP_STORE_URL_TR : APP_STORE_URL_EN;
+            } else if (isAndroid) {
+                target = PLAY_STORE_URL;
+            }
+
+            if (target) {
+                redirectTimer = setTimeout(function() {
+                    if (!isRedirectPaused) {
+                        window.location.href = target;
+                    }
+                }, 1200);
+            }
+        })();
+    </script>
+</body>
+</html>
