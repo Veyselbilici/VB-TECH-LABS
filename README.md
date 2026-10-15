@@ -60,7 +60,7 @@ Visit our website: [VB TECH LABS](https://veyselbilici.github.io/VB-TECH-LABS/)
 
 ## 📲 Applications
 
-Check out our applications on [Google Play Store](https://play.google.com/store/apps/dev?id=VBTECHLABS)
+Check out our applications on [Google Play Store](https://play.google.com/store/apps/dev?id=8939977021856772994)
 
 ## 🚀 Deployment
 
