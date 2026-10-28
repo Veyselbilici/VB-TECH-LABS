@@ -16,7 +16,7 @@ Bu dosya, mağaza kayıtları için gereken herkese açık sayfaların metnidir.
 |---|---|
 | ~~`[VERİ SORUMLUSU]`~~ | Dolduruldu: Veysel Bilici |
 | `[ADRES]` | KVKK için tebligat adresi (il/ilçe yeterli olabilir; hukukçuya sor) |
-| `[AI SAĞLAYICI]` | K6 kararından sonra (ör. Anthropic, OpenAI, Google) |
+| ~~`Google (Gemini)`~~ | Dolduruldu: Google (Gemini) |
 | ~~`[BARINDIRMA BÖLGESİ]`~~ | Dolduruldu: Avrupa Birliği – Frankfurt |
 
 > Bu metinler uygulamanın bugünkü davranışına göre hazırlanmış taslaktır. Yayından önce bir KVKK/hukuk uzmanına okutman önerilir (docs/TADFIT_PROJE.md Bölüm 19). Uygulamaya yeni veri, SDK veya özellik eklendiğinde bu sayfalar da güncellenir.
@@ -87,7 +87,7 @@ Sağlık verisine verdiğin açık rızayı geri almak istersen hesabını sileb
 
 ### 2.4 Yapay zekâ kullanımı
 - Kalori ve makro değerleri yapay zekâdan alınmaz; besin veritabanından ve formülle hesaplanır.
-- AI beslenme planı hazırlanırken AI hizmet sağlayıcısına ([AI SAĞLAYICI]) **adın, e-postan ve telefonun gönderilmez**. Gönderilenler: anonim bir kimlik, yaş, cinsiyet, boy, kilo, hedef, beslenme tipi, alerjiler ve uygun besin listesi.
+- AI beslenme planı hazırlanırken AI hizmet sağlayıcısına (Google (Gemini)) **adın, e-postan ve telefonun gönderilmez**. Gönderilenler: anonim bir kimlik, yaş, cinsiyet, boy, kilo, hedef, beslenme tipi, alerjiler ve uygun besin listesi.
 - Doktor takibi gerektiren bir durum bildiren veya vücut kitle indeksi güvenli aralığın dışında olan kullanıcılara AI plan hazırlanmaz.
 
 ### 2.5 Verileri kimlerle paylaşıyoruz? (Hizmet sağlayıcılar)
@@ -97,7 +97,7 @@ Verilerin satılmaz ve reklam amacıyla kullanılmaz. Uygulamada reklam yoktur. 
 | Sağlayıcı | Amaç | Paylaşılan veri |
 |---|---|---|
 | Supabase (veritabanı, kimlik doğrulama, dosya depolama) | Barındırma | Hesap ve uygulama verileri (Avrupa Birliği – Frankfurt) |
-| [AI SAĞLAYICI] | AI beslenme planı | Bölüm 2.4'teki anonim veriler |
+| Google (Gemini) | AI beslenme planı | Bölüm 2.4'teki anonim veriler |
 | RevenueCat, Apple App Store, Google Play | Abonelik | Kullanıcı kimliği, abonelik durumu |
 | PostHog | Kullanım analitiği | Kullanıcı kimliği, uygulama içi etkileşimler (sağlık değeri yok) |
 | Sentry | Çökme ve hata raporları | Teknik hata bilgisi (kişisel ve sağlık verisi ayıklanır) |
@@ -152,11 +152,11 @@ We do not ask for diseases, medications or diagnoses.
 
 **AI**
 - Calories and macros come from a food database and formulas, never from AI.
-- For AI meal plans, [AI SAĞLAYICI] receives an anonymous ID and the nutrition-related data needed — never your name, email or phone.
+- For AI meal plans, Google (Gemini) receives an anonymous ID and the nutrition-related data needed — never your name, email or phone.
 
 **Service providers**
 - Supabase: hosting.
-- [AI SAĞLAYICI]: AI meal plans.
+- Google (Gemini): AI meal plans.
 - RevenueCat, Apple and Google: subscriptions.
 - PostHog: analytics.
 - Sentry: crash reports.
