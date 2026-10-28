@@ -14,10 +14,10 @@ Bu dosya, mağaza kayıtları için gereken herkese açık sayfaların metnidir.
 
 | Yer tutucu | Açıklama |
 |---|---|
-| `[VERİ SORUMLUSU]` | Ad soyadın (bireysel geliştirici olarak KVKK veri sorumlususun) |
+| ~~`[VERİ SORUMLUSU]`~~ | Dolduruldu: Veysel Bilici |
 | `[ADRES]` | KVKK için tebligat adresi (il/ilçe yeterli olabilir; hukukçuya sor) |
 | `[AI SAĞLAYICI]` | K6 kararından sonra (ör. Anthropic, OpenAI, Google) |
-| `[BARINDIRMA BÖLGESİ]` | K3 kararından sonra Supabase bölgesi (ör. Avrupa Birliği – Frankfurt) |
+| ~~`[BARINDIRMA BÖLGESİ]`~~ | Dolduruldu: Avrupa Birliği – Frankfurt |
 
 > Bu metinler uygulamanın bugünkü davranışına göre hazırlanmış taslaktır. Yayından önce bir KVKK/hukuk uzmanına okutman önerilir (docs/TADFIT_PROJE.md Bölüm 19). Uygulamaya yeni veri, SDK veya özellik eklendiğinde bu sayfalar da güncellenir.
 
@@ -48,12 +48,12 @@ TadFit; boyuna, kilona, hedefine ve alerjilerine göre kişisel beslenme planı 
 
 ## 2. `privacy-tadfit.html` – Gizlilik Politikası ve KVKK Aydınlatma Metni
 
-**Son güncelleme:** 26 Ekim 2026
+**Son güncelleme:** 28 Ekim 2026
 
 Bu metin, TadFit mobil uygulamasını ("Uygulama") kullanırken kişisel verilerinin nasıl işlendiğini 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında açıklar.
 
 ### 2.1 Veri sorumlusu
-[VERİ SORUMLUSU] (bireysel geliştirici, VB Tech Labs), [ADRES]
+Veysel Bilici (bireysel geliştirici, VB Tech Labs), [ADRES]
 İletişim: bilicisoftwaree@gmail.com
 
 ### 2.2 Hangi verileri işliyoruz?
@@ -96,7 +96,7 @@ Verilerin satılmaz ve reklam amacıyla kullanılmaz. Uygulamada reklam yoktur. 
 
 | Sağlayıcı | Amaç | Paylaşılan veri |
 |---|---|---|
-| Supabase (veritabanı, kimlik doğrulama, dosya depolama) | Barındırma | Hesap ve uygulama verileri ([BARINDIRMA BÖLGESİ]) |
+| Supabase (veritabanı, kimlik doğrulama, dosya depolama) | Barındırma | Hesap ve uygulama verileri (Avrupa Birliği – Frankfurt) |
 | [AI SAĞLAYICI] | AI beslenme planı | Bölüm 2.4'teki anonim veriler |
 | RevenueCat, Apple App Store, Google Play | Abonelik | Kullanıcı kimliği, abonelik durumu |
 | PostHog | Kullanım analitiği | Kullanıcı kimliği, uygulama içi etkileşimler (sağlık değeri yok) |
@@ -133,7 +133,7 @@ Bu politika değişirse güncel hali bu sayfada yayımlanır. Önemli değişikl
 
 ### Privacy Policy (English summary)
 
-**Last updated:** 26 October 2026 · Controller: [VERİ SORUMLUSU] (VB Tech Labs, individual developer) · Contact: bilicisoftwaree@gmail.com
+**Last updated:** 28 October 2026 · Controller: Veysel Bilici (VB Tech Labs, individual developer) · Contact: bilicisoftwaree@gmail.com
 
 **Data we collect**
 - Account details: name, email, optional phone.
@@ -168,6 +168,14 @@ We do not sell data and there are no ads.
 - Your data is kept while your account exists.
 - Deleting your account permanently erases it; backups clear within 30 days.
 - Download your data or delete your account in the app, or see the [account deletion page](tadfit-hesap-silme.html).
+
+**Your rights in the EU/EEA/UK (GDPR)**
+- Legal bases: performance of our contract with you (Art. 6(1)(b)), your explicit consent for health data (Art. 9(2)(a)) and for the optional AI improvement and marketing uses (Art. 6(1)(a)), and legal obligations (Art. 6(1)(c)).
+- You have the right to access, rectify, erase, restrict and object to processing of your data, to data portability, and to withdraw consent at any time without affecting earlier processing.
+- Use the in-app tools (Profile > Privacy & my data: download, correct, delete) or write to bilicisoftwaree@gmail.com. We reply within one month.
+- You can lodge a complaint with your local data protection authority.
+- Data is hosted in the European Union (Frankfurt). If a provider processes data outside the EU/EEA, the transfer relies on safeguards such as the EU Standard Contractual Clauses.
+- Controller: Veysel Bilici, VB Tech Labs.
 
 **Age:** 18+ only.
 
