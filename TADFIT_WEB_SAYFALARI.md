@@ -62,8 +62,8 @@ Veysel Bilici (bireysel geliştirici, VB Tech Labs), [ADRES]
 |---|---|---|
 | Kimlik ve iletişim | Ad soyad, e-posta, telefon (isteğe bağlı) | Ad ve e-posta zorunlu |
 | Profil | Doğum tarihi, cinsiyet, dil tercihi | Evet |
-| **Sağlık ve beslenme verisi (özel nitelikli)** | Boy, kilo, hedef kilo, aktivite düzeyi, beslenme tipi, alerjiler, "doktor takibi gerektiren bir durumun var mı" sorusunun evet/hayır cevabı, öğün/su/kilo kayıtları, vücut ölçüleri | Uygulamanın çalışması için evet |
-| İlerleme fotoğrafları | Kendi yüklediğin fotoğraflar | İsteğe bağlı |
+| **Sağlık ve beslenme verisi (özel nitelikli)** | Boy, kilo, hedef kilo, aktivite düzeyi, beslenme tipi, alerjiler, "doktor takibi gerektiren bir durumun var mı" sorusunun evet/hayır cevabı, öğün/su/kilo kayıtları, aktivite kayıtları (tür, süre, yoğunluk, tahmini yakılan kalori), vücut ölçüleri | Uygulamanın çalışması için evet |
+| İlerleme ve profil fotoğrafları (kendi yüklediğin, isteğe bağlı) | Kendi yüklediğin fotoğraflar | İsteğe bağlı |
 | Uygulama içeriği | Favori tarifler, kiler listesi, alışveriş listesi, beslenme planları, geri bildirim mesajların | Kullanıma bağlı |
 | Abonelik | Abonelik durumu, ürün, bitiş tarihi (kart bilgisi değil) | Abonelikte |
 | Kullanım ve teknik veri | Uygulama içi etkileşimler (sağlık değeri içermez), çökme kayıtları | Evet |
@@ -138,8 +138,8 @@ Bu politika değişirse güncel hali bu sayfada yayımlanır. Önemli değişikl
 **Data we collect**
 - Account details: name, email, optional phone.
 - Profile: date of birth, sex.
-- Health and nutrition data (special category): height, weight, goal, activity, diet type, allergies, one yes/no follow-up question, meal, water and weight logs, body measurements.
-- Optional progress photos; location metadata is removed on your device before upload.
+- Health and nutrition data (special category): height, weight, goal, activity, diet type, allergies, one yes/no follow-up question, meal, water and weight logs, activity logs (type, duration, intensity, estimated calories burned), body measurements.
+- Optional progress photos and an optional profile photo; location metadata is removed on your device before upload.
 - Subscription status.
 - Usage analytics without any health values, and crash reports.
 
