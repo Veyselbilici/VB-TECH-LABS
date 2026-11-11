@@ -1,60 +1,77 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
   <defs>
+    <!-- Deep Oxford Navy Corporate Background -->
     <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#181824"/>
-      <stop offset="50%" stop-color="#0d0d14"/>
-      <stop offset="100%" stop-color="#07070b"/>
+      <stop offset="0%" stop-color="#0d172a"/>
+      <stop offset="55%" stop-color="#091120"/>
+      <stop offset="100%" stop-color="#060b16"/>
     </linearGradient>
-    <radialGradient id="glowLime" cx="76%" cy="22%" r="58%">
-      <stop offset="0%" stop-color="#d6ff3f" stop-opacity="0.24"/>
-      <stop offset="55%" stop-color="#d6ff3f" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#d6ff3f" stop-opacity="0"/>
+
+    <!-- Ambient Sky-Sapphire Top-Right Glow -->
+    <radialGradient id="glowSky" cx="74%" cy="22%" r="58%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28"/>
+      <stop offset="55%" stop-color="#2563eb" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowViolet" cx="18%" cy="84%" r="55%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+
+    <!-- Ambient Cobalt Bottom-Left Glow -->
+    <radialGradient id="glowCobalt" cx="18%" cy="84%" r="55%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
     </radialGradient>
+
+    <!-- Metallic Platinum-Sapphire Rim -->
     <linearGradient id="rim" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32"/>
-      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#d6ff3f" stop-opacity="0.28"/>
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.38"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.34"/>
     </linearGradient>
-    <linearGradient id="vGrad" x1="72" y1="132" x2="240" y2="380" gradientUnits="userSpaceOnUse">
+
+    <!-- Brushed Platinum-Titanium Gradient for V -->
+    <linearGradient id="vGrad" x1="68" y1="136" x2="183" y2="384" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#ded9ce"/>
+      <stop offset="60%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
     </linearGradient>
-    <linearGradient id="bGrad" x1="280" y1="132" x2="440" y2="380" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ecff78"/>
-      <stop offset="50%" stop-color="#d6ff3f"/>
-      <stop offset="100%" stop-color="#9be312"/>
+
+    <!-- Corporate Royal Sapphire-Azure Gradient for B -->
+    <linearGradient id="bGrad" x1="220" y1="136" x2="420" y2="384" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
     </linearGradient>
+
+    <!-- Soft Elevation Shadow -->
     <filter id="drop" x="-15%" y="-15%" width="130%" height="135%">
-      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#020610" flood-opacity="0.65"/>
     </filter>
   </defs>
 
-  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
-  <rect width="512" height="512" rx="118" fill="url(#glowLime)"/>
-  <rect width="512" height="512" rx="118" fill="url(#glowViolet)"/>
+  <!-- Squircle Base -->
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="116" fill="url(#glowSky)"/>
+  <rect width="512" height="512" rx="116" fill="url(#glowCobalt)"/>
 
-  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="2">
-    <line x1="128" y1="36" x2="128" y2="476"/>
-    <line x1="256" y1="36" x2="256" y2="476"/>
-    <line x1="384" y1="36" x2="384" y2="476"/>
-    <line x1="36" y1="128" x2="476" y2="128"/>
-    <line x1="36" y1="256" x2="476" y2="256"/>
-    <line x1="36" y1="384" x2="476" y2="384"/>
+  <!-- Subtle Architectural Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.042" stroke-width="1.5">
+    <line x1="128" y1="32" x2="128" y2="480"/>
+    <line x1="256" y1="32" x2="256" y2="480"/>
+    <line x1="384" y1="32" x2="384" y2="480"/>
+    <line x1="32" y1="128" x2="480" y2="128"/>
+    <line x1="32" y1="256" x2="480" y2="256"/>
+    <line x1="32" y1="384" x2="480" y2="384"/>
   </g>
 
-  <rect x="6" y="6" width="500" height="500" rx="112" stroke="url(#rim)" stroke-width="4"/>
+  <!-- Inner Glass Rim -->
+  <rect x="5" y="5" width="502" height="502" rx="111" stroke="url(#rim)" stroke-width="3.5"/>
 
+  <!-- Alternative 1: Kinetic Shared-Spine Monogram VB -->
   <g filter="url(#drop)">
-    <path d="M72 132 H132 L173 262 L203 172 H260 L197 380 H149 L72 132 Z" fill="url(#vGrad)"/>
-    <path d="M231.5 92 C238.5 117 238.5 117 263.5 124 C238.5 131 238.5 131 231.5 156 C224.5 131 224.5 131 199.5 124 C224.5 117 224.5 117 231.5 92 Z" fill="#d6ff3f"/>
+    <path d="M68 136 H128 L183 301 L153 384 H146 L68 136 Z" fill="url(#vGrad)"/>
     <path fill-rule="evenodd" clip-rule="evenodd" d="
-      M280 132 H366 A59 59 0 0 1 366 250 H372 A65 65 0 0 1 372 380 H280 V132 Z
-      M332 174 V226 H358 A26 26 0 0 0 358 174 H332 Z
-      M332 276 V334 H362 A29 29 0 0 0 362 276 H332 Z
+      M262 136 H374 A59 59 0 0 1 374 254 H362 A65 65 0 0 1 362 384 H172 L262 136 Z
+      M302 180 H366 A23 23 0 0 1 366 226 H285.3 L302 180 Z
+      M265 282 H352 A28 28 0 0 1 352 338 H244.7 L265 282 Z
     " fill="url(#bGrad)"/>
   </g>
 </svg>
