@@ -67,13 +67,11 @@ header {
     border-bottom: 1px solid var(--border-color) !important;
 }
 .logo-small {
-    background: #0c0c10 !important;
-    color: var(--lt-accent) !important;
-    border: 1px solid rgba(255, 255, 255, .16) !important;
+    background: url('favicon.svg?v=2') center / cover no-repeat !important;
+    color: transparent !important;
+    border: 0 !important;
     box-shadow: none !important;
-    font-family: var(--lt-font) !important;
-    font-weight: 800;
-    letter-spacing: -.02em;
+    user-select: none;
 }
 .header-title, .brand-name {
     font-family: var(--lt-font) !important;
