@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>VB TECH LABS | Mobil Uygulama & Yazılım Stüdyosu</title>
-    <meta name="description" content="VB TECH LABS — Falio, Zart Zurt ve PeriyoDoz uygulamalarının arkasındaki bağımsız mobil yazılım stüdyosu. Yapay zekâ destekli, güvenli ve özenle tasarlanmış uygulamalar.">
-    <meta name="keywords" content="mobil uygulama, yapay zeka, yazılım stüdyosu, Falio, Zart Zurt, PeriyoDoz, VB TECH LABS">
+    <meta name="description" content="VB TECH LABS — Falio, Zart Zurt, PeriyoDoz ve TadFit uygulamalarının arkasındaki bağımsız mobil yazılım stüdyosu. Yapay zekâ destekli, güvenli ve özenle tasarlanmış uygulamalar.">
+    <meta name="keywords" content="mobil uygulama, yapay zeka, yazılım stüdyosu, Falio, Zart Zurt, PeriyoDoz, TadFit, VB TECH LABS">
     <meta name="author" content="VB TECH LABS">
     <meta name="theme-color" content="#0a0a0d">
     <meta name="color-scheme" content="dark">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="VB TECH LABS | Mobil Uygulama & Yazılım Stüdyosu">
-    <meta property="og:description" content="Falio, Zart Zurt ve PeriyoDoz — günlük hayata dokunan, özenle tasarlanmış mobil uygulamalar.">
+    <meta property="og:description" content="Falio, Zart Zurt, PeriyoDoz ve TadFit — günlük hayata dokunan, özenle tasarlanmış mobil uygulamalar.">
     <meta property="og:image" content="https://vb-tech-labs.vercel.app/icon-512.png">
     <meta name="twitter:card" content="summary">
 
@@ -138,6 +138,7 @@
         .drawer-app svg { color: var(--text-3); font-size: 1.1rem; }
         .drawer-app.zz { --c: #ff7a1a; }
         .drawer-app.pz { --c: #ff4d8d; }
+        .drawer-app.tf { --c: #34d399; }
         .drawer-link { display: flex; align-items: center; justify-content: space-between; padding: .95rem .35rem; font-size: 1.25rem; font-weight: 600; letter-spacing: -.02em; border-bottom: 1px solid var(--line); transition: padding .3s var(--ease), color .2s; }
         .drawer-link svg { color: var(--text-3); font-size: 1.1rem; transition: transform .3s var(--ease), color .2s; }
         .drawer-link:active { padding-left: .75rem; color: var(--signal); }
@@ -201,16 +202,17 @@
 
         .hero-stage { position: relative; aspect-ratio: 1 / 1.05; width: min(100%, 520px); margin-inline: auto; }
         .hero-card {
-            position: absolute; width: 46%; aspect-ratio: 1; border-radius: 26%; overflow: hidden;
+            position: absolute; width: 43%; aspect-ratio: 1; border-radius: 26%; overflow: hidden;
             border: 1px solid var(--line-2);
             box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(255, 255, 255, .04) inset;
             animation: float 7s ease-in-out infinite;
             transition: transform .5s var(--ease);
         }
         .hero-card img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-card.c1 { left: 2%; top: 4%; --r: -7deg; --glow: rgba(139, 92, 246, .55); }
-        .hero-card.c2 { right: 0; top: 22%; --r: 6deg; animation-delay: -2.4s; --glow: rgba(255, 106, 26, .5); }
-        .hero-card.c3 { left: 22%; bottom: 0; --r: -2deg; animation-delay: -4.6s; --glow: rgba(225, 29, 106, .5); }
+        .hero-card.c1 { left: 2%; top: 2%; --r: -7deg; --glow: rgba(139, 92, 246, .55); }
+        .hero-card.c2 { right: 2%; top: 8%; --r: 6deg; animation-delay: -2.4s; --glow: rgba(255, 106, 26, .5); }
+        .hero-card.c3 { left: 4%; bottom: 6%; --r: -3deg; animation-delay: -4.6s; --glow: rgba(225, 29, 106, .5); }
+        .hero-card.c4 { right: 4%; bottom: 0; --r: 5deg; animation-delay: -5.8s; --glow: rgba(52, 211, 153, .55); }
         .hero-card::after { content: ''; position: absolute; inset: 0; box-shadow: 0 0 60px 0 var(--glow) inset; opacity: .35; pointer-events: none; }
         @keyframes float { 0%, 100% { transform: translateY(0) rotate(var(--r)); } 50% { transform: translateY(-16px) rotate(calc(var(--r) * .5)); } }
         .hero-card:hover { animation-play-state: paused; }
@@ -256,9 +258,10 @@
         .app-card.falio { --c: #a78bfa; --c2: #f5c451; --tint: rgba(139, 92, 246, .22); }
         .app-card.zz { --c: #ff7a1a; --c2: #ff3d81; --tint: rgba(255, 122, 26, .2); }
         .app-card.pz { --c: #ff4d8d; --c2: #8b5cf6; --tint: rgba(255, 77, 141, .2); }
+        .app-card.tf { --c: #34d399; --c2: #d6ff3f; --tint: rgba(52, 211, 153, .2); }
         .app-index { font-family: var(--mono); font-size: .75rem; letter-spacing: .14em; color: var(--text-3); }
         .app-badge { display: inline-flex; align-items: center; gap: .55rem; padding: .4rem .8rem; border-radius: 999px; font-size: .78rem; font-weight: 600; color: var(--c); background: color-mix(in srgb, var(--c) 13%, transparent); border: 1px solid color-mix(in srgb, var(--c) 32%, transparent); margin: 1rem 0 1.4rem; }
-        .pulse-dot, .pulse-dot-orange, .pulse-dot-rose { width: 7px; height: 7px; border-radius: 50%; background: var(--c); display: inline-block; animation: ping2 2s infinite; }
+        .pulse-dot, .pulse-dot-orange, .pulse-dot-rose, .pulse-dot-green { width: 7px; height: 7px; border-radius: 50%; background: var(--c); display: inline-block; animation: ping2 2s infinite; }
         @keyframes ping2 { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--c) 70%, transparent); } 70%, 100% { box-shadow: 0 0 0 9px transparent; } }
         .app-title-row { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.2rem; }
         .app-icon { width: 68px; height: 68px; border-radius: 22px; flex: none; border: 1px solid var(--line-2); box-shadow: 0 14px 34px -12px var(--c); object-fit: cover; }
@@ -655,6 +658,7 @@
                     <li><a href="#falio-app" data-translate="nav_falio">Falio App</a></li>
                     <li><a href="#zart-zurt-app" data-translate="nav_zartzurt">Zart Zurt</a></li>
                     <li><a href="#periyodoz-app" data-translate="nav_periyodoz">PeriyoDoz</a></li>
+                    <li><a href="#tadfit-app" data-translate="nav_tadfit">TadFit</a></li>
                     <li><a href="#services" data-translate="nav_services">Hizmetler</a></li>
                     <li><a href="#about" data-translate="nav_about">Hakkımızda</a></li>
                     <li><a href="iletisim.html" class="nav-cta" data-translate="nav_contact">İletişim</a></li>
@@ -705,6 +709,11 @@
                 <span><b data-translate="nav_periyodoz">PeriyoDoz</b><small data-translate="drawer_pz">İlaç, aile sağlığı & döngü</small></span>
                 <svg class="i"><use href="#i-arrow"/></svg>
             </a>
+            <a href="#tadfit-app" class="drawer-app tf stg" style="--i:5" onclick="toggleMobileNav()">
+                <img src="tadfit.icon.png" alt="" width="48" height="48">
+                <span><b data-translate="nav_tadfit">TadFit</b><small data-translate="drawer_tf">Kalori, diyet &amp; beslenme</small></span>
+                <svg class="i"><use href="#i-arrow"/></svg>
+            </a>
 
             <div class="drawer-label stg" style="--i:5" data-translate="footer_company_title">Şirket</div>
             <a href="#services" class="drawer-link stg" style="--i:6" onclick="toggleMobileNav()"><span data-translate="nav_services">Hizmetler</span><svg class="i"><use href="#i-arrow"/></svg></a>
@@ -713,6 +722,7 @@
             <div class="drawer-label stg" style="--i:8" data-translate="drawer_legal">Yasal</div>
             <div class="drawer-legal stg" style="--i:9">
                 <a href="privacy-periyodoz.html" data-translate="pz_footer_privacy">PeriyoDoz Gizlilik</a>
+                <a href="privacy-tadfit.html" data-translate="tf_footer_privacy">TadFit Gizlilik</a>
                 <a href="privacy-falio.html" data-translate="falio_privacy_short">Falio Gizlilik & Şartlar</a>
                 <a href="zart-zurt-privacy-policy.html" data-translate="fl_zz_privacy">Zart Zurt Gizlilik</a>
                 <a href="privacy-policy.html" data-translate="nav_privacy">Gizlilik Politikası</a>
@@ -735,7 +745,7 @@
                     <span class="eyebrow reveal"><i></i><span data-translate="hero_subtitle">Bağımsız Mobil Yazılım Stüdyosu</span></span>
                     <h1 class="reveal" style="--d:.08s" data-translate="hero_title">Hayatı kolaylaştıran <em>mobil</em> uygulamalar.</h1>
                     <p class="hero-description reveal" style="--d:.16s" data-translate="hero_desc">
-                        VB TECH LABS; yapay zekâ destekli, hızlı ve güvenli mobil uygulamalar tasarlayan ve geliştiren bir yazılım stüdyosudur. Üç uygulama, tek vizyon: kullanıcıya gerçekten değer katmak.
+                        VB TECH LABS; yapay zekâ destekli, hızlı ve güvenli mobil uygulamalar tasarlayan ve geliştiren bir yazılım stüdyosudur. Dört uygulama, tek vizyon: kullanıcıya gerçekten değer katmak.
                     </p>
                     <div class="cta-buttons reveal" style="--d:.24s">
                         <a href="#falio-app" class="btn btn-primary"><span data-translate="hero_cta1">Uygulamaları Keşfet</span><svg class="i"><use href="#i-arrow"/></svg></a>
@@ -746,6 +756,7 @@
                     <button type="button" class="hero-card c1" onclick="openAppDetail('falio')" aria-label="Falio"><img src="assets/icon-falio.webp" alt="Falio" width="384" height="384" decoding="async"></button>
                     <button type="button" class="hero-card c2" onclick="openAppDetail('zartzurt')" aria-label="Zart Zurt"><img src="assets/icon-zartzurt.webp" alt="Zart Zurt" width="384" height="384" decoding="async"></button>
                     <button type="button" class="hero-card c3" onclick="openAppDetail('periyodoz')" aria-label="PeriyoDoz"><img src="assets/icon-periyodoz.webp" alt="PeriyoDoz" width="384" height="384" decoding="async"></button>
+                    <button type="button" class="hero-card c4" onclick="openAppDetail('tadfit')" aria-label="TadFit"><img src="tadfit.icon.png" alt="TadFit" width="384" height="384" decoding="async"></button>
                 </div>
             </div>
             <a href="#falio-app" class="scroll-hint" aria-label="Scroll"><span></span>Scroll</a>
@@ -763,14 +774,14 @@
             <div class="wrap">
                 <div class="section-header reveal">
                     <div class="section-subtitle" data-translate="apps_subtitle">Uygulamalarımız</div>
-                    <h2 class="section-title" data-translate="apps_title">Cebinizde yaşayan <em>üç</em> ürün.</h2>
+                    <h2 class="section-title" data-translate="apps_title">Cebinizde yaşayan <em>dört</em> ürün.</h2>
                 </div>
 
                 <div class="apps">
                     <!-- Falio -->
                     <article class="app-card falio reveal falio-showcase" id="falio-app">
                         <div class="app-content falio-content">
-                            <span class="app-index">01 / 03</span>
+                            <span class="app-index">01 / 04</span>
                             <div class="app-badge falio-badge" data-translate="falio_badge"><span class="pulse-dot"></span>Şimdi Yayında — Ücretsiz İndir</div>
                             <div class="app-title-row">
                                 <img src="assets/icon-falio.webp" alt="Falio App Icon" class="app-icon falio-app-icon" width="68" height="68" loading="lazy">
@@ -840,7 +851,7 @@
                     <!-- Zart Zurt -->
                     <article class="app-card zz rev reveal zartzurt-showcase" id="zart-zurt-app">
                         <div class="app-content zz-content">
-                            <span class="app-index">02 / 03</span>
+                            <span class="app-index">02 / 04</span>
                             <div class="app-badge zz-badge" data-translate="zz_badge"><span class="pulse-dot-orange"></span>Yeni Eğlence Uygulaması — Şaka & Troll</div>
                             <div class="app-title-row">
                                 <img src="assets/icon-zartzurt.webp" alt="Zart Zurt App Icon" class="app-icon zz-app-icon" width="68" height="68" loading="lazy">
@@ -901,7 +912,7 @@
                     <!-- PeriyoDoz -->
                     <article class="app-card pz reveal periyodoz-showcase" id="periyodoz-app">
                         <div class="app-content pz-content">
-                            <span class="app-index">03 / 03</span>
+                            <span class="app-index">03 / 04</span>
                             <div class="app-badge pz-badge" data-translate="pz_badge"><span class="pulse-dot-rose"></span>Sağlık & İlaç Asistanı — Akıllı Takip</div>
                             <div class="app-title-row">
                                 <img src="assets/icon-periyodoz.webp" alt="PeriyoDoz App Icon" class="app-icon pz-app-icon" width="68" height="68" loading="lazy">
@@ -940,6 +951,54 @@
                                 <div class="phone-mockup"><img src="assets/periyodoz/tr-2.webp" data-tr="assets/periyodoz/tr-2.webp" data-en="assets/periyodoz/en-2.webp" alt="PeriyoDoz - Sağlık Yönetimi" loading="lazy" decoding="async"></div>
                                 <div class="phone-mockup"><img src="assets/periyodoz/tr-4.webp" data-tr="assets/periyodoz/tr-4.webp" data-en="assets/periyodoz/en-4.webp" alt="PeriyoDoz - İlaç Tara ve Ekle" loading="lazy" decoding="async"></div>
                                 <div class="phone-mockup"><img src="assets/periyodoz/tr-3.webp" data-tr="assets/periyodoz/tr-3.webp" data-en="assets/periyodoz/en-3.webp" alt="PeriyoDoz - Bütünsel Sağlık" loading="lazy" decoding="async"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- TadFit -->
+                    <article class="app-card tf rev reveal tadfit-showcase" id="tadfit-app">
+                        <div class="app-content tf-content">
+                            <span class="app-index">04 / 04</span>
+                            <div class="app-badge tf-badge" data-translate="tf_badge"><span class="pulse-dot-green"></span>Beslenme &amp; Kilo Yönetimi — Kişisel Plan</div>
+                            <div class="app-title-row">
+                                <img src="tadfit.icon.png" alt="TadFit App Icon" class="app-icon tf-app-icon" width="68" height="68" loading="lazy">
+                                <h3 class="app-title" data-translate="tf_title">TadFit : Kalori ve<br>Diyet Planı</h3>
+                            </div>
+                            <p class="app-desc" data-translate="tf_desc">Tadından vazgeçmeden formda kal! Boyuna, kilona, hedefine ve alerjilerine göre kişisel beslenme planı hazırlayan ve günlük kalori, su, kilo takibini kolaylaştıran beslenme ve kilo yönetimi uygulaması.</p>
+                            <div class="app-tags">
+                                <span class="app-tag"><svg class="i"><use href="#i-chart"/></svg><span data-translate="tf_tag_calorie">Kalori &amp; Makro Hedefi</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-qr"/></svg><span data-translate="tf_tag_barcode">Barkodla Öğün Kaydı</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-drop"/></svg><span data-translate="tf_tag_water">Su &amp; Kilo Takibi</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-shield"/></svg><span data-translate="tf_tag_recipes">Alerjiye Uygun Tarifler</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-ai"/></svg><span data-translate="tf_tag_ai">Kişisel AI Beslenme Planı</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-bolt"/></svg><span data-translate="tf_tag_streak">Seri, Rozet &amp; Meydan Okuma</span></span>
+                            </div>
+                            <div class="store-buttons">
+                                <a href="https://play.google.com/store/apps/details?id=com.tadfit.app" target="_blank" rel="noopener" class="store-btn">
+                                    <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+                                    <span class="store-btn-text"><small data-translate="tf_play_small">HEMEN İNDİR</small><strong>Google Play</strong></span>
+                                </a>
+                                <a href="#" class="store-btn disabled" style="opacity:0.6; cursor:default;" onclick="return false;">
+                                    <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                    <span class="store-btn-text"><small data-translate="tf_appstore_small">Çok Yakında</small><strong>App Store</strong></span>
+                                </a>
+                            </div>
+                            <div class="hub-links tf-hub-links">
+                                <button type="button" class="hub-btn hl" onclick="openShareModal('tadfit')"><svg class="i"><use href="#i-qr"/></svg><span data-translate="tf_link_smart">Paylaş &amp; QR</span></button>
+                                <a href="tadfit.html" class="hub-btn"><svg class="i"><use href="#i-globe"/></svg><span data-translate="tf_link_portal">Tanıtım &amp; İndirme Sayfası</span></a>
+                                <a href="privacy-tadfit.html" class="hub-btn"><svg class="i"><use href="#i-shield"/></svg><span data-translate="tf_link_privacy">Gizlilik Politikası</span></a>
+                                <a href="tadfit-terms.html" class="hub-btn"><svg class="i"><use href="#i-doc"/></svg><span data-translate="tf_link_terms">Kullanım Koşulları</span></a>
+                                <a href="tadfit-support.html" class="hub-btn"><svg class="i"><use href="#i-support"/></svg><span data-translate="tf_link_support">Destek &amp; SSS</span></a>
+                                <a href="tadfit-hesap-silme.html" class="hub-btn"><svg class="i"><use href="#i-trash"/></svg><span data-translate="tf_link_delete">Hesap &amp; Veri Silme</span></a>
+                            </div>
+                        </div>
+                        <div class="app-visual tf-visual">
+                            <div class="icon-stage">
+                                <div class="ring r1"></div><div class="ring r2"></div>
+                                <div class="icon-card"><img src="tadfit.icon.png" alt="TadFit - Kalori ve Diyet Planı" loading="lazy" decoding="async"></div>
+                                <div class="chip k1"><svg class="i"><use href="#i-chart"/></svg><span data-translate="tf_chip1">Kalori &amp; Makro</span></div>
+                                <div class="chip k2"><svg class="i"><use href="#i-ai"/></svg><span data-translate="tf_chip2">7 Günlük AI Plan</span></div>
+                                <div class="chip k3"><svg class="i"><use href="#i-drop"/></svg><span data-translate="tf_chip3">Su &amp; Kilo Takibi</span></div>
                             </div>
                         </div>
                     </article>
@@ -1013,7 +1072,7 @@
                         </div>
                     </div>
                     <div class="stats-grid reveal">
-                        <div class="stat-item"><div class="stat-number"><span data-count="3">3</span></div><div class="stat-label" data-translate="stats_apps">Yayında uygulama</div></div>
+                        <div class="stat-item"><div class="stat-number"><span data-count="4">4</span></div><div class="stat-label" data-translate="stats_apps">Yayında uygulama</div></div>
                         <div class="stat-item"><div class="stat-number"><span data-count="2">2</span></div><div class="stat-label" data-translate="stats_platforms">Platform: iOS & Android</div></div>
                         <div class="stat-item"><div class="stat-number"><span data-count="2">2</span></div><div class="stat-label" data-translate="stats_langs">Dil: TR & EN</div></div>
                         <div class="stat-item"><div class="stat-number">KVKK<small>/GDPR</small></div><div class="stat-label" data-translate="stats_compliance">Uyumlu veri politikası</div></div>
@@ -1064,6 +1123,10 @@
                         <li><a href="#periyodoz-app" data-translate="nav_periyodoz">PeriyoDoz App</a></li>
                         <li><a href="privacy-periyodoz.html" data-translate="pz_footer_privacy">PeriyoDoz Gizlilik</a></li>
                         <li><a href="periyodoz-hesap-silme.html" data-translate="pz_footer_delete">PeriyoDoz Hesap Silme</a></li>
+                        <li><a href="#tadfit-app" data-translate="nav_tadfit">TadFit App</a></li>
+                        <li><a href="tadfit.html" data-translate="tf_footer_landing">TadFit Tanıtım</a></li>
+                        <li><a href="privacy-tadfit.html" data-translate="tf_footer_privacy">TadFit Gizlilik</a></li>
+                        <li><a href="tadfit-hesap-silme.html" data-translate="tf_footer_delete">TadFit Hesap Silme</a></li>
                         <li><a href="zart-zurt-support.html" data-translate="zz_link_support">Zart Zurt Support</a></li>
                         <li><a href="privacy-policy.html" data-translate="nav_privacy">Gizlilik Politikası</a></li>
                         <li><a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a></li>
@@ -1089,6 +1152,11 @@
                     <a href="zart-zurt-privacy-policy.html" data-translate="fl_zz_privacy">Zart Zurt Gizlilik</a>
                     <a href="zart-zurt-terms.html" data-translate="fl_zz_terms">Zart Zurt Koşulları</a>
                     <a href="zart-zurt-support.html" data-translate="fl_zz_support">Zart Zurt Destek</a>
+                    <a href="tadfit.html" data-translate="tf_footer_landing">TadFit Tanıtım</a>
+                    <a href="privacy-tadfit.html" data-translate="tf_footer_privacy">TadFit Gizlilik</a>
+                    <a href="tadfit-terms.html" data-translate="tf_footer_terms">TadFit Koşulları</a>
+                    <a href="tadfit-support.html" data-translate="tf_footer_support">TadFit Destek</a>
+                    <a href="tadfit-hesap-silme.html" data-translate="tf_footer_delete">TadFit Hesap Silme</a>
                     <a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a>
                 </div>
             </div>
@@ -1099,19 +1167,19 @@
     <script>
         const translations = {
             tr: {
-                nav_falio: "Falio App", nav_zartzurt: "Zart Zurt", nav_periyodoz: "PeriyoDoz",
+                nav_falio: "Falio App", nav_zartzurt: "Zart Zurt", nav_periyodoz: "PeriyoDoz", nav_tadfit: "TadFit",
                 nav_services: "Hizmetler", nav_about: "Hakkımızda", nav_privacy: "Gizlilik Politikası",
                 nav_app_ads: "App-ads.txt", nav_contact: "İletişim",
                 drawer_apps: "Uygulamalar", drawer_legal: "Yasal", drawer_language: "Dil",
-                drawer_falio: "Astroloji, rüya & fal", drawer_zz: "Şaka, troll & komik sesler", drawer_pz: "İlaç, aile sağlığı & döngü",
+                drawer_falio: "Astroloji, rüya & fal", drawer_zz: "Şaka, troll & komik sesler", drawer_pz: "İlaç, aile sağlığı & döngü", drawer_tf: "Kalori, diyet & beslenme",
 
                 hero_subtitle: "Bağımsız Mobil Yazılım Stüdyosu",
                 hero_title: "Hayatı kolaylaştıran <em>mobil</em> uygulamalar.",
-                hero_desc: "VB TECH LABS; yapay zekâ destekli, hızlı ve güvenli mobil uygulamalar tasarlayan ve geliştiren bir yazılım stüdyosudur. Üç uygulama, tek vizyon: kullanıcıya gerçekten değer katmak.",
+                hero_desc: "VB TECH LABS; yapay zekâ destekli, hızlı ve güvenli mobil uygulamalar tasarlayan ve geliştiren bir yazılım stüdyosudur. Dört uygulama, tek vizyon: kullanıcıya gerçekten değer katmak.",
                 hero_cta1: "Uygulamaları Keşfet", hero_cta2: "İletişime Geç",
 
                 apps_subtitle: "Uygulamalarımız",
-                apps_title: "Cebinizde yaşayan <em>üç</em> ürün.",
+                apps_title: "Cebinizde yaşayan <em>dört</em> ürün.",
 
                 falio_badge: "<span class=\"pulse-dot\"></span>Şimdi Yayında — Ücretsiz İndir",
                 falio_title: "Falio : Astroloji,<br>Rüya & Fal",
@@ -1135,6 +1203,15 @@
                 pz_play_small: "HEMEN İNDİR", pz_appstore_small: "HEMEN İNDİR",
                 pz_link_smart: "Paylaş & QR", pz_link_portal: "Akıllı İndirme Sayfası", pz_link_privacy: "Gizlilik Politikası", pz_link_delete: "Hesap & Veri Silme", pz_link_support: "Destek Hattı",
                 pz_footer_privacy: "PeriyoDoz Gizlilik", pz_footer_delete: "PeriyoDoz Hesap Silme",
+
+                tf_badge: "<span class=\"pulse-dot-green\"></span>Beslenme & Kilo Yönetimi — Kişisel Plan",
+                tf_title: "TadFit : Kalori ve<br>Diyet Planı",
+                tf_desc: "Tadından vazgeçmeden formda kal! Boyuna, kilona, hedefine ve alerjilerine göre kişisel beslenme planı hazırlayan ve günlük kalori, su, kilo takibini kolaylaştıran beslenme ve kilo yönetimi uygulaması.",
+                tf_tag_calorie: "Kalori & Makro Hedefi", tf_tag_barcode: "Barkodla Öğün Kaydı", tf_tag_water: "Su & Kilo Takibi", tf_tag_recipes: "Alerjiye Uygun Tarifler", tf_tag_ai: "Kişisel AI Beslenme Planı", tf_tag_streak: "Seri, Rozet & Meydan Okuma",
+                tf_play_small: "HEMEN İNDİR", tf_appstore_small: "Çok Yakında",
+                tf_link_smart: "Paylaş & QR", tf_link_portal: "Tanıtım & İndirme Sayfası", tf_link_privacy: "Gizlilik Politikası", tf_link_terms: "Kullanım Koşulları", tf_link_support: "Destek & SSS", tf_link_delete: "Hesap & Veri Silme",
+                tf_chip1: "Kalori & Makro", tf_chip2: "7 Günlük AI Plan", tf_chip3: "Su & Kilo Takibi",
+                tf_footer_landing: "TadFit Tanıtım", tf_footer_privacy: "TadFit Gizlilik", tf_footer_terms: "TadFit Koşulları", tf_footer_support: "TadFit Destek", tf_footer_delete: "TadFit Hesap Silme",
 
                 services_subtitle: "Uzmanlık Alanlarımız",
                 services_title: "Fikirden mağazaya, <em>uçtan uca</em> hizmet.",
@@ -1162,19 +1239,19 @@
                 footer_copyright: "© 2026 VB TECH LABS. Tüm hakları saklıdır."
             },
             en: {
-                nav_falio: "Falio App", nav_zartzurt: "Zart Zurt", nav_periyodoz: "PeriyoDoz",
+                nav_falio: "Falio App", nav_zartzurt: "Zart Zurt", nav_periyodoz: "PeriyoDoz", nav_tadfit: "TadFit",
                 nav_services: "Services", nav_about: "About", nav_privacy: "Privacy Policy",
                 nav_app_ads: "App-ads.txt", nav_contact: "Contact",
                 drawer_apps: "Apps", drawer_legal: "Legal", drawer_language: "Language",
-                drawer_falio: "Astrology, dream & tarot", drawer_zz: "Pranks, troll & funny sounds", drawer_pz: "Meds, family health & cycle",
+                drawer_falio: "Astrology, dream & tarot", drawer_zz: "Pranks, troll & funny sounds", drawer_pz: "Meds, family health & cycle", drawer_tf: "Calories, diet & nutrition",
 
                 hero_subtitle: "Independent Mobile Software Studio",
                 hero_title: "<em>Mobile</em> apps that make everyday life easier.",
-                hero_desc: "VB TECH LABS is a software studio designing and building fast, secure, AI-powered mobile apps. Three apps, one vision: create real value for the people who use them.",
+                hero_desc: "VB TECH LABS is a software studio designing and building fast, secure, AI-powered mobile apps. Four apps, one vision: create real value for the people who use them.",
                 hero_cta1: "Explore the apps", hero_cta2: "Get in touch",
 
                 apps_subtitle: "Our Apps",
-                apps_title: "<em>Three</em> products that live in your pocket.",
+                apps_title: "<em>Four</em> products that live in your pocket.",
 
                 falio_badge: "<span class=\"pulse-dot\"></span>Now Live — Free Download",
                 falio_title: "Falio: Astrology,<br>Dream & Tarot",
@@ -1198,6 +1275,15 @@
                 pz_play_small: "DOWNLOAD NOW", pz_appstore_small: "DOWNLOAD NOW",
                 pz_link_smart: "Share & QR", pz_link_portal: "Smart Landing Page", pz_link_privacy: "Privacy Policy", pz_link_delete: "Delete Account & Data", pz_link_support: "Health Support Line",
                 pz_footer_privacy: "PeriyoDoz Privacy", pz_footer_delete: "PeriyoDoz Data Deletion",
+
+                tf_badge: "<span class=\"pulse-dot-green\"></span>Nutrition & Weight Management — Personal Plan",
+                tf_title: "TadFit : Calorie &<br>Diet Planner",
+                tf_desc: "Stay fit without giving up taste! A nutrition and weight management app that prepares personalized meal plans for your height, weight, goals, and allergies, and simplifies daily calorie, water, and weight tracking.",
+                tf_tag_calorie: "Calorie & Macro Goals", tf_tag_barcode: "Barcode Meal Logging", tf_tag_water: "Water & Weight Tracking", tf_tag_recipes: "Allergy-Safe Recipes", tf_tag_ai: "Personal AI Meal Plan", tf_tag_streak: "Streaks, Badges & Challenges",
+                tf_play_small: "DOWNLOAD NOW", tf_appstore_small: "Coming Soon",
+                tf_link_smart: "Share & QR", tf_link_portal: "Overview & Download Page", tf_link_privacy: "Privacy Policy", tf_link_terms: "Terms of Use", tf_link_support: "Support & FAQ", tf_link_delete: "Delete Account & Data",
+                tf_chip1: "Calorie & Macro", tf_chip2: "7-Day AI Plan", tf_chip3: "Water & Weight",
+                tf_footer_landing: "TadFit Overview", tf_footer_privacy: "TadFit Privacy", tf_footer_terms: "TadFit Terms", tf_footer_support: "TadFit Support", tf_footer_delete: "TadFit Data Deletion",
 
                 services_subtitle: "Our Expertise",
                 services_title: "From idea to store, <em>end to end</em>.",
@@ -1392,7 +1478,7 @@
         })();
 
         /* App detail dialog: reuses the live showcase sections so copy stays in sync */
-        const detailSources = { falio: '#falio-app', zartzurt: '#zart-zurt-app', periyodoz: '#periyodoz-app' };
+        const detailSources = { falio: '#falio-app', zartzurt: '#zart-zurt-app', periyodoz: '#periyodoz-app', tadfit: '#tadfit-app' };
         let detailLastFocus = null;
 
         function openAppDetail(key) {
@@ -1400,7 +1486,7 @@
             if (!src) return;
             const card = document.getElementById('app-detail-card');
             const lang = localStorage.getItem('preferredLanguage') || 'tr';
-            card.className = 'app-card app-detail-card ' + (key === 'zartzurt' ? 'zz' : key === 'periyodoz' ? 'pz' : 'falio');
+            card.className = 'app-card app-detail-card ' + (key === 'zartzurt' ? 'zz' : key === 'periyodoz' ? 'pz' : key === 'tadfit' ? 'tf' : 'falio');
             Array.from(card.children).forEach(n => { if (!n.classList.contains('app-detail-close')) n.remove(); });
 
             ['.app-content', '.app-visual'].forEach(sel => {
@@ -1532,6 +1618,26 @@
                 badgeColor: '#f9a8d4',
                 badgeBorder: 'rgba(255, 77, 141, 0.35)',
                 gradient: 'linear-gradient(90deg, #ff4d8d, #8b5cf6)'
+            },
+            tadfit: {
+                slug: 'tadfit.html',
+                qrName: 'tadfit',
+                page: 'tadfit.html',
+                icon: 'tadfit.icon.png',
+                qr: 'tadfit-qr.png',
+                title: { tr: 'TadFit : Kalori ve Diyet Planı', en: 'TadFit : Calorie & Diet Planner' },
+                badge: { tr: 'Hızlı Paylaş & QR', en: 'Quick Share & QR' },
+                desc: { tr: 'Arkadaşlarınla paylaş veya QR kodu hemen okut', en: 'Share with friends or scan the QR code' },
+                shareText: {
+                    tr: 'TadFit : Kalori ve Diyet Planı — Tadından vazgeçmeden formda kal! Hemen indir:',
+                    en: 'TadFit : Calorie & Diet Planner — Stay fit without giving up taste! Download now:'
+                },
+                theme: '#34d399',
+                glow: 'rgba(52, 211, 153, 0.28)',
+                badgeBg: 'rgba(52, 211, 153, 0.16)',
+                badgeColor: '#6ee7b7',
+                badgeBorder: 'rgba(52, 211, 153, 0.35)',
+                gradient: 'linear-gradient(90deg, #34d399, #d6ff3f)'
             }
         };
 
