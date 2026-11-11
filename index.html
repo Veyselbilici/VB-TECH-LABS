@@ -978,9 +978,9 @@
                                     <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
                                     <span class="store-btn-text"><small data-translate="tf_play_small">HEMEN İNDİR</small><strong>Google Play</strong></span>
                                 </a>
-                                <a href="#" class="store-btn disabled" style="opacity:0.6; cursor:default;" onclick="return false;">
+                                <a href="https://apps.apple.com/tr/app/tadfit-kalori-ve-diyet-plan%C4%B1/id6827642034?l=tr" target="_blank" rel="noopener" class="store-btn" id="tadfit-appstore-btn">
                                     <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                                    <span class="store-btn-text"><small data-translate="tf_appstore_small">Çok Yakında</small><strong>App Store</strong></span>
+                                    <span class="store-btn-text"><small data-translate="tf_appstore_small">HEMEN İNDİR</small><strong>App Store</strong></span>
                                 </a>
                             </div>
                             <div class="hub-links tf-hub-links">
@@ -1208,7 +1208,7 @@
                 tf_title: "TadFit : Kalori ve<br>Diyet Planı",
                 tf_desc: "Tadından vazgeçmeden formda kal! Boyuna, kilona, hedefine ve alerjilerine göre kişisel beslenme planı hazırlayan ve günlük kalori, su, kilo takibini kolaylaştıran beslenme ve kilo yönetimi uygulaması.",
                 tf_tag_calorie: "Kalori & Makro Hedefi", tf_tag_barcode: "Barkodla Öğün Kaydı", tf_tag_water: "Su & Kilo Takibi", tf_tag_recipes: "Alerjiye Uygun Tarifler", tf_tag_ai: "Kişisel AI Beslenme Planı", tf_tag_streak: "Seri, Rozet & Meydan Okuma",
-                tf_play_small: "HEMEN İNDİR", tf_appstore_small: "Çok Yakında",
+                tf_play_small: "HEMEN İNDİR", tf_appstore_small: "HEMEN İNDİR",
                 tf_link_smart: "Paylaş & QR", tf_link_portal: "Tanıtım & İndirme Sayfası", tf_link_privacy: "Gizlilik Politikası", tf_link_terms: "Kullanım Koşulları", tf_link_support: "Destek & SSS", tf_link_delete: "Hesap & Veri Silme",
                 tf_chip1: "Kalori & Makro", tf_chip2: "7 Günlük AI Plan", tf_chip3: "Su & Kilo Takibi",
                 tf_footer_landing: "TadFit Tanıtım", tf_footer_privacy: "TadFit Gizlilik", tf_footer_terms: "TadFit Koşulları", tf_footer_support: "TadFit Destek", tf_footer_delete: "TadFit Hesap Silme",
@@ -1280,7 +1280,7 @@
                 tf_title: "TadFit : Calorie &<br>Diet Planner",
                 tf_desc: "Stay fit without giving up taste! A nutrition and weight management app that prepares personalized meal plans for your height, weight, goals, and allergies, and simplifies daily calorie, water, and weight tracking.",
                 tf_tag_calorie: "Calorie & Macro Goals", tf_tag_barcode: "Barcode Meal Logging", tf_tag_water: "Water & Weight Tracking", tf_tag_recipes: "Allergy-Safe Recipes", tf_tag_ai: "Personal AI Meal Plan", tf_tag_streak: "Streaks, Badges & Challenges",
-                tf_play_small: "DOWNLOAD NOW", tf_appstore_small: "Coming Soon",
+                tf_play_small: "DOWNLOAD NOW", tf_appstore_small: "DOWNLOAD NOW",
                 tf_link_smart: "Share & QR", tf_link_portal: "Overview & Download Page", tf_link_privacy: "Privacy Policy", tf_link_terms: "Terms of Use", tf_link_support: "Support & FAQ", tf_link_delete: "Delete Account & Data",
                 tf_chip1: "Calorie & Macro", tf_chip2: "7-Day AI Plan", tf_chip3: "Water & Weight",
                 tf_footer_landing: "TadFit Overview", tf_footer_privacy: "TadFit Privacy", tf_footer_terms: "TadFit Terms", tf_footer_support: "TadFit Support", tf_footer_delete: "TadFit Data Deletion",
@@ -1342,6 +1342,13 @@
                 zzAppleBtn.href = lang === 'tr'
                     ? "https://apps.apple.com/tr/app/zart-zurt-%C5%9Faka-troll-sesler/id6809407795?l=tr"
                     : "https://apps.apple.com/us/app/zart-zurt-%C5%9Faka-troll-sesler/id6809407795";
+            }
+
+            const tfAppleBtn = document.getElementById('tadfit-appstore-btn');
+            if (tfAppleBtn) {
+                tfAppleBtn.href = lang === 'tr'
+                    ? "https://apps.apple.com/tr/app/tadfit-kalori-ve-diyet-plan%C4%B1/id6827642034?l=tr"
+                    : "https://apps.apple.com/us/app/tadfit-kalori-ve-diyet-plan%C4%B1/id6827642034";
             }
         }
 
