@@ -152,6 +152,53 @@ footer {
 
 :focus-visible { outline: 2px solid var(--lt-accent); outline-offset: 3px; border-radius: 6px; }
 
+/* ---- Mobile Responsive Refinements Across All Legal & Support Pages ---- */
+@media (max-width: 760px) {
+    header { padding: .75rem 0 !important; }
+    .header-content {
+        padding: 0 1rem !important;
+        flex-wrap: wrap !important;
+        gap: .65rem !important;
+    }
+    .header-title, .brand-name { font-size: 1.05rem !important; }
+    .logo-small { width: 34px !important; height: 34px !important; }
+    .header-actions, .header-nav-wrap {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: .5rem !important;
+    }
+    .app-subnav, .legal-tabs {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        width: 100%;
+        padding-bottom: .25rem;
+        gap: .4rem !important;
+        scrollbar-width: none;
+    }
+    .app-subnav::-webkit-scrollbar, .legal-tabs::-webkit-scrollbar { display: none; }
+    .subnav-link, .legal-tab-link {
+        white-space: nowrap !important;
+        font-size: .8rem !important;
+        padding: .45rem .75rem !important;
+    }
+    main, .container, .content-wrapper {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    h1, .page-header h1, .hero-text h1 {
+        font-size: clamp(1.65rem, 6.5vw, 2.25rem) !important;
+        line-height: 1.12 !important;
+    }
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { transition-duration: .01ms !important; animation: none !important; }
