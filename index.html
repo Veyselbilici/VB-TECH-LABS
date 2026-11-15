@@ -294,7 +294,7 @@
         .app-visual { position: relative; display: grid; place-items: center; min-height: 360px; }
         .phones-row { position: relative; width: min(100%, 460px); height: clamp(340px, 46vw, 520px); }
         .phone-mockup { position: absolute; bottom: 0; width: 44%; aspect-ratio: 9 / 19; border-radius: 28px; padding: 5px; background: linear-gradient(160deg, #3a3a46, #101014); border: 1px solid rgba(255, 255, 255, .16); box-shadow: 0 40px 70px -26px rgba(0, 0, 0, .9); transition: transform .7s var(--ease); }
-        .phone-mockup img { width: 100%; height: 100%; object-fit: cover; border-radius: 23px; background: #000; }
+        .phone-mockup img, .phone-mockup video { width: 100%; height: 100%; object-fit: cover; border-radius: 23px; background: #000; display: block; }
         .phone-mockup:nth-child(1) { left: 0; transform: translateY(18px) rotate(-7deg); z-index: 1; }
         .phone-mockup:nth-child(2) { left: 28%; z-index: 3; width: 48%; transform: translateY(-6px); }
         .phone-mockup:nth-child(3) { right: 0; transform: translateY(26px) rotate(7deg); z-index: 2; }
@@ -331,6 +331,8 @@
         .banner-sound[aria-pressed="true"] { background: #ff7a1a; color: #0a0a0d; border-color: transparent; }
         .video-banner.falio .banner-tag svg { color: #a78bfa; }
         .video-banner.falio .banner-sound[aria-pressed="true"] { background: #a78bfa; }
+        .video-banner.tadfit .banner-tag svg { color: #34d399; }
+        .video-banner.tadfit .banner-sound[aria-pressed="true"] { background: #34d399; color: #0a0a0d; }
         @media (max-width: 1100px) { .video-banner { aspect-ratio: 21 / 9; } }
         @media (max-width: 880px) { .video-banner { aspect-ratio: 16 / 9; border-radius: 18px; margin-top: 0; } }
 
@@ -998,13 +1000,31 @@
                             </div>
                         </div>
                         <div class="app-visual tf-visual">
-                            <div class="icon-stage">
-                                <div class="ring r1"></div><div class="ring r2"></div>
-                                <a href="tadfit.html" class="icon-card" aria-label="TadFit Tanıtım Sayfası" style="display:block;"><img src="tadfit.icon.png" alt="TadFit - Kalori ve Diyet Planı" loading="lazy" decoding="async"></a>
-                                <div class="chip k1"><svg class="i"><use href="#i-chart"/></svg><span data-translate="tf_chip1">Kalori &amp; Makro</span></div>
-                                <div class="chip k2"><svg class="i"><use href="#i-ai"/></svg><span data-translate="tf_chip2">7 Günlük AI Plan</span></div>
-                                <div class="chip k3"><svg class="i"><use href="#i-drop"/></svg><span data-translate="tf_chip3">Su &amp; Kilo Takibi</span></div>
+                            <div class="ring r1"></div><div class="ring r2"></div>
+                            <div class="phones-row">
+                                <div class="phone-mockup"><img src="assets/tadfit/tr-2.webp" data-tr="assets/tadfit/tr-2.webp" data-en="assets/tadfit/en-2.webp" alt="TadFit - Kalori ve Makro Kadranı" loading="lazy" decoding="async"></div>
+                                <div class="phone-mockup">
+                                    <video class="phone-video" muted loop playsinline preload="none" poster="assets/tadfit/poster-dikey.jpg" aria-hidden="true" tabindex="-1">
+                                        <source src="assets/tadfit/tadfit-dikey.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="phone-mockup"><img src="assets/tadfit/tr-3.webp" data-tr="assets/tadfit/tr-3.webp" data-en="assets/tadfit/en-3.webp" alt="TadFit - Barkod ve Besin Arama" loading="lazy" decoding="async"></div>
                             </div>
+                        </div>
+                        <!-- (inside card) TadFit video banner -->
+                        <div class="video-banner tadfit reveal" id="tf-banner">
+                            <video class="banner-video" muted loop playsinline preload="none" poster="assets/tadfit/poster-yatay.jpg" aria-hidden="true" tabindex="-1">
+                                <source src="assets/tadfit/tadfit-yatay.mp4" type="video/mp4">
+                            </video>
+                            <div class="banner-shade"></div>
+                            <div class="banner-copy">
+                                <span class="banner-tag"><svg class="i"><use href="#i-play"/></svg>TadFit</span>
+                                <strong data-translate="tf_banner_title">Spor bitti, mutfaktasın… Barkodu okut, kadran anında dönsün.</strong>
+                            </div>
+                            <button type="button" class="banner-sound" aria-pressed="false" aria-label="Sesi aç">
+                                <svg class="i"><use href="#i-wave"/></svg>
+                                <span data-translate="zz_banner_sound">Sesi aç</span>
+                            </button>
                         </div>
                     </article>
                 </div>
@@ -1215,7 +1235,7 @@
                 tf_tag_calorie: "Kalori & Makro Hedefi", tf_tag_barcode: "Barkodla Öğün Kaydı", tf_tag_water: "Su & Kilo Takibi", tf_tag_recipes: "Alerjiye Uygun Tarifler", tf_tag_ai: "Kişisel AI Beslenme Planı", tf_tag_streak: "Seri, Rozet & Meydan Okuma",
                 tf_play_small: "HEMEN İNDİR", tf_appstore_small: "HEMEN İNDİR",
                 tf_link_smart: "Paylaş & QR", tf_link_portal: "Tanıtım & İndirme Sayfası", tf_link_privacy: "Gizlilik Politikası", tf_link_terms: "Kullanım Koşulları", tf_link_support: "Destek & SSS", tf_link_delete: "Hesap & Veri Silme",
-                tf_chip1: "Kalori & Makro", tf_chip2: "7 Günlük AI Plan", tf_chip3: "Su & Kilo Takibi",
+                tf_chip1: "Kalori & Makro", tf_chip2: "7 Günlük AI Plan", tf_chip3: "Su & Kilo Takibi", tf_banner_title: "Spor bitti, mutfaktasın… Barkodu okut, kadran anında dönsün.",
                 tf_footer_landing: "TadFit Tanıtım", tf_footer_privacy: "TadFit Gizlilik", tf_footer_terms: "TadFit Koşulları", tf_footer_support: "TadFit Destek", tf_footer_delete: "TadFit Hesap Silme",
 
                 services_subtitle: "Uzmanlık Alanlarımız",
@@ -1287,7 +1307,7 @@
                 tf_tag_calorie: "Calorie & Macro Goals", tf_tag_barcode: "Barcode Meal Logging", tf_tag_water: "Water & Weight Tracking", tf_tag_recipes: "Allergy-Safe Recipes", tf_tag_ai: "Personal AI Meal Plan", tf_tag_streak: "Streaks, Badges & Challenges",
                 tf_play_small: "DOWNLOAD NOW", tf_appstore_small: "DOWNLOAD NOW",
                 tf_link_smart: "Share & QR", tf_link_portal: "Overview & Download Page", tf_link_privacy: "Privacy Policy", tf_link_terms: "Terms of Use", tf_link_support: "Support & FAQ", tf_link_delete: "Delete Account & Data",
-                tf_chip1: "Calorie & Macro", tf_chip2: "7-Day AI Plan", tf_chip3: "Water & Weight",
+                tf_chip1: "Calorie & Macro", tf_chip2: "7-Day AI Plan", tf_chip3: "Water & Weight", tf_banner_title: "Post-workout in the kitchen… Scan the barcode, watch the dial spin.",
                 tf_footer_landing: "TadFit Overview", tf_footer_privacy: "TadFit Privacy", tf_footer_terms: "TadFit Terms", tf_footer_support: "TadFit Support", tf_footer_delete: "TadFit Data Deletion",
 
                 services_subtitle: "Our Expertise",
@@ -1484,6 +1504,17 @@
                         else v.pause();
                     });
                 }, { threshold: .15 }).observe(banner);
+            });
+            document.querySelectorAll('.phone-video').forEach(function (pv) {
+                if (reduce) { pv.remove(); return; }
+                pv.muted = true;
+                if (!('IntersectionObserver' in window)) return;
+                new IntersectionObserver(function (en) {
+                    en.forEach(function (e) {
+                        if (e.isIntersecting) { pv.preload = 'auto'; const p = pv.play(); if (p && p.catch) p.catch(function () {}); }
+                        else pv.pause();
+                    });
+                }, { threshold: .15 }).observe(pv);
             });
         })();
 
