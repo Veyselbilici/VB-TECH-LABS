@@ -318,23 +318,100 @@
 
 
 
-        /* video banner under the Zart Zurt card */
-        .video-banner { order: 3; position: relative; grid-column: 1 / -1; width: 100%; margin: .4rem 0 0; border-radius: 20px; overflow: hidden; isolation: isolate; aspect-ratio: 32 / 9; border: 1px solid var(--line-2); background: #000; }
-        .banner-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
-        .banner-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 10, 13, .78) 0%, rgba(10, 10, 13, .25) 55%, rgba(10, 10, 13, .05) 100%), linear-gradient(0deg, rgba(10, 10, 13, .55), transparent 45%); }
-        .banner-copy { position: absolute; left: clamp(.9rem, 2.4vw, 1.6rem); bottom: clamp(.8rem, 2.2vw, 1.4rem); display: grid; gap: .6rem; max-width: 22em; }
-        .banner-tag { display: inline-flex; align-items: center; gap: .45rem; width: fit-content; padding: .35rem .7rem; border-radius: 999px; font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; background: rgba(10, 10, 13, .6); border: 1px solid var(--line-2); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+        /* Full 16:9 uncropped cinema video showcase under app cards */
+        .video-banner {
+            order: 3;
+            position: relative;
+            grid-column: 1 / -1;
+            width: 100%;
+            margin: .85rem 0 0;
+            border-radius: 26px;
+            overflow: hidden;
+            isolation: isolate;
+            aspect-ratio: 16 / 9;
+            border: 1px solid rgba(255, 255, 255, .18);
+            background: #07080c;
+            box-shadow: 0 38px 80px -28px rgba(0, 0, 0, .92), 0 0 0 1px rgba(255, 255, 255, .05) inset;
+        }
+        .banner-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #07080c;
+            z-index: -2;
+        }
+        .banner-shade {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background: linear-gradient(0deg, rgba(8, 8, 12, .88) 0%, rgba(8, 8, 12, .26) 22%, transparent 44%);
+        }
+        .banner-copy {
+            position: absolute;
+            left: clamp(1rem, 2.6vw, 1.85rem);
+            bottom: clamp(.95rem, 2.4vw, 1.55rem);
+            display: grid;
+            gap: .45rem;
+            max-width: min(62%, 34em);
+            pointer-events: none;
+        }
+        .banner-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            width: fit-content;
+            padding: .36rem .78rem;
+            border-radius: 999px;
+            font-family: var(--mono);
+            font-size: .7rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            background: rgba(10, 10, 14, .76);
+            border: 1px solid var(--line-2);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
         .banner-tag svg { color: #ff7a1a; }
-        .banner-copy strong { font-size: clamp(1rem, 2.2vw, 1.45rem); line-height: 1.08; letter-spacing: -.03em; font-weight: 700; text-wrap: balance; }
-        .banner-sound { position: absolute; right: clamp(.9rem, 2.4vw, 1.6rem); bottom: clamp(.9rem, 2.4vw, 1.6rem); display: inline-flex; align-items: center; gap: .5rem; padding: .6rem .95rem; border-radius: 12px; font-size: .84rem; font-weight: 600; background: rgba(10, 10, 13, .66); border: 1px solid var(--line-2); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: background .25s, transform .3s var(--ease); }
-        .banner-sound:hover { background: rgba(255, 255, 255, .16); transform: translateY(-2px); }
+        .banner-copy strong {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            line-height: 1.15;
+            letter-spacing: -.025em;
+            font-weight: 700;
+            text-wrap: balance;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, .85);
+        }
+        .banner-sound {
+            position: absolute;
+            right: clamp(1rem, 2.6vw, 1.85rem);
+            bottom: clamp(.95rem, 2.4vw, 1.55rem);
+            display: inline-flex;
+            align-items: center;
+            gap: .55rem;
+            padding: .68rem 1.1rem;
+            border-radius: 14px;
+            font-size: .86rem;
+            font-weight: 600;
+            background: rgba(10, 10, 14, .78);
+            border: 1px solid rgba(255, 255, 255, .24);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 14px 32px -10px rgba(0, 0, 0, .75);
+            transition: background .25s, transform .3s var(--ease), border-color .25s;
+        }
+        .banner-sound:hover { background: rgba(255, 255, 255, .18); border-color: rgba(255, 255, 255, .45); transform: translateY(-2px); }
         .banner-sound[aria-pressed="true"] { background: #ff7a1a; color: #0a0a0d; border-color: transparent; }
         .video-banner.falio .banner-tag svg { color: #a78bfa; }
-        .video-banner.falio .banner-sound[aria-pressed="true"] { background: #a78bfa; }
+        .video-banner.falio .banner-sound[aria-pressed="true"] { background: #a78bfa; color: #0a0a0d; }
         .video-banner.tadfit .banner-tag svg { color: #34d399; }
         .video-banner.tadfit .banner-sound[aria-pressed="true"] { background: #34d399; color: #0a0a0d; }
-        @media (max-width: 1100px) { .video-banner { aspect-ratio: 21 / 9; } }
-        @media (max-width: 880px) { .video-banner { aspect-ratio: 16 / 9; border-radius: 18px; margin-top: 0; } }
+        @media (max-width: 880px) {
+            .video-banner { border-radius: 18px; margin-top: .4rem; }
+            .banner-copy strong { font-size: .92rem; }
+            .banner-sound { padding: .5rem .82rem; font-size: .78rem; }
+        }
 
         /* video card */
         .zz-visual { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
@@ -790,10 +867,10 @@
                         <div class="app-content falio-content">
                             <span class="app-index">01 / 04</span>
                             <div class="app-badge falio-badge" data-translate="falio_badge"><span class="pulse-dot"></span>Şimdi Yayında — Ücretsiz İndir</div>
-                            <div class="app-title-row">
+                            <a href="app/" class="app-title-row" style="text-decoration:none; color:inherit;">
                                 <img src="assets/icon-falio.webp" alt="Falio App Icon" class="app-icon falio-app-icon" width="68" height="68" loading="lazy">
                                 <h3 class="app-title" data-translate="falio_title">Falio : Astroloji,<br>Rüya & Fal</h3>
-                            </div>
+                            </a>
                             <p class="app-desc" data-translate="falio_desc">Günlük burç yorumlarını keşfet, online canlı fal baktır ve astroloji dünyasına adım at. Falio ile geleceğine ışık tut!</p>
                             <div class="app-tags">
                                 <span class="app-tag"><svg class="i"><use href="#i-eye"/></svg><span data-translate="falio_tag_live">Canlı Fal</span></span>
@@ -860,10 +937,10 @@
                         <div class="app-content zz-content">
                             <span class="app-index">02 / 04</span>
                             <div class="app-badge zz-badge" data-translate="zz_badge"><span class="pulse-dot-orange"></span>Yeni Eğlence Uygulaması — Şaka & Troll</div>
-                            <div class="app-title-row">
+                            <a href="zart-zurt.html" class="app-title-row" style="text-decoration:none; color:inherit;">
                                 <img src="assets/icon-zartzurt.webp" alt="Zart Zurt App Icon" class="app-icon zz-app-icon" width="68" height="68" loading="lazy">
                                 <h3 class="app-title" data-translate="zz_title">Zart Zurt : Şaka,<br>Troll & Komik Sesler</h3>
-                            </div>
+                            </a>
                             <p class="app-desc" data-translate="zz_desc">Arkadaşlarınıza en komik şakaları yapın! Yüzlerce troll ses efekti, sevimli çizgi animasyonlar ve telefonu sallayınca ses perdesini değiştiren interaktif mod ile sınırsız kahkaha.</p>
                             <div class="app-tags">
                                 <span class="app-tag"><svg class="i"><use href="#i-smile"/></svg><span data-translate="zz_tag_characters">Çizgi Karakterler</span></span>
@@ -921,10 +998,10 @@
                         <div class="app-content pz-content">
                             <span class="app-index">03 / 04</span>
                             <div class="app-badge pz-badge" data-translate="pz_badge"><span class="pulse-dot-rose"></span>Sağlık & İlaç Asistanı — Akıllı Takip</div>
-                            <div class="app-title-row">
+                            <a href="periyodoz.html" class="app-title-row" style="text-decoration:none; color:inherit;">
                                 <img src="assets/icon-periyodoz.webp" alt="PeriyoDoz App Icon" class="app-icon pz-app-icon" width="68" height="68" loading="lazy">
                                 <h3 class="app-title" data-translate="pz_title">PeriyoDoz : İlaç Hatırlatıcı,<br>Aile Sağlığı & Döngü</h3>
-                            </div>
+                            </a>
                             <p class="app-desc" data-translate="pz_desc">İlaçlarınızı asla unutmayın, ailenizin sağlığını güvenle takip edin! Akıllı ilaç etkileşim uyarısı, tansiyon ve şeker ölçümleri, hidrasyon takibi ve adet döngüsü günlüğü ile eksiksiz sağlık asistanınız.</p>
                             <div class="app-tags">
                                 <span class="app-tag"><svg class="i"><use href="#i-bell"/></svg><span data-translate="pz_tag_reminders">Akıllı Doz Hatırlatıcı</span></span>
@@ -1004,7 +1081,7 @@
                             <div class="phones-row">
                                 <div class="phone-mockup"><img src="assets/tadfit/tr-2.webp" data-tr="assets/tadfit/tr-2.webp" data-en="assets/tadfit/en-2.webp" alt="TadFit - Kalori ve Makro Kadranı" loading="lazy" decoding="async"></div>
                                 <div class="phone-mockup">
-                                    <video class="phone-video" muted loop playsinline preload="none" poster="assets/tadfit/poster-dikey.jpg" aria-hidden="true" tabindex="-1">
+                                    <video class="phone-video" muted loop playsinline preload="none" poster="assets/tadfit/poster-dikey.jpg" data-tr="assets/tadfit/tadfit-dikey.mp4" data-en="assets/tadfit/tadfit-dikey-en.mp4" aria-hidden="true" tabindex="-1">
                                         <source src="assets/tadfit/tadfit-dikey.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -1013,7 +1090,7 @@
                         </div>
                         <!-- (inside card) TadFit video banner -->
                         <div class="video-banner tadfit reveal" id="tf-banner">
-                            <video class="banner-video" muted loop playsinline preload="none" poster="assets/tadfit/poster-yatay.jpg" aria-hidden="true" tabindex="-1">
+                            <video class="banner-video" muted loop playsinline preload="none" poster="assets/tadfit/poster-yatay.jpg" data-tr="assets/tadfit/tadfit-yatay.mp4" data-en="assets/tadfit/tadfit-yatay-en.mp4" aria-hidden="true" tabindex="-1">
                                 <source src="assets/tadfit/tadfit-yatay.mp4" type="video/mp4">
                             </video>
                             <div class="banner-shade"></div>
@@ -1354,6 +1431,18 @@
             });
 
             document.querySelectorAll('img[data-' + lang + ']').forEach(img => { img.src = img.getAttribute('data-' + lang); });
+            document.querySelectorAll('video[data-' + lang + ']').forEach(vid => {
+                const targetSrc = vid.getAttribute('data-' + lang);
+                const srcEl = vid.querySelector('source');
+                const curSrc = srcEl ? srcEl.getAttribute('src') : vid.getAttribute('src');
+                if (targetSrc && curSrc !== targetSrc) {
+                    const wasPlaying = !vid.paused;
+                    if (srcEl) srcEl.setAttribute('src', targetSrc);
+                    else vid.setAttribute('src', targetSrc);
+                    vid.load();
+                    if (wasPlaying) { const p = vid.play(); if (p && p.catch) p.catch(() => {}); }
+                }
+            });
 
             const pzAppleBtn = document.getElementById('periyodoz-appstore-btn');
             if (pzAppleBtn) {
@@ -1520,9 +1609,14 @@
 
         /* App detail dialog: reuses the live showcase sections so copy stays in sync */
         const detailSources = { falio: '#falio-app', zartzurt: '#zart-zurt-app', periyodoz: '#periyodoz-app', tadfit: '#tadfit-app' };
+        const detailPages = { falio: 'app/', zartzurt: 'zart-zurt.html', periyodoz: 'periyodoz.html', tadfit: 'tadfit.html' };
         let detailLastFocus = null;
 
         function openAppDetail(key) {
+            if (key === 'tadfit') {
+                window.location.href = 'tadfit.html';
+                return;
+            }
             const src = document.querySelector(detailSources[key]);
             if (!src) return;
             const card = document.getElementById('app-detail-card');
@@ -1530,13 +1624,35 @@
             card.className = 'app-card app-detail-card ' + (key === 'zartzurt' ? 'zz' : key === 'periyodoz' ? 'pz' : key === 'tadfit' ? 'tf' : 'falio');
             Array.from(card.children).forEach(n => { if (!n.classList.contains('app-detail-close')) n.remove(); });
 
-            ['.app-content', '.app-visual'].forEach(sel => {
+            ['.app-content', '.app-visual', '.video-banner'].forEach(sel => {
                 const orig = src.querySelector(sel);
                 if (!orig) return;
                 const c = orig.cloneNode(true);
+                c.classList.remove('reveal');
+                c.classList.add('in');
                 c.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
                 c.querySelectorAll('[loading]').forEach(n => n.removeAttribute('loading'));
                 c.querySelectorAll('img[data-' + lang + ']').forEach(img => { img.src = img.getAttribute('data-' + lang); });
+                c.querySelectorAll('video').forEach(vid => {
+                    const targetSrc = vid.getAttribute('data-' + lang);
+                    const srcEl = vid.querySelector('source');
+                    if (targetSrc && srcEl) srcEl.setAttribute('src', targetSrc);
+                    vid.muted = true;
+                    vid.preload = 'auto';
+                    vid.autoplay = true;
+                    setTimeout(() => { vid.load(); const p = vid.play(); if (p && p.catch) p.catch(() => {}); }, 60);
+                });
+                const sb = c.querySelector('.banner-sound');
+                const bv = c.querySelector('.banner-video');
+                if (sb && bv) {
+                    sb.addEventListener('click', () => {
+                        bv.muted = !bv.muted;
+                        sb.setAttribute('aria-pressed', String(!bv.muted));
+                        const t = sb.querySelector('span');
+                        if (t) t.textContent = bv.muted ? (lang === 'tr' ? 'Sesi aç' : 'Sound on') : (lang === 'tr' ? 'Sesi kapat' : 'Sound off');
+                        if (!bv.muted) { const p = bv.play(); if (p && p.catch) p.catch(() => {}); }
+                    });
+                }
                 c.querySelectorAll('button[onclick]').forEach(n => n.addEventListener('click', () => closeAppDetail()));
                 const yt = c.querySelector('.video-card');
                 if (yt && window.__loadYtCard) {

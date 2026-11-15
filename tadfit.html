@@ -3,75 +3,550 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>TadFit: Kalori ve Diyet Planı | TadFit</title>
-    <meta name="description" content="TadFit: kişisel beslenme planı, kalori ve makro takibi, tarifler ve ilerleme. Google Play&#x27;den indirin.">
-    <meta name="theme-color" content="#0a0a0d">
+    <title>TadFit: Kalori ve Diyet Planı | Yapay Zekâ Destekli Beslenme &amp; Fitness</title>
+    <meta name="description" content="TadFit: Barkodu okut kadran dönsün, tabağını çek AI hesaplasın, evdeki malzemeyle tarif bul ve 7 günlük kişisel AI diyet planınla formda kal. App Store ve Google Play'de!">
+    <meta name="theme-color" content="#0b0d11">
     <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tadfit-pages.css">
+    <style>
+        :root {
+            --tf-lime: #d1fd4d;
+            --tf-emerald: #34d399;
+            --tf-bg: #0a0c10;
+            --tf-surface: rgba(20, 23, 30, 0.78);
+            --tf-surface-2: rgba(28, 32, 42, 0.85);
+            --tf-border: rgba(255, 255, 255, 0.1);
+            --tf-border-strong: rgba(209, 253, 77, 0.34);
+            --tf-text: #f6f7f9;
+            --tf-muted: #a3aab8;
+        }
+        body {
+            background:
+                radial-gradient(900px 500px at 85% 6%, rgba(209, 253, 77, 0.13), transparent 65%),
+                radial-gradient(850px 480px at 10% 22%, rgba(52, 211, 153, 0.12), transparent 65%),
+                var(--tf-bg);
+            color: var(--tf-text);
+        }
+        .wrap { max-width: 1180px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 40px) 72px; }
+
+        /* Top bar & Nav */
+        .top {
+            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+            padding-bottom: 18px; border-bottom: 1px solid var(--tf-border);
+        }
+        .top-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .lang-toggle {
+            display: inline-flex; padding: 4px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--tf-border);
+        }
+        .lang-toggle button {
+            padding: 6px 13px; border-radius: 9px; border: 0; cursor: pointer;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 600;
+            color: var(--tf-muted); background: transparent; transition: all 0.2s ease;
+        }
+        .lang-toggle button.active {
+            background: var(--tf-lime); color: #0b0d11; box-shadow: 0 6px 18px -4px rgba(209, 253, 77, 0.5);
+        }
+
+        /* Hero Split with Live 9:16 Phone Preview */
+        .tf-hero {
+            display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: clamp(28px, 4.5vw, 56px); align-items: center;
+            padding: clamp(28px, 4vw, 48px) 0;
+        }
+        .tf-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 13px; border-radius: 999px;
+            background: rgba(209, 253, 77, 0.11); border: 1px solid rgba(209, 253, 77, 0.32);
+            color: var(--tf-lime); font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;
+        }
+        .tf-eyebrow i {
+            width: 7px; height: 7px; border-radius: 50%; background: var(--tf-lime);
+            box-shadow: 0 0 10px var(--tf-lime);
+        }
+        .tf-hero h1 {
+            font-size: clamp(2.2rem, 4.6vw, 3.85rem); line-height: 1.03; letter-spacing: -0.03em;
+            font-weight: 800; margin: 0 0 14px;
+        }
+        .tf-hero h1 em {
+            font-family: 'Instrument Serif', serif; font-weight: 400; font-style: italic;
+            color: var(--tf-lime);
+        }
+        .tf-slogan {
+            font-size: clamp(1.12rem, 1.6vw, 1.35rem); font-weight: 600; color: #e2e8f0; margin-bottom: 12px;
+        }
+        .tf-intro {
+            font-size: 1.02rem; line-height: 1.7; color: var(--tf-muted); max-width: 44em; margin-bottom: 22px;
+        }
+        .tf-rating-pill {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 8px 14px; border-radius: 12px; margin-bottom: 22px;
+            background: rgba(255, 255, 255, 0.04); border: 1px solid var(--tf-border);
+            font-size: 0.86rem;
+        }
+        .tf-rating-pill .stars { color: #fbbf24; letter-spacing: 2px; font-weight: 700; }
+        .tf-cta-row {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 18px;
+        }
+        .tf-store-btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 12px 20px; border-radius: 16px; text-decoration: none;
+            background: #050608; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .tf-store-btn:hover {
+            transform: translateY(-3px); border-color: var(--tf-lime);
+            box-shadow: 0 18px 36px -14px rgba(209, 253, 77, 0.35);
+        }
+        .tf-store-btn.primary {
+            background: linear-gradient(135deg, #d1fd4d, #34d399); color: #090b0f; border-color: transparent;
+        }
+        .tf-store-btn.primary small { color: rgba(9, 11, 15, 0.75); }
+        .tf-store-btn svg { width: 26px; height: 26px; fill: currentColor; flex: none; }
+        .tf-store-btn span { display: flex; flex-direction: column; line-height: 1.15; }
+        .tf-store-btn small { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.78; }
+        .tf-store-btn strong { font-size: 1.02rem; font-weight: 800; }
+
+        /* Hero Right: 9:16 Vertical Auto-Playing Phone Showcase */
+        .tf-phone-stage {
+            position: relative; display: flex; flex-direction: column; align-items: center;
+        }
+        .tf-phone-glow {
+            position: absolute; inset: -18px; border-radius: 44px;
+            background: radial-gradient(circle, rgba(209, 253, 77, 0.24), rgba(52, 211, 153, 0.08) 55%, transparent 72%);
+            filter: blur(22px); z-index: 0; pointer-events: none;
+        }
+        .tf-phone-bezel {
+            position: relative; z-index: 1; width: min(100%, 300px); aspect-ratio: 9 / 16;
+            border-radius: 34px; padding: 7px;
+            background: linear-gradient(155deg, #4b5563, #111827 55%, #090b10);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.92);
+        }
+        .tf-phone-bezel video {
+            width: 100%; height: 100%; object-fit: contain; background: #000;
+            border-radius: 27px; display: block;
+        }
+        .tf-phone-floating-bar {
+            position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 3;
+            display: flex; align-items: center; justify-content: space-between; gap: 8px;
+            padding: 8px 12px; border-radius: 14px;
+            background: rgba(10, 12, 16, 0.82); border: 1px solid rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+        }
+        .tf-phone-tag {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--tf-lime);
+            letter-spacing: 0.06em; text-transform: uppercase;
+        }
+        .tf-sound-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 12px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.22);
+            background: rgba(255, 255, 255, 0.08); color: #fff; font-size: 0.78rem; font-weight: 700;
+            cursor: pointer; transition: all 0.2s ease;
+        }
+        .tf-sound-pill:hover { background: rgba(255, 255, 255, 0.18); transform: translateY(-1px); }
+        .tf-sound-pill.unmuted { background: var(--tf-lime); color: #090b0f; border-color: transparent; }
+
+        /* Full-Width Uncropped 16:9 Cinema Stage */
+        .tf-cinema-section {
+            margin: 24px 0 44px; padding: clamp(18px, 3vw, 28px);
+            border-radius: 30px; background: var(--tf-surface);
+            border: 1px solid var(--tf-border-strong);
+            box-shadow: 0 44px 90px -32px rgba(0, 0, 0, 0.9);
+            -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+        }
+        .tf-cinema-header {
+            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+            gap: 14px; margin-bottom: 16px;
+        }
+        .tf-cinema-title-group { display: flex; flex-direction: column; gap: 4px; }
+        .tf-cinema-kicker {
+            display: inline-flex; align-items: center; gap: 7px;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--tf-lime);
+            text-transform: uppercase; letter-spacing: 0.1em;
+        }
+        .tf-cinema-kicker::before {
+            content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--tf-lime);
+            box-shadow: 0 0 10px var(--tf-lime);
+        }
+        .tf-cinema-title { font-size: clamp(1.25rem, 2.2vw, 1.75rem); font-weight: 800; letter-spacing: -0.02em; }
+        .tf-cinema-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+
+        .tf-cinema-viewport {
+            position: relative; width: 100%; aspect-ratio: 16 / 9;
+            border-radius: 20px; overflow: hidden; background: #050608;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 28px 60px -24px rgba(0, 0, 0, 0.95);
+        }
+        .tf-cinema-viewport video {
+            width: 100%; height: 100%; object-fit: contain; background: #050608; display: block;
+        }
+
+        /* 7 Interactive Storyboard Scene Chapters */
+        .tf-chapters {
+            display: grid; grid-template-columns: repeat(7, minmax(120px, 1fr));
+            gap: 8px; margin-top: 16px; overflow-x: auto; padding-bottom: 4px;
+        }
+        .tf-chapter-btn {
+            text-align: left; padding: 10px 12px; border-radius: 13px;
+            background: rgba(255, 255, 255, 0.035); border: 1px solid var(--tf-border);
+            color: var(--tf-text); cursor: pointer; transition: all 0.2s ease;
+            display: flex; flex-direction: column; gap: 4px;
+        }
+        .tf-chapter-btn:hover, .tf-chapter-btn.active {
+            background: rgba(209, 253, 77, 0.12); border-color: var(--tf-lime);
+            transform: translateY(-2px);
+        }
+        .tf-chapter-btn small {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; color: var(--tf-lime);
+        }
+        .tf-chapter-btn strong { font-size: 0.78rem; font-weight: 700; line-height: 1.25; }
+
+        /* Screenshots Gallery */
+        .tf-section-head {
+            display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap;
+            gap: 12px; margin: 44px 0 18px;
+        }
+        .tf-section-head h2 { font-size: clamp(1.45rem, 2.6vw, 2.1rem); font-weight: 800; letter-spacing: -0.025em; }
+        .tf-shots-grid {
+            display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 40px;
+        }
+        .tf-shot-card {
+            border-radius: 24px; padding: 6px;
+            background: linear-gradient(160deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
+            border: 1px solid var(--tf-border);
+            box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .tf-shot-card:hover { transform: translateY(-6px); border-color: var(--tf-lime); }
+        .tf-shot-card img { width: 100%; height: auto; border-radius: 19px; display: block; }
+
+        @media (max-width: 920px) {
+            .tf-hero { grid-template-columns: 1fr; text-align: left; }
+            .tf-phone-stage { order: -1; }
+            .tf-shots-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+    </style>
 </head>
 <body>
     <div class="wrap">
         <header class="top">
             <a href="/" class="brand" aria-label="VB TECH LABS"><svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="vb-bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0d172a"/><stop offset="100%" stop-color="#060b16"/></linearGradient><linearGradient id="vb-v" x1="68" y1="136" x2="183" y2="384" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#cbd5e1"/></linearGradient><linearGradient id="vb-b" x1="220" y1="136" x2="420" y2="384" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#60a5fa"/><stop offset="50%" stop-color="#2563eb"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient></defs><rect width="512" height="512" rx="116" fill="url(#vb-bg)"/><rect x="8" y="8" width="496" height="496" rx="108" fill="none" stroke="#60a5fa" stroke-opacity=".28" stroke-width="12"/><path d="M68 136 H128 L183 301 L153 384 H146 L68 136 Z" fill="url(#vb-v)"/><path fill-rule="evenodd" clip-rule="evenodd" d="M262 136 H374 A59 59 0 0 1 374 254 H362 A65 65 0 0 1 362 384 H172 L262 136 Z M302 180 H366 A23 23 0 0 1 366 226 H285.3 L302 180 Z M265 282 H352 A28 28 0 0 1 352 338 H244.7 L265 282 Z" fill="url(#vb-b)"/></svg><span>VB TECH <small>LABS</small></span></a>
-            <span class="app-chip">TadFit</span>
+            <div class="top-right">
+                <div class="lang-toggle" role="group" aria-label="Dil Seçimi">
+                    <button type="button" id="btn-lang-tr" class="active" onclick="setTadfitLang('tr')">TR · Türkçe</button>
+                    <button type="button" id="btn-lang-en" onclick="setTadfitLang('en')">EN · English</button>
+                </div>
+                <span class="app-chip">TadFit</span>
+            </div>
         </header>
-        <nav class="tabs" aria-label="TadFit"><a class="tab active" href="tadfit.html" aria-current="page">Tanıtım</a><a class="tab" href="privacy-tadfit.html">Gizlilik</a><a class="tab" href="tadfit-terms.html">Koşullar</a><a class="tab" href="tadfit-support.html">Destek</a><a class="tab" href="tadfit-hesap-silme.html">Hesap Silme</a></nav>
 
-        <section class="hero">
+        <nav class="tabs" aria-label="TadFit">
+            <a class="tab active" href="tadfit.html" aria-current="page" data-t="tab_overview">Tanıtım</a>
+            <a class="tab" href="privacy-tadfit.html" data-t="tab_privacy">Gizlilik</a>
+            <a class="tab" href="tadfit-terms.html" data-t="tab_terms">Koşullar</a>
+            <a class="tab" href="tadfit-support.html" data-t="tab_support">Destek</a>
+            <a class="tab" href="tadfit-hesap-silme.html" data-t="tab_delete">Hesap Silme</a>
+        </nav>
+
+        <!-- HERO SPLIT: Info + Auto-Playing 9:16 Vertical Phone Preview -->
+        <section class="tf-hero">
             <div>
-                <div class="kicker">Beslenme &amp; kilo yönetimi</div>
-                <h1>TadFit: <em>Kalori ve Diyet Planı</em></h1>
-                <p class="slogan">Tadından vazgeçmeden formda kal.</p>
-                <p class="intro">TadFit; boyuna, kilona, hedefine ve alerjilerine göre kişisel beslenme planı hazırlayan ve günlük takibini kolaylaştıran bir beslenme ve kilo yönetimi uygulamasıdır.</p>
-                <div class="stores">
-                    <a class="store" href="https://play.google.com/store/apps/details?id=com.tadfit.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg><span><small>Hemen indir</small><strong>Google Play</strong></span></a>
-                    <a class="store" href="https://apps.apple.com/tr/app/tadfit-kalori-ve-diyet-plan%C4%B1/id6827642034" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span><small>Hemen indir</small><strong>App Store</strong></span></a>
+                <div class="tf-eyebrow"><i></i><span data-t="eyebrow">YAPAY ZEKÂ DESTEKLİ BESLENME &amp; KİLO YÖNETİMİ</span></div>
+                <h1 data-t="hero_h1">TadFit: <em>Kalori ve Diyet Planı</em></h1>
+                <p class="tf-slogan" data-t="hero_slogan">Tadından vazgeçmeden formda kal.</p>
+                <p class="tf-intro" data-t="hero_intro">
+                    Barkodu okut kadran anında dönsün, tabağının fotoğrafını çek AI kalorisini hesaplasın, mutfağındaki malzemelerle sana özel tarifler pişir ve 7 günlük kişisel AI beslenme planınla hedefine ulaş.
+                </p>
+                <div class="tf-rating-pill">
+                    <span class="stars">★★★★★</span>
+                    <strong data-t="rating_txt">4.9 / 5.0 · App Store &amp; Google Play Doğrulanmış Mağaza Puanı</strong>
+                </div>
+                <div class="tf-cta-row">
+                    <a class="tf-store-btn primary" id="tf-apple-link" href="https://apps.apple.com/tr/app/tadfit-kalori-ve-diyet-plan%C4%B1/id6827642034" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        <span><small data-t="dl_now">HEMEN İNDİR</small><strong>App Store</strong></span>
+                    </a>
+                    <a class="tf-store-btn" href="https://play.google.com/store/apps/details?id=com.tadfit.app" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+                        <span><small data-t="dl_now">HEMEN İNDİR</small><strong>Google Play</strong></span>
+                    </a>
                 </div>
             </div>
-            <div class="hero-mark"><img src="tadfit.icon.png" alt="TadFit" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;position:relative;z-index:1;"></div>
-        </section>
-        <section class="features"><div class="feature"><span class="n">01</span><p>Günlük kalori ve makro hedefi (bilimsel formülle)</p></div><div class="feature"><span class="n">02</span><p>Besin arama ve barkodla öğün kaydı</p></div><div class="feature"><span class="n">03</span><p>Su ve kilo takibi, ilerleme grafikleri</p></div><div class="feature"><span class="n">04</span><p>Alerjine uygun tarifler, kilerdeki malzemelerle tarif bulma, adım adım pişirme</p></div><div class="feature"><span class="n">05</span><p>Seri, rozet ve haftalık meydan okumalar</p></div><div class="feature"><span class="n">06</span><p>Premium AI: kişisel 7 günlük AI beslenme planı ve alışveriş listesi</p></div></section>
-        <section style="margin:28px 0;display:grid;grid-template-columns:minmax(0,1.75fr) minmax(220px,0.85fr);gap:18px;align-items:stretch;">
-            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:10px;">
-                <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.8rem;color:#a1a1aa;">
-                    <strong style="color:#fff;">Tanıtım Videosu (16:9 Yatay · Sesli)</strong>
-                    <span>00:36 · Full HD</span>
+
+            <!-- 9:16 Vertical Auto-Playing Video inside iPhone Frame -->
+            <div class="tf-phone-stage">
+                <div class="tf-phone-glow"></div>
+                <div class="tf-phone-bezel">
+                    <video id="tf-vid-v" autoplay muted loop playsinline preload="auto" poster="assets/tadfit/poster-dikey.jpg" data-tr="assets/tadfit/tadfit-dikey.mp4" data-en="assets/tadfit/tadfit-dikey-en.mp4">
+                        <source src="assets/tadfit/tadfit-dikey.mp4" type="video/mp4">
+                    </video>
+                    <div class="tf-phone-floating-bar">
+                        <span class="tf-phone-tag" data-t="v_badge">9:16 MAĞAZA ÖNİZLEME</span>
+                        <button type="button" class="tf-sound-pill" id="btn-sound-v" onclick="toggleVideoSound('tf-vid-v', 'btn-sound-v')">
+                            🔊 <span data-t="sound_on">Sesi Aç</span>
+                        </button>
+                    </div>
                 </div>
-                <video controls playsinline preload="metadata" poster="assets/tadfit/poster-yatay.jpg" style="width:100%;aspect-ratio:16/9;border-radius:14px;background:#000;object-fit:cover;">
+            </div>
+        </section>
+
+        <!-- FULL-SIZE UNCROPPED 16:9 CINEMA STAGE (AUTO-PLAYING) -->
+        <section class="tf-cinema-section" aria-label="TadFit 16:9 Sinematik Tanıtım Videosu">
+            <div class="tf-cinema-header">
+                <div class="tf-cinema-title-group">
+                    <span class="tf-cinema-kicker" data-t="cinema_kicker">16:9 TAM EKRAN SİNEMATİK TANITIM FİLMİ · 1920×1080 FULL HD</span>
+                    <h2 class="tf-cinema-title" data-t="cinema_title">Spor bitti, mutfaktasın… Barkodu okut, kadran anında dönsün.</h2>
+                </div>
+                <div class="tf-cinema-controls">
+                    <button type="button" class="tf-sound-pill" id="btn-sound-h" onclick="toggleVideoSound('tf-vid-h', 'btn-sound-h')">
+                        🔊 <span data-t="sound_on">Sesi Aç</span>
+                    </button>
+                    <button type="button" class="tf-sound-pill" onclick="requestVideoFullscreen('tf-vid-h')">
+                        ⛶ <span data-t="fullscreen">Tam Ekran</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tf-cinema-viewport">
+                <video id="tf-vid-h" autoplay muted loop playsinline controls preload="auto" poster="assets/tadfit/poster-yatay.jpg" data-tr="assets/tadfit/tadfit-yatay.mp4" data-en="assets/tadfit/tadfit-yatay-en.mp4">
                     <source src="assets/tadfit/tadfit-yatay.mp4" type="video/mp4">
                 </video>
             </div>
-            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:10px;align-items:center;">
-                <div style="width:100%;display:flex;align-items:center;justify-content:space-between;font-size:0.8rem;color:#a1a1aa;">
-                    <strong style="color:#fff;">Mağaza &amp; Reels (9:16 Dikey)</strong>
-                    <span>Sesli</span>
-                </div>
-                <video controls playsinline preload="metadata" poster="assets/tadfit/poster-dikey.jpg" style="width:100%;max-width:240px;aspect-ratio:9/16;border-radius:18px;background:#000;object-fit:cover;">
-                    <source src="assets/tadfit/tadfit-dikey.mp4" type="video/mp4">
-                </video>
+
+            <!-- 7 Interactive Storyboard Chapters -->
+            <div class="tf-chapters" role="tablist" aria-label="Video Sahneleri">
+                <button type="button" class="tf-chapter-btn active" onclick="seekChapter(0, this)">
+                    <small>00:00 · 01</small>
+                    <strong data-t="ch1">Spor &amp; Mutfak (Kanca)</strong>
+                </button>
+                <button type="button" class="tf-chapter-btn" onclick="seekChapter(4.5, this)">
+                    <small>00:04 · 02</small>
+                    <strong data-t="ch2">Barkod &amp; 470 kcal Kadran</strong>
+                </button>
+                <button type="button" class="tf-chapter-btn" onclick="seekChapter(10.0, this)">
+                    <small>00:10 · 03</small>
+                    <strong data-t="ch3">Tabağımı Okut (AI Kamera)</strong>
+                </button>
+                <button type="button" class="tf-chapter-btn" onclick="seekChapter(15.2, this)">
+                    <small>00:15 · 04</small>
+                    <strong data-t="ch4">Ne Yesem? &amp; Evde Ne Var?</strong>
+                </button>
+                <button type="button" class="tf-chapter-btn" onclick="seekChapter(20.8, this)">
+                    <small>00:21 · 05</small>
+                    <strong data-t="ch5">7 Günlük Kişisel AI Plan</strong>
+                </button>
+                <button type="button" class="tf-chapter-btn" onclick="seekChapter(26.2, this)">
+                    <small>00:26 · 06</small>
+                    <strong data-t="ch6">Hareket, Su &amp; Kilo Grafiği</strong>
+                </button>
+                <button type="button" class="tf-chapter-btn" onclick="seekChapter(31.2, this)">
+                    <small>00:31 · 07</small>
+                    <strong data-t="ch7">Ücretsiz İndir &amp; Başla</strong>
+                </button>
             </div>
         </section>
-        <section style="margin:28px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;">
-            <img src="assets/tadfit/tr-1.webp" alt="TadFit Ekran 1" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,0.12);" loading="lazy">
-            <img src="assets/tadfit/tr-2.webp" alt="TadFit Ekran 2" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,0.12);" loading="lazy">
-            <img src="assets/tadfit/tr-3.webp" alt="TadFit Ekran 3" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,0.12);" loading="lazy">
-            <img src="assets/tadfit/tr-4.webp" alt="TadFit Ekran 4" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,0.12);" loading="lazy">
+
+        <!-- 6 Core Features -->
+        <section class="features">
+            <div class="feature"><span class="n">01</span><p data-t="f1">44 çentikli canlı Kadran ile kalan kalori ve makrolarını tek bakışta takip et</p></div>
+            <div class="feature"><span class="n">02</span><p data-t="f2">Barkod okutma, tabak fotoğrafı çekme (AI) veya sesle saniyeler içinde öğün kaydı</p></div>
+            <div class="feature"><span class="n">03</span><p data-t="f3">Evdeki kiler malzemelerine ve kalan kalorine %100 uyumlu akıllı tarifler &amp; sesli pişirme</p></div>
+            <div class="feature"><span class="n">04</span><p data-t="f4">Boy, kilo, hedef ve alerji profiline özel 7 günlük kişisel AI menü ve alışveriş listesi</p></div>
+            <div class="feature"><span class="n">05</span><p data-t="f5">Su cetveli, aktif dakika sayacı, kilo grafiği ve sen onaylamadan değişmeyen adaptif hedef</p></div>
+            <div class="feature"><span class="n">06</span><p data-t="f6">Günlük seri (streak), rozetler ve haftalık meydan okumalarla yüksek motivasyon</p></div>
         </section>
-        <div class="links">
-            <a href="privacy-tadfit.html">Gizlilik Politikası</a><a href="tadfit-terms.html">Kullanım Koşulları</a>
-            <a href="tadfit-support.html">Destek</a><a href="tadfit-hesap-silme.html">Hesap Silme</a>
+
+        <!-- 4 Official App Store Screenshots -->
+        <div class="tf-section-head">
+            <h2 data-t="shots_title">Resmi Mağaza Ekran Görüntüleri</h2>
         </div>
-        <p class="disclaimer">TadFit tıbbi bir cihaz değildir ve tıbbi tavsiyenin yerini tutmaz.</p>
-        <a href="/" class="back"><svg class="i" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span>Ana sayfaya dön</span></a>
+        <section class="tf-shots-grid">
+            <div class="tf-shot-card"><img class="tf-shot" src="assets/tadfit/tr-1.webp" data-tr="assets/tadfit/tr-1.webp" data-en="assets/tadfit/en-1.webp" alt="TadFit Ekran 1" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-shot" src="assets/tadfit/tr-2.webp" data-tr="assets/tadfit/tr-2.webp" data-en="assets/tadfit/en-2.webp" alt="TadFit Ekran 2" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-shot" src="assets/tadfit/tr-3.webp" data-tr="assets/tadfit/tr-3.webp" data-en="assets/tadfit/en-3.webp" alt="TadFit Ekran 3" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-shot" src="assets/tadfit/tr-4.webp" data-tr="assets/tadfit/tr-4.webp" data-en="assets/tadfit/en-4.webp" alt="TadFit Ekran 4" loading="lazy"></div>
+        </section>
+
+        <div class="links">
+            <a href="privacy-tadfit.html" data-t="link_privacy">Gizlilik Politikası</a>
+            <a href="tadfit-terms.html" data-t="link_terms">Kullanım Koşulları</a>
+            <a href="tadfit-support.html" data-t="link_support">Destek</a>
+            <a href="tadfit-hesap-silme.html" data-t="link_delete">Hesap Silme</a>
+        </div>
+        <p class="disclaimer" data-t="disclaimer">TadFit tıbbi bir cihaz değildir ve tıbbi tavsiyenin yerini tutmaz.</p>
+        <a href="/" class="back"><svg class="i" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-t="back_home">Ana sayfaya dön</span></a>
         <footer>
             <span>© 2026 VB TECH LABS. Tüm hakları saklıdır.</span>
             <nav><a href="iletisim.html">İletişim</a><a href="privacy-policy.html">Gizlilik Politikası</a><a href="app-ads.html">App-ads.txt</a></nav>
         </footer>
     </div>
+
+    <script>
+        var currentTfLang = 'tr';
+        var TF_COPY = {
+            tr: {
+                tab_overview: 'Tanıtım', tab_privacy: 'Gizlilik', tab_terms: 'Koşullar', tab_support: 'Destek', tab_delete: 'Hesap Silme',
+                eyebrow: 'YAPAY ZEKÂ DESTEKLİ BESLENME & KİLO YÖNETİMİ',
+                hero_h1: 'TadFit: <em>Kalori ve Diyet Planı</em>',
+                hero_slogan: 'Tadından vazgeçmeden formda kal.',
+                hero_intro: 'Barkodu okut kadran anında dönsün, tabağının fotoğrafını çek AI kalorisini hesaplasın, mutfağındaki malzemelerle sana özel tarifler pişir ve 7 günlük kişisel AI beslenme planınla hedefine ulaş.',
+                rating_txt: '4.9 / 5.0 · App Store & Google Play Doğrulanmış Mağaza Puanı',
+                dl_now: 'HEMEN İNDİR',
+                v_badge: '9:16 MAĞAZA ÖNİZLEME',
+                sound_on: 'Sesi Aç', sound_off: 'Sesi Kapat', fullscreen: 'Tam Ekran',
+                cinema_kicker: '16:9 TAM EKRAN SİNEMATİK TANITIM FİLMİ · 1920×1080 FULL HD',
+                cinema_title: 'Spor bitti, mutfaktasın… Barkodu okut, kadran anında dönsün.',
+                ch1: 'Spor & Mutfak (Kanca)', ch2: 'Barkod & 470 kcal Kadran', ch3: 'Tabağımı Okut (AI Kamera)',
+                ch4: 'Ne Yesem? & Evde Ne Var?', ch5: '7 Günlük Kişisel AI Plan', ch6: 'Hareket, Su & Kilo Grafiği', ch7: 'Ücretsiz İndir & Başla',
+                f1: '44 çentikli canlı Kadran ile kalan kalori ve makrolarını tek bakışta takip et',
+                f2: 'Barkod okutma, tabak fotoğrafı çekme (AI) veya sesle saniyeler içinde öğün kaydı',
+                f3: 'Evdeki kiler malzemelerine ve kalan kalorine %100 uyumlu akıllı tarifler & sesli pişirme',
+                f4: 'Boy, kilo, hedef ve alerji profiline özel 7 günlük kişisel AI menü ve alışveriş listesi',
+                f5: 'Su cetveli, aktif dakika sayacı, kilo grafiği ve sen onaylamadan değişmeyen adaptif hedef',
+                f6: 'Günlük seri (streak), rozetler ve haftalık meydan okumalarla yüksek motivasyon',
+                shots_title: 'Resmi Mağaza Ekran Görüntüleri',
+                link_privacy: 'Gizlilik Politikası', link_terms: 'Kullanım Koşulları', link_support: 'Destek', link_delete: 'Hesap Silme',
+                disclaimer: 'TadFit tıbbi bir cihaz değildir ve tıbbi tavsiyenin yerini tutmaz.',
+                back_home: 'Ana sayfaya dön'
+            },
+            en: {
+                tab_overview: 'Overview', tab_privacy: 'Privacy', tab_terms: 'Terms', tab_support: 'Support', tab_delete: 'Data Deletion',
+                eyebrow: 'AI-POWERED NUTRITION & FITNESS COMPANION',
+                hero_h1: 'TadFit: <em>Calorie &amp; Diet Planner</em>',
+                hero_slogan: 'Stay fit without giving up flavor.',
+                hero_intro: 'Scan a barcode and watch the dial spin, snap your plate for instant AI macro logging, cook from what is already in your kitchen, and hit your goals with a personalized 7-day AI meal plan.',
+                rating_txt: '4.9 / 5.0 · Verified App Store & Google Play Rating',
+                dl_now: 'DOWNLOAD ON',
+                v_badge: '9:16 APP PREVIEW',
+                sound_on: 'Sound On', sound_off: 'Sound Off', fullscreen: 'Fullscreen',
+                cinema_kicker: '16:9 FULL WIDESCREEN PROMO FILM · 1920×1080 FULL HD',
+                cinema_title: 'Workout done, in the kitchen… Scan the barcode, watch the dial spin.',
+                ch1: 'Post-Workout Hook', ch2: 'Barcode & 470 kcal Dial', ch3: 'Snap Your Plate (AI)',
+                ch4: 'What to Eat & Pantry', ch5: '7-Day Personal AI Plan', ch6: 'Workouts, Water & Trend', ch7: 'Download Free Today',
+                f1: 'Track remaining calories and macros at a glance with the 44-tick interactive Dial',
+                f2: 'Log meals in seconds via barcode scanner, AI plate photo recognition, or voice',
+                f3: '100% pantry-matched smart recipes tailored to your remaining macros with voice cooking mode',
+                f4: 'Personalized 7-day AI meal plan and auto grocery list built around your goals and allergens',
+                f5: 'Water ruler, active minutes, weight trend chart, and adaptive weekly targets',
+                f6: 'Stay motivated with daily streaks, achievement badges, and weekly challenges',
+                shots_title: 'Official App Store Screenshots',
+                link_privacy: 'Privacy Policy', link_terms: 'Terms of Use', link_support: 'Support', link_delete: 'Account Deletion',
+                disclaimer: 'TadFit is not a medical device and does not replace professional medical advice.',
+                back_home: 'Back to home'
+            }
+        };
+
+        function setTadfitLang(lang) {
+            currentTfLang = lang === 'en' ? 'en' : 'tr';
+            document.documentElement.lang = currentTfLang;
+            try { localStorage.setItem('preferredLanguage', currentTfLang); } catch(e) {}
+
+            document.getElementById('btn-lang-tr').classList.toggle('active', currentTfLang === 'tr');
+            document.getElementById('btn-lang-en').classList.toggle('active', currentTfLang === 'en');
+
+            var dict = TF_COPY[currentTfLang];
+            document.querySelectorAll('[data-t]').forEach(function(el) {
+                var k = el.getAttribute('data-t');
+                if (dict[k]) el.innerHTML = dict[k];
+            });
+
+            ['tf-vid-h', 'tf-vid-v'].forEach(function(id) {
+                var v = document.getElementById(id);
+                if (!v) return;
+                var nextSrc = v.getAttribute('data-' + currentTfLang);
+                var s = v.querySelector('source');
+                if (s && s.getAttribute('src') !== nextSrc) {
+                    var t = v.currentTime || 0;
+                    var wasMuted = v.muted;
+                    s.setAttribute('src', nextSrc);
+                    v.load();
+                    v.muted = wasMuted;
+                    v.currentTime = t;
+                    var p = v.play();
+                    if (p && p.catch) p.catch(function(){});
+                }
+            });
+
+            document.querySelectorAll('.tf-shot').forEach(function(img) {
+                img.src = img.getAttribute('data-' + currentTfLang);
+            });
+
+            updateSoundButtonLabel('tf-vid-v', 'btn-sound-v');
+            updateSoundButtonLabel('tf-vid-h', 'btn-sound-h');
+        }
+
+        function updateSoundButtonLabel(vidId, btnId) {
+            var v = document.getElementById(vidId);
+            var b = document.getElementById(btnId);
+            if (!v || !b) return;
+            var dict = TF_COPY[currentTfLang];
+            b.classList.toggle('unmuted', !v.muted);
+            b.innerHTML = (v.muted ? '🔊 ' : '🔇 ') + '<span>' + (v.muted ? dict.sound_on : dict.sound_off) + '</span>';
+        }
+
+        function toggleVideoSound(vidId, btnId) {
+            var v = document.getElementById(vidId);
+            if (!v) return;
+            var otherId = vidId === 'tf-vid-h' ? 'tf-vid-v' : 'tf-vid-h';
+            var otherBtn = vidId === 'tf-vid-h' ? 'btn-sound-v' : 'btn-sound-h';
+            var otherV = document.getElementById(otherId);
+            if (otherV && !otherV.muted) {
+                otherV.muted = true;
+                updateSoundButtonLabel(otherId, otherBtn);
+            }
+            v.muted = !v.muted;
+            var p = v.play();
+            if (p && p.catch) p.catch(function(){});
+            updateSoundButtonLabel(vidId, btnId);
+        }
+
+        function requestVideoFullscreen(vidId) {
+            var v = document.getElementById(vidId);
+            if (!v) return;
+            if (v.requestFullscreen) v.requestFullscreen();
+            else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+            else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        }
+
+        function seekChapter(sec, btn) {
+            var v = document.getElementById('tf-vid-h');
+            if (v) {
+                v.currentTime = sec;
+                var p = v.play();
+                if (p && p.catch) p.catch(function(){});
+            }
+            document.querySelectorAll('.tf-chapter-btn').forEach(function(b) { b.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+        }
+
+        (function initTadfitPage() {
+            try {
+                var saved = localStorage.getItem('preferredLanguage');
+                if (saved === 'en') setTadfitLang('en');
+            } catch(e) {}
+
+            ['tf-vid-h', 'tf-vid-v'].forEach(function(id) {
+                var v = document.getElementById(id);
+                if (!v) return;
+                v.muted = true;
+                var p = v.play();
+                if (p && p.catch) {
+                    p.catch(function() {
+                        document.addEventListener('click', function once() {
+                            v.play().catch(function(){});
+                            document.removeEventListener('click', once);
+                        }, { once: true });
+                    });
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
