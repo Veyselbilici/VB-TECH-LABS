@@ -265,6 +265,40 @@
             .tf-shot-card { border-radius: 16px; padding: 4px; }
             .tf-shot-card img { border-radius: 13px; }
         }
+
+        /* Özellik filmleri (9:16) ve kampanya görselleri: 21 Kasım 2026 eklentisi */
+        .tf-reels-section {
+            margin: 8px 0 40px; padding: clamp(14px, 3vw, 28px);
+            border-radius: 28px; background: var(--tf-surface);
+            border: 1px solid var(--tf-border);
+            box-shadow: 0 44px 90px -32px rgba(0, 0, 0, 0.9);
+        }
+        .tf-reels-sub { color: var(--tf-muted); font-size: 0.95rem; line-height: 1.6; max-width: 46em; margin-top: 6px; }
+        .tf-reels-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+        .tf-reel-card {
+            position: relative; border-radius: 22px; padding: 5px; cursor: pointer;
+            background: linear-gradient(160deg, rgba(255,255,255,0.16), rgba(255,255,255,0.03));
+            border: 1px solid var(--tf-border);
+            box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .tf-reel-card:hover, .tf-reel-card:focus-within { transform: translateY(-6px); border-color: var(--tf-lime); }
+        .tf-reel-card video { width: 100%; aspect-ratio: 9 / 16; border-radius: 17px; display: block; object-fit: cover; background: #0b0d11; }
+        .tf-reel-meta { padding: 10px 8px 6px; }
+        .tf-reel-meta small { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; color: var(--tf-lime); letter-spacing: 0.04em; }
+        .tf-reel-meta strong { display: block; margin-top: 3px; font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; }
+        .tf-reel-card.tf-reel-main { border-color: var(--tf-border-strong); }
+        .tf-camp-strip {
+            display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 23%);
+            gap: 14px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 36px; scroll-snap-type: x mandatory;
+            scrollbar-color: rgba(209, 253, 77, 0.45) transparent; scrollbar-width: thin;
+        }
+        .tf-camp-strip .tf-shot-card { scroll-snap-align: start; }
+        @media (max-width: 920px) {
+            .tf-reels-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+            .tf-camp-strip { grid-auto-columns: minmax(180px, 46%); }
+        }
+        @media (max-width: 480px) { .tf-reel-meta strong { font-size: 0.9rem; } }
     </style>
 </head>
 <body>
@@ -386,6 +420,53 @@
             </div>
         </section>
 
+        <!-- ÖZELLİK FİLMLERİ (9:16): görünürken oynar, görünmezken durur; yalnızca görününce yüklenir -->
+        <section class="tf-reels-section" aria-label="TadFit özellik filmleri">
+            <div class="tf-cinema-title-group">
+                <span class="tf-cinema-kicker" data-t="reels_kicker">YENİ · ÖZELLİK FİLMLERİ · 9:16</span>
+                <h2 class="tf-cinema-title" data-t="reels_title">Akşam ne pişirsem? Mutfaktan spora 6 kısa film.</h2>
+                <p class="tf-reels-sub" data-t="reels_sub">Gerçek mutfaklar, gerçek insanlar ve uygulamanın gerçek değerleri.</p>
+            </div>
+            <div class="tf-reels-grid">
+                <div class="tf-reel-card tf-reel-main" tabindex="0">
+                    <video class="tf-reel" muted loop playsinline preload="none" poster="assets/tadfit/reels/aksam-poster.jpg" data-tr="assets/tadfit/reels/aksam-tr.mp4" data-en="assets/tadfit/reels/aksam-en.mp4" aria-label="TadFit aksam">
+                        <source data-src="assets/tadfit/reels/aksam-tr.mp4" type="video/mp4">
+                    </video>
+                    <div class="tf-reel-meta"><small data-t="reel_aksam_k"></small><strong data-t="reel_aksam"></strong></div>
+                </div>
+                <div class="tf-reel-card" tabindex="0">
+                    <video class="tf-reel" muted loop playsinline preload="none" poster="assets/tadfit/reels/neyesem-poster.jpg" data-tr="assets/tadfit/reels/neyesem-tr.mp4" data-en="assets/tadfit/reels/neyesem-en.mp4" aria-label="TadFit neyesem">
+                        <source data-src="assets/tadfit/reels/neyesem-tr.mp4" type="video/mp4">
+                    </video>
+                    <div class="tf-reel-meta"><small data-t="reel_neyesem_k"></small><strong data-t="reel_neyesem"></strong></div>
+                </div>
+                <div class="tf-reel-card" tabindex="0">
+                    <video class="tf-reel" muted loop playsinline preload="none" poster="assets/tadfit/reels/kiler-poster.jpg" data-tr="assets/tadfit/reels/kiler-tr.mp4" data-en="assets/tadfit/reels/kiler-en.mp4" aria-label="TadFit kiler">
+                        <source data-src="assets/tadfit/reels/kiler-tr.mp4" type="video/mp4">
+                    </video>
+                    <div class="tf-reel-meta"><small data-t="reel_kiler_k"></small><strong data-t="reel_kiler"></strong></div>
+                </div>
+                <div class="tf-reel-card" tabindex="0">
+                    <video class="tf-reel" muted loop playsinline preload="none" poster="assets/tadfit/reels/spor-poster.jpg" data-tr="assets/tadfit/reels/spor-tr.mp4" data-en="assets/tadfit/reels/spor-en.mp4" aria-label="TadFit spor">
+                        <source data-src="assets/tadfit/reels/spor-tr.mp4" type="video/mp4">
+                    </video>
+                    <div class="tf-reel-meta"><small data-t="reel_spor_k"></small><strong data-t="reel_spor"></strong></div>
+                </div>
+                <div class="tf-reel-card" tabindex="0">
+                    <video class="tf-reel" muted loop playsinline preload="none" poster="assets/tadfit/reels/fotograf-poster.jpg" data-tr="assets/tadfit/reels/fotograf-tr.mp4" data-en="assets/tadfit/reels/fotograf-en.mp4" aria-label="TadFit fotograf">
+                        <source data-src="assets/tadfit/reels/fotograf-tr.mp4" type="video/mp4">
+                    </video>
+                    <div class="tf-reel-meta"><small data-t="reel_fotograf_k"></small><strong data-t="reel_fotograf"></strong></div>
+                </div>
+                <div class="tf-reel-card" tabindex="0">
+                    <video class="tf-reel" muted loop playsinline preload="none" poster="assets/tadfit/reels/ilerleme-poster.jpg" data-tr="assets/tadfit/reels/ilerleme-tr.mp4" data-en="assets/tadfit/reels/ilerleme-en.mp4" aria-label="TadFit ilerleme">
+                        <source data-src="assets/tadfit/reels/ilerleme-tr.mp4" type="video/mp4">
+                    </video>
+                    <div class="tf-reel-meta"><small data-t="reel_ilerleme_k"></small><strong data-t="reel_ilerleme"></strong></div>
+                </div>
+            </div>
+        </section>
+
         <!-- 6 Core Features -->
         <section class="features">
             <div class="feature"><span class="n">01</span><p data-t="f1">44 çentikli canlı Kadran ile kalan kalori ve makrolarını tek bakışta takip et</p></div>
@@ -405,6 +486,20 @@
             <div class="tf-shot-card"><img class="tf-shot" src="assets/tadfit/tr-2.webp" data-tr="assets/tadfit/tr-2.webp" data-en="assets/tadfit/en-2.webp" alt="TadFit Ekran 2" loading="lazy"></div>
             <div class="tf-shot-card"><img class="tf-shot" src="assets/tadfit/tr-3.webp" data-tr="assets/tadfit/tr-3.webp" data-en="assets/tadfit/en-3.webp" alt="TadFit Ekran 3" loading="lazy"></div>
             <div class="tf-shot-card"><img class="tf-shot" src="assets/tadfit/tr-4.webp" data-tr="assets/tadfit/tr-4.webp" data-en="assets/tadfit/en-4.webp" alt="TadFit Ekran 4" loading="lazy"></div>
+        </section>
+
+        <!-- Kampanya görselleri (kaydırmalı şerit) -->
+        <div class="tf-section-head">
+            <h2 data-t="camp_title">Akşam ne pişirsem? TadFit’te 6 cevap</h2>
+        </div>
+        <section class="tf-camp-strip" aria-label="Kampanya görselleri">
+            <div class="tf-shot-card"><img class="tf-camp" src="assets/tadfit/campaign/ozellik-tr-1.webp" data-tr="assets/tadfit/campaign/ozellik-tr-1.webp" data-en="assets/tadfit/campaign/ozellik-en-1.webp" alt="TadFit kampanya görseli 1" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-camp" src="assets/tadfit/campaign/ozellik-tr-2.webp" data-tr="assets/tadfit/campaign/ozellik-tr-2.webp" data-en="assets/tadfit/campaign/ozellik-en-2.webp" alt="TadFit kampanya görseli 2" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-camp" src="assets/tadfit/campaign/ozellik-tr-3.webp" data-tr="assets/tadfit/campaign/ozellik-tr-3.webp" data-en="assets/tadfit/campaign/ozellik-en-3.webp" alt="TadFit kampanya görseli 3" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-camp" src="assets/tadfit/campaign/ozellik-tr-4.webp" data-tr="assets/tadfit/campaign/ozellik-tr-4.webp" data-en="assets/tadfit/campaign/ozellik-en-4.webp" alt="TadFit kampanya görseli 4" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-camp" src="assets/tadfit/campaign/ozellik-tr-5.webp" data-tr="assets/tadfit/campaign/ozellik-tr-5.webp" data-en="assets/tadfit/campaign/ozellik-en-5.webp" alt="TadFit kampanya görseli 5" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-camp" src="assets/tadfit/campaign/ozellik-tr-6.webp" data-tr="assets/tadfit/campaign/ozellik-tr-6.webp" data-en="assets/tadfit/campaign/ozellik-en-6.webp" alt="TadFit kampanya görseli 6" loading="lazy"></div>
+            <div class="tf-shot-card"><img class="tf-camp" src="assets/tadfit/campaign/ozellik-tr-7.webp" data-tr="assets/tadfit/campaign/ozellik-tr-7.webp" data-en="assets/tadfit/campaign/ozellik-en-7.webp" alt="TadFit kampanya görseli 7" loading="lazy"></div>
         </section>
 
         <div class="links">
@@ -445,6 +540,16 @@
                 f5: 'Su cetveli, aktif dakika sayacı, kilo grafiği ve sen onaylamadan değişmeyen adaptif hedef',
                 f6: 'Günlük seri (streak), rozetler ve haftalık meydan okumalarla yüksek motivasyon',
                 shots_title: 'Resmi Mağaza Ekran Görüntüleri',
+                reels_kicker: 'YENİ · ÖZELLİK FİLMLERİ · 9:16',
+                reels_title: 'Akşam ne pişirsem? Mutfaktan spora 6 kısa film.',
+                reels_sub: 'Gerçek mutfaklar, gerçek insanlar ve uygulamanın gerçek değerleri.',
+                reel_aksam_k: 'ANA FİLM · 30 SN', reel_aksam: 'Akşam ne pişirsem?',
+                reel_neyesem_k: '15 SN', reel_neyesem: 'Ne yesem? Kalan kalorine göre',
+                reel_kiler_k: '15 SN', reel_kiler: 'Evde ne var? Elindekiyle pişir',
+                reel_spor_k: '15 SN', reel_spor: 'Evde antrenman ve programlar',
+                reel_fotograf_k: '15 SN', reel_fotograf: 'Kahveni ve tabağını fotoğrafla say',
+                reel_ilerleme_k: '15 SN', reel_ilerleme: 'Su, kilo ve seri',
+                camp_title: 'Akşam ne pişirsem? TadFit’te 6 cevap',
                 link_privacy: 'Gizlilik Politikası', link_terms: 'Kullanım Koşulları', link_support: 'Destek', link_delete: 'Hesap Silme',
                 disclaimer: 'TadFit tıbbi bir cihaz değildir ve tıbbi tavsiyenin yerini tutmaz.',
                 back_home: 'Ana sayfaya dön'
@@ -470,6 +575,16 @@
                 f5: 'Water ruler, active minutes, weight trend chart, and adaptive weekly targets',
                 f6: 'Stay motivated with daily streaks, achievement badges, and weekly challenges',
                 shots_title: 'Official App Store Screenshots',
+                reels_kicker: 'NEW · FEATURE FILMS · 9:16',
+                reels_title: 'What do I cook tonight? 6 short films, kitchen to workout.',
+                reels_sub: 'Real kitchens, real people and real values from the app.',
+                reel_aksam_k: 'MAIN FILM · 30 S', reel_aksam: 'What do I cook tonight?',
+                reel_neyesem_k: '15 S', reel_neyesem: 'What should I eat? Based on what’s left',
+                reel_kiler_k: '15 S', reel_kiler: 'What’s in the fridge? Cook with it',
+                reel_spor_k: '15 S', reel_spor: 'Home workouts and programs',
+                reel_fotograf_k: '15 S', reel_fotograf: 'Snap your coffee and your plate',
+                reel_ilerleme_k: '15 S', reel_ilerleme: 'Water, weight and streaks',
+                camp_title: 'What do I cook tonight? 6 answers in TadFit',
                 link_privacy: 'Privacy Policy', link_terms: 'Terms of Use', link_support: 'Support', link_delete: 'Account Deletion',
                 disclaimer: 'TadFit is not a medical device and does not replace professional medical advice.',
                 back_home: 'Back to home'
@@ -509,6 +624,23 @@
 
             document.querySelectorAll('.tf-shot').forEach(function(img) {
                 img.src = img.getAttribute('data-' + currentTfLang);
+            });
+
+            document.querySelectorAll('.tf-camp').forEach(function(img) {
+                img.src = img.getAttribute('data-' + currentTfLang);
+            });
+            document.querySelectorAll('.tf-reel').forEach(function(v) {
+                var s = v.querySelector('source');
+                var next = v.getAttribute('data-' + currentTfLang);
+                if (!s) return;
+                if (s.getAttribute('src')) {
+                    if (s.getAttribute('src') !== next) {
+                        s.setAttribute('src', next); v.load();
+                        if (v.dataset.visible === '1') { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+                    }
+                } else {
+                    s.setAttribute('data-src', next);
+                }
             });
 
             updateSoundButtonLabel('tf-vid-v', 'btn-sound-v');
@@ -578,6 +710,31 @@
                         }, { once: true });
                     });
                 }
+            });
+        })();
+    </script>
+    <script>
+        // Özellik filmleri: görünür olunca kaynağı yükle ve oynat, görünmez olunca durdur (veri ve pil tasarrufu).
+        (function () {
+            var vids = document.querySelectorAll('.tf-reel');
+            function start(v) {
+                var s = v.querySelector('source');
+                if (s && !s.getAttribute('src')) { s.setAttribute('src', s.getAttribute('data-src')); v.load(); }
+                var p = v.play(); if (p && p.catch) p.catch(function(){});
+            }
+            if (!('IntersectionObserver' in window)) { vids.forEach(start); return; }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    var v = e.target;
+                    v.dataset.visible = e.isIntersecting ? '1' : '0';
+                    if (e.isIntersecting) start(v); else v.pause();
+                });
+            }, { threshold: 0.45 });
+            vids.forEach(function (v) {
+                io.observe(v);
+                v.closest('.tf-reel-card').addEventListener('click', function () {
+                    if (v.paused) start(v); else v.pause();
+                });
             });
         })();
     </script>
