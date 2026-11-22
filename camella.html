@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Camella : Retro AI Fotoğraf | Hemen İndir</title>
+    
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="Camella: Bir selfie ver, kendini başka bir on yılın fotoğrafında gör. App Store ve Google Play'den ücretsiz indir.">
+    <meta name="keywords" content="Camella, retro fotoğraf, yapay zeka fotoğraf, 90lar yıllık, fotokabin, camella indir, app store, google play">
+    
+    <!-- Open Graph (Instagram, WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Camella : Retro AI Fotoğraf — Hemen İndir">
+    <meta property="og:description" content="İlaçlarınızı asla unutmayın, sağlığınızı güvenle takip edin! iOS ve Android için ücretsiz indirin.">
+    <meta property="og:image" content="https://vb-tech-labs.vercel.app/assets/icon-camella.webp">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Camella : Retro AI Fotoğraf">
+    <meta name="twitter:description" content="İlaçlarınızı asla unutmayın, sağlığınızı güvenle takip edin! iOS ve Android için ücretsiz indirin.">
+    <meta name="twitter:image" content="https://vb-tech-labs.vercel.app/assets/icon-camella.webp">
+
+    <meta name="theme-color" content="#0a0a0d">
+    <link rel="icon" type="image/png" href="assets/icon-camella.webp">
+    <link rel="apple-touch-icon" href="assets/icon-camella.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #ef4a2c;
+            --accent-2: #f4c24b;
+            --bg: #0a0a0d;
+            --surface: #14141a;
+            --line: rgba(255, 255, 255, .09);
+            --line-2: rgba(255, 255, 255, .16);
+            --text: #f4f1ea;
+            --text-2: #a9a8b3;
+            --text-3: #6f6e7a;
+            --signal: #d6ff3f;
+            --ease: cubic-bezier(.22, 1, .36, 1);
+            --font: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.55;
+            min-height: 100svh; display: flex; align-items: center; justify-content: center;
+            padding: max(1.25rem, env(safe-area-inset-top)) 1.1rem max(1.25rem, env(safe-area-inset-bottom));
+            overflow-x: hidden; position: relative; isolation: isolate; -webkit-font-smoothing: antialiased;
+        }
+        body::before {
+            content: ''; position: fixed; inset: 0; z-index: -2;
+            background:
+                radial-gradient(620px 420px at 12% 8%, color-mix(in srgb, var(--accent-2) 38%, transparent), transparent 70%),
+                radial-gradient(640px 460px at 92% 92%, color-mix(in srgb, var(--accent) 34%, transparent), transparent 70%),
+                linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 64px 64px,
+                linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 64px 64px;
+            -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, #000 30%, rgba(0,0,0,.35) 100%);
+            mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, #000 30%, rgba(0,0,0,.35) 100%);
+        }
+        a { color: inherit; text-decoration: none; }
+        button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; }
+        svg.i { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+        :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 8px; }
+
+        .card {
+            width: min(480px, 100%); position: relative; border-radius: 32px; padding: 1.4rem 1.4rem 1.2rem;
+            background: linear-gradient(180deg, rgba(24, 24, 31, .86), rgba(14, 14, 19, .9));
+            border: 1px solid var(--line-2);
+            -webkit-backdrop-filter: blur(22px) saturate(1.3); backdrop-filter: blur(22px) saturate(1.3);
+            box-shadow: 0 50px 100px -40px rgba(0, 0, 0, .9), 0 0 0 1px rgba(255, 255, 255, .03) inset;
+            animation: rise .9s var(--ease) both; text-align: center;
+        }
+        .card::before { content: ''; position: absolute; left: 12%; right: 12%; top: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent); opacity: .9; }
+        @keyframes rise { from { opacity: 0; transform: translateY(26px) scale(.985); } to { opacity: 1; transform: none; } }
+
+        .card-topbar { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.4rem; }
+        .platform-badge { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); padding: .42rem .75rem; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(255, 255, 255, .03); }
+        .platform-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--signal); animation: ping 2.2s infinite; }
+        @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(214, 255, 63, .6); } 70%, 100% { box-shadow: 0 0 0 8px rgba(214, 255, 63, 0); } }
+        .lang-switch { display: flex; padding: 3px; border-radius: 11px; background: rgba(255, 255, 255, .05); border: 1px solid var(--line); }
+        .lang-btn { padding: .3rem .65rem; border-radius: 8px; font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; color: var(--text-3); transition: all .25s; }
+        .lang-btn.active { background: var(--text); color: #0a0a0d; }
+
+        .app-icon-wrap { position: relative; width: 112px; height: 112px; margin: .4rem auto 1.3rem; }
+        .icon-halo { position: absolute; inset: -22px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 55%, transparent), transparent 68%); filter: blur(10px); animation: halo 4s ease-in-out infinite; }
+        @keyframes halo { 0%, 100% { opacity: .55; transform: scale(.95); } 50% { opacity: .95; transform: scale(1.08); } }
+        .app-icon { position: relative; width: 100%; height: 100%; border-radius: 27%; object-fit: cover; border: 1px solid var(--line-2); box-shadow: 0 24px 50px -18px var(--accent); }
+        .floating-emoji { display: none; }
+
+        h1 { font-size: clamp(2rem, 8vw, 2.7rem); font-weight: 700; letter-spacing: -.035em; line-height: 1; }
+        .tagline { color: var(--text-2); font-size: 1rem; margin: .7rem auto 1.4rem; max-width: 22em; }
+
+        .status-box { display: flex; align-items: center; gap: .85rem; text-align: left; padding: .85rem 1rem; border-radius: 18px; background: rgba(255, 255, 255, .035); border: 1px solid var(--line); margin-bottom: 1rem; }
+        .spinner { width: 22px; height: 22px; flex: none; border-radius: 50%; border: 2px solid rgba(255, 255, 255, .14); border-top-color: var(--signal); animation: spin .9s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .status-text { display: block; font-weight: 600; font-size: .92rem; line-height: 1.3; }
+        .status-sub { display: block; color: var(--text-3); font-size: .78rem; margin-top: .1rem; }
+        .pause-redirect-btn { display: inline-flex; align-items: center; gap: .4rem; padding: .45rem .7rem; border-radius: 10px; font-size: .78rem; font-weight: 600; border: 1px solid var(--line-2); transition: background .25s; flex: none; }
+        .pause-redirect-btn:hover { background: rgba(255, 255, 255, .08); }
+
+        .cta-container { display: grid; gap: .65rem; margin-bottom: 1rem; }
+        .store-btn { display: flex; align-items: center; gap: .9rem; padding: .85rem 1.1rem; border-radius: 18px; text-align: left; border: 1px solid var(--line-2); background: #000; transition: transform .35s var(--ease), box-shadow .35s, border-color .3s; }
+        .store-btn svg { width: 28px; height: 28px; fill: #fff; flex: none; }
+        .store-btn:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, .4); }
+        .btn-text-group { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+        .btn-text-group small { font-family: var(--mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); }
+        .btn-text-group strong { font-size: 1.08rem; font-weight: 650; }
+        .store-btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-color: transparent; box-shadow: 0 18px 40px -16px var(--accent); }
+        .store-btn-primary:hover { box-shadow: 0 24px 50px -14px var(--accent); border-color: transparent; }
+        .store-btn-primary .btn-text-group small { color: rgba(255, 255, 255, .8); }
+
+        .features-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; margin-bottom: 1.1rem; }
+        .feature-pill { padding: .4rem .75rem; font-size: .8rem; font-weight: 500; border-radius: 10px; color: var(--text); background: rgba(255, 255, 255, .045); border: 1px solid var(--line); }
+
+        .share-card-section { text-align: left; padding: 1rem; border-radius: 20px; background: rgba(255, 255, 255, .03); border: 1px solid var(--line); margin-bottom: 1rem; }
+        .share-header { display: flex; align-items: center; gap: .5rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); margin-bottom: .75rem; }
+        .share-header svg { color: var(--accent); }
+        .share-url-box { display: flex; gap: .45rem; margin-bottom: .6rem; }
+        .share-url-input { flex: 1; min-width: 0; padding: .65rem .8rem; border-radius: 12px; background: var(--bg); border: 1px solid var(--line-2); color: var(--text); font-family: var(--mono); font-size: .76rem; }
+        .share-url-copy-btn { display: inline-flex; align-items: center; gap: .4rem; padding: 0 .9rem; border-radius: 12px; font-weight: 600; font-size: .82rem; background: var(--text); color: #0a0a0d; transition: background .25s; }
+        .share-url-copy-btn:hover { background: var(--signal); }
+        .share-buttons-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: .4rem; }
+        .share-action-btn { display: flex; flex-direction: column; align-items: center; gap: .3rem; padding: .65rem .2rem; border-radius: 13px; font-size: .72rem; font-weight: 500; background: rgba(255, 255, 255, .04); border: 1px solid var(--line); transition: transform .3s var(--ease), background .25s, border-color .25s; }
+        .share-action-btn svg { font-size: 1.2rem; }
+        .share-action-btn:hover { transform: translateY(-2px); background: rgba(255, 255, 255, .08); border-color: var(--line-2); }
+        .share-action-btn.share-main { background: color-mix(in srgb, var(--accent) 18%, transparent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+
+        .qr-section { display: none; margin-bottom: 1rem; padding: 1.1rem; border-radius: 20px; background: rgba(255, 255, 255, .03); border: 1px dashed var(--line-2); text-align: center; }
+        .qr-section.show { display: flex; flex-direction: column; align-items: center; gap: .55rem; animation: rise .5s var(--ease); }
+        .qr-label { font-size: .82rem; color: var(--text-2); }
+        .qr-code-img { width: 164px; height: 164px; border-radius: 16px; background: #fff; padding: 10px; image-rendering: pixelated; }
+        .qr-buttons-wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; }
+        .qr-download-btn { padding: .5rem .85rem; border-radius: 10px; font-size: .8rem; font-weight: 500; border: 1px solid var(--line-2); transition: background .25s; }
+        .qr-download-btn:hover { background: rgba(255, 255, 255, .08); }
+
+        .footer-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .35rem 1.1rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+        .footer-link { color: var(--text-3); font-size: .8rem; transition: color .25s; }
+        .footer-link:hover { color: var(--text); }
+
+        .toast { position: fixed; left: 50%; bottom: calc(1.4rem + env(safe-area-inset-bottom, 0px)); z-index: 50; display: flex; align-items: center; gap: .55rem; padding: .75rem 1.1rem; border-radius: 14px; background: var(--text); color: #0a0a0d; font-weight: 600; font-size: .88rem; box-shadow: 0 20px 50px -14px #000; transform: translate(-50%, 24px); opacity: 0; pointer-events: none; transition: transform .45s var(--ease), opacity .3s; }
+        .toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+        @media (max-width: 420px) {
+            .card { padding: 1.1rem 1rem 1rem; border-radius: 26px; }
+            .share-buttons-row { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; } }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-topbar">
+            <span class="platform-badge" id="platform-badge">Akıllı Yönlendirme</span>
+            <div class="lang-switch">
+                <button class="lang-btn active" id="btn-tr" onclick="setLanguage('tr')">TR</button>
+                <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            </div>
+        </div>
+
+        <div class="app-icon-wrap">
+            <div class="icon-halo"></div>
+            <img src="assets/icon-camella.webp" alt="Camella Icon" class="app-icon">
+        </div>
+
+        <h1>Camella</h1>
+        <p class="tagline" id="app-tagline">Retro AI Fotoğraf: Bir Selfie, Birçok On Yıl</p>
+
+        <!-- Status box showing redirection progress -->
+        <div class="status-box" id="status-box">
+            <div class="spinner" id="spinner"></div>
+            <div style="flex: 1; min-width: 0;">
+                <span class="status-text" id="status-title">Mağazaya yönlendiriliyorsunuz...</span>
+                <span class="status-sub" id="status-desc">Açılmazsa aşağıdaki butona dokunun</span>
+            </div>
+            <button type="button" class="pause-redirect-btn" id="btn-pause-redirect" onclick="pauseRedirect()" title="Yönlendirmeyi Durdur">
+                <svg class="i" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg>
+                <span id="pause-btn-text">Durdur</span>
+            </button>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="cta-container">
+            <!-- App Store Button -->
+            <a href="https://apps.apple.com/tr/app/id6835137694" class="store-btn store-btn-primary" id="btn-apple">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <div class="btn-text-group">
+                    <small id="apple-btn-sub">iPhone / iPad İçin</small>
+                    <strong id="apple-btn-text">App Store'dan İndir</strong>
+                </div>
+            </a>
+
+            <!-- Google Play Button -->
+            <a href="https://play.google.com/store/apps/details?id=com.camella.app" class="store-btn store-btn-secondary" id="btn-google">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/>
+                </svg>
+                <div class="btn-text-group">
+                    <small id="google-btn-sub">Android Cihazlar İçin</small>
+                    <strong id="google-btn-text">Google Play'den İndir</strong>
+                </div>
+            </a>
+        </div>
+
+        <!-- Highlight Features -->
+        <div class="features-grid" id="features-box">
+            <span class="feature-pill">10 Dönem Stili</span>
+            <span class="feature-pill">Evcil Dost Stilleri</span>
+            <span class="feature-pill">Hatıra Kartı</span>
+            <span class="feature-pill">Selfie Saklanmaz</span>
+        </div>
+
+        <!-- Interactive Sharing System -->
+        <div class="share-card-section" id="share-section">
+            <div class="share-header">
+                <svg class="i" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 006.4 0l2.6-2.6a4.5 4.5 0 00-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 00-6.4 0L5 12.6a4.5 4.5 0 006.4 6.4l1-1"/></svg>
+                <span id="share-header-text">Arkadaşlarınla Paylaş</span>
+            </div>
+
+            <!-- Visible Copyable Link Box -->
+            <div class="share-url-box">
+                <input type="text" id="share-url-input" class="share-url-input" readonly value="https://vb-tech-labs.vercel.app/camella" onclick="this.select(); pauseRedirect();">
+                <button type="button" class="share-url-copy-btn" id="btn-copy-box" onclick="copyShareLink()">
+                    <svg class="i" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.2"/><path d="M15.5 8.5V6.2a2 2 0 00-2-2H6.2a2 2 0 00-2 2v7.3a2 2 0 002 2h2.3"/></svg>
+                    <span id="btn-copy-box-label">Kopyala</span>
+                </button>
+            </div>
+
+            <div class="share-buttons-row">
+                <button type="button" class="share-action-btn share-main" id="btn-native-share" onclick="triggerNativeShare()">
+                    <svg class="i" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.4"/><circle cx="17.5" cy="6" r="2.4"/><circle cx="17.5" cy="18" r="2.4"/><path d="M8.2 10.9l7.1-3.7M8.2 13.1l7.1 3.7"/></svg>
+                    <span id="btn-share-label">Paylaş</span>
+                </button>
+                <a href="#" class="share-action-btn" id="btn-share-whatsapp" target="_blank" rel="noopener" onclick="pauseRedirect()">
+                    <svg class="i" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 011 1v9.5a1 1 0 01-1 1h-8l-5 4v-4H4a1 1 0 01-1-1V6.5a1 1 0 011-1z"/></svg>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="#" class="share-action-btn" id="btn-share-telegram" target="_blank" rel="noopener" onclick="pauseRedirect()">
+                    <svg class="i" viewBox="0 0 24 24"><path d="M21 3.5L3 10.5l7 3 3 7 8-17z"/><path d="M10 13.5L21 3.5"/></svg>
+                    <span>Telegram</span>
+                </a>
+                <button type="button" class="share-action-btn" id="btn-qr-toggle" onclick="toggleQrCode()">
+                    <svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="6" height="6" rx="1"/><rect x="14.5" y="3.5" width="6" height="6" rx="1"/><rect x="3.5" y="14.5" width="6" height="6" rx="1"/><path d="M14.5 14.5h2.5v2.5M20.5 14.5v.01M14.5 20.5h.01M17 20.5h3.5v-3"/></svg>
+                    <span id="btn-qr-toggle-label">QR Kodu Gör</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Desktop QR Code -->
+        <div class="qr-section" id="qr-section">
+            <span class="qr-label" id="qr-label">iPhone veya Android kameranızla tarayarak hemen indirin:</span>
+            <img id="qr-code-img" class="qr-code-img" alt="QR Kodu" src="camella-qr.png">
+            <span style="display:block; font-size:0.72rem; color:#f472b6; font-weight:600; margin-top:2px;" id="qr-hint">Taranan cihazı otomatik algılar</span>
+            <div class="qr-buttons-wrap">
+                <a href="camella-qr.png" download="camella-qr.png" class="qr-download-btn" id="qr-download-png">
+                    QR Kodu İndir (PNG)
+                </a>
+                <a href="camella-qr.svg" download="camella-qr.svg" class="qr-download-btn" id="qr-download-svg">
+                    Vektör QR (SVG)
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="footer-links">
+            <a href="index.html" class="footer-link" id="footer-home">← Ana Sayfa</a>
+            <a href="https://www.camella.workers.dev/tr/privacy/" target="_blank" rel="noopener" class="footer-link" id="footer-privacy">Gizlilik Politikası</a>
+            <a href="https://www.camella.workers.dev/tr/delete-account/" target="_blank" rel="noopener" class="footer-link" id="footer-delete">Hesap Silme</a>
+        </div>
+    </div>
+
+    <!-- Toast Notification for Link Copy -->
+    <div class="toast" id="toast">
+        <svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        <span id="toast-message">Bağlantı panoya kopyalandı!</span>
+    </div>
+
+    <script>
+        var APP_STORE_URL_TR = 'https://apps.apple.com/tr/app/id6835137694';
+        var APP_STORE_URL_EN = 'https://apps.apple.com/us/app/id6835137694';
+        var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.camella.app';
+
+        var ua = navigator.userAgent || navigator.vendor || window.opera || '';
+        var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        var isAndroid = /android/i.test(ua);
+
+        var currentLang = 'tr';
+
+        var savedLang = null;
+        try { savedLang = localStorage.getItem('camella_smart_lang') || localStorage.getItem('preferredLanguage'); } catch (e) {}
+        // Default language is Turkish; English only when the visitor picked it
+        currentLang = (savedLang === 'en') ? 'en' : 'tr';
+
+        var i18n = {
+            tr: {
+                tagline: "Retro AI Fotoğraf: Bir Selfie, Birçok On Yıl",
+                iosBadge: "iOS Algılandı",
+                androidBadge: "Android Algılandı",
+                desktopBadge: "Masaüstü Algılandı",
+                statusIosTitle: "App Store'a Yönlendiriliyorsunuz...",
+                statusIosDesc: "Otomatik açılmazsa App Store butonuna dokunun",
+                statusAndroidTitle: "Google Play'e Yönlendiriliyorsunuz...",
+                statusAndroidDesc: "Otomatik açılmazsa Google Play butonuna dokunun",
+                statusDesktopTitle: "Cihazınıza Uygun Mağazayı Seçin",
+                statusDesktopDesc: "Veya telefonunuzla QR kodu tarayın",
+                recommended: "Önerilen (Cihazınız)",
+                appleSub: "iPhone / iPad İçin",
+                appleText: "App Store'dan İndir",
+                googleSub: "Android Cihazlar İçin",
+                googleText: "Google Play'den İndir",
+                qrLabel: "iPhone veya Android kameranızla tarayarak hemen indirin:",
+                qrHint: "Taranan cihazı otomatik algılar",
+                features: ["10 Dönem Stili", "Evcil Dost Stilleri", "Hatıra Kartı", "Selfie Saklanmaz"],
+                shareHeader: "Arkadaşlarınla Paylaş",
+                shareLabel: "Paylaş",
+                copyLabel: "Kopyala",
+                copyUrlLabel: "Kopyala",
+                copiedToast: "Bağlantı panoya kopyalandı!",
+                qrDownloadPng: "QR Kodu İndir (PNG)",
+                qrDownloadSvg: "Vektör QR (SVG)",
+                qrShowText: "QR Kodu Gör",
+                qrHideText: "QR Kodu Gizle",
+                pauseBtnText: "Durdur",
+                statusPausedTitle: "Yönlendirme Duraklatıldı",
+                statusPausedDesc: "Bağlantıyı kopyalayabilir, QR kodu gösterebilir veya aşağıdaki butonlardan indirebilirsiniz.",
+                home: "← Ana Sayfa",
+                privacy: "Gizlilik Politikası",
+                delete: "Hesap Silme",
+                shareText: "Camella: Bir selfie ver, kendini başka bir on yılın fotoğrafında gör! Ücretsiz indir:"
+            },
+            en: {
+                tagline: "Retro AI Photo: One Selfie, Many Decades",
+                iosBadge: "iOS Detected",
+                androidBadge: "Android Detected",
+                desktopBadge: "Desktop Detected",
+                statusIosTitle: "Redirecting to App Store...",
+                statusIosDesc: "Tap the App Store button if it does not open automatically",
+                statusAndroidTitle: "Redirecting to Google Play...",
+                statusAndroidDesc: "Tap the Google Play button if it does not open automatically",
+                statusDesktopTitle: "Choose Your App Store",
+                statusDesktopDesc: "Or scan the QR code with your mobile camera",
+                recommended: "Recommended (Your Device)",
+                appleSub: "For iPhone / iPad",
+                appleText: "Download on App Store",
+                googleSub: "For Android Devices",
+                googleText: "Get it on Google Play",
+                qrLabel: "Scan with your iPhone or Android camera to download:",
+                qrHint: "Automatically detects your device",
+                features: ["10 Decade Looks", "Pet Looks", "Keepsake Print", "Selfies Not Stored"],
+                shareHeader: "Share with Friends",
+                shareLabel: "Share",
+                copyLabel: "Copy",
+                copyUrlLabel: "Copy",
+                copiedToast: "Link copied to clipboard!",
+                qrDownloadPng: "Download QR (PNG)",
+                qrDownloadSvg: "Vector QR (SVG)",
+                qrShowText: "View QR Code",
+                qrHideText: "Hide QR Code",
+                pauseBtnText: "Pause",
+                statusPausedTitle: "Redirection Paused",
+                statusPausedDesc: "You can copy the link, show the QR code, or tap buttons below to open the store.",
+                home: "← Home Page",
+                privacy: "Privacy Policy",
+                delete: "Delete Account",
+                shareText: "Camella: Give it one selfie and see yourself in another decade! Download free:"
+            }
+        };
+
+        var redirectTimer = null;
+        var isRedirectPaused = false;
+
+        function getSmartShareUrl() {
+            if (window.location.origin && window.location.origin !== "null") {
+                return window.location.origin + '/camella';
+            }
+            return 'https://vb-tech-labs.vercel.app/camella';
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('camella_smart_lang', lang);
+            try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
+            updateUI();
+        }
+
+        function pauseRedirect() {
+            if (redirectTimer) {
+                clearTimeout(redirectTimer);
+                redirectTimer = null;
+            }
+            isRedirectPaused = true;
+            var spinner = document.getElementById('spinner');
+            if (spinner) spinner.style.display = 'none';
+            var pauseBtn = document.getElementById('btn-pause-redirect');
+            if (pauseBtn) pauseBtn.style.display = 'none';
+            var statusTitle = document.getElementById('status-title');
+            var statusDesc = document.getElementById('status-desc');
+            if (statusTitle) statusTitle.textContent = i18n[currentLang].statusPausedTitle;
+            if (statusDesc) statusDesc.textContent = i18n[currentLang].statusPausedDesc;
+        }
+
+        function toggleQrCode() {
+            pauseRedirect();
+            var qrSection = document.getElementById('qr-section');
+            var isShown = qrSection.classList.toggle('show');
+            var qrToggleLabel = document.getElementById('btn-qr-toggle-label');
+            if (qrToggleLabel) {
+                qrToggleLabel.textContent = isShown ? i18n[currentLang].qrHideText : i18n[currentLang].qrShowText;
+            }
+            if (isShown) {
+                qrSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function updateUI() {
+            var t = i18n[currentLang];
+            var btnTr = document.getElementById('btn-tr');
+            var btnEn = document.getElementById('btn-en');
+            if (btnTr && btnEn) {
+                btnTr.className = 'lang-btn ' + (currentLang === 'tr' ? 'active' : '');
+                btnEn.className = 'lang-btn ' + (currentLang === 'en' ? 'active' : '');
+            }
+
+            var appStoreLink = (currentLang === 'tr') ? APP_STORE_URL_TR : APP_STORE_URL_EN;
+            var btnApple = document.getElementById('btn-apple');
+            var btnGoogle = document.getElementById('btn-google');
+            btnApple.href = appStoreLink;
+            btnGoogle.href = PLAY_STORE_URL;
+
+            document.getElementById('app-tagline').textContent = t.tagline;
+            document.getElementById('qr-label').textContent = t.qrLabel;
+            var qrHintEl = document.getElementById('qr-hint');
+            if (qrHintEl) qrHintEl.textContent = t.qrHint;
+            document.getElementById('footer-home').textContent = t.home;
+            document.getElementById('footer-privacy').textContent = t.privacy;
+            document.getElementById('footer-delete').textContent = t.delete;
+
+            document.getElementById('share-header-text').textContent = t.shareHeader;
+            document.getElementById('btn-share-label').textContent = t.shareLabel;
+            var copyBoxLabel = document.getElementById('btn-copy-box-label');
+            if (copyBoxLabel) copyBoxLabel.textContent = t.copyUrlLabel;
+            var pauseBtnText = document.getElementById('pause-btn-text');
+            if (pauseBtnText) pauseBtnText.textContent = t.pauseBtnText;
+            var qrToggleLabel = document.getElementById('btn-qr-toggle-label');
+            var qrSection = document.getElementById('qr-section');
+            if (qrToggleLabel) {
+                qrToggleLabel.textContent = (qrSection && qrSection.classList.contains('show')) ? t.qrHideText : t.qrShowText;
+            }
+            document.getElementById('qr-download-png').textContent = t.qrDownloadPng;
+            document.getElementById('qr-download-svg').textContent = t.qrDownloadSvg;
+
+            // Setup social share links
+            var smartUrl = getSmartShareUrl();
+            var shareInput = document.getElementById('share-url-input');
+            if (shareInput) shareInput.value = smartUrl;
+
+            var shareMsg = t.shareText + ' ' + smartUrl;
+            document.getElementById('btn-share-whatsapp').href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(shareMsg);
+            document.getElementById('btn-share-telegram').href = 'https://t.me/share/url?url=' + encodeURIComponent(smartUrl) + '&text=' + encodeURIComponent(t.shareText);
+
+            var featuresBox = document.getElementById('features-box');
+            featuresBox.innerHTML = '';
+            t.features.forEach(function(feat) {
+                var span = document.createElement('span');
+                span.className = 'feature-pill';
+                span.textContent = feat;
+                featuresBox.appendChild(span);
+            });
+
+            var platformBadge = document.getElementById('platform-badge');
+            var statusTitle = document.getElementById('status-title');
+            var statusDesc = document.getElementById('status-desc');
+            var spinner = document.getElementById('spinner');
+            var qrImg = document.getElementById('qr-code-img');
+            var pauseBtn = document.getElementById('btn-pause-redirect');
+
+            if (isIOS) {
+                platformBadge.textContent = t.iosBadge;
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusIosTitle;
+                    statusDesc.textContent = t.statusIosDesc;
+                }
+                btnApple.className = 'store-btn store-btn-primary';
+                btnGoogle.className = 'store-btn store-btn-secondary';
+                document.getElementById('apple-btn-sub').textContent = t.recommended;
+                document.getElementById('apple-btn-text').textContent = t.appleText;
+                document.getElementById('google-btn-sub').textContent = t.googleSub;
+                document.getElementById('google-btn-text').textContent = t.googleText;
+            } else if (isAndroid) {
+                platformBadge.textContent = t.androidBadge;
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusAndroidTitle;
+                    statusDesc.textContent = t.statusAndroidDesc;
+                }
+                btnGoogle.className = 'store-btn store-btn-primary';
+                btnApple.className = 'store-btn store-btn-secondary';
+                document.getElementById('google-btn-sub').textContent = t.recommended;
+                document.getElementById('google-btn-text').textContent = t.googleText;
+                document.getElementById('apple-btn-sub').textContent = t.appleSub;
+                document.getElementById('apple-btn-text').textContent = t.appleText;
+            } else {
+                platformBadge.textContent = t.desktopBadge;
+                if (!isRedirectPaused) {
+                    statusTitle.textContent = t.statusDesktopTitle;
+                    statusDesc.textContent = t.statusDesktopDesc;
+                }
+                if (spinner) spinner.style.display = 'none';
+                if (pauseBtn) pauseBtn.style.display = 'none';
+                btnApple.className = 'store-btn store-btn-secondary';
+                btnGoogle.className = 'store-btn store-btn-secondary';
+                document.getElementById('apple-btn-sub').textContent = t.appleSub;
+                document.getElementById('apple-btn-text').textContent = t.appleText;
+                document.getElementById('google-btn-sub').textContent = t.googleSub;
+                document.getElementById('google-btn-text').textContent = t.googleText;
+
+                qrSection.classList.add('show');
+                qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(smartUrl);
+            }
+        }
+
+        function showToast(msg) {
+            var toast = document.getElementById('toast');
+            var toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = msg || i18n[currentLang].copiedToast;
+            toast.classList.add('show');
+            setTimeout(function() {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        function copyShareLink() {
+            pauseRedirect();
+            var url = getSmartShareUrl();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(function() {
+                    showToast(i18n[currentLang].copiedToast);
+                }).catch(function() {
+                    fallbackCopy(url);
+                });
+            } else {
+                fallbackCopy(url);
+            }
+        }
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            try {
+                document.execCommand('copy');
+                showToast(i18n[currentLang].copiedToast);
+            } catch (err) {}
+            document.body.removeChild(ta);
+        }
+
+        function triggerNativeShare() {
+            pauseRedirect();
+            var url = getSmartShareUrl();
+            var t = i18n[currentLang];
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Camella',
+                    text: t.shareText,
+                    url: url
+                }).catch(function(err) {});
+            } else {
+                copyShareLink();
+            }
+        }
+
+        updateUI();
+
+        // Auto-redirect for mobile devices (pausable)
+        (function() {
+            var target = null;
+            if (isIOS) {
+                target = (currentLang === 'tr') ? APP_STORE_URL_TR : APP_STORE_URL_EN;
+            } else if (isAndroid) {
+                target = PLAY_STORE_URL;
+            }
+
+            if (target) {
+                redirectTimer = setTimeout(function() {
+                    if (!isRedirectPaused) {
+                        window.location.href = target;
+                    }
+                }, 1200);
+            }
+        })();
+    </script>
+</body>
+</html>
