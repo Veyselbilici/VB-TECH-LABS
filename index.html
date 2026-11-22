@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>VB TECH LABS | Mobil Uygulama & Yazılım Stüdyosu</title>
-    <meta name="description" content="VB TECH LABS — Falio, Zart Zurt, PeriyoDoz ve TadFit uygulamalarının arkasındaki bağımsız mobil yazılım stüdyosu. Yapay zekâ destekli, güvenli ve özenle tasarlanmış uygulamalar.">
-    <meta name="keywords" content="mobil uygulama, yapay zeka, yazılım stüdyosu, Falio, Zart Zurt, PeriyoDoz, TadFit, VB TECH LABS">
+    <meta name="description" content="VB TECH LABS — Falio, Zart Zurt, PeriyoDoz, TadFit ve Camella uygulamalarının arkasındaki bağımsız mobil yazılım stüdyosu. Yapay zekâ destekli, güvenli ve özenle tasarlanmış uygulamalar.">
+    <meta name="keywords" content="mobil uygulama, yapay zeka, yazılım stüdyosu, Falio, Zart Zurt, PeriyoDoz, TadFit, Camella, VB TECH LABS">
     <meta name="author" content="VB TECH LABS">
     <meta name="theme-color" content="#0a0a0d">
     <meta name="color-scheme" content="dark">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="VB TECH LABS | Mobil Uygulama & Yazılım Stüdyosu">
-    <meta property="og:description" content="Falio, Zart Zurt, PeriyoDoz ve TadFit — günlük hayata dokunan, özenle tasarlanmış mobil uygulamalar.">
+    <meta property="og:description" content="Falio, Zart Zurt, PeriyoDoz, TadFit ve Camella — günlük hayata dokunan, özenle tasarlanmış mobil uygulamalar.">
     <meta property="og:image" content="https://vb-tech-labs.vercel.app/icon-512.png">
     <meta name="twitter:card" content="summary">
 
@@ -441,6 +441,43 @@
         .video-banner.falio .banner-sound[aria-pressed="true"] { background: #a78bfa; color: #0a0a0d; }
         .video-banner.tadfit .banner-tag svg { color: #34d399; }
         .video-banner.tadfit .banner-sound[aria-pressed="true"] { background: #34d399; color: #0a0a0d; }
+
+        /* ---------- Camella (retro AI photo) ---------- */
+        .drawer-app.cm { --c: #ff5a3c; }
+        .hero-card.c5 { left: 31%; top: 31%; width: 36%; --r: 2deg; animation-delay: -3.4s; --glow: rgba(255, 90, 60, .55); z-index: 2; }
+        .app-card.cm { --c: #ff5a3c; --c2: #f4c24b; --tint: rgba(255, 90, 60, .2); }
+        .pulse-dot-tomato { width: 7px; height: 7px; border-radius: 50%; background: var(--c); display: inline-block; animation: ping2 2s infinite; }
+        .store-btn.soon { opacity: .6; cursor: default; pointer-events: none; }
+        .cm-strip {
+            order: 3; grid-column: 1 / -1; position: relative; margin: .85rem 0 0; border-radius: 26px; overflow: hidden; isolation: isolate;
+            border: 1px solid rgba(255, 255, 255, .14); background: radial-gradient(120% 140% at 50% 0%, #2a1712 0%, #120d0b 60%);
+            padding: clamp(1.6rem, 3.4vw, 2.6rem) clamp(1rem, 3vw, 2.4rem) clamp(1.2rem, 3vw, 2rem);
+            box-shadow: 0 38px 80px -28px rgba(0, 0, 0, .92);
+        }
+        .cm-strip::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(60% 50% at 50% 115%, rgba(255, 90, 60, .28), transparent 70%); }
+        .cm-prints { display: flex; justify-content: center; align-items: flex-end; gap: clamp(.4rem, 1.6vw, 1.2rem); }
+        .cm-print {
+            position: relative; flex: 0 1 170px; min-width: 0; background: #fffbf3; padding: 7px 7px 26px; border-radius: 3px; margin: 0;
+            box-shadow: 0 18px 34px -16px rgba(0, 0, 0, .85); transform: rotate(var(--r, 0deg)); transition: transform .6s var(--ease);
+        }
+        .cm-print img { display: block; width: 100%; height: auto; aspect-ratio: 640 / 794; object-fit: cover; }
+        .cm-print figcaption { position: absolute; left: 9px; right: 9px; bottom: 6px; font-family: var(--mono); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; color: #5c4d43; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cm-print::after { content: ''; position: absolute; top: -9px; left: 50%; width: 46px; height: 16px; margin-left: -23px; background: rgba(244, 194, 75, .85); transform: rotate(-3deg); }
+        .cm-print.before { filter: saturate(.85); }
+        .cm-arrow { align-self: center; color: #ff5a3c; font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 3vw, 2.2rem); line-height: 1; padding-bottom: 1rem; }
+        .cm-strip:hover .cm-print { transform: rotate(0deg) translateY(-4px); }
+        .cm-strip-copy { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1.2rem; margin-top: clamp(1rem, 2.4vw, 1.6rem); }
+        .cm-strip-copy strong { font-size: clamp(.95rem, 1.5vw, 1.15rem); font-weight: 600; color: #f6eedf; }
+        .cm-strip-copy .banner-tag { position: static; }
+        .cm-strip-copy .banner-tag svg { color: #ff5a3c; }
+        @media (max-width: 880px) {
+            .cm-strip { border-radius: 18px; }
+            .cm-print { padding: 4px 4px 18px; }
+            .cm-print figcaption { font-size: .46rem; left: 5px; bottom: 4px; }
+            .cm-print.hide-sm { display: none; }
+            .cm-arrow { padding-bottom: .6rem; }
+        }
+        @media (prefers-reduced-motion: reduce) { .cm-print, .cm-strip:hover .cm-print { transition: none; transform: none; } }
         @media (max-width: 880px) {
             .video-banner { border-radius: 18px; margin-top: .4rem; }
             .banner-copy strong { font-size: .92rem; }
@@ -809,6 +846,7 @@
                     <li><a href="#zart-zurt-app" data-translate="nav_zartzurt">Zart Zurt</a></li>
                     <li><a href="#periyodoz-app" data-translate="nav_periyodoz">PeriyoDoz</a></li>
                     <li><a href="#tadfit-app" data-translate="nav_tadfit">TadFit</a></li>
+                    <li><a href="#camella-app" data-translate="nav_camella">Camella</a></li>
                     <li><a href="#services" data-translate="nav_services">Hizmetler</a></li>
                     <li><a href="#about" data-translate="nav_about">Hakkımızda</a></li>
                     <li><a href="iletisim.html" class="nav-cta" data-translate="nav_contact">İletişim</a></li>
@@ -864,6 +902,11 @@
                 <span><b data-translate="nav_tadfit">TadFit</b><small data-translate="drawer_tf">Kalori, diyet &amp; beslenme</small></span>
                 <svg class="i"><use href="#i-arrow"/></svg>
             </a>
+            <a href="#camella-app" class="drawer-app cm stg" style="--i:5" onclick="toggleMobileNav()">
+                <img src="assets/icon-camella.webp" alt="" width="48" height="48">
+                <span><b data-translate="nav_camella">Camella</b><small data-translate="drawer_cm">Retro AI fotoğraf</small></span>
+                <svg class="i"><use href="#i-arrow"/></svg>
+            </a>
 
             <div class="drawer-label stg" style="--i:5" data-translate="footer_company_title">Şirket</div>
             <a href="#services" class="drawer-link stg" style="--i:6" onclick="toggleMobileNav()"><span data-translate="nav_services">Hizmetler</span><svg class="i"><use href="#i-arrow"/></svg></a>
@@ -873,6 +916,7 @@
             <div class="drawer-legal stg" style="--i:9">
                 <a href="privacy-periyodoz.html" data-translate="pz_footer_privacy">PeriyoDoz Gizlilik</a>
                 <a href="privacy-tadfit.html" data-translate="tf_footer_privacy">TadFit Gizlilik</a>
+                <a href="https://www.camella.workers.dev/tr/privacy/" data-href-tr="https://www.camella.workers.dev/tr/privacy/" data-href-en="https://www.camella.workers.dev/privacy/" target="_blank" rel="noopener" data-translate="cm_footer_privacy">Camella Gizlilik</a>
                 <a href="privacy-falio.html" data-translate="falio_privacy_short">Falio Gizlilik & Şartlar</a>
                 <a href="zart-zurt-privacy-policy.html" data-translate="fl_zz_privacy">Zart Zurt Gizlilik</a>
                 <a href="privacy-policy.html" data-translate="nav_privacy">Gizlilik Politikası</a>
@@ -895,7 +939,7 @@
                     <span class="eyebrow reveal"><i></i><span data-translate="hero_subtitle">Bağımsız Mobil Yazılım Stüdyosu</span></span>
                     <h1 class="reveal" style="--d:.08s" data-translate="hero_title">Hayatı kolaylaştıran <em>mobil</em> uygulamalar.</h1>
                     <p class="hero-description reveal" style="--d:.16s" data-translate="hero_desc">
-                        VB TECH LABS; yapay zekâ destekli, hızlı ve güvenli mobil uygulamalar tasarlayan ve geliştiren bir yazılım stüdyosudur. Dört uygulama, tek vizyon: kullanıcıya gerçekten değer katmak.
+                        VB TECH LABS; yapay zekâ destekli, hızlı ve güvenli mobil uygulamalar tasarlayan ve geliştiren bir yazılım stüdyosudur. Beş uygulama, tek vizyon: kullanıcıya gerçekten değer katmak.
                     </p>
                     <div class="cta-buttons reveal" style="--d:.24s">
                         <a href="#falio-app" class="btn btn-primary"><span data-translate="hero_cta1">Uygulamaları Keşfet</span><svg class="i"><use href="#i-arrow"/></svg></a>
@@ -907,6 +951,7 @@
                     <button type="button" class="hero-card c2" onclick="openAppDetail('zartzurt')" aria-label="Zart Zurt"><img src="assets/icon-zartzurt.webp" alt="Zart Zurt" width="384" height="384" decoding="async"></button>
                     <button type="button" class="hero-card c3" onclick="openAppDetail('periyodoz')" aria-label="PeriyoDoz"><img src="assets/icon-periyodoz.webp" alt="PeriyoDoz" width="384" height="384" decoding="async"></button>
                     <button type="button" class="hero-card c4" onclick="openAppDetail('tadfit')" aria-label="TadFit"><img src="tadfit.icon.png" alt="TadFit" width="384" height="384" decoding="async"></button>
+                    <button type="button" class="hero-card c5" onclick="openAppDetail('camella')" aria-label="Camella"><img src="assets/icon-camella.webp" alt="Camella" width="384" height="384" decoding="async"></button>
                 </div>
             </div>
             <a href="#falio-app" class="scroll-hint" aria-label="Scroll"><span></span>Scroll</a>
@@ -924,14 +969,14 @@
             <div class="wrap">
                 <div class="section-header reveal">
                     <div class="section-subtitle" data-translate="apps_subtitle">Uygulamalarımız</div>
-                    <h2 class="section-title" data-translate="apps_title">Cebinizde yaşayan <em>dört</em> ürün.</h2>
+                    <h2 class="section-title" data-translate="apps_title">Cebinizde yaşayan <em>beş</em> ürün.</h2>
                 </div>
 
                 <div class="apps">
                     <!-- Falio -->
                     <article class="app-card falio reveal falio-showcase" id="falio-app">
                         <div class="app-content falio-content">
-                            <span class="app-index">01 / 04</span>
+                            <span class="app-index">01 / 05</span>
                             <div class="app-badge falio-badge" data-translate="falio_badge"><span class="pulse-dot"></span>Şimdi Yayında — Ücretsiz İndir</div>
                             <a href="app/" class="app-title-row" style="text-decoration:none; color:inherit;">
                                 <img src="assets/icon-falio.webp" alt="Falio App Icon" class="app-icon falio-app-icon" width="68" height="68" loading="lazy">
@@ -1001,7 +1046,7 @@
                     <!-- Zart Zurt -->
                     <article class="app-card zz rev reveal zartzurt-showcase" id="zart-zurt-app">
                         <div class="app-content zz-content">
-                            <span class="app-index">02 / 04</span>
+                            <span class="app-index">02 / 05</span>
                             <div class="app-badge zz-badge" data-translate="zz_badge"><span class="pulse-dot-orange"></span>Yeni Eğlence Uygulaması — Şaka & Troll</div>
                             <a href="zart-zurt.html" class="app-title-row" style="text-decoration:none; color:inherit;">
                                 <img src="assets/icon-zartzurt.webp" alt="Zart Zurt App Icon" class="app-icon zz-app-icon" width="68" height="68" loading="lazy">
@@ -1062,7 +1107,7 @@
                     <!-- PeriyoDoz -->
                     <article class="app-card pz reveal periyodoz-showcase" id="periyodoz-app">
                         <div class="app-content pz-content">
-                            <span class="app-index">03 / 04</span>
+                            <span class="app-index">03 / 05</span>
                             <div class="app-badge pz-badge" data-translate="pz_badge"><span class="pulse-dot-rose"></span>Sağlık & İlaç Asistanı — Akıllı Takip</div>
                             <a href="periyodoz.html" class="app-title-row" style="text-decoration:none; color:inherit;">
                                 <img src="assets/icon-periyodoz.webp" alt="PeriyoDoz App Icon" class="app-icon pz-app-icon" width="68" height="68" loading="lazy">
@@ -1108,7 +1153,7 @@
                     <!-- TadFit -->
                     <article class="app-card tf rev reveal tadfit-showcase" id="tadfit-app">
                         <div class="app-content tf-content">
-                            <span class="app-index">04 / 04</span>
+                            <span class="app-index">04 / 05</span>
                             <div class="app-badge tf-badge" data-translate="tf_badge"><span class="pulse-dot-green"></span>Beslenme &amp; Kilo Yönetimi — Kişisel Plan</div>
                             <a href="tadfit.html" class="app-title-row" style="text-decoration:none; color:inherit;">
                                 <img src="tadfit.icon.png" alt="TadFit App Icon" class="app-icon tf-app-icon" width="68" height="68" loading="lazy">
@@ -1168,6 +1213,65 @@
                                 <svg class="i"><use href="#i-wave"/></svg>
                                 <span data-translate="zz_banner_sound">Sesi aç</span>
                             </button>
+                        </div>
+                    </article>
+
+                    <!-- Camella -->
+                    <article class="app-card cm reveal camella-showcase" id="camella-app">
+                        <div class="app-content cm-content">
+                            <span class="app-index">05 / 05</span>
+                            <div class="app-badge cm-badge" data-translate="cm_badge"><span class="pulse-dot-tomato"></span>Yeni — Retro AI Fotoğraf Stüdyosu</div>
+                            <a href="https://www.camella.workers.dev/tr/" data-href-tr="https://www.camella.workers.dev/tr/" data-href-en="https://www.camella.workers.dev/" target="_blank" rel="noopener" class="app-title-row" style="text-decoration:none; color:inherit;">
+                                <img src="assets/icon-camella.webp" alt="Camella App Icon" class="app-icon cm-app-icon" width="68" height="68" loading="lazy">
+                                <h3 class="app-title" data-translate="cm_title">Camella : Retro<br>AI Fotoğraf</h3>
+                            </a>
+                            <p class="app-desc" data-translate="cm_desc">Bir selfie ver, kendini başka bir on yılın fotoğrafında gör. Fotokabin şeridi, 90'lar yıllığı, Yeşilçam afişi, gece flaşı… Evcil dostun için de ayrı stiller var. Sonuç, sana benzeyen bir hatıra kartı olarak elinde.</p>
+                            <div class="app-tags">
+                                <span class="app-tag"><svg class="i"><use href="#i-ai"/></svg><span data-translate="cm_tag_looks">10 Dönem Stili</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-smile"/></svg><span data-translate="cm_tag_pets">Evcil Dost Stilleri</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-star"/></svg><span data-translate="cm_tag_card">Paylaşılabilir Hatıra Kartı</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-lock"/></svg><span data-translate="cm_tag_privacy">Selfie Sunucuda Saklanmaz</span></span>
+                                <span class="app-tag"><svg class="i"><use href="#i-globe"/></svg><span data-translate="cm_tag_langs">Türkçe · English · Deutsch</span></span>
+                            </div>
+                            <div class="store-buttons">
+                                <a href="#" class="store-btn soon" aria-disabled="true" tabindex="-1" id="camella-play-btn">
+                                    <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.04l2.28 1.319a1 1 0 0 1 0 1.728l-2.28 1.319-2.529-2.529 2.529-2.837zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+                                    <span class="store-btn-text"><small data-translate="cm_play_small">ÇOK YAKINDA</small><strong>Google Play</strong></span>
+                                </a>
+                                <a href="#" class="store-btn soon" aria-disabled="true" tabindex="-1" id="camella-appstore-btn">
+                                    <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                    <span class="store-btn-text"><small data-translate="cm_appstore_small">ÇOK YAKINDA</small><strong>App Store</strong></span>
+                                </a>
+                            </div>
+                            <div class="hub-links cm-hub-links">
+                                <a href="https://www.camella.workers.dev/tr/" data-href-tr="https://www.camella.workers.dev/tr/" data-href-en="https://www.camella.workers.dev/" target="_blank" rel="noopener" class="hub-btn hl"><svg class="i"><use href="#i-globe"/></svg><span data-translate="cm_link_portal">Tanıtım Sitesi</span></a>
+                                <a href="https://www.camella.workers.dev/tr/privacy/" data-href-tr="https://www.camella.workers.dev/tr/privacy/" data-href-en="https://www.camella.workers.dev/privacy/" target="_blank" rel="noopener" class="hub-btn"><svg class="i"><use href="#i-shield"/></svg><span data-translate="cm_link_privacy">Gizlilik Politikası</span></a>
+                                <a href="https://www.camella.workers.dev/tr/terms/" data-href-tr="https://www.camella.workers.dev/tr/terms/" data-href-en="https://www.camella.workers.dev/terms/" target="_blank" rel="noopener" class="hub-btn"><svg class="i"><use href="#i-doc"/></svg><span data-translate="cm_link_terms">Kullanım Koşulları</span></a>
+                                <a href="https://www.camella.workers.dev/tr/support/" data-href-tr="https://www.camella.workers.dev/tr/support/" data-href-en="https://www.camella.workers.dev/support/" target="_blank" rel="noopener" class="hub-btn"><svg class="i"><use href="#i-support"/></svg><span data-translate="cm_link_support">Destek &amp; SSS</span></a>
+                                <a href="https://www.camella.workers.dev/tr/delete-account/" data-href-tr="https://www.camella.workers.dev/tr/delete-account/" data-href-en="https://www.camella.workers.dev/delete-account/" target="_blank" rel="noopener" class="hub-btn"><svg class="i"><use href="#i-trash"/></svg><span data-translate="cm_link_delete">Hesap &amp; Veri Silme</span></a>
+                            </div>
+                        </div>
+                        <div class="app-visual cm-visual">
+                            <div class="ring r1"></div><div class="ring r2"></div>
+                            <div class="phones-row">
+                                <div class="phone-mockup"><img src="assets/camella/tr-1.webp" data-tr="assets/camella/tr-1.webp" data-en="assets/camella/en-1.webp" alt="Camella - Stil galerisi" loading="lazy" decoding="async"></div>
+                                <div class="phone-mockup"><img src="assets/camella/tr-2.webp" data-tr="assets/camella/tr-2.webp" data-en="assets/camella/en-2.webp" alt="Camella - 90'lar yıllığı sonuç kartı" loading="lazy" decoding="async"></div>
+                                <div class="phone-mockup"><img src="assets/camella/tr-3.webp" data-tr="assets/camella/tr-3.webp" data-en="assets/camella/en-3.webp" alt="Camella - Evcil dost stilleri" loading="lazy" decoding="async"></div>
+                            </div>
+                        </div>
+                        <!-- (inside card) Camella print strip: one selfie, three decades -->
+                        <div class="cm-strip reveal" id="cm-strip">
+                            <div class="cm-prints">
+                                <figure class="cm-print before" style="--r:-3deg"><img src="assets/camella/a_before.webp" alt="" loading="lazy" decoding="async" width="640" height="794"><figcaption data-translate="cm_strip_before">Selfie</figcaption></figure>
+                                <span class="cm-arrow" aria-hidden="true">→</span>
+                                <figure class="cm-print" style="--r:2deg"><img src="assets/camella/a_yesilcam.webp" alt="" loading="lazy" decoding="async" width="640" height="794"><figcaption data-translate="cm_strip_1">Yeşilçam</figcaption></figure>
+                                <figure class="cm-print" style="--r:-1.5deg"><img src="assets/camella/a_yearbook_90s.webp" alt="" loading="lazy" decoding="async" width="640" height="794"><figcaption data-translate="cm_strip_2">90'lar Yıllığı</figcaption></figure>
+                                <figure class="cm-print hide-sm" style="--r:3deg"><img src="assets/camella/a_night_flash.webp" alt="" loading="lazy" decoding="async" width="640" height="794"><figcaption data-translate="cm_strip_3">Gece Flaşı</figcaption></figure>
+                            </div>
+                            <div class="cm-strip-copy">
+                                <span class="banner-tag"><svg class="i"><use href="#i-play"/></svg>Camella</span>
+                                <strong data-translate="cm_banner_title">Bir selfie, birçok on yıl. Hangi dönemde daha çok sen gibisin?</strong>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -1295,6 +1399,8 @@
                         <li><a href="tadfit.html" data-translate="tf_footer_landing">TadFit Tanıtım</a></li>
                         <li><a href="privacy-tadfit.html" data-translate="tf_footer_privacy">TadFit Gizlilik</a></li>
                         <li><a href="tadfit-hesap-silme.html" data-translate="tf_footer_delete">TadFit Hesap Silme</a></li>
+                        <li><a href="#camella-app" data-translate="nav_camella">Camella App</a></li>
+                        <li><a href="https://www.camella.workers.dev/tr/privacy/" data-href-tr="https://www.camella.workers.dev/tr/privacy/" data-href-en="https://www.camella.workers.dev/privacy/" target="_blank" rel="noopener" data-translate="cm_footer_privacy">Camella Gizlilik</a></li>
                         <li><a href="zart-zurt-support.html" data-translate="zz_link_support">Zart Zurt Support</a></li>
                         <li><a href="privacy-policy.html" data-translate="nav_privacy">Gizlilik Politikası</a></li>
                         <li><a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a></li>
@@ -1325,6 +1431,9 @@
                     <a href="tadfit-terms.html" data-translate="tf_footer_terms">TadFit Koşulları</a>
                     <a href="tadfit-support.html" data-translate="tf_footer_support">TadFit Destek</a>
                     <a href="tadfit-hesap-silme.html" data-translate="tf_footer_delete">TadFit Hesap Silme</a>
+                    <a href="https://www.camella.workers.dev/tr/privacy/" data-href-tr="https://www.camella.workers.dev/tr/privacy/" data-href-en="https://www.camella.workers.dev/privacy/" target="_blank" rel="noopener" data-translate="cm_footer_privacy">Camella Gizlilik</a>
+                    <a href="https://www.camella.workers.dev/tr/terms/" data-href-tr="https://www.camella.workers.dev/tr/terms/" data-href-en="https://www.camella.workers.dev/terms/" target="_blank" rel="noopener" data-translate="cm_footer_terms">Camella Koşulları</a>
+                    <a href="https://www.camella.workers.dev/tr/delete-account/" data-href-tr="https://www.camella.workers.dev/tr/delete-account/" data-href-en="https://www.camella.workers.dev/delete-account/" target="_blank" rel="noopener" data-translate="cm_footer_delete">Camella Hesap Silme</a>
                     <a href="app-ads.html" data-translate="nav_app_ads">App-ads.txt</a>
                 </div>
             </div>
@@ -1343,11 +1452,11 @@
 
                 hero_subtitle: "Bağımsız Mobil Yazılım Stüdyosu",
                 hero_title: "Hayatı kolaylaştıran <em>mobil</em> uygulamalar.",
-                hero_desc: "VB TECH LABS; yapay zekâ destekli, hızlı ve güvenli mobil uygulamalar tasarlayan ve geliştiren bir yazılım stüdyosudur. Dört uygulama, tek vizyon: kullanıcıya gerçekten değer katmak.",
+                hero_desc: "VB TECH LABS; yapay zekâ destekli, hızlı ve güvenli mobil uygulamalar tasarlayan ve geliştiren bir yazılım stüdyosudur. Beş uygulama, tek vizyon: kullanıcıya gerçekten değer katmak.",
                 hero_cta1: "Uygulamaları Keşfet", hero_cta2: "İletişime Geç",
 
                 apps_subtitle: "Uygulamalarımız",
-                apps_title: "Cebinizde yaşayan <em>dört</em> ürün.",
+                apps_title: "Cebinizde yaşayan <em>beş</em> ürün.",
 
                 falio_badge: "<span class=\"pulse-dot\"></span>Şimdi Yayında — Ücretsiz İndir",
                 falio_title: "Falio : Astroloji,<br>Rüya & Fal",
@@ -1380,6 +1489,17 @@
                 tf_link_smart: "Paylaş & QR", tf_link_portal: "Tanıtım & İndirme Sayfası", tf_link_privacy: "Gizlilik Politikası", tf_link_terms: "Kullanım Koşulları", tf_link_support: "Destek & SSS", tf_link_delete: "Hesap & Veri Silme",
                 tf_chip1: "Kalori & Makro", tf_chip2: "7 Günlük AI Plan", tf_chip3: "Su & Kilo Takibi", tf_banner_title: "Spor bitti, mutfaktasın… Barkodu okut, kadran anında dönsün.",
                 tf_footer_landing: "TadFit Tanıtım", tf_footer_privacy: "TadFit Gizlilik", tf_footer_terms: "TadFit Koşulları", tf_footer_support: "TadFit Destek", tf_footer_delete: "TadFit Hesap Silme",
+
+                nav_camella: "Camella", drawer_cm: "Retro AI fotoğraf",
+                cm_badge: "<span class=\"pulse-dot-tomato\"></span>Yeni — Retro AI Fotoğraf Stüdyosu",
+                cm_title: "Camella : Retro<br>AI Fotoğraf",
+                cm_desc: "Bir selfie ver, kendini başka bir on yılın fotoğrafında gör. Fotokabin şeridi, 90'lar yıllığı, Yeşilçam afişi, gece flaşı… Evcil dostun için de ayrı stiller var. Sonuç, sana benzeyen bir hatıra kartı olarak elinde.",
+                cm_tag_looks: "10 Dönem Stili", cm_tag_pets: "Evcil Dost Stilleri", cm_tag_card: "Paylaşılabilir Hatıra Kartı", cm_tag_privacy: "Selfie Sunucuda Saklanmaz", cm_tag_langs: "Türkçe · English · Deutsch",
+                cm_play_small: "ÇOK YAKINDA", cm_appstore_small: "ÇOK YAKINDA",
+                cm_link_portal: "Tanıtım Sitesi", cm_link_privacy: "Gizlilik Politikası", cm_link_terms: "Kullanım Koşulları", cm_link_support: "Destek & SSS", cm_link_delete: "Hesap & Veri Silme",
+                cm_strip_before: "Selfie", cm_strip_1: "Yeşilçam", cm_strip_2: "90'lar Yıllığı", cm_strip_3: "Gece Flaşı",
+                cm_banner_title: "Bir selfie, birçok on yıl. Hangi dönemde daha çok sen gibisin?",
+                cm_footer_privacy: "Camella Gizlilik", cm_footer_terms: "Camella Koşulları", cm_footer_delete: "Camella Hesap Silme",
 
                 services_subtitle: "Uzmanlık Alanlarımız",
                 services_title: "Fikirden mağazaya, <em>uçtan uca</em> hizmet.",
@@ -1415,11 +1535,11 @@
 
                 hero_subtitle: "Independent Mobile Software Studio",
                 hero_title: "<em>Mobile</em> apps that make everyday life easier.",
-                hero_desc: "VB TECH LABS is a software studio designing and building fast, secure, AI-powered mobile apps. Four apps, one vision: create real value for the people who use them.",
+                hero_desc: "VB TECH LABS is a software studio designing and building fast, secure, AI-powered mobile apps. Five apps, one vision: create real value for the people who use them.",
                 hero_cta1: "Explore the apps", hero_cta2: "Get in touch",
 
                 apps_subtitle: "Our Apps",
-                apps_title: "<em>Four</em> products that live in your pocket.",
+                apps_title: "<em>Five</em> products that live in your pocket.",
 
                 falio_badge: "<span class=\"pulse-dot\"></span>Now Live — Free Download",
                 falio_title: "Falio: Astrology,<br>Dream & Tarot",
@@ -1452,6 +1572,17 @@
                 tf_link_smart: "Share & QR", tf_link_portal: "Overview & Download Page", tf_link_privacy: "Privacy Policy", tf_link_terms: "Terms of Use", tf_link_support: "Support & FAQ", tf_link_delete: "Delete Account & Data",
                 tf_chip1: "Calorie & Macro", tf_chip2: "7-Day AI Plan", tf_chip3: "Water & Weight", tf_banner_title: "Post-workout in the kitchen… Scan the barcode, watch the dial spin.",
                 tf_footer_landing: "TadFit Overview", tf_footer_privacy: "TadFit Privacy", tf_footer_terms: "TadFit Terms", tf_footer_support: "TadFit Support", tf_footer_delete: "TadFit Data Deletion",
+
+                nav_camella: "Camella", drawer_cm: "Retro AI photos",
+                cm_badge: "<span class=\"pulse-dot-tomato\"></span>New — Retro AI Photo Studio",
+                cm_title: "Camella : Retro<br>AI Photo",
+                cm_desc: "Give it one selfie and see yourself in a photo from another decade. Photo booth strip, 90s yearbook, vintage film poster, night flash… with separate looks for your pet too. You get a keepsake print that looks like you.",
+                cm_tag_looks: "10 Decade Looks", cm_tag_pets: "Pet Looks", cm_tag_card: "Shareable Keepsake Print", cm_tag_privacy: "Selfies Not Stored on Servers", cm_tag_langs: "English · Deutsch · Türkçe",
+                cm_play_small: "COMING SOON", cm_appstore_small: "COMING SOON",
+                cm_link_portal: "Website", cm_link_privacy: "Privacy Policy", cm_link_terms: "Terms of Use", cm_link_support: "Support & FAQ", cm_link_delete: "Account & Data Deletion",
+                cm_strip_before: "Selfie", cm_strip_1: "Film Poster", cm_strip_2: "90s Yearbook", cm_strip_3: "Night Flash",
+                cm_banner_title: "One selfie, many decades. Which one looks most like you?",
+                cm_footer_privacy: "Camella Privacy", cm_footer_terms: "Camella Terms", cm_footer_delete: "Camella Data Deletion",
 
                 services_subtitle: "Our Expertise",
                 services_title: "From idea to store, <em>end to end</em>.",
@@ -1497,6 +1628,7 @@
             });
 
             document.querySelectorAll('img[data-' + lang + ']').forEach(img => { img.src = img.getAttribute('data-' + lang); });
+            document.querySelectorAll('a[data-href-' + lang + ']').forEach(a => { a.href = a.getAttribute('data-href-' + lang); });
             document.querySelectorAll('video[data-' + lang + ']').forEach(vid => {
                 const targetSrc = vid.getAttribute('data-' + lang);
                 const srcEl = vid.querySelector('source');
@@ -1674,8 +1806,8 @@
         })();
 
         /* App detail dialog: reuses the live showcase sections so copy stays in sync */
-        const detailSources = { falio: '#falio-app', zartzurt: '#zart-zurt-app', periyodoz: '#periyodoz-app', tadfit: '#tadfit-app' };
-        const detailPages = { falio: 'app/', zartzurt: 'zart-zurt.html', periyodoz: 'periyodoz.html', tadfit: 'tadfit.html' };
+        const detailSources = { falio: '#falio-app', zartzurt: '#zart-zurt-app', periyodoz: '#periyodoz-app', tadfit: '#tadfit-app', camella: '#camella-app' };
+        const detailPages = { falio: 'app/', zartzurt: 'zart-zurt.html', periyodoz: 'periyodoz.html', tadfit: 'tadfit.html', camella: 'https://www.camella.workers.dev/' };
         let detailLastFocus = null;
 
         function openAppDetail(key) {
@@ -1687,10 +1819,10 @@
             if (!src) return;
             const card = document.getElementById('app-detail-card');
             const lang = localStorage.getItem('preferredLanguage') || 'tr';
-            card.className = 'app-card app-detail-card ' + (key === 'zartzurt' ? 'zz' : key === 'periyodoz' ? 'pz' : key === 'tadfit' ? 'tf' : 'falio');
+            card.className = 'app-card app-detail-card ' + (key === 'zartzurt' ? 'zz' : key === 'periyodoz' ? 'pz' : key === 'tadfit' ? 'tf' : key === 'camella' ? 'cm' : 'falio');
             Array.from(card.children).forEach(n => { if (!n.classList.contains('app-detail-close')) n.remove(); });
 
-            ['.app-content', '.app-visual', '.video-banner'].forEach(sel => {
+            ['.app-content', '.app-visual', '.video-banner', '.cm-strip'].forEach(sel => {
                 const orig = src.querySelector(sel);
                 if (!orig) return;
                 const c = orig.cloneNode(true);
